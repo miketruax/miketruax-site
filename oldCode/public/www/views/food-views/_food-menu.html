@@ -1,0 +1,23 @@
+<nav class="food-menu">
+    <ul class="nav nav-pills text-center double-menu">
+        <li role="presentation" class="pointer" ng-class="active == breads ? 'active': ''"
+            ng-click="setActiveCat(breads, 'Breads')">
+            <a><img class="button-img" ng-src="../www/img/buttons/breads{{active == breads ? 'Active.png': '.png'}}"><b
+                    class="link-text">Breads</b></a>
+        </li>
+        <li role="presentation" class="pointer" ng-class="active == desserts ? 'active': ''"
+            ng-click="setActiveCat(desserts, 'Desserts')">
+            <a><img class="button-img"
+                    ng-src="../www/img/buttons/desserts{{active == desserts ? 'Active.png': '.png'}}"><b
+                    class="link-text">Desserts</b></a></li>
+        <li role="presentation" class="pointer" ng-class="active == entrees ? 'active': ''"
+            ng-click="setActiveCat(entrees, 'Entrees')">
+            <a><img class="button-img"
+                    ng-src="../www/img/buttons/entrees{{active == entrees ? 'Active.png': '.png'}}"><b
+                    class="link-text">Entrees</b></a></li>
+        <li role="presentation" class="pointer" ng-class="active == sides ? 'active': ''"
+            ng-click="setActiveCat(sides, 'Sides')">
+            <a><img class="button-img" ng-src="../www/img/buttons/sides{{active == sides ? 'Active.png': '.png'}}"><b
+                    class="link-text">Sides</b></a></li>
+    </ul>
+</nav>

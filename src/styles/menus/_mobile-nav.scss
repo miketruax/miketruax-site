@@ -1,0 +1,33 @@
+.mobile-nav-text {
+  font-size: 20px;
+  vertical-align: 8px;
+  color: $sunny;
+  text-shadow: 1px 1px $alabaster;
+  font-weight: normal !important;
+  line-height: 45px !important;
+
+}
+
+.mobile-nav-arrow {
+  font-size: 30px;
+  color: $sunny;
+  text-shadow: 1px 1px $raisin-black;
+}
+
+.mobile-nav {
+  position: fixed !important;
+  z-index: 1031;
+  cursor: pointer;
+  overflow-y: hidden !important;
+}
+
+#mobile-left {
+  left: 0px;
+  top: -6px;
+}
+
+#mobile-right {
+  right: 60px;
+  top: -6px;
+}
+

@@ -1,0 +1,15 @@
+@mixin xTranslation($pct) {
+  -webkit-transform: translateX($pct);
+  -moz-transform: translateX($pct);
+  -o-transform: translateX($pct);
+  -ms-transform: translateX($pct);
+  transform: translateX($pct);
+}
+
+@mixin transition-ease-in-out($time) {
+  -ms-transition: -ms-transform $time ease-in-out;
+  -webkit-transition: -webkit-transform $time ease-in-out;
+  -moz-transition: -moz-transform $time ease-in-out;
+  -o-transition: -o-transition $time ease-in-out;
+  transition: transform $time ease-in-out;
+}

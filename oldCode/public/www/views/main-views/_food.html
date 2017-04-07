@@ -1,0 +1,14 @@
+
+    <div class="section-box ">
+        <div class="inner-section " ng-include="'./www/views/food-views/_intro.html'"
+             onload="loadChecker.foodLoaded()">
+        </div>
+        <div class="inner-section ">
+            <div class="panel panel-default">
+                <div class="panel-header food1 no-border" ng-include="'./www/views/food-views/_food-menu.html'"
+                     onload="loadChecker.foodLoaded()"></div>
+                <div class="no-border panel-body" ng-include="'./www/views/food-views/_recipes.html'"
+                     onload="loadChecker.foodLoaded()"></div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,11 @@
+@font-face {
+  font-family: ImpactTTF;
+  src: url(../fonts/impact.ttf);
+}
+@font-face {
+  font-family: ImpactEOT;
+  src: url(../fonts/impact.eot);
+}
+
+$body-fonts: "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif !important;
+$panel-head-fonts: Impact, ImpactTTF, ImpactEOT, "Avenir Next Condensed", Charcoal, sans-serif;

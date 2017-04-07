@@ -1,0 +1,33 @@
+<div id="main-nav" class="hidden-nav">
+    <ul class="mobile-top-nav nav navbar-nav nav-pills nav-justified nav-stacked">
+        <li role="presentation" ng-class="mainState.active == 0 ? 'active' : ''" class="pointer"
+            ng-click="mainSwiper.slideTo('0', 0);"><a>Home</a>
+        </li>
+        <li role="presentation" ng-class="mainState.active == 1 ? 'active' : ''" class="pointer"
+            ng-click="mainSwiper.slideTo('1', 0);"><a>Skills</a>
+        </li>
+        <li role="presentation" ng-class="mainState.active == 2 ? 'active' : ''" class="pointer"
+            ng-click="mainSwiper.slideTo('2', 0);"><a>About</a>
+        </li>
+        <li role="presentation" ng-class="mainState.active == 3 ? 'active' : ''" class="pointer"
+            ng-click="mainSwiper.slideTo('3', 0);"><a>Food</a>
+        </li>
+    </ul>
+</div>
+
+<!-- Mobile Nav -->
+<div id="mobile-left" ng-click="mainSwiper.slidePrev()" class="mobile-nav" ng-hide="mainState.active===0">
+    <span class="mobile-nav-arrow glyphicon glyphicon-menu-left" role="navigation" aria-hidden="true"></span>
+    <span class="mobile-nav-text" id="mobile-prev">
+					{{mainState.active != 0 ? mainState.states[mainState.active -1]: '' | capitalize}}
+				</span>
+</div>
+
+
+<div id="mobile-right" ng-click="mainSwiper.slideNext()" class="mobile-nav"
+     ng-hide="mainState.active >= mainState.states.length-1">
+				<span class="mobile-nav-text" id="mobile-next">
+					{{mainState.active !==3 ? mainState.states[mainState.active +1]: '' | capitalize}}
+				</span>
+    <span class="mobile-nav-arrow glyphicon glyphicon-menu-right" role="navigation" aria-hidden="true"></span>
+</div>

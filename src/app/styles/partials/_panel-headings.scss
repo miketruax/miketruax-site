@@ -1,0 +1,92 @@
+ .home {
+    background-image: url(../../../assets/img/backgrounds/home.png) !important;
+  }
+  .home1 {
+    background-image: url(../../../assets/img/backgrounds/home1.png) !important;
+  }
+  .home2 {
+    background-image: url(../../../assets/img/backgrounds/home2.png) !important;
+  }
+
+  .about {
+    background-image: url(../../../assets/img/backgrounds/about.png) !important;
+  }
+  .about1 {
+    background-image: url(../../../assets/img/backgrounds/about1.png) !important;
+  }
+  .about2 {
+    background-image: url(../../../assets/img/backgrounds/about2.png) !important;
+  }
+  .about3 {
+    background-image: url(../../../assets/img/backgrounds/about3.png) !important;
+  }
+  .about4 {
+    background-image: url(../../../assets/img/backgrounds/about4.png) !important;
+  }
+
+  .skills {
+    background-image: url(../../../assets/img/backgrounds/skills.png) !important;
+  }
+  .skills1 {
+    background-image: url(../../../assets/img/backgrounds/skills1.png) !important;
+  }
+  .skills2 {
+    background-image: url(../../../assets/img/backgrounds/skills2.png) !important;
+  }
+  .skills3 {
+    background-image: url(../../../assets/img/backgrounds/skills3.png) !important;
+  }
+  .skills4 {
+    background-image: url(../../../assets/img/backgrounds/skills4.png) !important;
+  }
+
+
+//panel backgrounds on desktop
+@media only screen and (min-width: 800px){
+  .home-panel-heading {
+    background-image: url(assets/img/backgrounds/homeFull.png) !important;
+    background-attachment: fixed;
+  }
+
+  .skills-panel-heading {
+    background-image: url(assets/img/backgrounds/skillsFull.png) !important;
+    background-attachment: fixed;
+  }
+
+  .about-panel-heading {
+    background-image: url(assets/img/backgrounds/aboutFull.png) !important;
+    background-attachment: fixed;
+  }
+}
+
+//Unchanging panel bgs
+.food-panel-heading {
+  background-image: url(assets/img/backgrounds/foodFull.png) !important;
+  min-height: 60px;
+}
+.food1{
+  background-color: rgba($yankees-blue, .6);
+}
+.home-logo {
+  background-image: url(assets/img/backgrounds/home-logo.png) !important;
+  padding: 0 15px !important;
+  min-height: 50px !important;
+  background-attachment: scroll !important;
+}
+
+.skills-panel-heading, .about-panel-heading,
+.home-panel-heading, .food-panel-heading {
+  border-bottom: 1px solid $yankees-blue !important;
+  background-position: center;
+  background-size: cover;
+  min-height: 60px;
+  background-color: rgba($yankees-blue, .4) !important;
+
+  h3{
+    font-size: 30px !important;
+    color: $sunny !important;
+    font-family: $panel-head-fonts;
+    text-transform: uppercase !important;
+    text-shadow: 2px 2px $yankees-blue !important;
+  }
+}

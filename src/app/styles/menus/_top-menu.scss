@@ -1,0 +1,111 @@
+.navbar-toggle {
+  margin-right: 30px !important;
+  z-index: 100;
+  border-color: $sunny !important;
+  span {
+    background-color: $yankees-blue !important;
+  }
+}
+
+.hidden-nav {
+  position: fixed;
+  margin-top: 40px;
+  border: 1px solid black;
+  z-index: 1000;
+  opacity: .98;
+  width: 275px;
+  right: -276px;
+  color: $alabaster;
+  background: rgba($sunny, .85);
+  a, li {
+    width: 100% !important;
+    position: relative !important;
+    background-color: $moonstone-blue;
+  }
+  a:hover, li:hover{
+    background-color: $alabaster !important;
+  }
+  .active, .active a {
+    color: $sunny !important;
+    background-color: $yankees-blue !important;
+  }
+}
+
+
+.navbar-toggle {
+  background-color: $moonstone-blue !important;
+}
+
+#navbar-top {
+  height: 40px !important;
+  min-height: 40px !important;
+  max-width: 100% !important;
+}
+
+#nav-menu {
+  padding: 7px 8px !important;
+  margin-top: 4px !important;
+  margin-right: 10px !important;
+  margin-bottom: 4px !important;
+  display: block !important;
+}
+
+#nav-menu, #main-nav, .nav-icon {
+  transition: all .4s cubic-bezier(.23, .98, .01, .96);
+}
+
+@media(max-width: 800px) {
+  #main-nav {
+    width: 100%;
+  }
+  .hidden-nav {
+    right: -101%;
+  }
+}
+
+.navbar-fixed-top {
+  background: rgba($yankees-blue, .8) !important;
+  border-bottom: none !important;
+}
+
+#main-nav {
+  .navbar-nav {
+    margin: 0;
+  }
+  .pointer {
+    text-align: center;
+  }
+}
+
+.nav-active {
+  right: 0px !important;
+}
+
+$speed: 400ms;
+$easing: cubic-bezier(0.7, 0, 0, 0.7);
+
+.nav-icon-wrapper {
+  overflow: hidden;
+  float: left;
+}
+
+.icon-bar {
+  transition: opacity, transform;
+  transition-duration: $speed;
+  transition-timing-function: $easing;
+}
+
+.nav-menu-active {
+  .icon-bar {
+    &:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+    &:nth-child(2) {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    &:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+  }
+}

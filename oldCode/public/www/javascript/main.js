@@ -1,24 +1,5 @@
 var MainApp = angular.module('MainApp', ['ui.router', 'ngAnimate']) //initialize ui-router
 
-    .config(function ($stateProvider) {
-        //sets up states for all parent views
-        var main;
-        if ($(window).width() <= 770) {
-            main = '_mHome.html';
-        } else {
-            main = '_home.html';
-        }
-
-        var parents = [{name: 'home', url: '/', templateUrl: '../www/views/main-views/' + main, controller: 'HomeCtrl'},
-            {name: 'skills', url: '/skills', templateUrl: '../www/views/main-views/_resume.html', controller: 'ResumeCtrl'},
-            {name: 'about', url: '/about', templateUrl: '../www/views/main-views/_about.html', controller: 'AboutCtrl'},
-            {name: 'food', url: '/food', templateUrl: '../www/views/main-views/_food.html', controller: 'FoodCtrl'}];
-        for (var i = 0; i < parents.length; i++) { //creates a state for each in the parent array
-            $stateProvider.state(parents[i]);
-        }
-    })
-
-
     .factory('navigationService', ['$state', function ($state) {
 
 //Removes sliding classes to reduce risk of double animation or wrong animation
@@ -82,14 +63,6 @@ var MainApp = angular.module('MainApp', ['ui.router', 'ngAnimate']) //initialize
         };
         return navigationService;
     }])
-
-    //Simple capitalization filter for binding elements. Makes case sensitivity easier
-
-    .filter('capitalize', function () {
-        return function (s) {
-            return (angular.isString(s) && s.length > 0) ? s[0].toUpperCase() + s.substr(1).toLowerCase() : s;
-        }
-    })
 
 
     .factory('loadChecker', ['$rootScope', function ($rootScope) {
@@ -195,19 +168,6 @@ var MainApp = angular.module('MainApp', ['ui.router', 'ngAnimate']) //initialize
         return preLoadService;
     }])
 
-    // Recipe Service will recieve data in from of JSON from server side API
-    // it calls the API, recieves and then returns the JSON from SQL Database
-    // takes the id paramater of the appropriate category as saved in the DB
-
-    .factory('apiService', function ($http) {
-        var RecipeService = {
-            getJson: function (database, id) {
-                return $http.get("./api/"+database+"/"+id);
-                //return $http.get("./www/javascript/json/" + id + ".json")
-            }
-        };
-        return RecipeService;
-    })
     /*
      onRepeatFinish attached to ng-repeat and emits attr when final item is loaded.
      Uses $timeout to ensure loading is completed and not just started. This is
@@ -227,18 +187,3 @@ var MainApp = angular.module('MainApp', ['ui.router', 'ngAnimate']) //initialize
             }
         }
     })
-
-    .run(['$state', '$rootScope', function ($state, $rootScope) {
-        $state.transitionTo('home');
-        if ($(window).width() >= 771) {
-            $('#navigation').attr('ng-include',"'../www/views/menu-views/_main-menu.html'");
-        } else {
-            $('#navigation').attr('ng-include',"'../www/views/menu-views/_mobile-menu.html'");
-        }
-        $rootScope.$on("$locationChangeStart", function (event, next, current) {
-            if (next == current) {
-                event.preventDefault();
-                $state.go('home');
-            }
-        });
-    }]);

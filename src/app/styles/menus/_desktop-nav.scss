@@ -1,0 +1,105 @@
+.arrow-nav-left {
+  left: 45px;
+}
+
+.arrow-nav-right {
+  right: 85px;
+}
+
+.arrow-nav {
+  top: 0px;
+  z-index: 1031;
+  height: 40px !important;
+  position: fixed !important;
+  width: 90px !important;
+  margin: 0 !important;
+  overflow-y: hidden;
+
+  .icon-bar {
+    width: 35px;
+    height: 4px !important;
+    border-radius: 1px;
+    background-color: $sunny !important
+  }
+
+  .top-bar, .bottom-bar, .mid-bar {
+    transition: all .5s ease;
+  }
+
+  .mid-bar {
+    padding: 2px 2px 2px 0;
+    height: 30px;
+    overflow: hidden;
+    color: $sunny;
+    text-shadow: 1px 1px 1px $yankees-blue;
+  }
+
+  .left-arrow, .right-arrow {
+    height: 70px !important;
+    .mid-bar {
+      opacity: 0;
+      font-size: 22px;
+    }
+  }
+
+  .left-arrow {
+    overflow: hidden !important;
+    .mid-bar{
+      margin-left: -15px;
+    }
+    span {
+      float: left !important;
+      clear: left !important;
+    }
+    .top-bar {
+      transform: translateY(6px) rotate(-45deg);
+    }
+    .bottom-bar {
+      transform: translateY(-5px) rotate(45deg);
+    }
+  }
+
+  .right-arrow {
+    overflow: hidden !important;
+    .mid-bar{
+      margin-right: -15px;
+    }
+    span {
+      float: right !important;
+      clear: right !important;
+    }
+    .top-bar {
+      margin-left: 20px;
+      transform: translateY(6px) rotate(45deg);
+    }
+    .bottom-bar {
+      margin-left: 20px;
+      transform: translateY(-5px) rotate(-45deg);
+    }
+  }
+}
+@media(min-width: 800px) {
+  .arrow-nav:hover {
+    //.top-bar, .bottom-bar {
+    //  transform: translateY(0px) rotate(0deg);
+    //}
+    .right-arrow .mid-bar {
+      opacity: 1;
+      margin-right: 25px;
+    }
+    .left-arrow .mid-bar {
+      opacity: 1;
+      margin-left: 25px;
+    }
+  }
+}
+@media(max-width: 799px){
+  .right-arrow .mid-bar {
+    opacity: 1 !important;
+    margin-right: 25px !important;
+  }
+  .left-arrow .mid-bar {
+    opacity: 1 !important;
+    margin-left: 25px !important;
+  }
+}

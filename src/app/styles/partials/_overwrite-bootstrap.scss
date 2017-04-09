@@ -1,0 +1,27 @@
+.panel-heading {
+  background-color: rgba($alabaster, 0.75) !important;
+}
+.panel{
+  margin-bottom: 0 !important;
+}
+
+.panel.panel-default {
+  background-color: rgba($alabaster, 0.4) !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+.panel-body {
+  padding: 15px 5px 2px 5px !important;
+}
+
+.panel-group {
+  margin-bottom: 0 !important;
+}
+
+@media(max-width: 790px) {
+  .col-xs-12 {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}

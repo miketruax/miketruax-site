@@ -2,24 +2,25 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <button type="button" class="navbar-toggle collapsed" (click)="menuClick($event)" data-toggle="collapse"
+              data-target="#navbar-main" aria-expanded="false" [ngClass]="{'nav-menu-active': menuActive}">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" [routerLink]="['/about']">
-        <img class="brandLogo" alt="Buddy Trakr" src="/assets/img/logos/main_logo.png">
+      <a class="navbar-brand" style="margin: 0 !important; max-height: 45px !important; padding: 0 8px 0 0  !important;">
+        <img class="brandLogo" alt="Buddy Trakr" src="/assets/img/buttons/menu-button.png">
       </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse" id="navbar-main">
       <ul class="nav navbar-nav">
-        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/buddies']">Home</a></li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/home']">Home</a></li>
         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/about']">About</a></li>
-        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/settings']">Resume</a></li>
-        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/signup']">Food Blog</a></li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/skills']">Skills</a></li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/food']">Food Blog</a></li>
         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/examples']">Examples</a></li>
       </ul>
     </div>
@@ -29,6 +30,6 @@
 
 
 <footer class="col-xs-10 col-xs-offset-1 text-center">
-  <img src="/assets/img/buttons/menuButton.png" style="max-height: 40px !important;">
+  <img src="/assets/img/buttons/menu-button.png" style="max-height: 40px !important;">
   <span>Mike Truax: Website Developer and Consultant</span>
 </footer>

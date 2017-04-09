@@ -1,0 +1,24 @@
+// --------------MIXINS---------//
+
+@import 'mixins/colors';
+@import 'mixins/fonts';
+@import 'mixins/animations';
+//---------------PARTIALS------//
+@import 'partials/ng-animate';
+@import 'partials/elements';
+@import 'partials/overwrite-bootstrap';
+@import 'partials/mainbox';
+@import 'partials/panel-headings';
+@import 'partials/recipes';
+//---------------MENUS-------------//
+@import 'menus/desktop-nav';
+@import 'menus/top-menu';
+@import 'menus/mobile-nav';
+@import 'menus/category-menu';
+//---------SWIPERS--------------//
+@import 'swiper/swiper';
+@import 'swiper/food-swiper';
+//-------------HELPERS-------//
+@import 'helpers/helpers';
+//---------EXAMPLES------------//
+

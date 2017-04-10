@@ -1,7 +1,5 @@
 /*ELEMENTS----------------*/
 * {
-  // overflow-x: hidden;
-  // overflow-y: visible;
   line-height: normal !important;
   color: $raisin-black;
 }
@@ -11,18 +9,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 2px !important;
 }
 
-body {
-  background-color: rgba($alabaster, .8) !important;
-  font-family: $body-fonts;
-  overflow-y: visible !important;
-  text-shadow: .5px .5px $alabaster !important;
-}
 li{
-  text-shadow: .5px .5px $alabaster !important;
+  //text-shadow: .5px .5px $alabaster !important;
 }
 
-@media(max-width: 800px) {
-  body {
-    font-size: 12px !important;
-  }
-}

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -9,15 +9,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" style="margin: 0 !important; max-height: 45px !important; padding: 0 8px 0 0  !important;">
-        <img class="brandLogo" alt="Buddy Trakr" src="/assets/img/buttons/menu-button.png">
-      </a>
+      <!--<a class="navbar-brand" style="max-height: 45px !important; padding: 0 8px 0 0  !important;">-->
+        <!--<img class="brandLogo" alt="Mike Truax Design" src="/assets/img/buttons/menu-button.png">-->
+      <!--</a>-->
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-main">
       <ul class="nav navbar-nav">
-        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/home']">Home</a></li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/']">Home</a></li>
         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/about']">About</a></li>
         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/skills']">Skills</a></li>
         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/food']">Food Blog</a></li>
@@ -26,7 +26,15 @@
     </div>
   </div>
 </nav>
+
+<div class="home-logo">
+  <span class="v-align-helper"></span>
+  <img class="" src="/assets/img/logos/fullLogo.png">
+</div>
+<div class="col-xs-12 body">
 <router-outlet></router-outlet>
+</div>
+
 
 
 <footer class="col-xs-10 col-xs-offset-1 text-center">

@@ -1,0 +1,50 @@
+//Unchanging panel bgs
+.top-div{
+  margin-top: 175px !important;
+}
+
+.food-panel-heading {
+  background-image: url(../img/backgrounds/foodFull.png) !important;
+  min-height: 60px;
+}
+.food1{
+  background-color: rgba($yankees-blue, .6);
+}
+.home-logo {
+  position: fixed;
+  top: 50px !important;
+  z-index: 101 !important;
+  background: url(../img/backgrounds/home-logo.png) no-repeat center !important;
+  background-size: cover !important;
+  height: 100px !important;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+  img{
+    vertical-align: middle;
+    max-height: 100px !important;
+    height: auto;
+    max-width: 90% !important;
+    margin: auto !important;
+  }
+}
+
+.section-heading {
+  border-bottom: 1px solid $yankees-blue !important;
+  background-color: rgba($yankees-blue, .8) !important;
+  color: $moonstone-blue !important;
+  font-family: $panel-head-fonts;
+  text-transform: uppercase !important;
+  text-shadow: .5px .5px $sunny !important;
+}
+
+.container-box{
+  margin-bottom: 25px !important;
+}
+
+.body {
+  background-color: rgba($alabaster, 1) !important;
+  font-family: $body-fonts;
+  margin: 0 !important;
+  padding: 0 !important;
+}

@@ -5,11 +5,10 @@ import {HomeComponent} from "./home/home.component";
 import {ExamplesComponent} from "./examples/examples.component";
 import {SkillsComponent} from "./skills/skills.component"
 export const routes: Routes = [
-  { path: '',   redirectTo: '/home', pathMatch: 'full' },
+  { path: '',   component: HomeComponent },
   { path: 'food',  component: FoodComponent},
   { path: 'about', component: AboutComponent},
-  { path: 'home', component: HomeComponent },
   { path: 'skills', component: SkillsComponent },
   { path: 'examples', component: ExamplesComponent},
-  { path: '**',   redirectTo: '/home', pathMatch: 'full' },
+  { path: '**',   redirectTo: '/', pathMatch: 'full' },
 ];

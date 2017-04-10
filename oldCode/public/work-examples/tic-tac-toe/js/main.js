@@ -79,7 +79,7 @@
 
     var highlightXO = function () { // highlights X or O depending on active player
         if (!$(this).hasClass('box-filled-1') && !$(this).hasClass('box-filled-2')) {
-            activePlayer == 1 ? $(this).css("background-image", 'url(../work-examples/tic-tac-toe/img/o.svg)') : $(this).css("background-image", 'url(../work-examples/tic-tac-toe/img/x.svg)');
+            activePlayer == 1 ? $(this).css("background-image", 'url(../work-portfolio/tic-tac-toe/img/o.svg)') : $(this).css("background-image", 'url(../work-portfolio/tic-tac-toe/img/x.svg)');
         }
     };
     var removeXO = function () { //removes background image after mouse leave
@@ -99,8 +99,8 @@
                 computerMove();
 
             }
-            if (checkWinner() !== 0) { //if winner is 1 (player 1), 2(player 2), or 3(tie) ends game
-                endGame(checkWinner()); //ends game with winner value
+            if (checkWinner() !== 0) { //if gameOver is 1 (player 1), 2(player 2), or 3(tie) ends game
+                endGame(checkWinner()); //ends game with gameOver value
             }
         }
     };
@@ -211,7 +211,7 @@
     };
 
 
-    var checkWinner = function () { //takes current board setup and checks for winner
+    var checkWinner = function () { //takes current board setup and checks for gameOver
         for (var i = 0; i < 9; i += 3) { //checks for horizontal lines
             if (currentBoard[i] === currentBoard[i + 1] && currentBoard[i] === currentBoard[i + 2] && currentBoard[i] !== 0) {
                 return (currentBoard[i]);
@@ -230,7 +230,7 @@
         }
         if (!availMoves.length) {
             return 3;
-        } //if no moves left and there's no winner,  it's a tie
+        } //if no moves left and there's no gameOver,  it's a tie
         return 0;
     };
 
@@ -245,7 +245,7 @@
                 nameOne ? $('.message').html(nameOne + ' wins!') : $('.message').html('Winner!');
                 $('.screen-win').addClass('screen-win-one'); //change to display winning page
             }
-            else if (winner === 2) //same as above for winner ===1
+            else if (winner === 2) //same as above for gameOver ===1
             {
                 nameTwo ? $('.message').html(nameTwo + ' wins!') : $('.message').html('Winner!');
                 $('.screen-win').addClass('screen-win-two');

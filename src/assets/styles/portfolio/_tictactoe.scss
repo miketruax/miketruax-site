@@ -1,0 +1,193 @@
+@charset "UTF-8";
+body {
+  background: rgb(123, 191, 191);
+  font-family: "Montserrat", sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.computer {
+  margin-top: 1rem;
+}
+
+.startName {
+  margin: 2rem auto
+}
+
+.startName, #nameOne, #nameTwo {
+  display: none;
+}
+
+#playOne, #playTwo {
+  color: rgb(21, 54, 66);
+}
+
+.play1, .play2 {
+  color: rgb(255, 241, 125);
+}
+
+.screen {
+  height: 400px;
+  background: rgb(123, 191, 191);
+}
+
+.screen header {
+  position: relative;
+  -webkit-transform: translatey(-50%);
+  transform: translatey(-50%);
+}
+
+
+.screen-start .button {
+  color: rgb(123, 191, 191);
+}
+
+
+.screen-win p {
+  font-size: 6em;
+  font-weight: 700;
+  color: rgb(255, 241, 125);
+  position: relative;
+}
+
+.screen-win p:before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  color: #000;
+  font-size: 4em;
+  font-weight: 400;
+  line-height: 0;
+  z-index: -1;
+}
+
+.screen-win-tie {
+  background: rgb(123, 191, 191);
+}
+
+.screen-win-one {
+  background: rgba(255, 241, 125, .4);
+}
+
+.screen-win-one .button {
+  color: rgb(21, 54, 66);
+}
+
+.screen-win-one p:before {
+  content: "o";
+  top: 1.75rem;
+}
+
+.screen-win-two {
+  background: rgb(21, 54, 66);
+}
+
+.screen-win-two .button {
+  color: rgba(255, 241, 125, .4);
+}
+
+.screen-win-two p:before {
+  content: "×";
+  top: 4.5rem;
+}
+
+.board {
+  padding-top: 1em;
+}
+
+.board h1 {
+  margin-top: 0.3em;
+}
+
+.players {
+  color: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: absolute;
+  top: .5rem;
+  width: 35%;
+  padding: 1.25em 0 1em;
+  outline: 1px solid #ccc;
+  transition: 1s;
+}
+
+.players svg g {
+  fill: rgba(0, 0, 0, 0.15);
+}
+
+.players:first-child {
+  left: 2.5%;
+}
+
+.players:last-child {
+  right: 2.5%;
+}
+
+.players-turn {
+  outline: none;
+}
+
+.player1.active svg g, .player2.active svg g {
+  fill: #aaa;
+}
+
+.player1.active {
+  background: rgba(255, 241, 125, .4);
+}
+
+.player2.active {
+  background: rgb(21, 54, 66);
+}
+
+#O, #X {
+  color: rgba(0, 0, 0, .7);
+  position: absolute;
+  font-size: 1.5rem;
+  left: 0;
+  right: 0;
+  top: 30%;
+  margin: auto;
+}
+
+.active #O, .active #X {
+  color: rgb(243, 239, 233);
+}
+
+.boxes {
+  width: 480px;
+  margin: 3em auto 0;
+}
+
+.boxes .box {
+  background: rgb(243, 239, 233);
+  border-radius: 4px;
+  height: 100px;
+  width: 100px;
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  padding: 1.75em;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: 0.2s ease;
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.boxes .box:nth-child(3n-2) {
+  clear:left;
+}
+
+.boxes .box-filled-1 {
+  background-color: rgba(255, 241, 125, .6);
+  background-image: url(../../assets/img/portfolio/tictactoe/o.svg);
+}
+
+.boxes .box-filled-2 {
+  background-color: rgb(21, 54, 66);;
+  background-image: url(../../assets/img/portfolio/tictactoe/x.svg);
+}

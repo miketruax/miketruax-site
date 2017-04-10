@@ -1,5 +1,5 @@
 .navbar-toggle {
-  margin-right: 30px !important;
+  margin: 5px 30px 5px 0 !important;
   z-index: 100;
   border-color: $yankees-blue !important;
   span {
@@ -21,15 +21,10 @@
 .navbar-toggle {
   background-color: $moonstone-blue !important;
 }
-.navbar-default{
+.navbar-default, .nav{
+  min-height: 46px;
   border: 0 !important;
   background-color: $yankees-blue;
-}
-
-#navbar-top {
-  height: 40px !important;
-  min-height: 40px !important;
-  max-width: 100% !important;
 }
 
 .navbar-collapse{

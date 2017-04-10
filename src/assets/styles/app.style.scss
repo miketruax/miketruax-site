@@ -3,11 +3,11 @@
 @import './mixins/_animations.scss';
 @import './partials/_ng-animate.scss';
 @import './partials/_elements.scss';
-@import './partials/_overwrite-bootstrap.scss';
-@import './partials/_mainbox.scss';
 @import 'partials/box-styling';
 @import './partials/_recipes.scss';
 @import './menus/_top-menu.scss';
 @import './menus/_category-menu.scss';
 @import './helpers/_helpers.scss';
+@import "./portfolio/movie-search";
+@import "./portfolio/tictactoe";
 

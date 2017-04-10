@@ -9,25 +9,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <!--<a class="navbar-brand" style="max-height: 45px !important; padding: 0 8px 0 0  !important;">-->
-        <!--<img class="brandLogo" alt="Mike Truax Design" src="/assets/img/buttons/menu-button.png">-->
-      <!--</a>-->
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-main">
       <ul class="nav navbar-nav">
         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/']">Home</a></li>
         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/about']">About</a></li>
         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/skills']">Skills</a></li>
         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/food']">Food Blog</a></li>
-        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/examples']">Examples</a></li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/portfolio']">Portfolio</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<div class="home-logo">
+<div class="banner-logo">
   <span class="v-align-helper"></span>
   <img class="" src="/assets/img/logos/fullLogo.png">
 </div>
@@ -37,7 +33,14 @@
 
 
 
-<footer class="col-xs-10 col-xs-offset-1 text-center">
-  <img src="/assets/img/buttons/menu-button.png" style="max-height: 40px !important;">
-  <span>Mike Truax: Website Developer and Consultant</span>
+<footer class="col-xs-12 text-center">
+  <a class="col-xs-12" href="mailto:mike@miketruax.com">
+
+  <h5><img src="/assets/img/buttons/menu-button.png" style="max-height: 40px !important;"> Mike Truax - Web Developer</h5>
+  </a>
+  <a class="col-xs-12 col-sm-6" href="https://github.com/miketruax" target='_blank'>
+    <img src="assets/img/icons/GitHub-Mark-32px.png" class='icon' alt="Github Icon"> miketruax</a>
+  <a class="col-xs-12 col-sm-6" href="https://www.linkedin.com/pub/michael-truax/11a/690/625" target='_blank'>
+  <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png" class='icon'>Michael Truax </a>
+
 </footer>

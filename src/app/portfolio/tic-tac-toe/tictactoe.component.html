@@ -1,36 +1,40 @@
 <div class="jumbotron">
-
+  <h1 class="section-heading text-center col-xs-12">Tic Tac Toe</h1>
 <div *ngIf="activePlayer === -1" class="screen screen-start col-xs-12" id="start">
-    <h1 class="section-heading text-center col-xs-12">Tic Tac Toe</h1>
     <div class="col-xs-12">
       <button class="btn btn-default col-xs-12" (click)="againstWhom(true)">Play Against Computer</button><br><br>
       <button class="btn btn-default col-xs-12" (click)="againstWhom(false)">Play Against Player</button>
     </div>
 </div>
 
-<div class="col-xs-12 screen" *ngIf="activePlayer === 0">
-    <label for="playOne" class="col-xs-12">Player One's Name:</label>
+
+
+
+  <div class="col-xs-12 screen" *ngIf="activePlayer === 0">
+      <label for="playOne" class="col-xs-12">Player One's Name:</label>
       <input class="form-control" type="text" name="nameOne" id="playOne" ngModel="{{nameOne}}">
 
     <label for="playTwo" class="col-xs-12">Player Two's Name:</label>
-      <input *ngIf="!againstComputer" class="form-control" type="text" name="nameTwo" id="playTwo" ngModel="{{nameTwo}}">
-      <p class="col-xs-12" *ngIf="againstComputer">{{nameTwo}}</p>
+        <input *ngIf="!againstComputer" class="form-control" type="text" name="nameTwo" id="playTwo" ngModel="{{nameTwo}}">
+        <p class="col-xs-12" *ngIf="againstComputer">{{nameTwo}}</p>
+    <button class="btn-lg btn btn-default col-xs-6 col-xs-offset-3" (click)="startGame();">Start</button>
 
-  <button class="btn-lg btn btn-default" (click)="startGame();">Start</button>
-</div>
-
-
-<div *ngIf="gameOver" class="screen screen-win" id="finish">
-  <header><h1>Tic Tac Toe</h1>
-    <p class="message">{{winner}}</p>
-    <button class="btn btn-default" (click)="resetBoard()">New game</button></header>
-</div>
+  </div>
 
 
-<div class="board col-xs-12" *ngIf="activePlayer >0 && !gameOver" id="board">
-  <header><h1 class="col-xs-12 text-center">Tic Tac Toe</h1>
+
+  <div *ngIf="gameOver" class="screen screen-win col-xs-12" ngClass="screen-win-{{winner.winner}}" id="finish">
+    <h1 class="heading col-xs-12 text-center">Game Over!</h1>
+    <p class="message col-xs-12 text-center" *ngIf="winner.winner === 1">{{winner.name ? winner.name : 'O'}} Wins!</p>
+    <p class="message col-xs-12 text-center" *ngIf="winner.winner === 2">{{winner.name ? winner.name : 'X'}} Wins!</p>
+    <p class="message col-xs-12 text-center" *ngIf="winner.winner === 3">It's a Tie!</p>
+    <button class="btn btn-default col-xs-6 col-xs-offset-3" (click)="resetBoard()">New game</button>
+  </div>
+
+
+<div class="board col-xs-12 jumbotron" *ngIf="activePlayer >0 && !gameOver" id="board">
     <ul>
-      <li class="players player1 col-xs-5">
+      <li class="players player1 active col-xs-5">
         <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" version="1.1">
           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g transform="translate(-200.000000, -60.000000)" fill="#000000">
@@ -53,7 +57,7 @@
         </svg>
         <span id="X">{{nameTwo}}</span></li>
     </ul>
-  </header>
+
   <ul class="boxes col-xs-12 text-center">
     <li class="box col-xs-4" (click)="placeMove($event, 0)" (mouseenter)="highlight($event, true)" (mouseleave)="highlight($event, false)"></li>
     <li class="box col-xs-4" (click)="placeMove($event, 1)" (mouseenter)="highlight($event, true)" (mouseleave)="highlight($event, false)"></li>
@@ -65,6 +69,7 @@
     <li class="box col-xs-4" (click)="placeMove($event, 7)" (mouseenter)="highlight($event, true)" (mouseleave)="highlight($event, false)"></li>
     <li class="box col-xs-4" (click)="placeMove($event, 8)" (mouseenter)="highlight($event, true)" (mouseleave)="highlight($event, false)"></li>
   </ul>
+
 </div>
 
 </div>

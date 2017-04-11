@@ -13,14 +13,13 @@ export class TicTacToeComponent implements OnInit {
   currentBoard: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0];
   availMoves: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8];
   gameOver: boolean = false;
-  winner: string ='';
+  winner: Object = {name:'', winner:null};
   constructor() {
 
   }
   againstWhom(againstComp: boolean){
     this.againstComputer = againstComp;
     this.activePlayer = 0;
-    console.log(this.activePlayer);
     if(againstComp){
       this.nameTwo = "SkyNet";
     }
@@ -31,6 +30,7 @@ export class TicTacToeComponent implements OnInit {
     this.activePlayer = -1;
     this.nameOne = '';
     this.nameTwo = '';
+    this.winner = {name:'', winner:null};
     this.currentBoard = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     this.availMoves = [0, 1, 2, 3, 4, 5, 6, 7, 8];
     this.gameOver = false;
@@ -38,7 +38,6 @@ export class TicTacToeComponent implements OnInit {
 
   highlight(e, direction: boolean){
     let target = e.target;
-    console.log(target.style.backgroundImage);
     if (!target.classList.contains('box-filled-1') && !target.classList.contains('box-filled-2')) {
       if(direction){
         if(this.activePlayer ==1) {
@@ -54,9 +53,14 @@ export class TicTacToeComponent implements OnInit {
     }
   }
 
-  placeMove(e, pos: number){
-      let target = e.target;
-      console.log(e);
+  placeMove(e: any, pos: number){
+      let target;
+      if(e.target){
+        target = e.target;
+      }
+      else{
+        target = e;
+      }
       if (target.classList.contains('box-filled-1') || target.classList.contains('box-filled-2')) {
         return;
       }
@@ -113,20 +117,20 @@ export class TicTacToeComponent implements OnInit {
   let highestScore = -10000; //used to compare potential best moves
   let index; //to save index for later use
 
-  for (let i = 0; i < this.availMoves.length; i++) {
-    this.currentBoard[this.availMoves[i]] = 2; //makes a move for outcome testing
+  this.availMoves.forEach((val, idx)=>{
+    this.currentBoard[this.availMoves[idx]] = 2;
     let score = this.evaluateTotalScore();
-        //compares potential play to base score of -10000 this is on the offchance all
-        //moves are bad. It will then pick the least bad of the bunch
+    //compares potential play to base score of -10000 this is on the offchance all
+    //moves are bad. It will then pick the least bad of the bunch
     if (score > highestScore) {
       highestScore = score; //if higher, this becomes the best play
-      index = i; //saves index to click box after all passes
+      index = idx; //saves index to click box after all passes
     }
-    this.currentBoard[this.availMoves[i]] = 0; //resets the move to test a different one
-  }
-    let boxes = document.getElementsByClassName('boxes')[0];
-    let box = boxes.children[index];
-    console.log(box);//clicks the box that resulted in highest line scores
+    this.currentBoard[this.availMoves[idx]] = 0; //resets the move to test a different one
+  });
+    let boxes = document.getElementsByClassName('box');
+    this.placeMove(boxes[this.availMoves[index]], this.availMoves[index]);
+
 
   }
 
@@ -217,18 +221,23 @@ export class TicTacToeComponent implements OnInit {
 
 
     endGame(winner: number) {
-  //ensures loaded before adding event listeners and adjusting html
-  //shoudln't be needed really but hey.
+
     if (winner === 1) { //assuming first player won
       // if a valid name was entered, display name with wins! otherwise display Winner!
-        this.winner = this.nameOne;
+        this.winner['name'] = this.nameOne;
+        this.winner['winner'] = 1
       }
       else if (winner === 2) //same as above for gameOver ===1
       {
-        this.winner = this.nameTwo;
+        this.winner['name'] = this.nameTwo;
+        this.winner['winner'] = 2
+        if(this.againstComputer){
+          console.log('SKYNET IS ASSUMING DIRECT CONTROL');
+
+        }
       }
       else if (winner === 3) { // in case of a tie, display such and tie screen
-        this.winner = "It's a tie!";
+        this.winner['winner'] = 3
 
       }
   };

@@ -1,6 +1,5 @@
-<div class="panel panel-default">
-  <div class="panel-heading food-panel-heading food" style="max-height: 60px;"><h3 class="panel-title text-center">Food on a design site?</h3></div>
-  <div class="panel-body">
+ <h3 class="section-heading text-center top-div col-xs-12">Food on a design site?</h3>
+  <div class="container-box col-xs-12">
     <p class="col-xs-12">In my opinion, food is one of the great equalizers. Everyone needs to eat and
       no matter your viewpoints, you can almost always find common ground in enjoyed foods.
       From a young age, my mother instilled in me a love of food and a love of cooking.
@@ -18,62 +17,8 @@
       this site, I figured I might as well include them here as cooking is a part of who I am.
     </p>
   </div>
-</div>
-<!--<nav class="food-menu">-->
-  <!--<ul class="nav nav-pills text-center double-menu">-->
-    <!--<li role="presentation" class="pointer" ng-class="active == breads ? 'active': ''"-->
-        <!--ng-click="setActiveCat(breads, 'Breads')">-->
-      <!--<a><img class="button-img" ng-src="../www/img/buttons/breads{{active == breads ? 'Active.png': '.png'}}"><b-->
-        <!--class="link-text">Breads</b></a>-->
-    <!--</li>-->
-    <!--<li role="presentation" class="pointer" ng-class="active == desserts ? 'active': ''"-->
-        <!--ng-click="setActiveCat(desserts, 'Desserts')">-->
-      <!--<a><img class="button-img"-->
-              <!--ng-src="../www/img/buttons/desserts{{active == desserts ? 'Active.png': '.png'}}"><b-->
-        <!--class="link-text">Desserts</b></a></li>-->
-    <!--<li role="presentation" class="pointer" ng-class="active == entrees ? 'active': ''"-->
-        <!--ng-click="setActiveCat(entrees, 'Entrees')">-->
-      <!--<a><img class="button-img"-->
-              <!--ng-src="../www/img/buttons/entrees{{active == entrees ? 'Active.png': '.png'}}"><b-->
-        <!--class="link-text">Entrees</b></a></li>-->
-    <!--<li role="presentation" class="pointer" ng-class="active == sides ? 'active': ''"-->
-        <!--ng-click="setActiveCat(sides, 'Sides')">-->
-      <!--<a><img class="button-img" ng-src="../www/img/buttons/sides{{active == sides ? 'Active.png': '.png'}}"><b-->
-        <!--class="link-text">Sides</b></a></li>-->
-  <!--</ul>-->
-<!--</nav>-->
-<!--<div class="swiper-container food-swiper-container">-->
-  <!--<div class="swiper-wrapper">-->
 
-    <!--<div class="swiper-slide col-xs-12" ng-repeat="activeRecipe in active" on-repeat-finish="makeFoodSwiper">-->
-      <!--<div class="pointer food-button-prev" ng-hide="$index==0" ng-click="recipeSwiper.slidePrev()">-->
-        <!--<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>-->
-        <!--<img class="rounded img-thumbnail img-responsive"-->
-             <!--ng-src="www/img/food/{{activeNav($index-1).image}}"/><b>{{activeNav($index-1).name}}</b>-->
-      <!--</div>-->
-      <!--<div class="pointer food-button-next text-right" ng-hide="$index==active.length-1"-->
-           <!--ng-click="recipeSwiper.slideNext();">-->
-        <!--<b>{{activeNav($index+1).name}}</b>-->
-        <!--<img class="rounded img-thumbnail img-responsive"-->
-             <!--ng-src="www/img/food/{{activeNav($index+1).image}}"/>-->
-        <!--<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>-->
-      <!--</div>-->
-      <!--<div class="col-xs-12 recipe-title"><h2 class="text-center">{{activeRecipe.name}}</h2></div>-->
-      <!--<div class="col-sm-5 col-lg-4 col-xs-6 col-xs-offset-3 col-sm-offset-0 text-center">-->
-        <!--<img class="rounded img-thumbnail img-responsive" ng-src="www/img/food/{{activeRecipe.image}}">-->
-      <!--</div>-->
-      <!--<div class="col-sm-7 col-xs-12 col-md-6 col-lg-8">-->
-        <!--<dl>-->
-          <!--<dt>Results:</dt>-->
-          <!--<dd> {{activeRecipe.results}}</dd>-->
-        <!--</dl>-->
-        <!--<dl>-->
-          <!--<dt>Changes from Original:</dt>-->
-          <!--<dd>{{activeRecipe.changes}}</dd>-->
-        <!--</dl>-->
-      <!--</div>-->
-      <!--<div class="text-center col-xs-12 recipeLink"><a-->
-        <!--ng-href="{{activeRecipe.recipeLink}}" target="_blank"><h4>{{activeRecipe.credits}}</h4></a></div>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
+
+
+ <food-list [recipes]="recipes | async">Getting Recipe List...</food-list>
+

@@ -1,14 +1,14 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { FoodService} from './food.service';
+import { RecipeService} from './recipe.service';
 
 describe('FoodServiceService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [FoodService]
+      providers: [RecipeService]
     });
   });
 
-  it('should ...', inject([FoodService], (service: FoodService) => {
+  it('should ...', inject([RecipeService], (service: RecipeService) => {
     expect(service).toBeTruthy();
   }));
 });

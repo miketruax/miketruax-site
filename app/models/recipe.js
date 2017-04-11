@@ -1,8 +1,11 @@
-import {Connection} from '../connection';
-let conn = new Connection();
-export default ()=> {
+let conn = require('../connection');
+function Recipe(){
+  conn.init();
     this.get = function (res) {
         conn.acquire(function (err, con) {
+          if(err){
+            return;
+          }
             con.query('select * from recipes', function (err, result) {
                 con.release();
                 res.send(result);
@@ -12,6 +15,10 @@ export default ()=> {
 
     this.cat = function (id, res) {
         conn.acquire(function (err, con) {
+          if(err){
+            console.log(err);
+            return;
+          }
             con.query('select * from recipes where category_ID = ?', [id], function (err, result) {
                 con.release();
                 res.send(result);
@@ -22,6 +29,10 @@ export default ()=> {
 
     this.create = function (recipe, res) {
         conn.acquire(function (err, con) {
+          if(err){
+            console.log(err);
+            return;
+          }
             con.query('insert into recipes set ?', recipe, function (err, result) {
                 con.release();
                 if (err) {
@@ -35,6 +46,10 @@ export default ()=> {
 
     this.update = function (recipe, res) {
         conn.acquire(function (err, con) {
+          if(err){
+            console.log(err);
+            return;
+          }
             con.query('update recipe set ? where id = ?', [recipe, recipe.id], function (err, result) {
                 con.release();
                 if (err) {
@@ -59,3 +74,5 @@ export default ()=> {
         });
     };
 }
+
+module.exports = new Recipe();

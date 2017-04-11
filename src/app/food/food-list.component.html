@@ -1,0 +1,62 @@
+<nav class="food-menu">
+  <ul class="nav nav-pills text-center">
+    <li role="presentation" class="pointer" ngClass="activeCat== 'breads' ? 'active: ''" (click)="setCat('breads')">
+      <a><img class="button-img" [src]="'/assets/img/buttons/food/breads' + (activeCat === 'breads' ? 'Active.png': '.png')"><b
+        class="link-text">Breads</b></a>
+    </li>
+    <li role="presentation" class="pointer" ngClass="activeCat== 'desserts' ? 'active: ''" (click)="setCat('desserts')">
+      <a><img class="button-img" [src]="'/assets/img/buttons/food/desserts' + (activeCat === 'desserts' ? 'Active.png': '.png')"><b
+        class="link-text">Desserts</b></a></li>
+    <li role="presentation" class="pointer" ngClass="activeCat== 'entrees' ? 'active: ''" (click)="setCat('entrees')">
+      <a><img class="button-img" [src]="'/assets/img/buttons/food/entrees' + (activeCat === 'entrees' ? 'Active.png': '.png')"><b
+        class="link-text">Entrees</b></a></li>
+    <li role="presentation" class="pointer" ngClass="activeCat== 'sides' ? 'active: ''" (click)="setCat('sides')">
+      <a><img class="button-img" [src]="'/assets/img/buttons/food/sides'+(activeCat === 'sides' ? 'Active.png': '.png')"><b
+        class="link-text">Sides</b></a></li>
+  </ul>
+</nav>
+
+
+<div class="col-xs-12 food-container" *ngFor="let r of (recipes | category:activeCat); let idx = index;">
+  <div *ngIf="idx === activeIdx">
+
+    <div *ngIf="getActiveArr().length > 1" (click)="cycleLeft(idx)" class="pointer  food-button-prev col-xs-6">
+      <img class="col-xs-6 col-xs-offset-3 rounded thumbnail-img"
+           [src]="'assets/img/food/'+getPrev(idx).image"/>
+      <p class="col-xs-12">
+      <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+      <b>{{getPrev(idx).name}}</b>
+      </p>
+    </div>
+
+    <div *ngIf="getActiveArr().length>1" (click)="cycleRight(idx)" class="pointer food-button-next col-xs-6 text-right">
+
+      <img class="col-xs-6 col-xs-offset-3 rounded thumbnail-img"
+           [src]="'assets/img/food/'+getNext(idx).image"/>
+
+      <p class="col-xs-12">
+      <b>{{getNext(idx).name}}</b>
+      <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+      </p>
+
+
+    </div>
+  <div class="col-xs-12 recipe-title"><h2 class="text-center">{{r.name}}</h2></div>
+  <div class="col-sm-5 col-lg-4 col-xs-6 col-xs-offset-3 col-sm-offset-0 text-center">
+    <img class="rounded img-thumbnail img-responsive" [src]="'assets/img/food/'+r.image">
+  </div>
+  <div class="col-sm-7 col-xs-12 col-md-6 col-lg-8">
+    <dl>
+      <dt>Results:</dt>
+      <dd> {{r.results}}</dd>
+    </dl>
+    <dl>
+      <dt>Changes from Original:</dt>
+      <dd>{{r.changes}}</dd>
+    </dl>
+  </div>
+  <div class="text-center col-xs-12 recipeLink"><a
+    [href]="r.recipeLink" target="_blank"><h4>{{r.credits}}</h4></a></div>
+</div>
+</div>
+

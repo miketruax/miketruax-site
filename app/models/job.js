@@ -1,5 +1,5 @@
-import {Connection} from '../connection';
-let conn = new Connection();
+import * as Connection from '../connection';
+let conn = Connection.default;
 
 export default () => {
     this.get = function (res) {

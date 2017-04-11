@@ -7,15 +7,18 @@ import { AppComponent } from './app.component';
 import {RouterModule} from "@angular/router";
 import {FoodComponent} from "./food/food.component";
 import {AboutComponent} from "./about/about.component";
-
+import * as reducer from './reducers';
 import {HomeComponent} from "./home/home.component";
-import {FoodService} from "./services/food.service";
+import {RecipeService} from "./services/recipe.service";
 import {SkillsService} from "./services/skills.service";
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import {SkillsComponent} from "./skills/skills.component";
 import {PortfolioComponent} from "./portfolio/portfolio.component";
 import {TicTacToeComponent} from "./portfolio/tic-tac-toe/tictactoe.component";
 import {MovieSearchComponent} from "./portfolio/movie-search/movie-search.component";
+import {CategoryPipe} from "./pipes/category.pipe";
+import {StoreModule} from "@ngrx/store";
+import {FoodListComponent} from "./food/food-list.component";
 
 
 
@@ -25,7 +28,8 @@ import {MovieSearchComponent} from "./portfolio/movie-search/movie-search.compon
   declarations: [
     AppComponent, FoodComponent, AboutComponent,
     PortfolioComponent, SkillsComponent, HomeComponent,
-    TicTacToeComponent, MovieSearchComponent, CapitalizePipe],
+    TicTacToeComponent, MovieSearchComponent, FoodListComponent, CapitalizePipe,
+    CategoryPipe],
   imports: [
     BrowserModule,
     FormsModule,
@@ -33,8 +37,9 @@ import {MovieSearchComponent} from "./portfolio/movie-search/movie-search.compon
     RouterModule.forRoot(routes, {
       useHash: true
     }),
+    StoreModule.provideStore(reducer.default),
   ],
-  providers: [FoodService, SkillsService],
+  providers: [RecipeService, SkillsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -166,7 +166,7 @@ export class TicTacToeComponent implements OnInit {
         }
       } else if (this.currentBoard[b] == 1) { //if b was O
     //if a and b were O, this is a bad line, set score to -15 this gives a block more weight
-    //and allows for only a single passthrough as opposed to going down multiple branches
+    //and allows for only a single pass-through as opposed to going down multiple branches
         if (lineScore == -1) {
           lineScore = -15;
         } else if (lineScore == 1) { //if a was X and b was 0 return zero, no win possible on this line

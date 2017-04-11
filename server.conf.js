@@ -6,9 +6,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
-import {Connection} from './app/connection'
+let conn = require('./app/connection');
 
-let conn = new Connection;
 
 import http from 'http';
 let app = express();

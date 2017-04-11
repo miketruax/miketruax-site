@@ -5,7 +5,7 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "start": "gulp fresh && ng build -watch && nodemon app.js",
+    "start": "concurrently --kill-others \"ng build --watch\" \"nodemon app.js\" ",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

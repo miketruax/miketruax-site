@@ -20,27 +20,37 @@
 <div class="col-xs-12 food-container" *ngFor="let r of (recipes | category:activeCat); let idx = index;">
   <div *ngIf="idx === activeIdx">
 
-    <div *ngIf="getActiveArr().length > 1" (click)="cycleLeft(idx)" class="pointer  food-button-prev col-xs-6">
-      <img class="col-xs-6 col-xs-offset-3 rounded thumbnail-img"
-           [src]="'assets/img/food/'+getPrev(idx).image"/>
-      <p class="col-xs-12">
-      <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-      <b>{{getPrev(idx).name}}</b>
-      </p>
+
+
+
+    <!--<div *ngIf="getActiveArr().length > 1" (click)="cycleLeft(idx)" class="pointer  food-button-prev col-xs-6">-->
+      <!--<span class="glyphicon pull-left glyphicon-menu-left" aria-hidden="true"></span>-->
+      <!--<img class="rounded pull-left thumbnail-img"-->
+           <!--[src]="'assets/img/food/'+getPrev(idx).image"/>-->
+      <!--&lt;!&ndash;<p class="col-xs-12">&ndash;&gt;-->
+
+      <!--&lt;!&ndash;<b>{{getPrev(idx).name}}</b>&ndash;&gt;-->
+      <!--&lt;!&ndash;</p>&ndash;&gt;-->
+    <!--</div>-->
+
+    <!--<div *ngIf="getActiveArr().length>1" (click)="cycleRight(idx)" class="pointer food-button-next col-xs-6 text-right">-->
+      <!--<span class="glyphicon pull-right glyphicon-menu-right" aria-hidden="true"></span>-->
+      <!--<img class="pull-right rounded thumbnail-img"-->
+           <!--[src]="'assets/img/food/'+getNext(idx).image"/>-->
+
+      <!--&lt;!&ndash;<p class="col-xs-12">&ndash;&gt;-->
+      <!--&lt;!&ndash;<b>{{getNext(idx).name}}</b>&ndash;&gt;-->
+
+      <!--&lt;!&ndash;</p>&ndash;&gt;-->
+
+
+    <!--</div>-->
+
+    <div *ngIf="getActiveArr().length >1" class="col-xs-12 text-center thumbnail-container">
+      <img *ngFor="let f of (recipes| category: activeCat); let i = index" (click)="activeIdx = i" class="pointer rounded thumbnail-img"
+           ngClass="{{i === idx ? 'active-thumb' : ''}}" [src]="'assets/img/food/'+f.image" title="{{f.name}}"/>
     </div>
 
-    <div *ngIf="getActiveArr().length>1" (click)="cycleRight(idx)" class="pointer food-button-next col-xs-6 text-right">
-
-      <img class="col-xs-6 col-xs-offset-3 rounded thumbnail-img"
-           [src]="'assets/img/food/'+getNext(idx).image"/>
-
-      <p class="col-xs-12">
-      <b>{{getNext(idx).name}}</b>
-      <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-      </p>
-
-
-    </div>
   <div class="col-xs-12 recipe-title"><h2 class="text-center">{{r.name}}</h2></div>
   <div class="col-sm-5 col-lg-4 col-xs-6 col-xs-offset-3 col-sm-offset-0 text-center">
     <img class="rounded img-thumbnail img-responsive" [src]="'assets/img/food/'+r.image">
@@ -56,7 +66,7 @@
     </dl>
   </div>
   <div class="text-center col-xs-12 recipeLink"><a
-    [href]="r.recipeLink" target="_blank"><h4>{{r.credits}}</h4></a></div>
+    [href]="r.recipeLink" target="_blank"><h4><i>{{r.credits}}</i></h4></a></div>
 </div>
 </div>
 

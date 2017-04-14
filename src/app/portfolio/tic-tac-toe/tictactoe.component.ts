@@ -130,6 +130,7 @@ export class TicTacToeComponent implements OnInit {
   });
     let boxes = document.getElementsByClassName('box');
     this.placeMove(boxes[this.availMoves[index]], this.availMoves[index]);
+    console.log(boxes);
 
 
   }

@@ -1,8 +1,20 @@
+$size-sm:        80px;
+$size:           120px;
+$spacing:        5px;
+
+$player-1-icon:  $alabaster;
+$player-2-icon:  $sunny;
+
+$player-1-color: $moonstone-blue;
+$player-2-color: $yankees-blue;
+$hover-color:    $raisin-black;
+
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
+
 
 .computer {
   margin-top: 1rem;
@@ -18,38 +30,48 @@ ul {
 }
 
 .screen {
-  height: 70vh;
-  width: 55vh;
+  width: ($size-sm + $spacing*2)*3;
+  height: ($size-sm + $spacing)*4;
+  @media(min-width: 450px) {
+    height: ($size + $spacing)*4 + $spacing;
+    width: ($size + $spacing*2)*3;
+  }
   background: $alabaster;
   label{
-    margin-top: 5vh !important;
+    margin-top: $spacing*5 !important;
   }
   input{
-    margin: 3vh 0;
+    margin: $spacing*2 0;
   }
-}
-#lplayOne{
-  margin-top: 7vh !important;
+  padding-bottom: $spacing*2 ;
 }
 
-.screen-start div{
-  margin-top:100px !important;
+#lplayOne{
+  margin-top: $spacing*3 !important;
 }
+
 
 
 .screen-start button {
   color: $yankees-blue !important;
   background-color: $moonstone-blue !important;
-  margin-top: 10vh !important;
-  margin-bottom: 10vh !important;
+  margin-top: 4vh !important;
   height: 60px !important;
+  border: 1px solid $sunny !important;
 }
 
 
 .screen-win p, .screen-win h1 {
-  font-size: 6em;
-  font-weight: 700;
+  margin-top: $spacing*6 !important;
+  font-size: 60px;
+  font-weight: 500;
   color: $alabaster
+}
+
+.screen-win button{
+  color: $yankees-blue !important;
+  background-color: $moonstone-blue !important;
+  border: 1px solid $sunny !important;
 }
 
 
@@ -89,13 +111,15 @@ ul {
 .players {
   color: rgba($alabaster, 0.2);
   text-align: center;
-  padding: 1.25em 0 1em;
   outline: 1px solid $alabaster;
   transition: 1s;
+  height: 30px !important;
+  background-size: 40px auto !important;
 }
 
 .players svg g {
   fill: rgba($yankees-blue, 0.15);
+  height: 25px !important;
 }
 
 .startgame{
@@ -125,10 +149,10 @@ ul {
 #O, #X {
   color: rgba($yankees-blue, .7);
   position: absolute;
-  font-size: 1.5rem;
+  font-size: 1rem;
   left: 0;
   right: 0;
-  top: 30%;
+  top: $spacing*2;
   margin: auto;
 }
 
@@ -136,37 +160,95 @@ ul {
   color: rgb(243, 239, 233);
 }
 
-.boxes {
-  margin: 3em auto 0;
-}
 
-.boxes .box {
-  background: $alabaster;
-  border-radius: 4px;
-  border: 2px solid $yankees-blue;
-  height: 15vh;
-  width: 15vh;
-  margin-right: 2vh;
-  margin-bottom: 15px;
-  padding: 1.75em;
+.box {
+  background-color: white;
+  border-radius: 14px;
   cursor: pointer;
-  box-sizing: border-box;
+  color: white;
+  height: $size-sm;
+  margin: $spacing;
+  position: absolute;
+  width: $size-sm;
+
+  @media(min-width: 450px) {
+    height: $size;
+    width: $size;
+  }
+  border: 1px solid $yankees-blue;
   transition: 0.2s ease;
-  background-size: 70px 70px;
+  background-size: 90%;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-.boxes .box:nth-child(3n-2) {
-  clear:left;
+.topb {
+  top: $size-sm;
+}
+.midrowb {
+  top: ($spacing + $size-sm*2);
+}
+.bottomb {
+  top: ($spacing*2 + $size-sm*3);
+}
+.leftb {
+  left: $spacing*2
+}
+.midcolb {
+  left: ($spacing*3 + $size-sm)
+}
+.rightb {
+  left: ($spacing*4 + $size-sm*2)
 }
 
-.boxes .box-filled-1 {
-  background-color: $moonstone-blue;
+
+
+@media(min-width: 450px) {
+  .topb {
+    top: $size;
+  }
+  .midrowb {
+    top: ($spacing + $size*2);
+  }
+  .bottomb {
+    top: ($spacing*2 + $size*3);
+  }
+  .leftb {
+    left: $spacing*2
+  }
+  .midcolb {
+    left: ($spacing*3 + $size)
+  }
+  .rightb {
+    left: ($spacing*4 + $size*2)
+  }
+}
+
+
+
+.box.box-filled-1 {
+  background-color: $moonstone-blue !important;
   background-image: url(../../assets/img/portfolio/tictactoe/o.svg);
 }
 
-.boxes .box-filled-2 {
-  background-color: $yankees-blue;
+.box.box-filled-2 {
+  background-color: $yankees-blue !important;
   background-image: url(../../assets/img/portfolio/tictactoe/x.svg);
 }
+
+
+/* Body and Notice styling
+-------------------------------------------------------------- */
+
+.background-screen {
+  color: $alabaster;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  text-align: center;
+}
+
+h5 {
+  font-weight: 400;
+  padding: 0 20px;
+}
+

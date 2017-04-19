@@ -1,3 +1,16 @@
+// ------PALLETE-----
+// Primary Colors
+$moonstone-blue: rgb(123, 191, 191);
+$yankees-blue: rgb(21, 54, 66);
+$sunny: rgb(255, 241, 125);
+
+// Highlight
+
+// -----TYPOGRAPHY-----
+$raisin-black: rgb(37, 38, 39);
+$alabaster: rgb(243, 239, 233);
+
+
 /* =================================
   Element Styles
 ==================================== */
@@ -9,23 +22,23 @@
 .body {
   font: 1em/1.5 'Roboto', sans-serif;
   color: #222;
-  background: #f6f7f7;
+  background: $alabaster;
   padding-top: 145px;
   padding-bottom: 3em;
   margin: 0;
 }
 
-.a {
+a {
   text-decoration: none;
 }
 
-.ul {
+ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.input {
+input {
   font-size: 1.12em;
   height: 46px;
   padding-bottom: 1em;
@@ -37,15 +50,15 @@
   transition: border-color .4s;
 }
 
-.input ~ input {
+input ~ input {
   margin-left: 5px;
 }
 
-.input:focus {
+input:focus {
   border-color: #c1c1c1;
 }
 
-.button {
+button {
   width: 40px;
   height: 35px;
   border: 0;

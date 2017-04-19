@@ -1,3 +1,15 @@
+// ------PALLETE-----
+// Primary Colors
+$moonstone-blue: rgb(123, 191, 191);
+$yankees-blue: rgb(21, 54, 66);
+$sunny: rgb(255, 241, 125);
+
+// Highlight
+
+// -----TYPOGRAPHY-----
+$raisin-black: rgb(37, 38, 39);
+$alabaster: rgb(243, 239, 233);
+
 $size-sm:        80px;
 $size:           120px;
 $spacing:        5px;
@@ -8,13 +20,6 @@ $player-2-icon:  $sunny;
 $player-1-color: $moonstone-blue;
 $player-2-color: $yankees-blue;
 $hover-color:    $raisin-black;
-
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 
 .computer {
   margin-top: 1rem;
@@ -32,9 +37,16 @@ ul {
 .screen {
   width: ($size-sm + $spacing*2)*3;
   height: ($size-sm + $spacing)*4;
+  .screen-head{
+    margin-top: ($spacing) !important;
+  }
   @media(min-width: 450px) {
     height: ($size + $spacing)*4 + $spacing;
     width: ($size + $spacing*2)*3;
+    .screen-head{
+      margin-top: $size + $spacing  !important;
+    }
+
   }
   background: $alabaster;
   label{
@@ -228,12 +240,12 @@ ul {
 
 .box.box-filled-1 {
   background-color: $moonstone-blue !important;
-  background-image: url(../../assets/img/portfolio/tictactoe/o.svg);
+  background-image: url(../../../assets/img/portfolio/tictactoe/o.svg);
 }
 
 .box.box-filled-2 {
   background-color: $yankees-blue !important;
-  background-image: url(../../assets/img/portfolio/tictactoe/x.svg);
+  background-image: url(../../../assets/img/portfolio/tictactoe/x.svg);
 }
 
 

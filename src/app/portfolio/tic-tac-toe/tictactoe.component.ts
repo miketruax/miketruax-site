@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'tictactoe',
   templateUrl: 'tictactoe.component.html',
-  styleUrls: ['../../../assets/styles/app.style.scss']
+  styleUrls: ['../../../assets/styles/app.style.scss', './tictactoe.component.scss']
 })
 export class TicTacToeComponent implements OnInit {
   againstComputer = false;

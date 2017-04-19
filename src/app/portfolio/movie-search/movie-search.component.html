@@ -1,27 +1,26 @@
-extends ../../../templates/layout
-block header
-    meta(charset='utf-8')
-    title Movie Search
-    link(href='https://fonts.googleapis.com/css?family=Roboto:400,500,700', rel='stylesheet', type='text/css')
-    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
-
-block content
-    .main-header
-        .inner
-            h1.main-title MovieSearch
-            form.search-form
-                label.is-hidden(for='search') Search a title
-                input#search(type='search', name='search', placeholder='Search a Title...')
-                label.is-hidden(for='year') Any Year
-                input#year(type='text', maxlength='4', name='year', placeholder='Year')
-                button#submit.search-button(type='submit')
-                    i.material-icons.icn-search search
-    #expandedInfo
-    .main-content.clearfix
-        ul#movies.movie-list
-            .no-movies
-                i.material-icons.icon-help help_outline
-                |             You Need JavaScript to in order for this site to work
-    #pagination-div
-    script(src='http://code.jquery.com/jquery-1.12.0.min.js')
-    script(src='../work-portfolio/movie-search/js/app.js')
+<div class="main-header">
+  <div class="inner">
+    <h1 class="main-title">MovieSearch</h1>
+    <div class="search-form">
+      <label for="search" class="is-hidden">Search a title</label>
+      <input id="search" ngModel="currentMovie" type="search" name="search" placeholder="Search a Title..."/>
+      <label for="year" ngModel="currentYear" name="currentYear" class="is-hidden">Any Year</label>
+      <input id="year" type="text" maxlength="4" name="year" placeholder="Year"/>
+      <button (click)="searchSubmit()" class="search-button"><i class="material-icons icn-search">search</i></button>
+    </div>
+  </div>
+</div>
+<div id="expandedInfo"></div>
+<div class="main-content clearfix">
+  <ul id="movies" class="movie-list">
+    <li *ngFor="let m of movieList" class="movie_more" id="{{m.imdbID}}">
+      <div class="poster-wrap">
+        <i class="material-icons more-placeholder">crop_original</i>
+      </div>
+      <span class="movie-title" >{{m.Title}}</span>
+      <span class="movie-year">m.Year</span>
+    </li>
+  </ul>
+</div>
+<div id="pagination-div"></div>
+<script src="./js/app.js"></script>

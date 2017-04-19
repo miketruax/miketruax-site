@@ -1,7 +1,7 @@
 <div *ngIf="activePlayer === -1" class="screen screen-start col-xs-12" id="start">
   <h3 class="section-heading text-center col-xs-12">Tic Tac Toe</h3>
   <div class="col-xs-12">
-      <h3 class="col-xs-12 text-center">What Kind of Game?</h3>
+      <h3 class="col-xs-12 text-center screen-head">What Kind of Game?</h3>
       <button class="btn btn-default col-xs-12" (click)="againstWhom(true)">Play Against Computer</button><br><br>
       <button class="btn btn-default col-xs-12" (click)="againstWhom(false)">Play Against Player</button>
     </div>
@@ -12,7 +12,7 @@
 
   <div class="col-xs-12 screen" *ngIf="activePlayer === 0">
     <h3 class="section-heading text-center col-xs-12">Tic Tac Toe</h3>
-    <label for="playOne" class="col-xs-12" id="lplayOne">Player One's Name:</label>
+    <label for="playOne" class="col-xs-12 screen-head" id="lplayOne">Player One's Name:</label>
       <input class="form-control" type="text" name="nameOne" id="playOne" ngModel="{{nameOne}}">
 
     <label for="playTwo" class="col-xs-12">Player Two's Name:</label>
@@ -26,9 +26,9 @@
 
   <div *ngIf="gameOver" class="screen screen-win col-xs-12" ngClass="screen-win-{{winner.winner}}" id="finish">
     <h3 class="section-heading text-center col-xs-12">Tic Tac Toe</h3>
-    <p class="message col-xs-12 text-center" *ngIf="winner.winner === 1">{{winner.name ? winner.name : 'O'}} Wins!</p>
-    <p class="message col-xs-12 text-center" *ngIf="winner.winner === 2">{{winner.name ? winner.name : 'X'}} Wins!</p>
-    <p class="message col-xs-12 text-center" *ngIf="winner.winner === 3">It's a Tie!</p>
+    <p class="message col-xs-12 text-center screen-head" *ngIf="winner.winner === 1">{{winner.name ? winner.name : 'O'}} Wins!</p>
+    <p class="message col-xs-12 text-center screen-head" *ngIf="winner.winner === 2">{{winner.name ? winner.name : 'X'}} Wins!</p>
+    <p class="message col-xs-12 text-center screen-head" *ngIf="winner.winner === 3">It's a Tie!</p>
     <button class="btn btn-default btn-lg col-xs-6 col-xs-offset-3" (click)="resetBoard()">New game</button>
   </div>
 

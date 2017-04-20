@@ -238,7 +238,6 @@ select {
   Expanded Info Styles
 ==================================== */
 #expandedInfo {
-  display: none;
   padding: 0;
   margin: 0;
   width: 100%;
@@ -341,7 +340,7 @@ select {
 
 .main-header {
   position: fixed;
-  top: 0;
+  top: 155px;
   left: 0;
   width: 100%;
   background: #fff;

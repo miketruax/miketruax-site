@@ -21,9 +21,6 @@ import {StoreModule} from "@ngrx/store";
 import {FoodListComponent} from "./food/food-list.component";
 
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent, FoodComponent, AboutComponent,

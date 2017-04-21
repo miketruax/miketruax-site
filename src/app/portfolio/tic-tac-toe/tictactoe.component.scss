@@ -21,6 +21,13 @@ $player-1-color: $moonstone-blue;
 $player-2-color: $yankees-blue;
 $hover-color:    $raisin-black;
 
+hr{
+  width: 90%;
+  background-color: black;
+  padding: 1px;
+  margin: 5px 5% !important;
+}
+
 .computer {
   margin-top: 1rem;
 }
@@ -33,16 +40,18 @@ $hover-color:    $raisin-black;
 .play1, .play2 {
   color: $sunny;
 }
-
 .screen {
-  width: ($size-sm + $spacing*2)*3;
+  width: ($size-sm + $spacing*2)*3 + ($spacing*2);
   height: ($size-sm + $spacing)*4;
+  float: none !important;
+  margin: auto !important;
+  margin-top: 150px !important;
   .screen-head{
     margin-top: ($spacing) !important;
   }
   @media(min-width: 450px) {
     height: ($size + $spacing)*4 + $spacing;
-    width: ($size + $spacing*2)*3;
+    width: ($size + $spacing*2)*3 + ($spacing*2);
     .screen-head{
       margin-top: $size + $spacing  !important;
     }

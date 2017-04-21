@@ -1,56 +1,56 @@
-<div class="main-header" *ngIf="!moreInfo">
-  <div class="inner">
-    <h1 class="main-title">MovieSearch</h1>
-    <div class="search-form">
-      <label for="search" class="is-hidden">Search a title</label>
-      <input id="search" [(ngModel)]="movieSearch" type="search" name="movie" placeholder="Search a Title...">
-      <label for="year"  class="is-hidden">Any Year</label>
-      <input id="year" [(ngModel)]="yearSearch" type="number" maxlength="4" name="year" placeholder="Year"/>
-      <button (click)="searchSubmit()" class="search-button"><i class="material-icons icn-search">search</i></button>
-    </div>
-  </div>
-</div>
 
-<div class="centered" *ngIf="moreInfo && !moreInfoLoaded">LOADING...<br><img src="../../../assets/img/portfolio/movie-search/bar.gif"></div>
+<div class="main-content">
+  <div class="centered" *ngIf="moreInfo && !moreInfoLoaded">LOADING...<br><img src="../../../assets/img/portfolio/movie-search/bar.gif"></div>
 
-<div id="expandedInfo" *ngIf="moreInfo && moreInfoLoaded">
-  <div class="top-grey">
-    <button class="back" (click)="moreInfo = false">  &#10094; Search results</button><br>
-      <span class="more-title">{{activeMovie.Title}}({{activeMovie.Year}})</span><br>
-      <span class="more-title more-rating">IMDB Rating: {{activeMovie.imdbRating}}</span></div>
+  <div id="expandedInfo" *ngIf="moreInfo && moreInfoLoaded">
+    <div class="top-grey col-xs-12">
+      <button class="back col-xs-6" (click)="moreInfo = false">  &#10094; Search results</button><br>
+      <h2 class="more-title col-xs-12">{{activeMovie.Title}}({{activeMovie.Year}})</h2>
+      <span class="more-title more-rating col-xs-12">IMDB Rating: {{activeMovie.imdbRating}}</span></div>
     <div class="poster-wrap">
       <i class="material-icons more-placeholder">crop_original</i>
     </div>
     <div class ="more-synopsis">
-      <h3>Plot Synopsis:</h3>
+      <h3 class="text-center" style="padding-top: 10px !important;">Plot Synopsis:</h3>
       <p class="synopsis">{{activeMovie.Plot}}</p>
-        <a class="imdb-button" [href]="'http://www.imdb.com/title/'+activeMovie.imdbID" target="_blank">View on IMDB</a>
+      <a class="imdb-button" [href]="'http://www.imdb.com/title/'+activeMovie.imdbID" target="_blank">View on IMDB</a>
     </div>
-</div>
+  </div>
 
 
-<div class="main-content clearfix" *ngIf="!moreInfo">
-  <ul id="movies" class="movie-list">
-    <li class="no-movies" *ngIf="error.err"><i class="material-icons icon-help">help_outline</i>{{error.msg}}</li>
-    <li *ngFor="let m of movieList" class="movie_more" (click)="showMore(m.imdbID)">
-      <div class="poster-wrap">
-        <i class="material-icons more-placeholder">crop_original</i>
+  <div class="main-header" *ngIf="!moreInfo">
+    <div class="inner">
+      <h1 class="main-title">OMDB API Movie Search</h1>
+      <div class="search-form">
+        <label for="search" class="is-hidden">Search a title</label>
+        <input id="search" [(ngModel)]="movieSearch" type="search" name="movie" placeholder="Search a Title...">
+        <label for="year"  class="is-hidden">Any Year</label>
+        <input id="year" [(ngModel)]="yearSearch" type="number" maxlength="4" name="year" placeholder="Year"/>
+        <button (click)="searchSubmit()" class="search-button"><i class="material-icons icn-search">search</i></button>
       </div>
-      <span class="movie-title" >{{m.Title}}</span>
-      <span class="movie-year">{{m.Year}}</span>
+    </div>
+  </div>
+
+  <ul id="movies" class="movie-list"  *ngIf="!moreInfo">
+    <li class="no-movies" *ngIf="error.err"><i class="material-icons icon-help">help_outline</i>{{error.msg}}</li>
+    <li *ngFor="let m of movieList" data-toggle="tooltip" title="Click to see more about {{m.Title}}" class="movie_more col-xs-6 col-sm-4 col-md-3" (click)="showMore(m.imdbID)">
+        <i class="material-icons more-placeholder col-xs-12">crop_original</i>
+      <span class="movie-title col-xs-12 text-center" >{{m.Title}}</span>
+      <span class="movie-year  col-xs-12 text-center">{{m.Year}}</span>
     </li>
   </ul>
-  <div class="pagination" *ngIf="movieList.length >0">{{totalMovies}} movies found</div>
+
 </div>
 <div id="pagination-div" *ngIf="!moreInfo && totalMovies > 10">
   <div class="pagination">{{totalPages.length}} total pages</div>
+  <div class="pagination text-center" *ngIf="movieList.length >0">{{totalMovies}} movies found</div>
   <div class="pagination">
     <ol id="buttons">
-      <li><a class="first jumper" (click)="currentPage = 1; pullMovies()">&#8606;first</a></li>
+      <li *ngIf="currentPage !== 1"><a class="first jumper pointer" (click)="currentPage = 1; pullMovies()">&#8606;first</a></li>
       <li *ngFor="let i of buttons;">
-        <a class="pag-button" ngClass="{{currentPage == i ? 'active' : ''}}" (click)="currentPage = i; pullMovies()" >{{i}}</a>
+        <a class="pag-button pointer" ngClass="{{currentPage == i ? 'active' : ''}}" (click)="currentPage = i; pullMovies()" >{{i}}</a>
       </li>
-      <li><a class="last" (click)="currentPage = totalPages; pullMovies()">last &#8608;</a></li>
+      <li><a class="last pointer" *ngIf="currentPage !== totalPages.length" (click)="currentPage = totalPages.length; pullMovies()">last &#8608;</a></li>
     </ol>
   </div>
   <div class="select">Jump to page:
@@ -60,3 +60,7 @@
     <a id="jump-to" (click)="pageClick()" >Go!</a>
   </div>
 </div>
+
+<hr>
+<a class="col-xs-12 text-center" [routerLink]="['/portfolio']">Back to Portfolio</a>
+<hr>

@@ -14,6 +14,12 @@ $alabaster: rgb(243, 239, 233);
 /* =================================
   Element Styles
 ==================================== */
+hr{
+  width: 90%;
+  margin: 5px 5% !important;
+  background-color: black;
+  padding: 1px;
+}
 
 * {
   box-sizing: border-box;
@@ -79,7 +85,6 @@ select {
 ==================================== */
 .movie_more {
   cursor: pointer;
-
 }
 
 .main-title {
@@ -197,7 +202,8 @@ select {
 }
 
 .pagination {
-  margin: 40px 0 0 0;
+  margin: 10px 0 0 0;
+  width: 100%;
   text-align: center;
 }
 
@@ -240,6 +246,7 @@ select {
 #expandedInfo {
   padding: 0;
   margin: 0;
+  margin-top: 165px !important;
   width: 100%;
 }
 
@@ -258,26 +265,21 @@ select {
 }
 
 .top-grey {
-  background: rgb(76, 76, 76);
+  background: $yankees-blue;
   width: 100%;
-  margin: 0;
-  z-index: -2;
-  height: 7rem;
-  margin-top: -35px;
+  margin-top: -20px;
+  padding-bottom: 15px !important;
 }
 
 .more-title {
   color: white;
-  margin-left: 29%;
-  font-size: 1.2rem;
-  text-align: left;
+  text-align: center;
   font-weight: 500;
 }
 
 .more-rating {
   font-size: 1rem;
   color: white;
-  margin-left: 29%;
 }
 
 .more-poster {
@@ -294,6 +296,10 @@ select {
   width: 67%;
   margin-right: 2%;
   float: right;
+}
+
+.synopsis{
+  padding-bottom: 10px !important;
 }
 
 .imdb-button {
@@ -315,16 +321,14 @@ select {
 
 .more-placeholder {
   z-index: 4;
-  margin-top: -40px;
-  max-width: 25%;
+  margin-top: 0px;
   background: #fff;
   float: left;
   color: #dadada;
   font-size: 5em;
-  width: 120px;
   height: 120px;
-  padding: 20px;
-  margin-left: 2%;
+  padding: 10px;
+  text-align: center;
 }
 
 /* =================================
@@ -333,30 +337,24 @@ select {
 
 .inner,
 .main-content {
-  width: 90%;
-  max-width: 1025px;
+  width: 100%;
   margin: auto;
+  margin-top: 165px !important;
 }
 
+.main-content{
+  min-height: 300px !important;
+}
 .main-header {
-  position: fixed;
-  top: 155px;
-  left: 0;
-  width: 100%;
-  background: #fff;
+  width: 90%;
+  background: white;
   min-height: 80px;
-  z-index: 1000;
+  margin-left: 5% !important;
 }
 
 /* =================================
   Helper Classes
 ==================================== */
-
-.clearfix::after {
-  content: " ";
-  display: table;
-  clear: both;
-}
 
 .is-hidden {
   border: 0;
@@ -379,46 +377,36 @@ select {
   }
 }
 
-@media (max-width: 770px) {
-  .top-grey {
-    margin-top: -20px;
-  }
-}
-
-@media (min-width: 550px) {
-  .movie-list li {
-    float: left;
-    width: 50%;
-  }
-
-  .movie-list .no-movies {
-    float: none;
-    width: 100%;
-  }
-
-  .poster-wrap {
-    height: 290px;
-    border: 1px solid white;
-    overflow: hidden;
-  }
-
-  .movie-poster {
-    width: 100%;
-    min-height: 100%;
-    -webkit-transition: -webkit-transform .4s ease-out;
-    transition: transform .4s ease-out;
-  }
-
-  .poster-wrap:hover .movie-poster {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-  }
-
-  .movie-title {
-    padding-right: 1.25em;
-  }
-
-}
+//
+//@media (min-width: 550px) {
+//  .movie-list .no-movies {
+//    float: none;
+//    width: 100%;
+//  }
+//
+//  .poster-wrap {
+//    height: 290px;
+//    border: 1px solid white;
+//    overflow: hidden;
+//  }
+//
+//  .movie-poster {
+//    width: 100%;
+//    min-height: 100%;
+//    -webkit-transition: -webkit-transform .4s ease-out;
+//    transition: transform .4s ease-out;
+//  }
+//
+//  .poster-wrap:hover .movie-poster {
+//    -webkit-transform: scale(1.1);
+//    transform: scale(1.1);
+//  }
+//
+//  .movie-title {
+//    padding-right: 1.25em;
+//  }
+//
+//}
 
 @media (min-width: 769px) {
   body {
@@ -435,27 +423,5 @@ select {
     margin-top: 34px;
   }
 
-  .movie-list li {
-    width: 33.333333333%;
-  }
 }
 
-@media (min-width: 769px) and (max-width: 999px) {
-  .movie-list li:nth-of-type(3n+1) {
-    clear: left;
-  }
-}
-
-@media (min-width: 1000px) {
-  .movie-list li {
-    width: 25%;
-  }
-
-  .movie-list li:nth-of-type(9n) {
-    margin-left: 25%;
-  }
-
-  .movie-list li:nth-of-type(4n+1) {
-    clear: left;
-  }
-}

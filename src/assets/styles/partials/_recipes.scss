@@ -4,8 +4,8 @@
   margin: 7px 0 !important;
   h2{
     font-family: $title-font;
-    color: $sunny !important;
-    text-shadow: 2px 2px $yankees-blue !important;
+    color: $yankees-blue !important;
+    text-shadow: 2px 2px $sunny !important;
   }
 }
 
@@ -26,8 +26,15 @@
 .thumbnail-container{
   border-bottom: 2px solid $yankees-blue;
   margin: auto;
+  background-color: $alabaster !important;
 }
 
 .active-thumb{
   border:2px solid $sunny;
+}
+
+.img-thumbnail{
+  @media(min-width: 600px) {
+    max-width: 70% !important;
+  }
 }

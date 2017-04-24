@@ -59,6 +59,12 @@
   }
 }
 
+.skills-box{
+  @media(min-width: 1200px) {
+    min-height: 425px !important;
+  }
+}
+
 .body {
   font-family: $content-font;
   margin: 0 !important;

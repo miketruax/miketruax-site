@@ -21,17 +21,22 @@ $player-1-color: $moonstone-blue;
 $player-2-color: $yankees-blue;
 $hover-color:    $raisin-black;
 
-hr{
-  width: 90%;
-  background-color: black;
-  padding: 1px;
-  margin: 5px 5% !important;
-}
+
 
 .computer {
   margin-top: 1rem;
 }
 
+a h4{
+  background-color: white !important;
+  width: ($size-sm + $spacing*2)*3 + ($spacing*2);
+
+  margin: auto !important;
+  margin-top: 10px !important;
+  @media(min-width: 450px) {
+    width: ($size + $spacing*2)*3 + ($spacing*2);
+  }
+}
 
 #playOne, #playTwo {
   color: $yankees-blue;
@@ -57,7 +62,7 @@ hr{
     }
 
   }
-  background: $alabaster;
+  background: white !important;
   label{
     margin-top: $spacing*5 !important;
   }
@@ -145,6 +150,7 @@ hr{
 
 .startgame{
   margin-top: 10vh !important;
+  background-color: $alabaster !important;
 }
 
 .players-turn {
@@ -183,7 +189,7 @@ hr{
 
 
 .box {
-  background-color: white;
+  background-color: $alabaster;
   border-radius: 14px;
   cursor: pointer;
   color: white;

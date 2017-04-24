@@ -10,15 +10,14 @@ $sunny: rgb(255, 241, 125);
 $raisin-black: rgb(37, 38, 39);
 $alabaster: rgb(243, 239, 233);
 
-
+.material-icons {
+  font-family: 'Material Icons' !important;
+}
 /* =================================
   Element Styles
 ==================================== */
-hr{
-  width: 90%;
-  margin: 5px 5% !important;
-  background-color: black;
-  padding: 1px;
+div{
+  background-color: white !important;
 }
 
 * {
@@ -265,7 +264,7 @@ select {
 }
 
 .top-grey {
-  background: $yankees-blue;
+  background: $yankees-blue !important;
   width: 100%;
   margin-top: -20px;
   padding-bottom: 15px !important;
@@ -337,6 +336,7 @@ select {
 
 .inner,
 .main-content {
+  background-color: white !important;
   width: 100%;
   margin: auto;
   margin-top: 165px !important;

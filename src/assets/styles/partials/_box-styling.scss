@@ -52,18 +52,10 @@
   background-color: rgba($sunny, .4) !important;
   border: 1px solid $yankees-blue !important;
 }
-.container-box{
 
-  padding: 15px !important;
-  background-color: white !important;
-  p{
-    font-size: initial !important;
-    font-family: $paragraph-font;
-  }
-}
 .home-box{
   @media(min-width: 1200px) {
-    min-height: 730px !important;
+    min-height: 750px !important;
   }
 }
 
@@ -86,10 +78,29 @@
   margin: 0 !important;
 }
 
+.container-box{
+  padding: 15px !important;
+  background-color: white !important;
+  p{
+    font-size: initial !important;
+    font-family: $paragraph-font;
+  }
+  @media(min-width: 1200px) {
+    border: 1px solid $raisin-black;
+  }
+
+}
+
 .section-background{
   background-size: cover; min-height: 150px !important;
   background-position: center;
   background-repeat: no-repeat;
+  border-width: 1px 1px 0 1px;
+  border-color: $yankees-blue;
+  border-style: solid;
+  @media(max-width: 1199px){
+    border-width: 1px 0 0 0 !important;
+  }
 }
 
 .section-container{

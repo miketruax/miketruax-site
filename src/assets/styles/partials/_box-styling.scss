@@ -1,4 +1,6 @@
 //Unchanging panel bgs
+
+
 .top-div{
   margin-top: 146px !important;
 }
@@ -42,7 +44,6 @@
   border-bottom: 1px solid $sunny !important;
   background-color: rgba($yankees-blue, 1) !important;
   color: $alabaster !important;
-  font-family: $panel-head-fonts;
   text-transform: uppercase !important;
 }
 
@@ -52,15 +53,25 @@
   border: 1px solid $yankees-blue !important;
 }
 .container-box{
+
   padding: 15px !important;
-  background-color: rgba($alabaster, 1);
+  background-color: white !important;
+  p{
+    font-size: initial !important;
+    font-family: $paragraph-font;
+  }
+}
+.home-box{
+  @media(min-width: 1200px) {
+    min-height: 730px !important;
+  }
 }
 
 .body {
-  //background-color: rgba($sunny, .3) !important;
-  font-family: $body-fonts;
+  font-family: $content-font;
   margin: 0 !important;
   padding: 0 !important;
+  background-color: $alabaster;
 }
 
 .food-container{
@@ -73,4 +84,24 @@
 
 .food-button-next, .food-button-prev{
   margin: 0 !important;
+}
+
+.section-background{
+  background-size: cover; min-height: 150px !important;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section-container{
+  padding-top: 20px !important;
+  @media(max-width: 1199px) {
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+}
+
+.section-container:not(.top-div){
+  @media(min-width: 1200px) {
+    margin-top: 146px !important;
+  }
 }

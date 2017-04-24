@@ -1,12 +1,14 @@
 /*ELEMENTS----------------*/
 * {
   line-height: normal !important;
+  font-family: $content-font !important;
   color: $raisin-black;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0px !important;
   margin-bottom: 2px !important;
+  font-family: $title-font !important;
 }
 
 li{
@@ -19,9 +21,15 @@ dd{
 
 }
 
-footer{
+hr{
+  padding: 1px !important;
+  margin-left: 5% !important;
+  width: 90% !important;
+  background-color: $raisin-black;
+}
 
-  margin-top: 20px !important;
+footer{
+  background-color: $alabaster;
 
 }
 

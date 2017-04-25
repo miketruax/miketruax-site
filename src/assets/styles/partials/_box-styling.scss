@@ -64,6 +64,12 @@
     min-height: 425px !important;
   }
 }
+.col-lg-4 .about-box{
+  @media(min-width: 1200px) {
+    min-height: 836px !important;
+  }
+}
+
 
 .body {
   font-family: $content-font;
@@ -117,7 +123,7 @@
   }
 }
 
-.section-container:not(.top-div){
+.section-container:not(.top-div):not(.no-top){
   @media(min-width: 1200px) {
     margin-top: 146px !important;
   }

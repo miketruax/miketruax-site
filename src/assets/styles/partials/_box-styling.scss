@@ -5,14 +5,6 @@
   margin-top: 146px !important;
 }
 
-.food-panel-heading {
-  background-image: url(../img/backgrounds/foodFull.png) !important;
-  min-height: 60px;
-}
-
-.food1{
-  background-color: rgba($yankees-blue, .6);
-}
 
 
 // 12466730
@@ -45,6 +37,7 @@
   background-color: rgba($yankees-blue, 1) !important;
   color: $alabaster !important;
   text-transform: uppercase !important;
+  letter-spacing: 1px !important;
 }
 
 .inner-heading{

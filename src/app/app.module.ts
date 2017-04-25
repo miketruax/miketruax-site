@@ -12,7 +12,6 @@ import {HomeComponent} from "./home/home.component";
 import {RecipeService} from "./services/recipe.service";
 import {SkillsService} from "./services/skills.service";
 import { CapitalizePipe } from './pipes/capitalize.pipe';
-import {SkillsComponent} from "./skills/skills.component";
 import {PortfolioComponent} from "./portfolio/portfolio.component";
 import {TicTacToeComponent} from "./portfolio/tic-tac-toe/tictactoe.component";
 import {MovieSearchComponent} from "./portfolio/movie-search/movie-search.component";
@@ -24,7 +23,7 @@ import {FoodListComponent} from "./food/food-list.component";
 @NgModule({
   declarations: [
     AppComponent, FoodComponent, AboutComponent,
-    PortfolioComponent, SkillsComponent, HomeComponent,
+    PortfolioComponent, HomeComponent,
     TicTacToeComponent, MovieSearchComponent, FoodListComponent, CapitalizePipe,
     CategoryPipe],
   imports: [

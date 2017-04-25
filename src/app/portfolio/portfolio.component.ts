@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['../../assets/styles/app.style.scss']
 })
 export class PortfolioComponent implements OnInit {
-
+  buddyTrakrTech: boolean = false;
   constructor() { }
 
   ngOnInit() {

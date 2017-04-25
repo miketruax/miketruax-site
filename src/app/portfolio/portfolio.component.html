@@ -96,11 +96,40 @@
   <h3 class="section-heading text-center col-xs-12">Portfolio</h3>
   <div class="col-xs-12 container-box  skills-box">
 
-<div class="col-xs-12 col-md-6">
-  <h4 class="col-xs-12 text-center section-heading  inner-heading">Fullstack Design</h4>
-  <dl class="col-xs-10 col-xs-offset-1">
-    <dd class="dd-list"><b>www.miketruax.com</b>
-      <ul>
+<div class="col-xs-12">
+  <h4 class="col-xs-12 text-center section-heading  inner-heading">Sample Apps and Websites</h4>
+</div>
+
+    <div class="col-xs-12 col-sm-4 col-lg-3 portfolio-container">
+      <img class="img-responsive portfolio-icon" src="../../assets/img/portfolio/icons/buddytrakr.png" />
+      <h3 class="col-xs-12 text-center ">Buddy <br>Trakr</h3>
+      <a href="http://buddytrakr.herokuapp.com" class=" port-link col-xs-12 text-center">Check it out</a>
+      <hr>
+      <h4 class="text-center col-xs-12">Tech Stack</h4>
+      <ul class="col-xs-12 tech-list">
+        <li>Angluar 2 w/ Angular CLI for ease of scaffolding</li>
+        <li>Bootstrap and SCSS for styling</li>
+        <li>Rxjs and ngrx for Observables and Stores for client-side</li>
+        <li>Node.js in ES6</li>
+        <li>Utilized some components via @datatype_void's MEA2N constructor while learning Angular 2</li>
+        <li>MongoDB via mlab.com for off-site MongoDB storage</li>
+        <li>API for data access and passport/express-session for login authentication / sessions</li>
+        <li><a target="_blank" href="https://github.com/miketruax/BuddyTrakr-Angular2"><img
+          src="assets/img/icons/GitHub-Mark-32px.png" class='icon' alt="Github Icon">Github Repo</a></li>
+      </ul>
+      <hr>
+    </div>
+
+
+
+
+    <div class="col-xs-12 col-sm-4 col-lg-3 portfolio-container">
+      <img class="img-responsive portfolio-icon" src="../../assets/img/portfolio/icons/miketruax.png" />
+      <h3 class="col-xs-12 text-center">Personal <br>Site</h3>
+      <a [routerLink]="['/']" class="port-link  col-xs-12 text-center">Back Home</a>
+      <hr>
+      <h4 class="text-center col-xs-12">Tech Stack</h4>
+      <ul class="col-xs-12 tech-list">
         <li>HTML5 / Bootstrap / SCSS for design</li>
         <li>Angular 2 utilizing ngrx, stores, and reducers (specifically for food blog)</li>
         <li>Node.JS with Express for backend</li>
@@ -111,54 +140,49 @@
         <li><a target="_blank" href="https://github.com/miketruax/miketruax-website-NG2"><img
           src="assets/img/icons/GitHub-Mark-32px.png" class='icon' alt="Github Icon">Github Repo</a></li>
       </ul>
-    </dd>
-    <dd class="dd-list"><b>
-      <a href="http://buddytrakr.herokuapp.com" target="_blank">
-        <img src="./assets/img/portfolio/buddyTrakr/main_logo.png" style="max-height: 40px !important; width: auto;">
-        BuddyTrakr (check it out)
-      </a></b>
-      <ul>
-        <li>Angluar 2 w/ Angular CLI for ease of scaffolding</li>
-        <li>Bootstrap and SCSS for styling</li>
-        <li>Rxjs and ngrx for Observables and Stores for client-side</li>
-        <li>Node.js in ES6</li>
-        <li>Utilized some components via @datatype_void's MEA2N constructor while learning Angular 2</li>
-        <li>MongoDB via mlab.com for off-site MongoDB storage</li>
-        <li>API for data access and passport/express-session for login authentication / sessions</li>
+      <hr>
+    </div>
 
-        <li><a target="_blank" href="https://github.com/miketruax/BuddyTrakr-Angular2"><img
-          src="assets/img/icons/GitHub-Mark-32px.png" class='icon' alt="Github Icon">Github Repo</a></li>
-      </ul>
-    </dd>
-  </dl>
-</div>
-<div class="col-xs-12 col-md-6">
-  <h4 class="col-xs-12 text-center section-heading  inner-heading">Front-End Web-Apps</h4>
-  <dl class="col-xs-10 col-xs-offset-1">
-    <dd><b><a [routerLink]="['/portfolio/tic-tac-toe']">Simple Tic-Tac-Toe Game (Check it out)</a></b>.
-      <ul>
-        <li>Styling template initially provided by teamtreehouse.com but with HEAVY adjustments</li>
-        <li>Utilizes TS and Angular 2 for interactivity</li>
-        <li>Simple AI utilizing min-max calculations for best computer move</li>
-        <li>SCSS and Raw CSS for styling</li>
-        <li>Utilizes jQuery for ease of DOM manipulation (in addition to NG2)</li>
-      </ul>
-    </dd>
-    <dd><b><a [routerLink]="['/portfolio/movie-search']">Movie Search Engine (Check it out)</a></b>
-      <ul class='list innerHeading'>
+
+
+    <div class="col-xs-12 col-sm-4 col-lg-3 portfolio-container">
+        <img class="img-responsive portfolio-icon" src="../../assets/img/portfolio/icons/moviesearch.png" />
+      <h3 class="col-xs-12 text-center">Movie <br>Search</h3>
+      <a [routerLink]="['/portfolio/movie-search']" class="port-link col-xs-12 text-center">Check it out</a>
+      <hr>
+      <h4 class="text-center col-xs-12">Tech Stack</h4>
+      <ul class="col-xs-12 tech-list">
         <li> Utilizes the OMDB API for JSONP calling</li>
         <li> Front Page formatting by http://www.teamtreehouse.com</li>
         <li> Styling for "more-info" page completely done by myself</li>
         <li> NG2 http calls with rxjs for asynchronous calling</li>
         <li> Custom pagination to get past pull limit for OMDB API</li>
+        <li><a target="_blank" href="https://github.com/miketruax/miketruax-website-NG2/tree/master/src/app/portfolio/movie-search"><img
+          src="assets/img/icons/GitHub-Mark-32px.png" class='icon' alt="Github Icon">Github Repo</a></li>
       </ul>
-    </dd>
-  </dl>
+      <hr>
+    </div>
+
+
+    <div class="col-xs-12 col-sm-4 col-lg-3 portfolio-container">
+      <img class="img-responsive portfolio-icon" src="../../assets/img/portfolio/icons/tictactoe.png" />
+      <h3 class="col-xs-12 text-center">Tic Tac <br>Toe</h3>
+      <a [routerLink]="['/portfolio/tic-tac-toe']" class="port-link  col-xs-12 text-center">Check it out</a>
+      <hr>
+      <h4 class="text-center col-xs-12">Tech Stack</h4>
+      <ul class="col-xs-12 tech-list">
+        <li>Styling template initially provided by teamtreehouse.com but with HEAVY adjustments</li>
+        <li>Utilizes TS and Angular 2 for interactivity</li>
+        <li>Simple AI utilizing min-max calculations for best computer move</li>
+        <li>SCSS and Raw CSS for styling</li>
+        <li>Utilizes jQuery for ease of DOM manipulation (in addition to NG2)</li>
+        <li><a target="_blank" href="https://github.com/miketruax/miketruax-website-NG2/tree/master/src/app/portfolio/tic-tac-toe"><img
+          src="assets/img/icons/GitHub-Mark-32px.png" class='icon' alt="Github Icon">Github Repo</a></li>
+      </ul>
+      <hr>
+    </div>
+
+
+
 </div>
-
-<div style="margin: auto !important;">
-<!--<tictactoe></tictactoe>-->
-<!--<movie-search></movie-search>-->
-
 </div>
-

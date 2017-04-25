@@ -16,15 +16,13 @@
   </ul>
 </nav>
 
+<div *ngIf="getActiveArr().length >1" class="col-xs-12 text-center thumbnail-container">
+  <img *ngFor="let f of (recipes| category: activeCat); let i = index" (click)="activeIdx = i" class="pointer rounded thumbnail-img"
+       ngClass="{{i === activeIdx ? 'active-thumb' : ''}}" [src]="'assets/img/food/'+f.image" title="{{f.name}}"/>
+</div>
 
 <div class="col-xs-12 food-container" *ngFor="let r of (recipes | category:activeCat); let idx = index;">
   <div *ngIf="idx === activeIdx">
-
-    <div *ngIf="getActiveArr().length >1" class="col-xs-12 text-center thumbnail-container">
-      <img *ngFor="let f of (recipes| category: activeCat); let i = index" (click)="activeIdx = i" class="pointer rounded thumbnail-img"
-           ngClass="{{i === idx ? 'active-thumb' : ''}}" [src]="'assets/img/food/'+f.image" title="{{f.name}}"/>
-    </div>
-
   <div class="col-xs-12 recipe-title"><h2 class="text-center">{{r.name}}</h2></div>
   <div class="col-sm-5 col-lg-4 col-xs-6 col-xs-offset-3 col-sm-offset-0 text-center">
     <img class="rounded img-thumbnail img-responsive" [src]="'assets/img/food/'+r.image">

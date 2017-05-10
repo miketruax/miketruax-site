@@ -9,7 +9,7 @@ import {Observable} from "rxjs";
 @Component({
   selector: 'food-component',
   templateUrl: './food.component.html',
-  styleUrls: ['../../assets/styles/app.style.scss']
+  styleUrls: ['../styles/app.style.scss']
 })
 export class FoodComponent implements OnInit {
   recipes: Observable<Array<Recipe>>;

@@ -11,7 +11,7 @@ export interface State {
 }
 
 const reducers = {
-  recipes: fromRecipes.default
+  recipes: fromRecipes.recipeReducer
 };
 
 

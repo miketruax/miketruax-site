@@ -3,7 +3,7 @@ import {Recipe} from "../stores/recipe.store";
 @Component({
   selector: 'food-list',
   templateUrl: './food-list.component.html',
-  styleUrls: ['../../assets/styles/app.style.scss']
+  styleUrls: ['../styles/app.style.scss']
 })
 export class FoodListComponent implements OnInit {
   activeCat: string;

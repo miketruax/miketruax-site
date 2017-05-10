@@ -6,7 +6,7 @@ import * as $ from 'jquery';
 @Component({
   selector: 'movie-search',
   templateUrl: 'movie-search.component.html',
-  styleUrls: ['../../../assets/styles/app.style.scss', './movie-search.component.scss']
+  styleUrls: ['../../styles/app.style.scss', './movie-search.component.scss']
 })
 export class MovieSearchComponent implements OnInit {
   movieSearch: string = '';

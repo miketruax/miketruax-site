@@ -5,11 +5,6 @@
   margin-top: 146px !important;
 }
 
-
-
-// 12466730
-
-
 .banner-logo {
   position: fixed;
   border-bottom: 2px solid $sunny;
@@ -17,7 +12,8 @@
   top:46px !important;
   margin-bottom: 3px !important;
   z-index: 101 !important;
-  background: url(../img/backgrounds/home-logo.png) no-repeat center !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
   background-size: cover !important;
   height: 100px !important;
   white-space: nowrap;

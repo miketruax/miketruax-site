@@ -7,8 +7,7 @@ export type State = Recipe[]
 const initialState: State = [];
 
 
-export default
-function(state = initialState, action: Action): any{
+export function recipeReducer(state = initialState, action: Action): any{
 
   switch (action.type) {
 
@@ -32,6 +31,6 @@ function(state = initialState, action: Action): any{
     default:
       return state;
   }
-};
+}
 
 export const getRecipes = (state: State) => state;

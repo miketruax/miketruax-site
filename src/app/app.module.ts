@@ -38,4 +38,6 @@ import {FoodListComponent} from "./food/food-list.component";
   providers: [RecipeService, SkillsService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule{
+
+}

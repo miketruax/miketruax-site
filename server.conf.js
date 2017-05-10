@@ -38,14 +38,10 @@ import routes from './app/routes';
 routes(app, router);
 
 
-
-
-// ### Ignition Phase
-
 server.listen(port);
 
-// Shoutout to the user
-console.log(`Server is open: ${port}`);
+
+console.log(`Internet bears are at door #${port}`);
 
 // Expose app
 export {app};

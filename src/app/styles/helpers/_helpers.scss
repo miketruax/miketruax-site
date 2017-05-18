@@ -10,30 +10,6 @@
 .icon {
   max-height: 25px !important;
 }
-
-.hidden {
-  display: none;
-}
-
-//------ MAIN - LOGO to override bootstrap ----//
-
-.main-logo{
-  max-height: 50px !important;
-}
-
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  .main-logo{
-    width: 60% !important;
-  }
-}
-
-/* Smaller devices (tablets, 550px and up) */
-@media (min-width: 550px) {
-  .main-logo{
-    width: 75% !important;
-  }
-}
 .v-align-helper {
   display: inline-block;
   height: 100%;

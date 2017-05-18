@@ -130,11 +130,16 @@
   }
 }
 
+
+
 .portfolio-icon{
   max-width: 50% !important;
   margin: auto;
 }
 @media(max-width: 767px){
+  .portfolio-container:nth-child(even){
+    background-color: $alabaster !important;
+  }
   .portfolio-icon{
     max-width: 33% !important;
   }

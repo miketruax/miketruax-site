@@ -2,8 +2,7 @@ import {Component, OnInit, Input} from "@angular/core";
 import {Recipe} from "../stores/recipe.store";
 @Component({
   selector: 'food-list',
-  templateUrl: './food-list.component.html',
-  styleUrls: ['../styles/app.style.scss']
+  templateUrl: './food-list.component.html'
 })
 export class FoodListComponent implements OnInit {
   activeCat: string;

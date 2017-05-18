@@ -40,24 +40,9 @@
 }
 
 //-----------MEDIA QUERIES--------------//
-@media(max-width: 500px) {
-  .link-text {
-    position: absolute;
-    top: 35% !important;
-    z-index: 5;
-    left: 20%;
-    color: $alabaster;
-  }
-  .button-img {
-    float: none !important;
-  }
-  .active .link-text {
+@media(max-width: 620px) {
+  .link-text{
     display: none;
   }
 }
 
-@media(max-width: 400px) {
-  .link-text {
-    left: 15%;
-  }
-}

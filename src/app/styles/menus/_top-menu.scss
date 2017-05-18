@@ -14,7 +14,7 @@
   max-height: 45px !important;
 }
 .navbar-header{
-  background-color: $yankees-blue;
+  background-color: $yankees-blue !important;
 
 }
 
@@ -22,24 +22,24 @@
   background-color: $moonstone-blue !important;
 }
 .navbar-default, .nav{
-  min-height: 46px;
+  min-height: 46px !important;
   border: 0 !important;
-  background-color: $yankees-blue;
+  background-color: $yankees-blue !important;
 }
 
 .navbar-collapse{
-  background-color: $yankees-blue;
+  background-color: $yankees-blue !important;
 
   a{
-    color: $alabaster;
+    color: $alabaster !important;
   }
   .active a{
-    background-color: $moonstone-blue;
-    color: $alabaster;
+    background-color: $moonstone-blue !important;
+    color: $alabaster !important;
   }
   a:hover{
-    background-color: $sunny;
-    color: $yankees-blue;
+    background-color: $sunny !important;
+    color: $yankees-blue !important;
   }
 }
 

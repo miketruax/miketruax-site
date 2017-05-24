@@ -1,19 +1,18 @@
-
 <div class="main-content">
   <div class="centered" *ngIf="moreInfo && !moreInfoLoaded">LOADING...<br><img src="../../../assets/img/portfolio/movie-search/bar.gif"></div>
 
-  <div id="expandedInfo" *ngIf="moreInfo && moreInfoLoaded">
+  <div id="expandedInfo" class="col-xs-12" *ngIf="moreInfo && moreInfoLoaded">
     <div class="top-grey col-xs-12">
       <button class="back col-xs-6" (click)="moreInfo = false">  &#10094; Search results</button><br>
       <h2 class="more-title col-xs-12">{{activeMovie.Title}}({{activeMovie.Year}})</h2>
       <span class="more-title more-rating col-xs-12">IMDB Rating: {{activeMovie.imdbRating}}</span></div>
-    <div class="poster-wrap">
-      <i class="material-icons more-placeholder">crop_original</i>
+    <div class="poster-wrap col-xs-12 col-md-3 text-center">
+      <movie-search-image [imdbID]="activeMovie.imdbID"></movie-search-image>
     </div>
-    <div class ="more-synopsis">
-      <h3 class="text-center" style="padding-top: 10px !important;">Plot Synopsis:</h3>
+    <div class ="more-synopsis col-xs-12 col-md-9">
+      <h3 class="text-center">Plot Synopsis:</h3>
       <p class="synopsis">{{activeMovie.Plot}}</p>
-      <a class="imdb-button" [href]="'http://www.imdb.com/title/'+activeMovie.imdbID" target="_blank">View on IMDB</a>
+      <a class="imdb-button pull-right" [href]="'http://www.imdb.com/title/'+activeMovie.imdbID" target="_blank">View on IMDB</a>
     </div>
   </div>
 
@@ -25,16 +24,16 @@
         <label for="search" class="is-hidden">Search a title</label>
         <input id="search" [(ngModel)]="movieSearch" type="search" name="movie" placeholder="Search a Title...">
         <label for="year"  class="is-hidden">Any Year</label>
-        <input id="year" [(ngModel)]="yearSearch" type="number" maxlength="4" name="year" placeholder="Year"/>
+        <input id="year" [(ngModel)]="yearSearch" type="number" maxlength="4" min=1900 max=2020 name="year" placeholder="Year"/>
         <button (click)="searchSubmit()" class="search-button"><i class="material-icons icn-search">search</i></button>
       </div>
     </div>
   </div>
 
-  <ul id="movies" class="movie-list"  *ngIf="!moreInfo">
+  <ul id="movies" class="movie-list col-xs-12"  *ngIf="!moreInfo">
     <li class="no-movies" *ngIf="error.err"><i class="material-icons icon-help">help_outline</i>{{error.msg}}</li>
-    <li *ngFor="let m of movieList" data-toggle="tooltip" title="Click to see more about {{m.Title}}" class="movie_more col-xs-6 col-sm-4 col-md-3" (click)="showMore(m.imdbID)">
-        <i class="material-icons more-placeholder col-xs-12">crop_original</i>
+    <li *ngFor="let m of movieList" data-toggle="tooltip" title="Click to see more about {{m.Title}}" class="movie_more col-xs-12 col-sm-6 col-md-4 col-lg-3" (click)="showMore(m.imdbID)">
+      <movie-search-image [imdbID]="m.imdbID"></movie-search-image>
       <span class="movie-title col-xs-12 text-center" >{{m.Title}}</span>
       <span class="movie-year  col-xs-12 text-center">{{m.Year}}</span>
     </li>

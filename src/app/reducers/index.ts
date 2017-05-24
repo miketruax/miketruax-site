@@ -1,9 +1,7 @@
-import {
-  combineReducers
-} from '@ngrx/store'
 
 import * as fromRecipes from './recipes.reducer'
 import {compose} from "@ngrx/core/compose";
+import {combineReducers} from "@ngrx/store";
 
 
 export interface State {

@@ -18,13 +18,14 @@ import {MovieSearchComponent} from "./portfolio/movie-search/movie-search.compon
 import {CategoryPipe} from "./pipes/category.pipe";
 import {StoreModule} from "@ngrx/store";
 import {FoodListComponent} from "./food/food-list.component";
+import {MovieSearchImageComponent} from "./portfolio/movie-search/movie-search-image.component";
 
 
 @NgModule({
   declarations: [
     AppComponent, FoodComponent, AboutComponent,
     PortfolioComponent, HomeComponent,
-    TicTacToeComponent, MovieSearchComponent, FoodListComponent, CapitalizePipe,
+    TicTacToeComponent, MovieSearchComponent, MovieSearchImageComponent, FoodListComponent, CapitalizePipe,
     CategoryPipe],
   imports: [
     BrowserModule,

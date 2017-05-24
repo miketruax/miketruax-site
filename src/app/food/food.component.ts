@@ -5,11 +5,14 @@ import {RecipeService} from "../services/recipe.service";
 import {Recipe} from "../stores/recipe.store";
 import * as recipeActions from '../actions/recipes.actions'
 import {Observable} from "rxjs";
+import {fadeInAnimation} from "../animations/fade-in.animation";
 
 @Component({
   selector: 'food-component',
   templateUrl: './food.component.html',
-  styleUrls: ['../styles/app.style.scss']
+  styleUrls: ['../styles/app.style.scss'],
+  animations: [fadeInAnimation],
+  host: { '[@fadeInAnimation]': '' }
 })
 export class FoodComponent implements OnInit {
   recipes: Observable<Array<Recipe>>;

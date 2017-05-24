@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {horizontalSlideAnimation} from "../../animations/horizontal-slide.animation";
 
 @Component({
   selector: 'tictactoe',
   templateUrl: 'tictactoe.component.html',
-  styleUrls: ['../../styles/app.style.scss', './tictactoe.component.scss']
+  styleUrls: ['./tictactoe.component.scss']
 })
 export class TicTacToeComponent implements OnInit {
   againstComputer = false;
@@ -130,7 +131,6 @@ export class TicTacToeComponent implements OnInit {
   });
     let boxes = document.getElementsByClassName('box');
     this.placeMove(boxes[this.availMoves[index]], this.availMoves[index]);
-    console.log(boxes);
 
 
   }
@@ -231,7 +231,7 @@ export class TicTacToeComponent implements OnInit {
       else if (winner === 2) //same as above for gameOver ===1
       {
         this.winner['name'] = this.nameTwo;
-        this.winner['winner'] = 2
+        this.winner['winner'] = 2;
         if(this.againstComputer){
           console.log('SKYNET IS ASSUMING DIRECT CONTROL');
 

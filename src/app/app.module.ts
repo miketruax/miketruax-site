@@ -18,17 +18,21 @@ import {MovieSearchComponent} from "./portfolio/movie-search/movie-search.compon
 import {CategoryPipe} from "./pipes/category.pipe";
 import {StoreModule} from "@ngrx/store";
 import {FoodListComponent} from "./food/food-list.component";
-import {MovieSearchImageComponent} from "./portfolio/movie-search/movie-search-image.component";
+import {MovieSearchImageComponent} from "./portfolio/movie-search/image/movie-search-image.component";
+import {MovieMoreInfoComponent} from "./portfolio/movie-search/more-info/movie-more-info.component";
+import {PaginationComponent} from "./shared/pagination/pagination.component";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
   declarations: [
     AppComponent, FoodComponent, AboutComponent,
-    PortfolioComponent, HomeComponent,
-    TicTacToeComponent, MovieSearchComponent, MovieSearchImageComponent, FoodListComponent, CapitalizePipe,
+    PortfolioComponent, HomeComponent, PaginationComponent,
+    TicTacToeComponent, MovieSearchComponent, MovieSearchImageComponent, MovieMoreInfoComponent, FoodListComponent, CapitalizePipe,
     CategoryPipe],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(routes, {

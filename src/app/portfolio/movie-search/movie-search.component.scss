@@ -4,8 +4,6 @@ $moonstone-blue: rgb(123, 191, 191);
 $yankees-blue: rgb(15,60,89);
 $sunny: rgb(255, 241, 125);
 
-// Highlight
-
 // -----TYPOGRAPHY-----
 $raisin-black: rgb(37, 38, 39);
 $alabaster: rgb(243, 239, 233);
@@ -16,46 +14,19 @@ $alabaster: rgb(243, 239, 233);
 /* =================================
   Element Styles
 ==================================== */
-div{
-  background-color: white !important;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.body {
-  font: 1em/1.5 'Roboto', sans-serif;
-  color: #222;
-  background: $alabaster;
-  padding-top: 145px;
-  padding-bottom: 3em;
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-}
 
 ul {
-  margin: 0;
-  padding: 0;
   list-style: none;
 }
 
 input {
-  font-size: 1.12em;
   height: 46px;
-  padding-bottom: 1em;
-  padding-left: 0;
-  background: none;
   border: none;
   outline: 0;
   border-bottom: 4px solid #e4e4e4;
-  transition: border-color .4s;
 }
 
-input ~ input {
+#year{
   margin-left: 5px;
 }
 
@@ -64,12 +35,9 @@ input:focus {
 }
 
 button {
-  width: 40px;
-  height: 35px;
   border: 0;
-  background: none;
-  cursor: pointer;
   outline: 0;
+  background: none;
   position: relative;
   z-index: 100;
 }
@@ -85,30 +53,18 @@ select {
 .movie_more {
   cursor: pointer;
 }
-
-.main-title {
-  font-size: 1.4em;
-  line-height: 80px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin: 0;
+.movie_more:hover{
+  .movie_more /deep/ > movie-search-image{
+      border: 2px solid black;
+      //-webkit-transform: scale(1.1);
+      //transform: scale(1.1);
+    }
+  .movie-title{
+    color: $moonstone-blue;
+  }
 }
-
 .search-form input:last-of-type {
   margin-right: -40px;
-}
-
-.search-form input:nth-of-type(1) {
-  width: 65%;
-}
-
-.search-form input:nth-of-type(2) {
-  width: 35%;
-}
-
-.search-form input:only-of-type {
-  width: 100%;
-  padding-right: 35px;
 }
 
 .search-button {
@@ -129,21 +85,8 @@ select {
 
 /* MOVIE LIST COMPONENTS -------- */
 
-.instructions {
-  text-align: center;
-  margin: auto;
-}
-
-.no-movies {
-  color: #b0b0b0;
-  height: 140px;
-  margin-top: 65px;
-  text-align: center;
-  font-size: 1.25em;
-}
-
 .movie-list li, .movie-list a {
-  margin: 1.925em 0 0;
+  margin: 26px 0 0;
 }
 
 .movie-list a {
@@ -151,129 +94,6 @@ select {
   margin: auto;
 }
 
-.movie-title {
-  display: block;
-  font-size: 1.1em;
-  line-height: 1.2;
-  color: #000;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.movie-title:hover {
-  color: #3385ff;
-}
-
-.movie-year {
-  color: #9d9d9d;
-}
-
-.poster-wrap {
-  background-color: #fff;
-  margin-bottom: .8em;
-  position: relative;
-}
-
-.poster-placeholder {
-  color: #dadada;
-  font-size: 5em;
-  width: 80px;
-  height: 80px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-}
-
-/* =================================
-  Pagination styling
-==================================== */
-.centered {
-  text-align: center;
-  margin: auto;
-}
-
-#pagination-div {
-  width: 100%;
-  margin: auto;
-}
-
-.pagination {
-  margin: 10px 0 0 0;
-  width: 100%;
-  text-align: center;
-}
-
-.pagination ol:nth-child(11n) {
-  display: block;
-}
-
-.pagination li {
-  display: inline;
-}
-
-.pagination li a, #jump-to {
-  border: 1px solid #eaeaea;
-  border-radius: 5px;
-  padding: 3px 8px;
-  text-decoration: none;
-  color: rgb(76, 76, 76);
-}
-
-.pagination li a.active,
-.pagination li a:hover,
-#jump-to:hover {
-  background-color: rgb(76, 76, 76);
-  color: #fff;
-}
-
-.select {
-  text-align: center;
-  width: 30%;
-  margin: auto;
-}
-
-#jump-to {
-  margin-left: 7px;
-}
-
-/* =================================
-  Expanded Info Styles
-==================================== */
-
-.back {
-  width: auto;
-  color: #c2c4c6;
-  margin-left: 2%;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 13px;
-  z-index: auto;
-}
-
-.back:hover {
-  color: white;
-}
-
-.top-grey {
-  background: $yankees-blue !important;
-  width: 100%;
-  margin-top: -20px;
-  padding-bottom: 15px !important;
-}
-
-.more-title {
-  color: white;
-  text-align: center;
-  font-weight: 500;
-}
-
-.more-rating {
-  font-size: 1rem;
-  color: white;
-}
 
 .more-poster {
   z-index: -1;
@@ -285,6 +105,44 @@ select {
   float: left;
 }
 
+
+.movie-year {
+  color: gray;
+}
+
+
+/* =================================
+  Expanded Info Styles
+==================================== */
+
+.back {
+  color: #c2c4c6;
+  text-align: left;
+  cursor: pointer;
+}
+
+.back:hover {
+  color: white;
+}
+
+.top-grey {
+  background: $yankees-blue !important;
+  padding-bottom: 15px !important;
+}
+
+.more-title {
+  color: white;
+  text-align: center;
+  font-weight: 500;
+}
+
+.more-rating {
+  font-size: 12px;
+  color: white;
+}
+
+
+
 .synopsis, .more-synopsis{
   margin-bottom: 10px !important;
   h3{
@@ -292,100 +150,28 @@ select {
   }
 }
 
-#expandedInfo{
-  .poster-wrap{
-    margin-top: .8em;
-  }
-}
-
 .imdb-button {
-  background: rgb(55, 214, 178);
+  background: $moonstone-blue;
   color: white;
   border-radius: 5px;
-  border: solid rgb(55, 214, 178) 2px;
+  border: solid $moonstone-blue 2px;
   padding: 6px;
   margin-top: 4px;
   cursor: pointer;
 }
 
 .imdb-button:hover {
-  color: rgb(55, 214, 178);
+  color: $moonstone-blue;
   background: white;
 }
 
-.more-placeholder {
-  z-index: 4;
-  margin-top: 0px;
-  background: #fff;
-  float: left;
-  color: #dadada;
-  font-size: 5em;
-  height: 120px;
-  padding: 10px;
-  text-align: center;
-}
-
-/* =================================
-  Layout Styles
-==================================== */
-
-.inner,
-.main-content {
-  background-color: white !important;
-  width: 100%;
-  margin: auto;
-  margin-top: 165px !important;
-}
 
 .main-content{
   min-height: 300px !important;
-}
-.main-header {
-  width: 90%;
-  background: white;
-  min-height: 80px;
-  margin-left: 5% !important;
+  background-color: white !important;
+  margin-top: 165px !important;
 }
 
-/* =================================
-  Helper Classes
-==================================== */
-
-.is-hidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-/* =================================
-  Media Queries
-==================================== */
-
-  .poster-wrap:hover .movie-poster {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-  }
 
 
-@media (min-width: 769px) {
-  body {
-    padding-top: 115px;
-  }
-
-  .main-title {
-    float: left;
-  }
-
-  .search-form {
-    width: 422px;
-    float: right;
-    margin-top: 34px;
-  }
-
-}
 

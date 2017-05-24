@@ -1,0 +1,14 @@
+<div id="expandedInfo" class="col-xs-12">
+  <div class="top-grey col-xs-12">
+    <button class="col-xs-12 back" (click)="close.emit()">  &#10094; Search results</button>
+    <h2 class="more-title col-xs-12">{{movie.Title}}  ({{movie.Year}})</h2>
+    <span class="more-title more-rating col-xs-12">IMDB Rating: {{movie.imdbRating}}</span></div>
+  <div class="poster-wrap col-xs-12 col-md-3 text-center">
+    <movie-search-image [imdbID]="movie.imdbID"></movie-search-image>
+  </div>
+  <div class ="more-synopsis col-xs-12 col-md-9">
+    <h3 class="text-center">Plot Synopsis:</h3>
+    <p class="synopsis">{{movie.Plot}}</p>
+    <a class="imdb-button pull-right" [href]="'http://www.imdb.com/title/'+movie.imdbID" target="_blank">View on IMDB</a>
+  </div>
+</div>

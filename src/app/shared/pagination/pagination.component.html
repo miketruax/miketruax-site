@@ -1,0 +1,19 @@
+<div id="pagination-div col-xs-12" *ngIf="total > perPage">
+  <div class="pagination">{{totalPages.length}} total pages</div>
+  <div class="pagination text-center">{{total}} movies found</div>
+  <div class="pagination">
+    <ol id="buttons">
+      <li *ngIf="active !== 1"><a class="first jumper pointer" (click)="active = 1; pullMovies()">&#8606;first</a></li>
+      <li *ngFor="let i of buttons;">
+        <a class="pag-button pointer" ngClass="{{active == i ? 'active' : ''}}" (click)="action.emit(i)" >{{i}}</a>
+      </li>
+      <li><a class="last pointer" *ngIf="active !== totalPages.length" (click)="action.emit(totalPages.length)">last &#8608;</a></li>
+    </ol>
+  </div>
+  <div class="select">Jump to page:
+    <select name="pagejump" [(ngModel)]="jumpIdx">
+      <option *ngFor="let i of totalPages" value="{{i}}">{{i}}</option>
+    </select>
+    <a class="pointer" id="jump-to" (click)="action.emit(jumpIdx)" >Go!</a>
+  </div>
+</div>

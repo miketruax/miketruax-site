@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import {Http, URLSearchParams} from "@angular/http";
 import 'rxjs/Rx';
 import * as $ from 'jquery';
+import {horizontalSlideAnimation} from "../../animations/horizontal-slide.animation";
 
 @Component({
   selector: 'movie-search',
   templateUrl: 'movie-search.component.html',
-  styleUrls: ['../../styles/app.style.scss', './movie-search.component.scss']
+  styleUrls: ['./movie-search.component.scss']
 })
 export class MovieSearchComponent implements OnInit {
   movieSearch: string = '';
@@ -14,7 +15,7 @@ export class MovieSearchComponent implements OnInit {
   movieList:Object[] = [];
   activeMovie: Object = {};
   moreInfo: boolean = false;
-  moreInfoLoaded: boolean = false;
+  loading: boolean = false;
   totalMovies: number = null;
   currentPage: number = 1;
   buttons: number[] = [];
@@ -25,17 +26,18 @@ export class MovieSearchComponent implements OnInit {
   constructor(private http: Http) {
 
   };
-
-  searchSubmit() {
-    this.currentPage = 1;
-    this.pullMovies(); //pulls movies passing 1 for just the first page
+  closeMore(e){
     this.moreInfo = false;
-    this.moreInfoLoaded = false;
+  }
+  searchSubmit() {
+    this.loading = true;
+    this.pullMovies(1); //pulls movies passing 1 for just the first page
+    this.moreInfo = false;
     this.buttons = [];
     this.totalPages = [];
     this.totalMovies = null;
     this.error = {msg: '', err: false};
-    $('#pagination-div').html(''); //clears old pagination
+    // $('#pagination-div').html(''); //clears old pagination
   };
 
   populateError(errMsg) { //creates error li element
@@ -43,8 +45,9 @@ export class MovieSearchComponent implements OnInit {
   };
 
 
-  pullMovies() {
-    // $('#movies').html('<div class="centered">LOADING...<br><img src="../work-examples/movie-search/css/bar.gif"></div>');
+  pullMovies(idx) {
+    this.currentPage = idx;
+    console.log(this.currentPage, idx);
     this.movieList =[];
     let params: URLSearchParams =  new URLSearchParams();
     params.set('s', this.movieSearch);
@@ -81,6 +84,7 @@ export class MovieSearchComponent implements OnInit {
                         at least two characters and please try again shortly.`;
           this.populateError(errMsg);
         }
+        this.loading = false;
       })
       .subscribe();
   }
@@ -88,6 +92,7 @@ export class MovieSearchComponent implements OnInit {
   //title is clicked hides search results and shows more info
   showMore(id) {
     this.moreInfo = true;
+    this.loading = true;
     let params: URLSearchParams =  new URLSearchParams();
     params.set('i', id);
     params.set('apikey', '25c98aaf');
@@ -101,7 +106,7 @@ export class MovieSearchComponent implements OnInit {
         if (data.Response === "True") {
           //populates the data
           this.activeMovie = data;
-          this.moreInfoLoaded = true;
+          this.loading = false;
         }
         //in case an error occurs retreiving the information
         else {
@@ -129,8 +134,8 @@ export class MovieSearchComponent implements OnInit {
 
   //makes new call and jumps to appropriate page
   pageClick(){
-    this.currentPage = parseInt($('select[name="pagejump"]').val());
-    this.pullMovies()
+    this.pullMovies(parseInt($('select[name="pagejump"]').val()));
+
   }
 
 

@@ -1,3 +1,4 @@
+<hr>
 <div *ngIf="results.movieNum === 0" class="col-xs-12">
   <h2>{{results.actors.length >1 ? 'Actors' : 'Actor'}} who appeared in the all of your chosen movies:</h2>
   <h5 class="text-centered">
@@ -15,13 +16,13 @@
     </div>
   </h5>
 
-  <h4 class="col-xs-12" *ngIf="results['actors'].length <=0 || results.actors[0] === undefined">No Actors in common according to OMDBApi. If you feel this is an error, feel free to contact them and help
+  <h5 class="col-xs-12" *ngIf="results['actors'].length <=0 || results.actors[0] === undefined">No Actors in common according to OMDBApi. If you feel this is an error, feel free to contact them and help
     update their data. You can find them <a href="http://www.omdbapi.com/" target="_blank">here</a>.
-  </h4>
+  </h5>
   <ul class="list-group" *ngIf="results['actors'].length >0 && results.actors[0] !== undefined">
     <li class="list-group-item" *ngFor="let a of results.actors">{{a}}</li>
   </ul>
 </div>
 <div class="col-xs-12" *ngIf="results.movieNum > 0">
-  <h2 class="text-center">Loading Results...</h2>
+  <h3 class="text-center">Loading Results...</h3>
 </div>

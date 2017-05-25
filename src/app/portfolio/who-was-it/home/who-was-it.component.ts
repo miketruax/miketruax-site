@@ -1,25 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import {MovieService} from '../movie-service.service'
-import * as fromRoot from "../reducers";
+import {MovieService} from '../../../services/movie.service'
+import * as fromRoot from "../../../reducers";
 import {Store} from "@ngrx/store";
 import {Observable} from "rxjs";
-import {ActorActions} from "../actions/actor.actions";
-import {State} from "../reducers/index";
+import {ActorActions} from "../../../actions/actor.actions";
 
 
 @Component({
-  selector: 'app-home',
+  selector: 'who-was-it',
   providers: [MovieService],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  templateUrl: './who-was-it.component.html',
+  styleUrls: ['./who-was-it.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class WhoWasItComponent implements OnInit {
   //Initializes elements movie as two blank elements, tooFew (movies searched for) as false, results as observable
   private movies: Array<Object> = [{movie: {'title' :'', 'year': ''}}, {movie: {'title' :'', 'year': ''}}];
   private results: Observable<String[]>;
   private tooFew: boolean = false;
   constructor(private movieService: MovieService, private store: Store<fromRoot.State>) {
-    this.results = store.select('results');
+    this.results = store.select('actors');
   }
   //Pushes blank movie to search array to allow for more than 3 searches
   addItem(){

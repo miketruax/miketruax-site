@@ -10,7 +10,7 @@ import {AboutComponent} from "./about/about.component";
 import * as reducer from './reducers';
 import {HomeComponent} from "./home/home.component";
 import {RecipeService} from "./services/recipe.service";
-import {SkillsService} from "./services/skills.service";
+import {MovieService} from "./services/movie.service";
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import {PortfolioComponent} from "./portfolio/portfolio.component";
 import {TicTacToeComponent} from "./portfolio/tic-tac-toe/tictactoe.component";
@@ -22,14 +22,17 @@ import {MovieSearchImageComponent} from "./portfolio/movie-search/image/movie-se
 import {MovieMoreInfoComponent} from "./portfolio/movie-search/more-info/movie-more-info.component";
 import {PaginationComponent} from "./shared/pagination/pagination.component";
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {WhoWasItComponent} from "./portfolio/who-was-it/home/who-was-it.component";
+import {WhoWasItAboutComponent} from "./portfolio/who-was-it/about/who-was-it-about.component";
+import {WhoWasItResultsComponent} from "./portfolio/who-was-it/home/who-was-it-results.component";
 
 
 @NgModule({
   declarations: [
     AppComponent, FoodComponent, AboutComponent,
     PortfolioComponent, HomeComponent, PaginationComponent,
-    TicTacToeComponent, MovieSearchComponent, MovieSearchImageComponent, MovieMoreInfoComponent, FoodListComponent, CapitalizePipe,
-    CategoryPipe],
+    WhoWasItComponent, WhoWasItAboutComponent, WhoWasItResultsComponent, TicTacToeComponent, MovieSearchComponent,
+    MovieSearchImageComponent, MovieMoreInfoComponent, FoodListComponent, CapitalizePipe, CategoryPipe],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -40,7 +43,7 @@ import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
     }),
     StoreModule.provideStore(reducer.default),
   ],
-  providers: [RecipeService, SkillsService],
+  providers: [RecipeService, MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule{

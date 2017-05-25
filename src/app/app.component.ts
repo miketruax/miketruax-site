@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
+import {Router, NavigationEnd} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -8,11 +8,12 @@ import {Router} from "@angular/router";
 export class AppComponent implements OnInit {
   menuActive: boolean = false;
   constructor(private router: Router) {
-    this.router.events.subscribe(path => {
-      if (path.url != this.router.url) {
-        this.menuActive = false;
-        window.scrollTo(0, 0);
-      }
+    this.router.events.subscribe(path=>{
+        if (path['url'] != this.router.url) {
+          this.menuActive = false;
+          window.scrollTo(0, 0);
+        }
+
     });
   }
 

@@ -21,7 +21,7 @@ import {FoodListComponent} from "./food/food-list.component";
 import {MovieSearchImageComponent} from "./portfolio/movie-search/image/movie-search-image.component";
 import {MovieMoreInfoComponent} from "./portfolio/movie-search/more-info/movie-more-info.component";
 import {PaginationComponent} from "./shared/pagination/pagination.component";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({

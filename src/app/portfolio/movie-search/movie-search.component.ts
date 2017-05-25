@@ -47,7 +47,6 @@ export class MovieSearchComponent implements OnInit {
 
   pullMovies(idx) {
     this.currentPage = idx;
-    console.log(this.currentPage, idx);
     this.movieList =[];
     let params: URLSearchParams =  new URLSearchParams();
     params.set('s', this.movieSearch);
@@ -110,8 +109,7 @@ export class MovieSearchComponent implements OnInit {
         }
         //in case an error occurs retreiving the information
         else {
-          let error = 'Could not find information. Please try again later.';
-          error += ' We apologize for any inconvenience.';
+          let error = `Could not find information. Please try again later. We apologize for any inconvenience.`;
           this.populateError(error);
         }
       }).subscribe();

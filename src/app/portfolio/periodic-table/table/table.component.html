@@ -1,8 +1,8 @@
-<div style="background-color: white !important;">
+
 <div class="col-xs-12 main-container" [style.opacity]="(moreInfo || showRanking) ? 0 : 1">
-<h1 class=" col-xs-12 text-center">
-  Periodic Table of Elements
-</h1>
+<h3 class=" col-xs-12 text-center">
+  Periodic Table
+</h3>
   <div class="btn-group col-xs-12">
     <button type="button" class="col-xs-12 btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Change View <span class="caret"></span>
@@ -17,7 +17,7 @@
   </div>
 </div>
 <button *ngIf="(!moreInfo && !showRanking) && style !== 'classic'" class="col-xs-8 col-xs-offset-2 btn btn-default" (click)="ranking()">Ranked List</button>
-<div class="col-xs-12"  *ngIf="style === 'discoveryYear'">
+<div class="col-xs-12"  *ngIf="style === 'discoveryYear' && (!moreInfo && !showRanking)">
   <input (click)="clearCounter()" (mousedown)="clearCounter()" type="range" class="col-xs-12 yearSlider" min="0" max="{{currYear}}" [(ngModel)]="year"
          [style.background]="sanitizer.bypassSecurityTrustStyle('-moz-linear-gradient(left,  aliceblue 0%, aliceblue '+(year/currYear*100)+'%, gray '+(year/currYear*100)+'%, gray 100%)')"
   [style.background]= "sanitizer.bypassSecurityTrustStyle('-webkit-gradient(linear, left top, right top, color-stop(0%,aliceblue), color-stop('+(year/currYear*100)+'%,aliceblue), color-stop('+(year/currYear*100)+'%,gray), color-stop(100%,gray))')"
@@ -39,4 +39,8 @@
 <element-ranking-component [style.opacity]="(showRanking  && !moreInfo) ? 1 : 0" (closeRanking)="ranking($event)"
                            [moreInfo]="moreInfo" [showRanking]="showRanking" (showMore)="showMore($event)" [style]="style" [elements]="elements | ranking:style"></element-ranking-component>
 <element-info-component [style.opacity]="moreInfo ? 1 : 0"  (showMore)="showMore($event)" [moreInfo]="moreInfo" [element]="selectedElement"></element-info-component>
-</div>
+
+
+<a class="col-xs-12 text-center" style="background-color: white !important; margin-top: 20px !important;"
+   [routerLink]="['/portfolio']">
+  <h4>Back to Portfolio</h4></a>

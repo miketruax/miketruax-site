@@ -7,9 +7,11 @@ import {Router, NavigationEnd} from "@angular/router";
 })
 export class AppComponent implements OnInit {
   menuActive: boolean = false;
+
   constructor(private router: Router) {
     this.router.events.subscribe(path=>{
-        if (path['url'] != this.router.url) {
+      if (path['url'] != this.router.url) {
+
           this.menuActive = false;
           window.scrollTo(0, 0);
         }

@@ -1,5 +1,5 @@
 <div class="col-xs-12 info-container col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2" *ngIf="showRanking && !moreInfo" >
-  <div class="exit" (click)="closeRanking.emit()"></div>
+  <div class="exit" style="background-image: url('/assets/img/portfolio/periodic-table/exit.svg')" (click)="closeRanking.emit()"></div>
   <h2 class="col-xs-12 text-center">{{rankHeader()}}</h2>
   <div class="ranking-container col-xs-12">
     <h3 class="col-xs-12 text-center" *ngIf="style !== 'discoveryYear'">
@@ -8,4 +8,6 @@
       <div class="col-xs-12">{{i+1}}. {{e.name}}<span style="float: right;">{{e |rankingInfo:style}}</span></div>
     </div>
   </div>
+  <button class="btn btn-default col-xs-12 text-center pointer" style="margin-top: 10px !important;" (click)="closeRanking.emit()">Close</button>
 </div>
+

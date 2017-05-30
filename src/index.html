@@ -12,23 +12,24 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/mobile-icons/favicon-16x16.png">
   <link rel="manifest" href="/assets/img/mobile-icons/manifest.json">
   <link rel="mask-icon" href="/assets/img/mobile-icons/safari-pinned-tab.svg" color="#5bbad5">
+  <style>
+    @keyframes blink {
+      0% {  opacity: 1;  }
+      50% {  opacity: 0;  }
+      100% {  opacity: 1;  }
+    }
+    .preloadingImg {
+      animation: blink 2s;
+      animation-iteration-count: infinite;
+    }
+  </style>
 </head>
 <body>
   <app-root>
-    <style>
-      @keyframes blink {
-        0% {  opacity: 1;  }
-        50% {  opacity: 0;  }
-        100% {  opacity: 1;  }
-      }
-      img {
-        animation: blink 2s;
-        animation-iteration-count: infinite;
-      }
-    </style>
+
     <h1 style="text-align: center">Loading MikeTruax.com</h1>
     <div style="margin: auto !important">
-      <img src="./assets/img/logos/bulletPawActive.png" style="margin: auto !important; display: block !important;">
+      <img class="preloadingImg" src="./assets/img/logos/bulletPawActive.png" style="margin: auto !important; display: block !important;">
     </div>
     <h3 style="text-align: center">Please Stand By...</h3>
 

@@ -56,7 +56,16 @@
 
 .col-lg-4 .about-box{
   @media(min-width: 1200px) {
-    min-height: 836px !important;
+    min-height: 746px !important;
+  }
+  @media(min-width: 1400px) {
+    min-height: 632px !important;
+  }
+  @media(min-width: 1600px) {
+    min-height: 559px !important;
+  }
+  @media(min-width: 1600px) {
+    min-height: 487px !important;
   }
 }
 

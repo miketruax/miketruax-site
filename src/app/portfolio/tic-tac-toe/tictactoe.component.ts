@@ -69,6 +69,13 @@ export class TicTacToeComponent implements OnInit {
         players[0].classList.toggle('active');
         players[1].classList.toggle('active');
         target.classList.add('box-filled-' + this.activePlayer);
+        if(this.activePlayer === 1) {
+          target.style.backgroundImage = ('url(../../../assets/img/portfolio/tictactoe/o.svg)');
+        } else{
+          target.style.backgroundImage = ('url(../../../assets/img/portfolio/tictactoe/x.svg)');
+        }
+
+
         this.updateBoard(pos);//updates the board for both AI and win verification passes current index
         this.activePlayer = this.activePlayer === 1 ? 2 : 1;
 

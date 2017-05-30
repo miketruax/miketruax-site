@@ -13,10 +13,10 @@
   <div class="col-xs-12 screen" *ngIf="activePlayer === 0">
     <h3 class="section-heading text-center col-xs-12">Tic Tac Toe</h3>
     <label for="playOne" class="col-xs-12 screen-head" id="lplayOne">Player One's Name:</label>
-      <input class="form-control" type="text" name="nameOne" id="playOne" ngModel="{{nameOne}}">
+      <input class="form-control" type="text" name="nameOne" id="playOne" [(ngModel)]="nameOne">
 
     <label for="playTwo" class="col-xs-12">Player Two's Name:</label>
-        <input *ngIf="!againstComputer" class="form-control" type="text" name="nameTwo" id="playTwo" ngModel="{{nameTwo}}">
+        <input *ngIf="!againstComputer" class="form-control" type="text" name="nameTwo" id="playTwo" [(ngModel)]="nameTwo">
         <p class="col-xs-12" *ngIf="againstComputer">{{nameTwo}}</p>
     <button class="btn-lg btn btn-default col-xs-6 col-xs-offset-3 startgame" (click)="startGame();">Start</button>
 
@@ -46,7 +46,7 @@
             </g>
           </g>
         </svg>
-        <span id="O">{{nameOne}}</span></li>
+        <span id="O" style="color: black">{{nameOne}}</span></li>
       <li class="players player2 col-xs-5 col-xs-offset-2">
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 42 43" version="1.1">
           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -57,7 +57,7 @@
             </g>
           </g>
         </svg>
-        <span id="X">{{nameTwo}}</span></li>
+        <span id="X" style="color: black">{{nameTwo}}</span></li>
     </ul>
 
     <div class="box topb leftb" (click)="placeMove($event, 0)" (mouseenter)="highlight($event, true)" (mouseleave)="highlight($event, false)"></div>

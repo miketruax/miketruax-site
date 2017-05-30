@@ -25,6 +25,13 @@ import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {WhoWasItComponent} from "./portfolio/who-was-it/home/who-was-it.component";
 import {WhoWasItAboutComponent} from "./portfolio/who-was-it/about/who-was-it-about.component";
 import {WhoWasItResultsComponent} from "./portfolio/who-was-it/home/who-was-it-results.component";
+import {TableComponent} from "./portfolio/periodic-table/table/table.component";
+import {ElementRankingComponent} from "./portfolio/periodic-table/element-ranking/element-ranking.component";
+import {ElementInfoComponent} from "./portfolio/periodic-table/element-info/element-info.component";
+import {AtomicMass} from "./portfolio/periodic-table/pipes/atomicMass.pipe";
+import {ElementType} from "./portfolio/periodic-table/pipes/elementType.pipe";
+import {RankingInfoPipe} from "./portfolio/periodic-table/pipes/rankingInfo.pipe";
+import {RankingPipe} from "./portfolio/periodic-table/pipes/ranking.pipe";
 
 
 @NgModule({
@@ -32,7 +39,9 @@ import {WhoWasItResultsComponent} from "./portfolio/who-was-it/home/who-was-it-r
     AppComponent, FoodComponent, AboutComponent,
     PortfolioComponent, HomeComponent, PaginationComponent,
     WhoWasItComponent, WhoWasItAboutComponent, WhoWasItResultsComponent, TicTacToeComponent, MovieSearchComponent,
-    MovieSearchImageComponent, MovieMoreInfoComponent, FoodListComponent, CapitalizePipe, CategoryPipe],
+    TableComponent, ElementRankingComponent, ElementInfoComponent,
+    MovieSearchImageComponent, MovieMoreInfoComponent, FoodListComponent, CapitalizePipe, CategoryPipe, AtomicMass,
+  ElementType, RankingInfoPipe, RankingPipe],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

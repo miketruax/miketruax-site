@@ -1,0 +1,33 @@
+.info-container{
+  background-color: white;
+  position: absolute;
+  top: 0;
+}
+
+.info{
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  padding: 8px !important;
+}
+
+.top-circle{
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-size: 45px;
+  line-height: 67.5px;
+  border-radius: 50%;
+  p{
+    line-height: 15px;
+    font-size:20px;
+  }
+}
+
+.info-header{
+  background-color: lightgray;
+}
+
+.basicProps{
+  margin-top: 20px !important;
+}

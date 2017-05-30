@@ -1,0 +1,271 @@
+//--MIXINS--//
+@mixin crustPosition($i, $x, $y) {
+  //@mixin crustPosition($i, $x, $y, $color) {
+  border: none;
+  background-color: rgba(white, 0);
+  left: ($x*1vw)-2vw;
+  top: ($y*1vw)+5vw;
+  opacity: 1;
+  .element-symbol {
+    width: (5*(120-$i)/120)*1.5vw !important;
+    height: (5*(120-$i)/120)*1.5vw !important;
+    margin: 0 !important;
+    border-radius: 50%;
+    font-size: (5*(120-$i)/120)*.75vw !important;
+  }
+}
+
+.crustAbundance {
+
+  .element .element-weight, .element .element-number, .element {
+    opacity: 0;
+  }
+
+  #O {
+    @include crustPosition(1, -12, -5);
+  }
+  #Si {
+    @include crustPosition(2, -17, 12);
+  }
+  #Al {
+    @include crustPosition(3, -5, 0);
+  }
+  #Fe {
+    @include crustPosition(4, 10, 1);
+  }
+  #Ca {
+    @include crustPosition(5, 62, -4);
+  }
+  #Mg {
+    @include crustPosition(6, 5, -9);
+  }
+  #Na {
+    @include crustPosition(7,49, 3);
+  }
+  #K{
+    @include crustPosition(8, 66, -10);
+  }
+  #C {
+    @include crustPosition(9, -8, -5);
+  }
+  #H {
+    @include crustPosition(10, 9, 7);
+  }
+  #Mn {
+    @include crustPosition(11, -11, 6);
+  }
+  #P {
+    @include crustPosition(12, -9, -1);
+  }
+  #F {
+    @include crustPosition(13, -11, -5);
+  }
+  #S {
+    @include crustPosition(14, -2, 2);
+  }
+  #Sr {
+    @include crustPosition(15, 67, -14);
+  }
+  #Ba {
+    @include crustPosition(16, 70, -25);
+  }
+  #V {
+    @include crustPosition(17, 31, 11);
+  }
+  #Cl {
+    @include crustPosition(18, -2, -5);
+  }
+  #Zr {
+    @include crustPosition(19, 0, -12);
+  }
+  #Ni {
+    @include crustPosition(20, -3, -3);
+  }
+  #Zn {
+    @include crustPosition(21, -5, 2);
+  }
+  #Cu {
+    @include crustPosition(22, -10, 2);
+  }
+  #Ce {
+    @include crustPosition(23, 29, -9);
+  }
+  #Rb {
+    @include crustPosition(24, 80, 12);
+  }
+  #La {
+    @include crustPosition(25, 69, -11);
+  }
+  #Nd {
+    @include crustPosition(26, -3, -12);
+  }
+  #Co {
+    @include crustPosition(27, -17, -12);
+  }
+  #Yt {
+    @include crustPosition(28, -17, -12);
+  }
+  #Sc {
+     @include crustPosition(29, 3, -15);
+  }
+  #N {
+      @include crustPosition(30, -17, 14);
+  }
+  #Ga {
+    @include crustPosition(31, -6, -10);
+  }
+  #Li {
+    @include crustPosition(32, 48, 0);
+  }
+  #Nb {
+    @include crustPosition(33, 5, 4);
+  }
+  #Pb {
+    @include crustPosition(34, -5, -20);
+  }
+  #Pr {
+    @include crustPosition(35, -14, -29);
+  }
+  #B {
+    @include crustPosition(36, -8, -4);
+  }
+  #Dy {
+    @include crustPosition(37, -2, -25);
+  }
+  #Th {
+    @include crustPosition(38, 0, -38);
+  }
+  #Sm {
+    @include crustPosition(39, -22, -36);
+  }
+  #Gd {
+    @include crustPosition(40, 35, -39);
+  }
+  #Hf {
+    @include crustPosition(41, 1, -24);
+  }
+  #Br {
+    @include crustPosition(42, -2, -4);
+  }
+  #Er {
+    @include crustPosition(43, 15, -6);
+  }
+  #Yb {
+    @include crustPosition(44, 0, -18);
+  }
+  #Sn {
+    @include crustPosition(45, -11, 3);
+  }
+  #As {
+    @include crustPosition(46, -3, 2);
+  }
+  #Be {
+    @include crustPosition(47, 2, -5);
+  }
+  #Cs {
+    @include crustPosition(48, 14, -20);
+  }
+  #U {
+    @include crustPosition(49, 55, -36);
+  }
+  #Eu {
+    @include crustPosition(50, -13, -40);
+  }
+  #Ta {
+    @include crustPosition(51, 1, 2);
+  }
+  #Ar {
+    @include crustPosition(52, -27, 20);
+  }
+  #Ge {
+    @include crustPosition(53, -21, -9);
+  }
+  #Ho {
+    @include crustPosition(54, -16, -40);
+  }
+  #Mo {
+    @include crustPosition(55, 1, 13);
+  }
+  #Tb {
+    @include crustPosition(56, -32, -6);
+  }
+  #Lu {
+    @include crustPosition(57, -4, -40);
+  }
+  #Tl {
+    @include crustPosition(60, -52, -14);
+  }
+  #I {
+    @include crustPosition(59, -40, -6);
+  }
+  #Tm {
+    @include crustPosition(60, 0, -18);
+  }
+  #Sb {
+    @include crustPosition(61, 6, -2);
+  }
+  #In {
+    @include crustPosition(62, -3, 0);
+  }
+  #Cd {
+    @include crustPosition(63, -30, 2);
+  }
+  #Ag {
+    @include crustPosition(64, -8, -12);
+  }
+  #Hg {
+    @include crustPosition(65, -32, 6);
+  }
+  #Se {
+    @include crustPosition(66, -55, -15);
+  }
+  #Pt {
+    @include crustPosition(67, -22, 13);
+  }
+  #Bi {
+    @include crustPosition(68, -21, 4);
+  }
+  #Pd {
+    @include crustPosition(69, -33, -4);
+  }
+  #He {
+    @include crustPosition(70, -81, 1);
+  }
+  #Au {
+    @include crustPosition(71, -3, -12);
+  }
+  #Ne {
+    @include crustPosition(72, -38, -4);
+  }
+  #Re {
+    @include crustPosition(73, 1, 1);
+  }
+  #Os {
+    @include crustPosition(74, 18, -16);
+  }
+  #Te {
+    @include crustPosition(75, -60, -2);
+  }
+  #Ru {
+    @include crustPosition(76, -17, 0);
+  }
+  #Rh {
+    @include crustPosition(77, -22, -7);
+  }
+  #Ir {
+    @include crustPosition(78, 2, -22);
+  }
+  #Kr {
+    @include crustPosition(79, -38, -10);
+  }
+  #Xe {
+    @include crustPosition(80, -61, 21);
+  }
+  #Ra {
+    @include crustPosition(81, 16, -13);
+  }
+  #Pa {
+    @include crustPosition(82, 0, -16);
+  }
+}
+

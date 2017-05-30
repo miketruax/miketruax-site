@@ -1,0 +1,144 @@
+//--MIXINS--//
+@mixin humanPosition($i, $x, $y) {
+  border: none;
+  background-color: rgba(white, 0);
+    top: $y*1vw;
+    left: $x*1vw;
+  opacity: 1;
+  .element-symbol {
+    width: (5*(80-$i)/80)*1.5vw !important;
+    height: (5*(80-$i)/80)*1.5vw !important;
+    margin: 0 !important;
+    border-radius: 50%;
+    font-size: (5*(80-$i)/80)*.75vw !important;
+  }
+}
+
+//---STYLES---//
+
+
+.humanAbundance {
+  .element .element-weight, .element .element-number, .element {
+    opacity: 0;
+  }
+  #O {
+    @include humanPosition(1, -47, 21);
+  }
+  #C {
+    @include humanPosition(2, -26, 15);
+  }
+  #H {
+    @include humanPosition(3, 29, 32);
+  }
+  #N {
+    @include humanPosition(4, -40, 33);
+  }
+  #Ca {
+    @include humanPosition(5, 30, 13);
+  }
+  #P {
+    @include humanPosition(6, -36, 32);
+  }
+  #K {
+    @include humanPosition(7, 36, 20);
+  }
+  #S {
+    @include humanPosition(8, -41, 12);
+  }
+  #Na {
+    @include humanPosition(9, 45, 17);
+  }
+  #Cl {
+    @include humanPosition(10, -35, 11);
+  }
+  #Mg {
+    @include humanPosition(11, 35, 17);
+  }
+  #Si {
+    @include humanPosition(12, -12, 22);
+  }
+  #Fe {
+    @include humanPosition(13, 12, 17);
+  }
+  #F {
+    @include humanPosition(14, -38, 28);
+  }
+  #Zn {
+    @include humanPosition(15, -5, 22);
+  }
+  #Rb {
+    @include humanPosition(16, 47, 21);
+  }
+  #Sr {
+    @include humanPosition(17, 36, 24);
+  }
+  #Br {
+    @include humanPosition(18, -39, 24);
+  }
+  #Pb {
+    @include humanPosition(19, -40, -2);
+  }
+  #Cu {
+    @include humanPosition(20, -28, 4);
+  }
+  #Al {
+    @include humanPosition(21, -41, 6);
+  }
+  #Cd {
+    @include humanPosition(22, -23, -2);
+  }
+  #B {
+    @include humanPosition(23, -32, 1);
+  }
+  #Ba {
+    @include humanPosition(24, 24, -14);
+  }
+  #Mn {
+    @include humanPosition(25, 9, -14);
+  }
+  #I {
+    @include humanPosition(26, -40, -5);
+  }
+  #Sn {
+    @include humanPosition(27, -26, -14);
+  }
+  #Mo {
+    @include humanPosition(28, 14, -9);
+  }
+  #Ni {
+    @include humanPosition(29, 4, -12);
+  }
+  #Au {
+    @include humanPosition(30, -1, -18);
+  }
+  #Se {
+    @include humanPosition(31, -27, -4);
+  }
+  #Zr {
+    @include humanPosition(32, 32, -5);
+  }
+  #As {
+    @include humanPosition(33, -5, 10);
+  }
+  #Li {
+    @include humanPosition(34, 61, 21);
+  }
+  #V {
+    @include humanPosition(35, 40, 14);
+  }
+  #Co {
+    @include humanPosition(36, 17, 15);
+  }
+  #Cs {
+    @include humanPosition(37, 32, -10);
+  }
+  #U {
+    @include humanPosition(38, 18, -27);
+  }
+  #Be {
+    @include humanPosition(39, 34, 21);
+  }
+  #Ra {
+    @include humanPosition(40, 41, 8);
+  }
+}

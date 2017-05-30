@@ -1,0 +1,31 @@
+.info-container{
+  background-color: white;
+  position: absolute;
+  top: 0;
+}
+
+.info{
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  padding: 8px !important;
+}
+
+.ranking{
+  width: 96%;
+  margin: 2px 2% !important;
+  cursor: pointer;
+  border: .5px solid rgba(black, .2);
+  border-radius: 6px;
+  font-weight: 400 !important;
+  float: left;
+  @media (max-width: 720px) {
+    width: 96%;
+    margin: 2px 2% !important;
+  }
+}
+
+.ranking:hover{
+  -ms-transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+  transform: scale(1.02);
+}

@@ -1,0 +1,130 @@
+@import "./styles/classic.table";
+@import "./styles/universe-abundance.table";
+@import "./styles/human-abundance.table";
+@import "./styles/crust-abundance.table";
+@import "./styles/discovery-year.table";
+
+.main-container{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.universeAbundance, .humanAbundance, .crustAbundance{
+  .element{
+    cursor: auto;
+  }
+}
+
+element-info-component, element-ranking-component, .main-container{
+  transition: all .25s linear;
+}
+.dropdown-menu{
+  a{
+    cursor: pointer;
+  }
+  .active{
+    background-color: gainsboro;
+  }
+}
+
+.universeAbundance, .crustAbundance, .humanAbundance {
+  .Alkali-Metal {
+    .element-symbol {
+      background-color: #ff9999;
+    }
+  }
+
+  .Alkaline-Earth-Metal {
+    .element-symbol {
+      background-color: #ffb499;
+    }
+  }
+
+  .Lanthanide {
+    .element-symbol {
+      background-color: #ffdb99;
+    }
+  }
+
+  .Actinide {
+    .element-symbol {
+      background-color: #f3a5f3;
+    }
+  }
+
+  .Transition-Metal {
+    .element-symbol {
+      background-color: #ffff99;
+    }
+  }
+
+  .Post-Transition-Metal {
+    .element-symbol {
+      background-color: #99ff99;
+    }
+  }
+
+  .Metalloid {
+    .element-symbol {
+      background-color: #1aa6c9;
+    }
+  }
+
+  .Polyatomic {
+    .element-symbol {
+      background-color: #9988ff;
+    }
+  }
+
+  .Noble-Gas {
+    .element-symbol {
+      background-color: #99d6ff;
+    }
+  }
+
+  .Diatomic-Nonmetal {
+    .element-symbol {
+      background-color: #e066ff;
+    }
+  }
+
+  .Unknown {
+    .element-symbol {
+      background-color: #f2edf6;
+    }
+  }
+}
+
+.Alkali-Metal{
+  background-color: #ff9999;
+}
+.Alkaline-Earth-Metal{
+  background-color: #ffb499;
+}
+.Lanthanide{
+  background-color: #ffdb99;
+}
+.Actinide{
+  background-color:  #f3a5f3;
+}
+.Transition-Metal{
+  background-color: #ffff99;
+}
+.Post-Transition-Metal{
+  background-color: #99ff99;
+}
+.Metalloid{
+  background-color: #1aa6c9;
+}
+.Polyatomic{
+  background-color: #9988ff;
+}
+.Noble-Gas{
+  background-color: #99d6ff;
+}
+.Diatomic-Nonmetal{
+  background-color: #e066ff;
+}
+
+.Unknown{
+  background-color: #f2edf6;
+}

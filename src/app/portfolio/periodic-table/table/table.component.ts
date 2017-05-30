@@ -16,7 +16,7 @@ export class TableComponent {
   currYear: number;
   year: number;
   constructor(private sanitizer: DomSanitizer){
-    this.elements = require('../../assets/elem_v3.json');
+    this.elements = require('../assets/elem_v3.json');
     this.currYear = new Date().getFullYear();
     this.year = this.currYear;
   }

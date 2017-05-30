@@ -5,7 +5,8 @@
 @import "./styles/discovery-year.table";
 
 .main-container{
-  margin-top: 20px;
+  height: 75px !important;
+  margin-top: 146px;
   margin-bottom: 20px;
 }
 .universeAbundance, .humanAbundance, .crustAbundance{
@@ -16,6 +17,7 @@
 
 element-info-component, element-ranking-component, .main-container{
   transition: all .25s linear;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 .dropdown-menu{
   a{
@@ -24,6 +26,10 @@ element-info-component, element-ranking-component, .main-container{
   .active{
     background-color: gainsboro;
   }
+}
+
+.element-symbol, .element-number, .element-weight{
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 
 .universeAbundance, .crustAbundance, .humanAbundance {

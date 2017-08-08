@@ -6,7 +6,6 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
-let conn = require('./app/connection');
 
 
 import http from 'http';
@@ -29,7 +28,6 @@ app.use(express.static(__dirname + '/dist'));
 app.use(helmet());
 
 
-conn.init();
 
 
 // catch 404 and forward to error handler

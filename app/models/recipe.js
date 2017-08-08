@@ -1,9 +1,10 @@
 let conn = require('../connection');
-function Recipe(){
+export default ()=>{
   conn.init();
     this.get = function (res) {
-        conn.acquire(function (err, con) {
+        conn.pool.getConnection(function (err, con) {
           if(err){
+            res.send(err);
             return;
           }
             con.query('select * from recipes', function (err, result) {
@@ -74,5 +75,3 @@ function Recipe(){
         });
     };
 }
-
-module.exports = new Recipe();

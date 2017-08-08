@@ -1,12 +1,13 @@
 import mysql from 'mysql';
 
-function Connection(){
+export default () => {
   this.pool = null;
 
     this.init = function () {
         this.pool = mysql.createPool({
+          debug: true,
             connectionLimit: 10,
-            host: 'http://www.miketruax.com',
+            host: 'miketruax.com',
           user: process.env.user,
           password: process.env.password,
           database: process.env.database
@@ -20,5 +21,3 @@ function Connection(){
     };
 }
 
-
-module.exports = new Connection();

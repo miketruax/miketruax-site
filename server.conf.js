@@ -37,6 +37,9 @@ let router = express.Router();
 import routes from './app/routes';
 routes(app, router);
 
+setInterval(function() {
+  http.get("http://www.miketruax.com/api/ping");
+}, 300000);
 
 server.listen(port);
 

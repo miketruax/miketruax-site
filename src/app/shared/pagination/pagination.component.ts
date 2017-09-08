@@ -25,7 +25,7 @@ export class PaginationComponent implements OnInit {
 
       //Adds buttons for previous 5(up to page 1) and next 5 (up to last button)
       this.buttons = [];
-      for (let i = (this.active - 5); i <= (this.active + 5); i++) {
+      for (let i = (this.active - 2); i <= (this.active + 2); i++) {
         if (i > 0 && i <= numButtons) {
           this.buttons.push(i);
         }

@@ -1,10 +1,6 @@
-import Recipe from '../models/recipe';
-import Job from '../models/job';
-
 export default  (app, router) => {
+
         router.get('/recipe', (req, res, next) => {
-          // Recipe.get(res);
-          //TODO: RESET TO Actual API. Host issues causing MYSQL api failure
           res.send([
             {
               "id": 1,
@@ -99,16 +95,14 @@ export default  (app, router) => {
           ])
         });
 
-        router.get('/recipe/:id/', (req, res, next) => {
-            Recipe.cat(req.params.id, res);
+        router.get('/recipes/:id/', (req, res, next) => {
+            // Recipe.cat(req.params.id, res);
+            res.send({});
         });
 
-        router.get('/job/', (req, res, next) => {
-            Job.get(res);
-        });
         router.get('/ping', (req, res, next)=>{
           res.send({success: true})
-        })
+        });
 
 
 }

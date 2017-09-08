@@ -1,4 +1,4 @@
-#[miketruax.com](http://www.miketruax.com)
+# [miketruax.com](http://www.miketruax.com)
 
 This is the repo for my professional site. Originally built using AngularJS,
  it's since been update to include the following technologies:
@@ -13,7 +13,7 @@ This is the repo for my professional site. Originally built using AngularJS,
  ## Current Functionality
  
  Currently, this site hosts all of my simple portfolio items as sub-components. 
- Most of the portfolio objects originally started as simple JS which was
+ Most of the por****tfolio objects originally started as simple JS which was
  then converted to Angular4 but not yet built into their own components.
  
  ## Planned Functionality

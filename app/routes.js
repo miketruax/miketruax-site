@@ -1,6 +1,6 @@
 import apiRoutes from './routes/_api.routes.js';
 
-export default (app, router, passport) => {
+export default (app, router) => {
 
 
   router.use((req, res, next) => {

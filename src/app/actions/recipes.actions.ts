@@ -1,5 +1,5 @@
 import {
-  Action,
+  Action
 } from '@ngrx/store';
 import {Injectable} from "@angular/core";
 import {Recipe} from "../stores/recipe.store";

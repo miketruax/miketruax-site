@@ -1,25 +1,17 @@
-let conn = require('../connection');
-export default ()=>{
-  conn.init();
-    this.get = function (res) {
-        conn.pool.getConnection(function (err, con) {
-          if(err){
-            res.send(err);
-            return;
-          }
-            con.query('select * from recipes', function (err, result) {
-                con.release();
-                res.send(result);
-            });
-        });
-    };
+import {acquire} from '../connection';
 
-    this.cat = function (id, res) {
-        conn.acquire(function (err, con) {
-          if(err){
-            console.log(err);
-            return;
-          }
+
+      function get(res) {
+        acquire((con) => {
+          con.query('select * from recipes', function (err, result) {
+            con.release();
+            res.send(result);
+          });
+        })
+      };
+
+    function cat(id, res) {
+      acquire((con) => {
             con.query('select * from recipes where category_ID = ?', [id], function (err, result) {
                 con.release();
                 res.send(result);
@@ -28,12 +20,8 @@ export default ()=>{
     };
 
 
-    this.create = function (recipe, res) {
-        conn.acquire(function (err, con) {
-          if(err){
-            console.log(err);
-            return;
-          }
+    function create(recipe, res) {
+      acquire((con) => {
             con.query('insert into recipes set ?', recipe, function (err, result) {
                 con.release();
                 if (err) {
@@ -45,12 +33,8 @@ export default ()=>{
         });
     };
 
-    this.update = function (recipe, res) {
-        conn.acquire(function (err, con) {
-          if(err){
-            console.log(err);
-            return;
-          }
+    function update(recipe, res) {
+      acquire((con) => {
             con.query('update recipe set ? where id = ?', [recipe, recipe.id], function (err, result) {
                 con.release();
                 if (err) {
@@ -62,8 +46,8 @@ export default ()=>{
         });
     };
 
-    this.delete = function (id, res) {
-        conn.acquire(function (err, con) {
+    function del(id, res) {
+      acquire((con) => {
             con.query('delete from recipe where id = ?', [id], function (err, result) {
                 con.release();
                 if (err) {
@@ -74,4 +58,5 @@ export default ()=>{
             });
         });
     };
-}
+
+    export {get, cat, create, update, del}

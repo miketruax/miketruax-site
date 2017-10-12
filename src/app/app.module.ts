@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {NgModule, APP_INITIALIZER} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {routes} from './app.routes';
@@ -34,6 +34,10 @@ import {RankingInfoPipe} from "./portfolio/periodic-table/pipes/rankingInfo.pipe
 import {RankingPipe} from "./portfolio/periodic-table/pipes/ranking.pipe";
 
 
+export function startUpRecipes(startUpService : RecipeService) : Function {
+  return () => startUpService.getRecipes();
+}
+
 @NgModule({
   declarations: [
     AppComponent, FoodComponent, AboutComponent,
@@ -52,7 +56,7 @@ import {RankingPipe} from "./portfolio/periodic-table/pipes/ranking.pipe";
     }),
     StoreModule.provideStore(reducer.default),
   ],
-  providers: [RecipeService, MovieService],
+  providers: [{ provide: APP_INITIALIZER, useFactory: startUpRecipes, deps: [RecipeService], multi: true },RecipeService, MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule{

@@ -33,6 +33,10 @@
       max-height: 40px !important;
     }
   }
+
+  .pointer.active a{
+    background-color: rgba($alabaster, .6) !important;
+  }
   .double-menu {
     background-color: rgba($moonstone-blue, 0.5) !important;
     width: 100%;

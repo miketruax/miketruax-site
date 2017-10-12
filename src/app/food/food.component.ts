@@ -17,12 +17,8 @@ import {fadeInAnimation} from "../animations/fade-in.animation";
 export class FoodComponent implements OnInit {
   recipes: Observable<Array<Recipe>>;
   active = 'breads';
-  constructor(private store: Store<fromRoot.State>, private recipeService: RecipeService) {
+  constructor(private store: Store<fromRoot.State>) {
     this.recipes = store.select(fromRoot.getRecipeState);
-    this.recipeService.getRecipes();
-
-
-
   }
   ngOnInit() {
   }

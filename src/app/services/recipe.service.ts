@@ -16,7 +16,8 @@ export class RecipeService {
     this.http.get('/api/recipe')
       .map(res => res.json())
       .map(payload => ({type: recipeActions.Actions.ADD_RECIPES, payload}))
-      .subscribe(action => this.store.dispatch(action));
+      .subscribe(action =>{
+        this.store.dispatch(action)});
   }
 
 }

@@ -17,33 +17,40 @@
     <div [ngClass]="{'in': menuActive}" class="collapse navbar-collapse" id="navbar-main">
       <ul class="nav navbar-nav">
         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/']">Home</a></li>
-        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/about']">About</a></li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/about']">About</a>
+        </li>
         <li routerLinkActive="active"><a [routerLink]="['/portfolio']">Portfolio</a></li>
-        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/food']">Food Blog</a></li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/food']">Food Blog</a>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
 
-<div class="banner-logo" style="background-image: url('/assets/img/backgrounds/home-logo.png')" *ngIf="router.url !== '/portfolio/periodic-table'">
+<div class="banner-logo" style="background-image: url('/assets/img/backgrounds/home-logo.png')"
+     *ngIf="router.url !== '/portfolio/periodic-table'">
   <span class="v-align-helper"></span>
   <img class="" src="/assets/img/logos/fullLogo.png">
 </div>
 <div class="col-xs-12 body" [style.background-color]="router.url.indexOf('portfolio/') !== -1 ? 'white' : '#f3efe9'">
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
-
 
 
 <footer class="col-xs-12 text-center">
   <hr>
-  <a class="col-xs-12" href="mailto:mike@miketruax.com">
 
-  <h5><img src="/assets/img/buttons/menu-button.png" style="max-height: 40px !important;"> Mike Truax - Web Developer</h5>
+  <a class="col-xs-12" href="mailto:mike@miketruax.com">
+    <h5><img class="social-icon" src="/assets/img/buttons/menu-button.png">Mike Truax - Web Developer
+    </h5>
   </a>
-  <a class="col-xs-12 col-sm-6" href="https://github.com/miketruax" target='_blank'>
-    <img src="assets/img/icons/GitHub-Mark-32px.png" class='icon' alt="Github Icon"> miketruax</a>
-  <a class="col-xs-12 col-sm-6" href="https://www.linkedin.com/pub/michael-truax/11a/690/625" target='_blank'>
-  <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png" class='icon'>Michael Truax </a>
+  <a class="social-icon" href="https://github.com/miketruax" target='_blank'>
+    <img src="assets/img/icons/GitHub-Mark-32px.png" class='icon' alt="Github Icon"></a>
+
+  <a class="social-icon" href="https://www.linkedin.com/pub/michael-truax/11a/690/625" target='_blank'>
+    <img src="assets/img/icons/linked-in.png" class='icon' alt="Github Icon"></a>
+
+  <a class="social-icon" href="https://twitter.com/thecodingursine?ref_src=twsrc%5Etfw" target='_blank'>
+    <img src="assets/img/icons/twitter.png" class='icon' alt="Github Icon"></a>
 
 </footer>

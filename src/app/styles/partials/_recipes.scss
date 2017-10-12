@@ -19,17 +19,17 @@
   max-height: 65px !important;
   margin: 5px !important;
   width: auto !important;
-  border: 1px solid $yankees-blue;
+  border: 1px solid white;
 }
 
 .thumbnail-container{
   border-bottom: 2px solid $yankees-blue;
   margin: auto;
-  background-color: $yankees-blue !important;
+  //background-color: $yankees-blue !important;
 }
 
 .active-thumb{
-  border:2px solid $sunny;
+  border:2px solid $yankees-blue;
 }
 
 .img-thumbnail{

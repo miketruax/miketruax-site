@@ -31,7 +31,6 @@ export class CategoryPipe implements PipeTransform {
           break;
         }
       }
-
       return allRecipes.filter(v => v.category_ID === catID);
   }
 

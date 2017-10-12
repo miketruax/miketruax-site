@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, NavigationEnd} from "@angular/router";
+import {RecipeService} from "./services/recipe.service";
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,7 @@ export class AppComponent implements OnInit {
   menuActive: boolean = false;
 
   constructor(private router: Router) {
+
     this.router.events.subscribe(path=>{
       if (path['url'] != this.router.url) {
 

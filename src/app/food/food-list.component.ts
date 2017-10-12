@@ -10,7 +10,7 @@ export class FoodListComponent implements OnInit {
   catRef: Object;
   @Input() recipes: Recipe[];
   constructor() {
-    this.activeCat = 'breads';
+    this.activeCat = "breads";
     this.activeIdx = 0;
     this.catRef = {"breads": 1, "desserts": 2, "sides": 4, "entrees": 3};
 
@@ -56,8 +56,6 @@ export class FoodListComponent implements OnInit {
     }
     return actArr[i-1];
   }
-
-
   ngOnInit() {
   }
 

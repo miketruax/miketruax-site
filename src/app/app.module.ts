@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {NgModule, APP_INITIALIZER} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {HttpModule, Http} from '@angular/http';
 import {routes} from './app.routes';
 import { AppComponent } from './app.component';
 import {RouterModule} from "@angular/router";
@@ -34,8 +34,18 @@ import {RankingInfoPipe} from "./portfolio/periodic-table/pipes/rankingInfo.pipe
 import {RankingPipe} from "./portfolio/periodic-table/pipes/ranking.pipe";
 
 
-export function startUpRecipes(startUpService : RecipeService) : Function {
-  return () => startUpService.getRecipes();
+export function startUpRecipes(startUpService : RecipeService, http: Http) : Function {
+  return () => {
+    let backgrounds =["beginning.gif", "consultation.gif", "design.gif", "food.gif",
+    "home-logo.png", "passions.gif", "philosophy.gif", "planning.gif", "portfolio.gif",
+    "programming.gif", "retail.gif", "school.gif", "timedate.gif"];
+
+    backgrounds.forEach((v)=> {
+      http.get(`/assets/img/background/${v}`)
+    });
+
+    startUpService.getRecipes()
+  };
 }
 
 @NgModule({
@@ -56,7 +66,7 @@ export function startUpRecipes(startUpService : RecipeService) : Function {
     }),
     StoreModule.provideStore(reducer.default),
   ],
-  providers: [{ provide: APP_INITIALIZER, useFactory: startUpRecipes, deps: [RecipeService], multi: true },RecipeService, MovieService],
+  providers: [{ provide: APP_INITIALIZER, useFactory: startUpRecipes, deps: [RecipeService, Http], multi: true },RecipeService, MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule{

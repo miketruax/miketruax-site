@@ -6,10 +6,11 @@ import {Router, NavigationEnd} from "@angular/router";
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
+
+
   menuActive: boolean = false;
 
   constructor(private router: Router) {
-
     this.router.events.subscribe(path=>{
       if (path['url'] != this.router.url) {
 

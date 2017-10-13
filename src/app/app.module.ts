@@ -32,6 +32,7 @@ import {AtomicMass} from "./portfolio/periodic-table/pipes/atomicMass.pipe";
 import {ElementType} from "./portfolio/periodic-table/pipes/elementType.pipe";
 import {RankingInfoPipe} from "./portfolio/periodic-table/pipes/rankingInfo.pipe";
 import {RankingPipe} from "./portfolio/periodic-table/pipes/ranking.pipe";
+import {EtaTimeUntilComponent} from "./shared/eta-until-end/eta-time-until.component";
 
 
 export function startUpRecipes(startUpService : RecipeService, http: Http) : Function {
@@ -53,7 +54,7 @@ export function startUpRecipes(startUpService : RecipeService, http: Http) : Fun
     AppComponent, FoodComponent, AboutComponent,
     PortfolioComponent, HomeComponent, PaginationComponent,
     WhoWasItComponent, WhoWasItAboutComponent, WhoWasItResultsComponent, TicTacToeComponent, MovieSearchComponent,
-    TableComponent, ElementRankingComponent, ElementInfoComponent,
+    TableComponent, ElementRankingComponent, ElementInfoComponent, EtaTimeUntilComponent,
     MovieSearchImageComponent, MovieMoreInfoComponent, FoodListComponent, CapitalizePipe, CategoryPipe, AtomicMass,
   ElementType, RankingInfoPipe, RankingPipe],
   imports: [

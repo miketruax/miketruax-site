@@ -1,6 +1,3 @@
-//Unchanging panel bgs
-
-
 .top-div{
   margin-top: 146px !important;
 }
@@ -140,16 +137,14 @@
     text-decoration: underline;
     color: $moonstone-blue;
   }
-
-
 }
-
-
 
 .portfolio-icon{
   max-width: 50% !important;
   margin: auto;
 }
+
+
 @media(max-width: 767px){
   .portfolio-container:nth-child(even){
     background-color: $alabaster !important;

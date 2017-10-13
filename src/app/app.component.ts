@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, HostListener} from '@angular/core';
 import {Router, NavigationEnd} from "@angular/router";
 
 @Component({
@@ -7,7 +7,7 @@ import {Router, NavigationEnd} from "@angular/router";
 })
 export class AppComponent implements OnInit {
 
-
+  fullHeight: number = window.scrollY + (window.innerHeight -200);
   menuActive: boolean = false;
 
   constructor(private router: Router) {
@@ -19,6 +19,10 @@ export class AppComponent implements OnInit {
         }
 
     });
+  }
+
+  @HostListener('window:scroll') onScroll() {
+    this.fullHeight = window.scrollY + (window.innerHeight -200);
   }
 
     menuClick(){

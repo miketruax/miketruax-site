@@ -1,28 +1,26 @@
-import {Directive, HostListener, ElementRef, Renderer} from "@angular/core";
+import {Directive, HostListener, ElementRef, Renderer, OnInit} from "@angular/core";
 @Directive({
   selector: '[imageFade]'
 })
-export class ImageFadeDirective{
+export class ImageFadeDirective implements OnInit{
+  public location: number;
   constructor(private el: ElementRef){
-    let location = this.el.nativeElement.getBoundingClientRect().top;
-    if(location <(window.scrollY + (window.innerHeight -200)) ){
-      this.el.nativeElement.style.opacity = 1;
-      console.log(location);
-      console.log(this.el.nativeElement);
-    }
+
   }
 
   @HostListener('window:scroll') onScroll() {
-    let location = this.el.nativeElement.getBoundingClientRect().top;
-    
-    let fullHeight = window.scrollY + (window.innerHeight -200);
-    let element = this.el.nativeElement;
-
-    if(location < fullHeight){
+    let fullHeight = window.scrollY + (window.innerHeight -100);
+    if(this.location < fullHeight){
       this.el.nativeElement.style.opacity = 1;
     }
   }
 
+  ngOnInit(){
+    this.location = this.el.nativeElement.getBoundingClientRect().top;
+    if(this.location <(window.scrollY + (window.innerHeight)) ){
+      this.el.nativeElement.style.opacity = 1;
+    }
+  }
 
 
 

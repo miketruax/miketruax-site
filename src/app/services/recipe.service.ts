@@ -3,8 +3,6 @@ import {Http} from "@angular/http";
 import * as recipeActions from '../actions/recipes.actions';
 import {Store} from "@ngrx/store";
 import * as fromRoot from '../reducers';
-import {Observable} from "rxjs";
-import {Recipe} from "../stores/recipe.store";
 import 'rxjs/Rx';
 
 @Injectable()

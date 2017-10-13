@@ -1,32 +1,31 @@
 <nav class="food-menu col-xs-12" style="margin-top: 20px !important;">
   <ul class="nav nav-pills text-center">
-    <li role="presentation" class="pointer" [ngClass]="activeCat== 'breads' ? 'active' : ''" (click)="setCat('breads')">
-      <a><img class="button-img"
-              [src]="'/assets/img/buttons/food/breads' + (activeCat === 'breads' ? 'Active.png': '.png')"><b
-        class="link-text">Breads</b></a>
+    <li role="presentation" class="pointer" [ngClass]="{active: activeCat === 1}" (click)="setCat(1)">
+      <a>
+        <img class="button-img"[src]="'/assets/img/buttons/food/breads' + (activeCat === 1 ? 'Active.png': '.png')">
+        <b class="link-text">Breads</b></a>
     </li>
-    <li role="presentation" class="pointer" [ngClass]="activeCat== 'desserts' ? 'active' : ''" (click)="setCat('desserts')">
-      <a><img class="button-img"
-              [src]="'/assets/img/buttons/food/desserts' + (activeCat === 'desserts' ? 'Active.png': '.png')"><b
-        class="link-text">Desserts</b></a></li>
-    <li role="presentation" class="pointer" [ngClass]="activeCat== 'entrees' ? 'active' : ''" (click)="setCat('entrees')">
-      <a><img class="button-img"
-              [src]="'/assets/img/buttons/food/entrees' + (activeCat === 'entrees' ? 'Active.png': '.png')"><b
-        class="link-text">Entrees</b></a></li>
-    <li role="presentation" class="pointer" [ngClass]="activeCat== 'sides' ? 'active' : ''" (click)="setCat('sides')">
-      <a><img class="button-img"
-              [src]="'/assets/img/buttons/food/sides'+(activeCat === 'sides' ? 'Active.png': '.png')"><b
-        class="link-text">Sides</b></a></li>
+    <li role="presentation" class="pointer" [ngClass]="{active: activeCat === 2}" (click)="setCat(2)">
+      <a>
+        <img class="button-img"[src]="'/assets/img/buttons/food/desserts' + (activeCat === 2 ? 'Active.png': '.png')">
+        <b class="link-text">Desserts</b></a></li>
+    <li role="presentation" class="pointer" [ngClass]="{active: activeCat === 3}" (click)="setCat(3)">
+      <a>
+        <img class="button-img" [src]="'/assets/img/buttons/food/entrees' + (activeCat === 3 ? 'Active.png': '.png')">
+        <b class="link-text">Entrees</b></a></li>
+    <li role="presentation" class="pointer" [ngClass]="{active: activeCat === 4}" (click)="setCat(4)">
+      <a>
+        <img class="button-img" [src]="'/assets/img/buttons/food/sides'+(activeCat === 4 ? 'Active.png': '.png')">
+        <b class="link-text">Sides</b></a></li>
   </ul>
 </nav>
 
 <div *ngIf="getActiveArr().length >1" class="col-xs-12 text-center thumbnail-container">
-  <img *ngFor="let f of (recipes| category: activeCat); let i = index" (click)="activeIdx = i"
-       class="pointer rounded thumbnail-img"
-       ngClass="{{i === activeIdx ? 'active-thumb' : ''}}" [src]="'assets/img/food/'+f.image" title="{{f.name}}"/>
+  <img *ngFor="let f of recipes | category:activeCat; let i = index" (click)="setID(i)" class="pointer rounded thumbnail-img"
+       [ngClass]="{'active-thumb': i === activeIdx}" [src]="'assets/img/food/'+f.image" title="{{f.name}}"/>
 </div>
 
-<div class="col-xs-12 food-container" *ngFor="let r of (recipes | category:activeCat); let idx = index;">
+<div class="col-xs-12 food-container" *ngFor="let r of recipes | category:activeCat; let idx = index;">
   <div *ngIf="idx === activeIdx">
     <div class="col-xs-12 recipe-title"><h2 class="text-center">{{r.name}}</h2></div>
     <div class="col-sm-5 col-lg-4 col-xs-6 col-xs-offset-3 col-sm-offset-0 text-center">

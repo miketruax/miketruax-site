@@ -4,19 +4,15 @@ import {Recipe} from "../stores/recipe.store";
   selector: 'food-list',
   templateUrl: './food-list.component.html'
 })
-export class FoodListComponent implements OnInit {
-  activeCat: string;
+export class FoodListComponent{
+  activeCat: number = 1;
   activeIdx: number;
-  catRef: Object;
   @Input() recipes: Recipe[];
   constructor() {
-    this.activeCat = "breads";
     this.activeIdx = 0;
-    this.catRef = {"breads": 1, "desserts": 2, "sides": 4, "entrees": 3};
-
   }
-  getActiveArr(){
-    return this.recipes.filter(v => v.category_ID === this.catRef[this.activeCat]);
+  getActiveArr(): Recipe[]{
+    return this.recipes.filter(v => v.category_ID === this.activeCat);
   }
   cycleRight(i: number){
     let actArr = this.getActiveArr();
@@ -36,7 +32,7 @@ export class FoodListComponent implements OnInit {
     this.activeIdx = i-1;
   }
 
-  setCat(newCat: string){
+  setCat(newCat: number){
     this.activeCat = newCat;
     this.activeIdx = 0;
   }
@@ -56,7 +52,8 @@ export class FoodListComponent implements OnInit {
     }
     return actArr[i-1];
   }
-  ngOnInit() {
+  setID(i: number){
+    this.activeIdx = i;
   }
 
 }

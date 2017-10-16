@@ -1,4 +1,4 @@
-<nav class="food-menu col-xs-12" style="margin-top: 20px !important;">
+<nav class="food-menu col-xs-12">
   <ul class="nav nav-pills text-center">
     <li role="presentation" class="pointer" [ngClass]="{active: activeCat === 1}" (click)="setCat(1)">
       <a>
@@ -20,13 +20,17 @@
   </ul>
 </nav>
 
-<div *ngIf="getActiveArr().length >1" class="col-xs-12 text-center thumbnail-container">
-  <img *ngFor="let f of recipes | category:activeCat; let i = index" (click)="setID(i)" class="pointer rounded thumbnail-img"
-       [ngClass]="{'active-thumb': i === activeIdx}" [src]="'assets/img/food/'+f.image" title="{{f.name}}"/>
+
+<div class="col-xs-12 text-center thumbnail-container" >
+  <div *ngFor="let f of recipes | category:activeCat; let i = index" (click)="activeIdx = i"
+       [ngClass]="{'active-thumb': i === activeIdx}" class="thumbnail-img">
+  <img class="rounded" [src]="'assets/img/food/'+f.image" title="{{f.name}}" />
+  </div>
 </div>
 
+
 <div class="col-xs-12 food-container" *ngFor="let r of recipes | category:activeCat; let idx = index;">
-  <div *ngIf="idx === activeIdx">
+  <div *ngIf="idx === activeIdx" [@fadeInAnimation]>
     <div class="col-xs-12 recipe-title"><h2 class="text-center">{{r.name}}</h2></div>
     <div class="col-sm-5 col-lg-4 col-xs-6 col-xs-offset-3 col-sm-offset-0 text-center">
       <img class="rounded img-thumbnail img-responsive" [src]="'assets/img/food/'+r.image">

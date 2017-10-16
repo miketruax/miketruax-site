@@ -79,6 +79,7 @@ export function startUpRecipes(startUpService: RecipeService, http: Http): Funct
     ImageFadeDirective
       ],
   imports: [
+
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,

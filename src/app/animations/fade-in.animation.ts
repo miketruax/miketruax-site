@@ -2,14 +2,15 @@
 import { trigger, state, animate, transition, style } from '@angular/animations';
 
 export const fadeInAnimation =
-  // trigger name for attaching this animation to an element using the [@triggerName] syntax
   trigger('fadeInAnimation', [
-    transition(':enter', [
-      style({ opacity: 0 }),
-      animate('.4s', style({ opacity: 1 }))
-    ]),
-    transition(':leave', [
-      style({ opacity: 1 }),
-      animate('.3s', style({ opacity: 0 }))
-    ])
-  ]);
+      state('*', style({ 'overflow-y': 'hidden' })),
+      state('void', style({ 'overflow-y': 'hidden' })),
+      transition('* => void', [
+        style({ opacity: 0 }),
+        animate(0, style({ opacity: 0 }))
+      ]),
+      transition('void => *', [
+        style({ opacity: 0 }),
+        animate(250, style({ opacity: 1 }))
+      ])
+    ]);

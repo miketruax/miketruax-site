@@ -1151,7 +1151,6 @@
       "universe abundance": "3×10^-6% by mass  (rank: 31st)",
       "crust abundance": "0.0026% by mass  (rank: 31st)"
     },
-    "nuclearProps": {},
     "discoveryYear": 1879,
     "type": "Transition-Metal",
     "name": "Scandium",
@@ -1193,9 +1192,6 @@
       "electron affinity": "0.079 eV  (molar electronvolts)",
       "first ionization energy": "6.828 eV  (molar electronvolts)"
     },
-    "atomicProps": {},
-    "abundances": {},
-    "nuclearProps": {},
     "discoveryYear": 1791,
     "type": "Transition-Metal",
     "name": "Titanium",
@@ -1291,9 +1287,6 @@
       "electron affinity": "0.666 eV  (molar electronvolts)",
       "first ionization energy": "6.767 eV  (molar electronvolts)"
     },
-    "atomicProps": {},
-    "abundances": {},
-    "nuclearProps": {},
     "discoveryYear": 1797,
     "type": "Transition-Metal",
     "name": "Chromium",
@@ -1399,7 +1392,6 @@
       "crust abundance": "6.3% by mass  (rank: 4th)",
       "human abundance": "0.006% by mass  (rank: 13th)"
     },
-    "nuclearProps": {},
     "discoveryYear": -2000,
     "type": "Transition-Metal",
     "name": "Iron",
@@ -3239,9 +3231,6 @@
       "electron affinity": "0.815 eV  (molar electronvolts)",
       "first ionization energy": "7.98 eV  (molar electronvolts)"
     },
-    "atomicProps": {},
-    "abundances": {},
-    "nuclearProps": {},
     "discoveryYear": 1783,
     "type": "Transition-Metal",
     "name": "Tungsten",
@@ -3882,7 +3871,6 @@
       "term symbol": "^1S_0",
       "atomic radius": "120 pm"
     },
-    "abundances": {},
     "nuclearProps": {
       "half‐life": "91.7639 h",
       "specific radioactivity": "5692 TBq/g",
@@ -3997,9 +3985,6 @@
       "atomic mass": "265 u  (unified atomic mass units)",
       "half‐life": "13 hours"
     },
-    "thermoProps": {},
-
-
     "reactivity": {
       "valence": "4"
     },
@@ -4033,9 +4018,6 @@
       "atomic mass": "268 u  (unified atomic mass units)",
       "half‐life": "5.6 hours"
     },
-    "thermoProps": {},
-
-
     "reactivity": {
       "valence": "5"
     },
@@ -4069,9 +4051,6 @@
       "atomic mass": "271 u  (unified atomic mass units)",
       "half‐life": "120 minutes"
     },
-    "thermoProps": {},
-
-
     "reactivity": {
       "valence": "6"
     },
@@ -4105,9 +4084,6 @@
       "atomic mass": "272 u  (unified atomic mass units)",
       "half‐life": "90 minutes"
     },
-    "thermoProps": {},
-
-
     "reactivity": {
       "valence": "7"
     },
@@ -4141,10 +4117,6 @@
       "atomic mass": "270 u  (unified atomic mass units)",
       "half‐life": "67 minutes"
     },
-    "thermoProps": {},
-
-
-
     "atomicProps": {
       "term symbol": "^5D_4"
     },

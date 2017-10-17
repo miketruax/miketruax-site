@@ -3,12 +3,13 @@
 }
 
 .banner-logo {
+  -webkit-transform: translateZ(0);
   position: fixed;
   border-bottom: 2px solid $sunny;
   border-top: 2px solid $sunny;
   top:46px !important;
   margin-bottom: 3px !important;
-  z-index: 101 !important;
+  z-index: 1001 !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: cover !important;
@@ -89,14 +90,19 @@
 .container-box{
   padding: 15px !important;
   background-color: white !important;
+  backface-visibility: hidden;
+  *{
+    transition: right .4s ease-in;
+  }
+  overflow-x: hidden;
   p{
     font-size: initial !important;
     font-family: $paragraph-font;
+
   }
   @media(min-width: 1200px) {
     border: 1px solid $raisin-black;
   }
-
 }
 
 .section-background{

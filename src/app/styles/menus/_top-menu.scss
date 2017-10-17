@@ -29,6 +29,7 @@
 }
 
 .navbar-collapse{
+  -webkit-transform: translateZ(0);
   background-color: $yankees-blue !important;
 
   a{
@@ -45,6 +46,7 @@
 }
 
 #nav-menu, #main-nav, .nav-icon {
+
   transition: all .4s cubic-bezier(.23, .98, .01, .96);
 }
 

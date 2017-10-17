@@ -1,9 +1,5 @@
 .food-menu {
-  width: 100% !important;
-  margin: 0;
   padding: 0;
-  min-height: 0 !important;
-  color: $raisin-black !important;
   margin-top: 20px !important;
 
   .active{
@@ -12,10 +8,7 @@
   .pointer {
     background-color: rgba($alabaster, .6) !important;
     max-height: 40px !important;
-    padding: 0 !important;
-    display: inline-block !important;
     margin: 5px .5% 5px .5%;
-    float: left !important;
     width: 24% !important;
 
     a {

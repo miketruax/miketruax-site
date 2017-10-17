@@ -1,0 +1,13 @@
+.section-container{
+  padding-top: 20px !important;
+  @media(max-width: 1199px) {
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+}
+
+.section-container:not(.top-div):not(.no-top){
+  @media(min-width: 1200px) {
+    margin-top: 146px !important;
+  }
+}

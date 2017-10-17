@@ -1,7 +1,9 @@
 .navbar-toggle {
-  margin: 5px 10px 5px 0 !important;
   z-index: 100;
+  margin: 5px 10px 5px 0 !important;
+  background-color: $moonstone-blue !important;
   border-color: $yankees-blue !important;
+
   span {
     background-color: $yankees-blue !important;
   }
@@ -14,14 +16,12 @@
   }
   max-height: 40px !important;
 }
+
 .navbar-header{
   background-color: $yankees-blue !important;
 
 }
 
-.navbar-toggle {
-  background-color: $moonstone-blue !important;
-}
 .navbar-default, .nav{
   min-height: 46px !important;
   border: 0 !important;
@@ -46,10 +46,11 @@
 }
 
 #nav-menu, #main-nav, .nav-icon {
-
   transition: all .4s cubic-bezier(.23, .98, .01, .96);
 }
 
+
+//Navbar icon animation
 
 $speed: 400ms;
 $easing: cubic-bezier(0.7, 0, 0, 0.7);

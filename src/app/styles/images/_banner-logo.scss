@@ -1,0 +1,23 @@
+.banner-logo {
+  -webkit-transform: translateZ(0);
+  position: fixed;
+  border-bottom: 2px solid $sunny;
+  border-top: 2px solid $sunny;
+  top:46px !important;
+  margin-bottom: 3px !important;
+  z-index: 1001 !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+  height: 100px !important;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+  img{
+    vertical-align: middle;
+    max-height: 90px !important;
+    height: auto;
+    max-width: 90% !important;
+    margin: auto !important;
+  }
+}

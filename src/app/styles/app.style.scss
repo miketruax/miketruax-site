@@ -1,8 +1,23 @@
-@import 'mixins/_colors.scss';
-@import 'mixins/_fonts.scss';
-@import 'partials/_elements.scss';
-@import 'partials/_box-styling.scss';
-@import 'partials/_recipes.scss';
-@import 'menus/_top-menu.scss';
-@import 'menus/_category-menu.scss';
-@import 'helpers/_helpers.scss';
+@import 'variables/colors';
+@import 'variables/fonts';
+
+@import 'partials/elements';
+@import 'partials/helpers';
+@import 'partials/overriding-bootstrap';
+@import 'partials/typography';
+
+@import 'containers/food-containers';
+@import 'containers/headings';
+@import 'containers/portfolio-containers';
+@import 'containers/section-box';
+@import 'containers/sizing';
+@import 'containers/universal-boxes';
+
+@import 'images/banner-logo';
+@import 'images/food-thumbnails';
+@import 'images/icons';
+@import 'images/section-backgrounds';
+
+@import 'menus/category-menu';
+@import 'menus/top-menu';
+

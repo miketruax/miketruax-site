@@ -1,0 +1,21 @@
+.section-heading {
+  border-bottom: 1px solid $sunny !important;
+  background-color: rgba($yankees-blue, 1) !important;
+  color: $alabaster !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.inner-heading{
+  color: $yankees-blue !important;
+  background-color: rgba($sunny, .4) !important;
+  border: 1px solid $yankees-blue !important;
+}
+
+.sub-heading{
+  margin-top: 10px !important;
+  color: $yankees-blue;
+  text-align: center;
+  text-shadow: 1px 1px $moonstone-blue;
+}
+

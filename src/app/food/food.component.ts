@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, AfterViewInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import * as fromRoot from '../reducers'
 import {Recipe} from "../stores/recipe.store";
@@ -12,12 +12,17 @@ import {fadeInAnimation} from "../animations/fade-in.animation";
   animations: [fadeInAnimation],
   host: { '[@fadeInAnimation]': '' }
 })
-export class FoodComponent implements OnInit {
+export class FoodComponent implements AfterViewInit {
   recipes: Observable<Array<Recipe>>;
   constructor(private store: Store<fromRoot.State>) {
     this.recipes = store.select(fromRoot.getRecipeState);
   }
-  ngOnInit() {
-
+  ngAfterViewInit() {
+    let fjs = document.getElementsByClassName("twitter-timeline")[0];
+    console.log(fjs);
+    let js = document.createElement("script");
+    js.id = "twitter-wjs";
+    js.src = "http://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
   }
 }

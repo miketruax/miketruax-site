@@ -1,0 +1,40 @@
+.portfolio-container{
+  margin-top: 10px !important;
+  p{
+    font-size: 14px !important;
+  }
+  h4{
+    margin: 5px 0;
+  }
+  a{
+    text-decoration: underline;
+    color: $moonstone-blue;
+  }
+}
+
+
+@media(max-width: 767px){
+  .portfolio-container:nth-child(even){
+    background-color: $alabaster !important;
+  }
+  .portfolio-icon{
+    max-width: 33% !important;
+  }
+}
+
+@media(min-width: 768px){
+  .tech-list{
+    min-height: 313px;
+  }
+  .portfolio-about{
+    min-height: 128px !important;
+  }
+}
+@media(min-width: 900px){
+  .tech-list{
+    min-height: 250px;
+  }
+  .portfolio-about{
+    min-height: 98px !important;
+  }
+}

@@ -4,6 +4,9 @@
   font-family: $content-font !important;
   color: $raisin-black;
 }
+nav{
+  -webkit-transform: translateZ(0) !important;
+}
 
 input[type='text'],
 input[type='number'],
@@ -15,10 +18,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0px !important;
   margin-bottom: 2px !important;
   font-family: $title-font !important;
-}
-
-li{
-  //text-shadow: .5px .5px $alabaster !important;
 }
 
 dd{

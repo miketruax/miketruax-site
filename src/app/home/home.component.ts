@@ -1,17 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, AfterViewInit} from '@angular/core';
 import {fadeInAnimation} from "../animations/fade-in.animation";
 
 @Component({
   selector: 'home-component',
   templateUrl: 'home.component.html',
   animations: [fadeInAnimation],
-  host: { '[@fadeInAnimation]': '' }
+  host: {'[@fadeInAnimation]': ''}
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements AfterViewInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
   }
 
+
+  ngAfterViewInit() {
+    let fjs = document.getElementsByClassName("twitter-timeline")[0];
+    console.log(fjs);
+    let js = document.createElement("script");
+    js.id = "twitter-wjs";
+    js.src = "http://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }
 }

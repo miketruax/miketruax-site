@@ -2,33 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e685dd8-c04c-4b86-9fd0-1acc8d90d99b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/styles/containers/_food-containers.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/styles/containers/_headings.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/styles/containers/_portfolio-containers.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/styles/containers/_section-box.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/styles/containers/_sizing.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/styles/containers/_universal-boxes.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/styles/images/_banner-logo.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/styles/images/_food-thumbnails.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/styles/images/_icons.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/styles/images/_section-backgrounds.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/styles/partials/_overriding-bootstrap.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/styles/partials/_typography.scss" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/styles/partials/_box-styling.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/styles/partials/_recipes.scss" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/styles/helpers/_helpers.scss" afterPath="$PROJECT_DIR$/src/app/styles/partials/_helpers.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/styles/mixins/_colors.scss" afterPath="$PROJECT_DIR$/src/app/styles/variables/_colors.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/styles/mixins/_fonts.scss" afterPath="$PROJECT_DIR$/src/app/styles/variables/_fonts.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/food/food.component.ts" afterPath="$PROJECT_DIR$/src/app/food/food.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/home/home.component.html" afterPath="$PROJECT_DIR$/src/app/home/home.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/home/home.component.ts" afterPath="$PROJECT_DIR$/src/app/home/home.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/portfolio/portfolio.component.html" afterPath="$PROJECT_DIR$/src/app/portfolio/portfolio.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/styles/app.style.scss" afterPath="$PROJECT_DIR$/src/app/styles/app.style.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/styles/menus/_category-menu.scss" afterPath="$PROJECT_DIR$/src/app/styles/menus/_category-menu.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/styles/menus/_top-menu.scss" afterPath="$PROJECT_DIR$/src/app/styles/menus/_top-menu.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/styles/partials/_elements.scss" afterPath="$PROJECT_DIR$/src/app/styles/partials/_elements.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="food.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="food.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/food/food.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="26" column="3" lean-forward="false" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+            <state relative-caret-position="225">
+              <caret line="20" column="69" lean-forward="false" selection-start-line="20" selection-start-column="69" selection-end-line="20" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -69,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.component.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/home/home.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="22" selection-end-column="3" />
+            <state relative-caret-position="240">
+              <caret line="16" column="69" lean-forward="false" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
               <folding>
                 <element signature="e#0#63#0" expanded="true" />
               </folding>
@@ -234,8 +209,8 @@
         <option value="$PROJECT_DIR$/src/app/styles/containers/_universal-boxes.scss" />
         <option value="$PROJECT_DIR$/src/app/home/home.component.html" />
         <option value="$PROJECT_DIR$/src/index.html" />
-        <option value="$PROJECT_DIR$/src/app/home/home.component.ts" />
         <option value="$PROJECT_DIR$/src/app/food/food.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/home/home.component.ts" />
       </list>
     </option>
   </component>
@@ -825,12 +800,12 @@
       <workItem from="1504900243210" duration="529000" />
       <workItem from="1507728121964" duration="8204000" />
       <workItem from="1507826828870" duration="38974000" />
-      <workItem from="1508209515686" duration="17724000" />
+      <workItem from="1508209515686" duration="17886000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="267179000" />
+    <option name="totallyTimeSpent" value="267341000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="91" width="1439" height="833" extended-state="0" />
@@ -1274,21 +1249,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/home/home.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/food/food.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="22" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#63#0" expanded="true" />
-          </folding>
+          <caret line="20" column="69" lean-forward="false" selection-start-line="20" selection-start-column="69" selection-end-line="20" selection-end-column="69" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/food/food.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/home/home.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="26" column="3" lean-forward="false" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
-          <folding />
+        <state relative-caret-position="240">
+          <caret line="16" column="69" lean-forward="false" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

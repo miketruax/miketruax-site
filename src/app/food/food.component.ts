@@ -19,7 +19,6 @@ export class FoodComponent implements AfterViewInit {
   }
   ngAfterViewInit() {
     let fjs = document.getElementsByClassName("twitter-timeline")[0];
-    console.log(fjs);
     let js = document.createElement("script");
     js.id = "twitter-wjs";
     js.src = "http://platform.twitter.com/widgets.js";

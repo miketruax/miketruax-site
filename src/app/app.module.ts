@@ -38,7 +38,7 @@ import {ImageFadeDirective} from "./directives/image-fade.directive";
 
 export function startUpRecipes(startUpService: RecipeService, http: Http): Function {
   return () => {
-    let backgrounds = ["beginning.gif", "consultation.gif", "design.gif", "food.gif",
+    let backgrounds = ["beginning.gif", "home-logo.png", "consultation.gif", "design.gif", "food.gif",
       "home-logo.png", "passions.gif", "philosophy.gif", "planning.gif", "portfolio.gif",
       "programming.gif", "retail.gif", "school.gif", "timedate.gif"];
 

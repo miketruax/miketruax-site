@@ -11,7 +11,7 @@ export class SlideBox implements AfterViewInit{
 
   transitionElements(elements: Object, position: number){
     for(let i =0; i <this.el.nativeElement.children.length; i++){
-      this.el.nativeElement.children[i].style['transition-delay'] = `${i*.4}s`;
+      this.el.nativeElement.children[i].style['transition-delay'] = `${i*.2}s`;
       this.el.nativeElement.children[i].style.right = `${i===0 || i%2===0 ? '-' : ''}${position}%`;
     }
   }

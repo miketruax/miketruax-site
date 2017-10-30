@@ -1,6 +1,5 @@
 import mysql from 'mysql';
-
-let debugFlag = process.env.NODE_ENV === 'development' || 'test' ? true : false;
+let debugFlag = (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test');
 let pool = mysql.createPool({
     debug: debugFlag,
     connectionLimit: 10,

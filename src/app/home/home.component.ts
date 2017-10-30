@@ -14,10 +14,10 @@ export class HomeComponent implements AfterViewInit {
 
 
   ngAfterViewInit() {
-    let fjs = document.getElementsByClassName("twitter-timeline")[0];
-    let js = document.createElement("script");
-    js.id = "twitter-wjs";
-    js.src = "http://platform.twitter.com/widgets.js";
-    fjs.parentNode.insertBefore(js, fjs);
+    // let fjs = document.getElementsByClassName("twitter-timeline")[0];
+    // let js = document.createElement("script");
+    // js.id = "twitter-wjs";
+    // js.src = "http://platform.twitter.com/widgets.js";
+    // fjs.parentNode.insertBefore(js, fjs);
   }
 }

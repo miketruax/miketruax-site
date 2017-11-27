@@ -21,7 +21,9 @@
     max-width: 33% !important;
   }
 }
-
+.tech-list{
+  margin-bottom: 0 !important;
+}
 @media(min-width: 768px){
   .tech-list{
     min-height: 313px;
@@ -32,9 +34,9 @@
 }
 @media(min-width: 900px){
   .tech-list{
-    min-height: 250px;
+    min-height: 265px;
   }
   .portfolio-about{
-    min-height: 98px !important;
+    min-height: 108px !important;
   }
 }

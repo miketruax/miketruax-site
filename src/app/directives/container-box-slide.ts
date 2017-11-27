@@ -11,20 +11,24 @@ export class SlideBox implements AfterViewInit{
 
   transitionElements(elements: Object, position: number){
     for(let i =0; i <this.el.nativeElement.children.length; i++){
+
       this.el.nativeElement.children[i].style['transition-delay'] = `${i*.2}s`;
-      this.el.nativeElement.children[i].style.right = `${i===0 || i%2===0 ? '-' : ''}${position}%`;
+      this.el.nativeElement.children[i].style.opacity = `${position}`;
+
+      // this.el.nativeElement.children[i].style['transition-delay'] = `${i*.2}s`;
+      // this.el.nativeElement.children[i].style.right = `${i===0 || i%2===0 ? '-' : ''}${position}%`;
     }
   }
 
   ngAfterViewInit(){
     this.location = this.el.nativeElement.getBoundingClientRect().top;
     if(this.location >= window.innerHeight ){
-      this.transitionElements(this.el.nativeElement, 120);
+      this.transitionElements(this.el.nativeElement, 0);
       this.handler = this.renderer.listen(window, "scroll", ()=>{
         this.location = this.el.nativeElement.getBoundingClientRect().top;
         let fullHeight = window.innerHeight - 100;
         if (this.location < fullHeight) {
-          this.transitionElements(this.el.nativeElement.children, 0);
+          this.transitionElements(this.el.nativeElement.children, 1);
           this.handler();
         }
       });

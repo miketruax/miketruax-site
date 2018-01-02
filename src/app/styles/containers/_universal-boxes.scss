@@ -13,7 +13,7 @@
   background-color: white !important;
   backface-visibility: hidden;
   *{
-    transition: right .3s ease-in;
+    transition: opacity .3s ease-in;
   }
 
   > .col-xs-12{

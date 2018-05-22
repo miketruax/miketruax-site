@@ -13,8 +13,8 @@ export class AppComponent implements OnInit {
   constructor(private router: Router) {
     this.router.events.subscribe(path=>{
       if (path['url'] != this.router.url) {
-
-          this.menuActive = false;
+          document.getElementById('navbar-main').classList.remove('show');
+        this.menuActive = false;
           window.scrollTo(0, 0);
         }
 

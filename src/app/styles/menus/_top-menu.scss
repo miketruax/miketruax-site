@@ -12,6 +12,10 @@
   }
 }
 
+.navbar-toggler:focus {
+  outline: none;
+}
+
 .navbar-brand{
   img{
     max-height: 40px !important;
@@ -38,13 +42,15 @@
   a{
     color: $alabaster !important;
   }
-  .active a{
+  .nav-item.active{
     background-color: $moonstone-blue !important;
     color: $alabaster !important;
   }
-  a:hover:not(.active){
+   .nav-item:hover:not(.active){
     background-color: $sunny !important;
-    color: $yankees-blue !important;
+    a{
+     color: $yankees-blue !important;
+    }
   }
 }
 

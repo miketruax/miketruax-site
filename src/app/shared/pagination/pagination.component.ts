@@ -17,6 +17,7 @@ export class PaginationComponent implements OnInit {
   jumpIdx: number = 1;
   constructor() {};
   ngOnChanges(changes: SimpleChanges){
+    this.active = +this.active;
     //this is the function that creates the pagination buttons on the bottom
     // 10 per page then rounds up so 84->9pages 24->3 pages etx
     if(this.total) {
@@ -25,6 +26,7 @@ export class PaginationComponent implements OnInit {
 
       //Adds buttons for previous 5(up to page 1) and next 5 (up to last button)
       this.buttons = [];
+
       for (let i = (this.active - 2); i <= (this.active + 2); i++) {
         if (i > 0 && i <= numButtons) {
           this.buttons.push(i);

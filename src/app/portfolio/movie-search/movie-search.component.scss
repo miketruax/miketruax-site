@@ -50,6 +50,7 @@ select {
 /* =================================
   Page Components
 ==================================== */
+
 .movie_more {
   cursor: pointer;
 }
@@ -60,6 +61,7 @@ select {
       //transform: scale(1.1);
     }
   .movie-title{
+
     color: $moonstone-blue;
   }
 }
@@ -68,6 +70,8 @@ select {
 }
 
 .search-button {
+  cursor: pointer;
+  z-index: 2;
   float: right;
   margin-right: -10px;
 }
@@ -85,8 +89,14 @@ select {
 
 /* MOVIE LIST COMPONENTS -------- */
 
-.movie-list li, .movie-list a {
-  margin: 26px 0 0;
+.movie-list div, .movie-list a {
+  margin: 26px auto;
+  margin-bottom: 0px;
+}
+
+.movie-list{
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .movie-list a {
@@ -94,6 +104,14 @@ select {
   margin: auto;
 }
 
+.no-movies{
+  margin: 26px auto;
+}
+
+
+.movie-title{
+  margin-top: 10px;
+}
 
 .more-poster {
   z-index: -1;
@@ -110,6 +128,10 @@ select {
   color: gray;
 }
 
+.movie-more{
+  display: flex;
+  flex-flow: column wrap;
+}
 
 /* =================================
   Expanded Info Styles
@@ -119,6 +141,9 @@ select {
   color: #c2c4c6;
   text-align: left;
   cursor: pointer;
+  position: relative;
+  bottom: 5px;
+  left: -10px;
 }
 
 .back:hover {
@@ -128,6 +153,7 @@ select {
 .top-grey {
   background: $yankees-blue !important;
   padding-bottom: 15px !important;
+  margin-bottom: 10px;
 }
 
 .more-title {

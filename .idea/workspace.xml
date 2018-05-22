@@ -2,31 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e685dd8-c04c-4b86-9fd0-1acc8d90d99b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.angular-cli.json" afterPath="$PROJECT_DIR$/.angular-cli.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/about/about.component.html" afterPath="$PROJECT_DIR$/src/app/about/about.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.component.html" afterPath="$PROJECT_DIR$/src/app/app.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/food/food-list.component.html" afterPath="$PROJECT_DIR$/src/app/food/food-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/food/food.component.html" afterPath="$PROJECT_DIR$/src/app/food/food.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.component.ts" afterPath="$PROJECT_DIR$/src/app/app.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/directives/container-box-slide.ts" afterPath="$PROJECT_DIR$/src/app/directives/container-box-slide.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/directives/section-background-fade.ts" afterPath="$PROJECT_DIR$/src/app/directives/section-background-fade.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/home/home.component.html" afterPath="$PROJECT_DIR$/src/app/home/home.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/portfolio/movie-search/image/movie-search-image.component.html" afterPath="$PROJECT_DIR$/src/app/portfolio/movie-search/image/movie-search-image.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/portfolio/movie-search/image/movie-search-image.component.scss" afterPath="$PROJECT_DIR$/src/app/portfolio/movie-search/image/movie-search-image.component.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/portfolio/movie-search/more-info/movie-more-info.component.html" afterPath="$PROJECT_DIR$/src/app/portfolio/movie-search/more-info/movie-more-info.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/portfolio/movie-search/movie-search.component.html" afterPath="$PROJECT_DIR$/src/app/portfolio/movie-search/movie-search.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/portfolio/periodic-table/element-info/element-info.component.html" afterPath="$PROJECT_DIR$/src/app/portfolio/periodic-table/element-info/element-info.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/portfolio/periodic-table/element-ranking/element-ranking.component.html" afterPath="$PROJECT_DIR$/src/app/portfolio/periodic-table/element-ranking/element-ranking.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/portfolio/periodic-table/table/table.component.html" afterPath="$PROJECT_DIR$/src/app/portfolio/periodic-table/table/table.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/portfolio/portfolio.component.html" afterPath="$PROJECT_DIR$/src/app/portfolio/portfolio.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/portfolio/movie-search/movie-search.component.scss" afterPath="$PROJECT_DIR$/src/app/portfolio/movie-search/movie-search.component.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/portfolio/tic-tac-toe/tictactoe.component.html" afterPath="$PROJECT_DIR$/src/app/portfolio/tic-tac-toe/tictactoe.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/portfolio/who-was-it/about/who-was-it-about.component.html" afterPath="$PROJECT_DIR$/src/app/portfolio/who-was-it/about/who-was-it-about.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/portfolio/who-was-it/app.component.html" afterPath="$PROJECT_DIR$/src/app/portfolio/who-was-it/app.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/portfolio/who-was-it/home/who-was-it.component.html" afterPath="$PROJECT_DIR$/src/app/portfolio/who-was-it/home/who-was-it.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/styles/containers/_portfolio-containers.scss" afterPath="$PROJECT_DIR$/src/app/styles/containers/_portfolio-containers.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/styles/containers/_universal-boxes.scss" afterPath="$PROJECT_DIR$/src/app/styles/containers/_universal-boxes.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/styles/images/_icons.scss" afterPath="$PROJECT_DIR$/src/app/styles/images/_icons.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/styles/menus/_category-menu.scss" afterPath="$PROJECT_DIR$/src/app/styles/menus/_category-menu.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/pagination/pagination.component.html" afterPath="$PROJECT_DIR$/src/app/shared/pagination/pagination.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/pagination/pagination.component.scss" afterPath="$PROJECT_DIR$/src/app/shared/pagination/pagination.component.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/pagination/pagination.component.ts" afterPath="$PROJECT_DIR$/src/app/shared/pagination/pagination.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/styles/menus/_top-menu.scss" afterPath="$PROJECT_DIR$/src/app/styles/menus/_top-menu.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/styles/partials/_helpers.scss" afterPath="$PROJECT_DIR$/src/app/styles/partials/_helpers.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/styles/partials/_overriding-bootstrap.scss" afterPath="$PROJECT_DIR$/src/app/styles/partials/_overriding-bootstrap.scss" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -47,51 +38,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_top-menu.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/styles/menus/_top-menu.scss">
+      <file leaf-file-name="home.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/home/home.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="44" column="21" lean-forward="false" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
+            <state relative-caret-position="174">
+              <caret line="158" column="80" lean-forward="false" selection-start-line="158" selection-start-column="80" selection-end-line="158" selection-end-column="80" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".angular-cli.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.angular-cli.json">
+      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="22" column="110" lean-forward="false" selection-start-line="22" selection-start-column="110" selection-end-line="22" selection-end-column="110" />
+            <state relative-caret-position="238">
+              <caret line="15" column="74" lean-forward="false" selection-start-line="15" selection-start-column="74" selection-end-line="15" selection-end-column="74" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="element-info.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/portfolio/periodic-table/element-info/element-info.component.html">
+      <file leaf-file-name="section-background-fade.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/directives/section-background-fade.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-357">
-              <caret line="0" column="75" lean-forward="false" selection-start-line="0" selection-start-column="75" selection-end-line="0" selection-end-column="75" />
+            <state relative-caret-position="391">
+              <caret line="23" column="16" lean-forward="true" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_portfolio-containers.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/styles/containers/_portfolio-containers.scss">
+      <file leaf-file-name="container-box-slide.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/directives/container-box-slide.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" column="16" lean-forward="false" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+            <state relative-caret-position="255">
+              <caret line="15" column="99" lean-forward="false" selection-start-line="15" selection-start-column="99" selection-end-line="15" selection-end-column="99" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tictactoe.component.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/portfolio/tic-tac-toe/tictactoe.component.html">
+      <file leaf-file-name="_universal-boxes.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/styles/containers/_universal-boxes.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="777">
-              <caret line="59" column="2" lean-forward="false" selection-start-line="59" selection-start-column="2" selection-end-line="59" selection-end-column="2" />
+            <state relative-caret-position="357">
+              <caret line="21" column="2" lean-forward="false" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -101,7 +92,27 @@
         <entry file="file://$PROJECT_DIR$/src/app/app.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="12" column="71" lean-forward="false" selection-start-line="12" selection-start-column="71" selection-end-line="12" selection-end-column="71" />
+              <caret line="12" column="71" lean-forward="true" selection-start-line="12" selection-start-column="71" selection-end-line="12" selection-end-column="71" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_top-menu.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/styles/menus/_top-menu.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="52" column="4" lean-forward="false" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="movie-more-info.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/portfolio/movie-search/more-info/movie-more-info.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="82" lean-forward="false" selection-start-line="4" selection-start-column="82" selection-end-line="4" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -111,12 +122,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>img-</find>
-      <find>|</find>
-      <find>&quot;&quot;</find>
-      <find>Fe</find>
-      <find>{}</find>
-      <find>activeArr</find>
       <find>getAc</find>
       <find>setId</find>
       <find>console</find>
@@ -137,13 +142,18 @@
       <find>col-lg</find>
       <find>-sm</find>
       <find>-md</find>
-      <find>-xs</find>
       <find>offset</find>
       <find>offse</find>
       <find>off</find>
+      <find>xs</find>
+      <find>-xs</find>
+      <find>back</find>
+      <find>movies</find>
+      <find>col</find>
+      <find>float-right</find>
+      <find>ho</find>
     </findStrings>
     <replaceStrings>
-      <replace>recipes</replace>
       <replace>Recipe</replace>
       <replace>this.</replace>
       <replace>recipe</replace>
@@ -173,6 +183,7 @@
       <replace>col-12</replace>
       <replace>col-xl</replace>
       <replace>-md</replace>
+      <replace>float-rigght</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -181,16 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/index.html" />
-        <option value="$PROJECT_DIR$/src/app/styles/images/_section-backgrounds.scss" />
-        <option value="$PROJECT_DIR$/src/app/food/food.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/home/home.component.ts" />
-        <option value="$PROJECT_DIR$/config/config.js" />
-        <option value="$PROJECT_DIR$/dist/styles.75cc783fb5e8260f9973.bundle.css" />
-        <option value="$PROJECT_DIR$/src/app/directives/container-box-slide.ts" />
-        <option value="$PROJECT_DIR$/src/polyfills.ts" />
-        <option value="$PROJECT_DIR$/app/connection.js" />
-        <option value="$PROJECT_DIR$/src/app/styles/containers/_sizing.scss" />
         <option value="$PROJECT_DIR$/src/app/styles/containers/_section-box.scss" />
         <option value="$PROJECT_DIR$/src/app/styles/app.style.scss" />
         <option value="$PROJECT_DIR$/src/app/stores/recipe.store.ts" />
@@ -212,7 +213,6 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/app/about/about.component.html" />
         <option value="$PROJECT_DIR$/src/app/food/food.component.html" />
-        <option value="$PROJECT_DIR$/src/app/home/home.component.html" />
         <option value="$PROJECT_DIR$/src/app/portfolio/who-was-it/app.component.html" />
         <option value="$PROJECT_DIR$/src/app/portfolio/who-was-it/about/who-was-it-about.component.html" />
         <option value="$PROJECT_DIR$/src/app/food/food-list.component.html" />
@@ -222,16 +222,27 @@
         <option value="$PROJECT_DIR$/src/app/styles/images/_icons.scss" />
         <option value="$PROJECT_DIR$/src/app/styles/containers/_universal-boxes.scss" />
         <option value="$PROJECT_DIR$/src/app/styles/partials/_overriding-bootstrap.scss" />
-        <option value="$PROJECT_DIR$/src/app/styles/menus/_top-menu.scss" />
-        <option value="$PROJECT_DIR$/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/.angular-cli.json" />
         <option value="$PROJECT_DIR$/src/app/portfolio/periodic-table/element-ranking/element-ranking.component.html" />
         <option value="$PROJECT_DIR$/src/app/portfolio/periodic-table/element-info/element-info.component.html" />
         <option value="$PROJECT_DIR$/src/app/portfolio/who-was-it/home/who-was-it.component.html" />
-        <option value="$PROJECT_DIR$/src/app/portfolio/movie-search/movie-search.component.html" />
         <option value="$PROJECT_DIR$/src/app/portfolio/periodic-table/table/table.component.html" />
         <option value="$PROJECT_DIR$/src/app/styles/containers/_portfolio-containers.scss" />
         <option value="$PROJECT_DIR$/src/app/portfolio/tic-tac-toe/tictactoe.component.html" />
+        <option value="$PROJECT_DIR$/src/app/app.component.html" />
+        <option value="$PROJECT_DIR$/src/app/portfolio/movie-search/movie-search.component.html" />
+        <option value="$PROJECT_DIR$/src/app/portfolio/movie-search/image/movie-search-image.component.html" />
+        <option value="$PROJECT_DIR$/src/app/portfolio/movie-search/image/movie-search-image.component.scss" />
+        <option value="$PROJECT_DIR$/src/app/portfolio/movie-search/more-info/movie-more-info.component.html" />
+        <option value="$PROJECT_DIR$/src/app/portfolio/movie-search/movie-search.component.scss" />
+        <option value="$PROJECT_DIR$/src/app/shared/pagination/pagination.component.scss" />
+        <option value="$PROJECT_DIR$/src/app/shared/pagination/pagination.component.html" />
+        <option value="$PROJECT_DIR$/src/app/shared/pagination/pagination.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/home/home.component.html" />
+        <option value="$PROJECT_DIR$/src/app/styles/menus/_top-menu.scss" />
+        <option value="$PROJECT_DIR$/src/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/directives/section-background-fade.ts" />
+        <option value="$PROJECT_DIR$/src/app/directives/container-box-slide.ts" />
       </list>
     </option>
   </component>
@@ -355,59 +366,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miketruax-website-NG2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miketruax-website-NG2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="styles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="menus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miketruax-website-NG2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miketruax-website-NG2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="styles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -455,7 +414,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="stores" />
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pagination" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miketruax-website-NG2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miketruax-website-NG2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -525,7 +510,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="who-was-it" />
+              <option name="myItemId" value="movie-search" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -551,7 +536,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tic-tac-toe" />
+              <option name="myItemId" value="movie-search" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="more-info" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miketruax-website-NG2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miketruax-website-NG2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -574,6 +585,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="food" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miketruax-website-NG2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miketruax-website-NG2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="directives" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -712,12 +745,12 @@
       <workItem from="1512485843426" duration="615000" />
       <workItem from="1514922520091" duration="464000" />
       <workItem from="1527001153173" duration="9367000" />
-      <workItem from="1527010886865" duration="7171000" />
+      <workItem from="1527010886865" duration="13802000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="295708000" />
+    <option name="totallyTimeSpent" value="302339000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -730,7 +763,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -776,83 +809,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/styles/containers/_sizing.scss" />
-    <entry file="file://$PROJECT_DIR$/src/app/styles/app.style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/rxjs/scheduler/Action.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/stores/recipe.store.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="2" lean-forward="false" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="50" lean-forward="false" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/reducers/movies.reducer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#37#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/reducers/selectedMovies.reducer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#37#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/reducers/recipes.reducer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="49" lean-forward="false" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#37#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/actions/movies.actions.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -875,16 +831,6 @@
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/portfolio/movie-search/movie-search.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="21" lean-forward="true" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -987,19 +933,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/home/home.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="91" column="25" lean-forward="false" selection-start-line="91" selection-start-column="25" selection-end-line="91" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/portfolio/who-was-it/about/who-was-it-about.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1056,14 +989,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/styles/containers/_universal-boxes.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="33" lean-forward="false" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/styles/containers/_section-box.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1096,14 +1021,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="25" lean-forward="false" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1114,26 +1031,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="71" lean-forward="false" selection-start-line="12" selection-start-column="71" selection-end-line="12" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tsconfig.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/styles/menus/_top-menu.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="44" column="21" lean-forward="false" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -1170,14 +1071,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/portfolio/movie-search/movie-search.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="65" lean-forward="false" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/portfolio/periodic-table/table/table.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="736">
@@ -1194,6 +1087,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/portfolio/tic-tac-toe/tictactoe.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="777">
+          <caret line="59" column="2" lean-forward="false" selection-start-line="59" selection-start-column="2" selection-end-line="59" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/styles/containers/_portfolio-containers.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -1202,10 +1103,142 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/portfolio/tic-tac-toe/tictactoe.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/portfolio/movie-search/image/movie-search-image.component.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="59" column="2" lean-forward="false" selection-start-line="59" selection-start-column="2" selection-end-line="59" selection-end-column="2" />
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/portfolio/movie-search/more-info/movie-more-info.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/portfolio/movie-search/image/movie-search-image.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="65" lean-forward="false" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/portfolio/movie-search/movie-search.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="107" column="20" lean-forward="true" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/portfolio/movie-search/more-info/movie-more-info.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="82" lean-forward="false" selection-start-line="4" selection-start-column="82" selection-end-line="4" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/pagination/pagination.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="17" lean-forward="false" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/portfolio/movie-search/movie-search.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="11" lean-forward="true" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/pagination/pagination.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="83" lean-forward="false" selection-start-line="22" selection-start-column="83" selection-end-line="22" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/portfolio/movie-search/movie-search.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="33" column="21" lean-forward="true" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/pagination/pagination.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#103#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/home/home.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="158" column="80" lean-forward="false" selection-start-line="158" selection-start-column="80" selection-end-line="158" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/styles/menus/_top-menu.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="52" column="4" lean-forward="false" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="71" lean-forward="true" selection-start-line="12" selection-start-column="71" selection-end-line="12" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="74" lean-forward="false" selection-start-line="15" selection-start-column="74" selection-end-line="15" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/styles/containers/_universal-boxes.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="2" lean-forward="false" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/directives/section-background-fade.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="16" lean-forward="true" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/directives/container-box-slide.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="99" lean-forward="false" selection-start-line="15" selection-start-column="99" selection-end-line="15" selection-end-column="99" />
           <folding />
         </state>
       </provider>

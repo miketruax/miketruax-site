@@ -1,26 +1,18 @@
-import {
-  Action,
-} from '@ngrx/store';
-import {Injectable} from "@angular/core";
+import {Action} from '@ngrx/store';
+
+export const UPDATE_MOVIES = '[Movies] Update Movies';
+export const CLEAR_MOVIES = '[Movies] Clear Movies';
 
 
-@Injectable()
-export class MovieActions {
-  static UPDATE_MOVIES = '[Movies] Update Movies';
-  addMovies(data): Action {
-    return {
-      type: MovieActions.UPDATE_MOVIES,
-      payload: data
-    };
-  }
 
-  static CLEAR_MOVIES = '[Movies] Clear Movies';
-  clearMovies(): Action {
-    return {
-      type: MovieActions.CLEAR_MOVIES,
-      payload: {}
-    }
-  }
-
-
+export class UpdateMovies implements Action {
+  readonly type = UPDATE_MOVIES;
+  constructor(public payload: Object[]){}
 }
+
+export class ClearMovies implements Action {
+  readonly type = CLEAR_MOVIES;
+  constructor(public payload: Object[] = null){}
+}
+
+export type Actions = UpdateMovies | ClearMovies

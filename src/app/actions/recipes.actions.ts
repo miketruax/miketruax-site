@@ -1,43 +1,30 @@
 import {
   Action
 } from '@ngrx/store';
-import {Injectable} from "@angular/core";
 import {Recipe} from "../stores/recipe.store";
 
-
-@Injectable()
-export class Actions {
-  static ADD_RECIPES = '[Recipes] Add Recipes';
-  addRecipes(recipes): Action {
-    return {
-      type: Actions.ADD_RECIPES,
-      payload: recipes
-    };
-  }
-
-  static CREATE_RECIPE = '[Recipe] Create Recipe';
-  createRecipes(recipe): Action {
-    return {
-      type: Actions.CREATE_RECIPE,
-      payload: recipe
-    }
-  }
-
-  static UPDATE_RECIPE = '[Recipe] Update Recipe';
-  updateRecipes(recipe): Action {
-    return {
-      type: Actions.UPDATE_RECIPE,
-      payload: recipe
-    }
-  }
-
-  static DELETE_RECIPE = '[Recipe] Delete Recipe';
-  deleteRecipes(number): Action {
-    return {
-      type: Actions.DELETE_RECIPE,
-      payload: number
-    }
-  }
+export const ADD_RECIPES = '[Recipes] Add Recipes';
+export const CREATE_RECIPE = '[Recipe] Create Recipe';
+export const UPDATE_RECIPE = '[Recipe] Update Recipe';
+export const DELETE_RECIPE = '[Recipe] Delete Recipe';
 
 
+export class AddRecipes implements Action {
+  readonly type = ADD_RECIPES;
+  constructor(public payload: Recipe[]){}
 }
+
+export class CreateRecipe implements Action {
+  readonly type = CREATE_RECIPE;
+  constructor(public payload: Recipe){}
+}
+export class UpdateRecipe implements Action {
+  readonly type = UPDATE_RECIPE;
+  constructor(public payload: Recipe){}
+}
+export class DeleteRecipe implements Action {
+  readonly type = DELETE_RECIPE;
+  constructor(public payload: number){}
+}
+
+export type Actions = AddRecipes | CreateRecipe | UpdateRecipe | DeleteRecipe

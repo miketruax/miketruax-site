@@ -1,11 +1,11 @@
 import { Action } from '@ngrx/store';
-import  {SelectedMovieActions}  from '../actions/selectedMovies.actions';
+import  * as SelectedMovieActions  from '../actions/selectedMovies.actions';
 
 export type State = Object
 
 const initialState: State = {};
 
-export function selectedMoviesReducer(state = initialState, action: Action): any{
+export function selectedMoviesReducer(state: Object = initialState, action: SelectedMovieActions.Actions){
 
   switch (action.type) {
     case SelectedMovieActions.SELECT_MOVIE:
@@ -19,4 +19,3 @@ export function selectedMoviesReducer(state = initialState, action: Action): any
   }
 }
 
-export const getSelectedMovie = (state: State) => state;

@@ -7,7 +7,7 @@ import {AppComponent} from './app.component';
 import {RouterModule} from "@angular/router";
 import {FoodComponent} from "./food/food.component";
 import {AboutComponent} from "./about/about.component";
-import * as reducer from './reducers';
+import {reducers} from './reducers';
 import {HomeComponent} from "./home/home.component";
 import {RecipeService} from "./services/recipe.service";
 import {MovieService} from "./services/movie.service";
@@ -80,7 +80,6 @@ export function startUpRecipes(startUpService: RecipeService, http: Http): Funct
     SectionBackgroundFade, SlideBox
       ],
   imports: [
-
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -88,7 +87,7 @@ export function startUpRecipes(startUpService: RecipeService, http: Http): Funct
     RouterModule.forRoot(routes, {
       useHash: true
     }),
-    StoreModule.provideStore(reducer.default),
+    StoreModule.forRoot(reducers),
   ],
   providers: [{
     provide: APP_INITIALIZER,

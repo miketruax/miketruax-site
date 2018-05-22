@@ -3,11 +3,11 @@ import {Http, URLSearchParams} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 import {Store} from "@ngrx/store";
 import * as fromRoot from '../reducers'
-import {ActorActions} from "../actions/actor.actions";
-import {SelectedMovieActions} from '../actions/selectedMovies.actions'
-import 'rxjs/add/operator/map';
+import * as ActorActions  from "../actions/actor.actions";
+import * as SelectedMovieActions from '../actions/selectedMovies.actions'
+import {map} from 'rxjs/operators';
 import 'rxjs/add/operator/toPromise';
-import {MovieActions} from "../actions/movies.actions";
+import * as MovieActions from "../actions/movies.actions";
 
 
 @Injectable()
@@ -31,11 +31,9 @@ export class MovieService {
                 return {actors: [], movies: {title: title, valid: false, msg: "could not get title from OMDBApi either"}}
               }
             })
-            .map(payload => ({ type: ActorActions.ADD_ACTORS, payload }))
-            //Adds information to state with actor list
-            .subscribe(action => {
-              this.store.dispatch(action);
-              this.store.dispatch({type: ActorActions.COMBINE_ACTORS});
+            .subscribe(payload => {
+              this.store.dispatch(new ActorActions.AddActors(payload));
+              this.store.dispatch(new ActorActions.CombineActors());
             });
       }
 

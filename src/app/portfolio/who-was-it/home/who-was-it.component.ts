@@ -3,7 +3,7 @@ import {MovieService} from '../../../services/movie.service'
 import * as fromRoot from "../../../reducers";
 import {Store} from "@ngrx/store";
 import {Observable} from "rxjs";
-import {ActorActions} from "../../../actions/actor.actions";
+import * as ActorActions from "../../../actions/actor.actions";
 
 
 @Component({
@@ -15,7 +15,7 @@ import {ActorActions} from "../../../actions/actor.actions";
 export class WhoWasItComponent implements OnInit {
   //Initializes elements movie as two blank elements, tooFew (movies searched for) as false, results as observable
   private movies: Array<Object> = [{movie: {'title' :'', 'year': ''}}, {movie: {'title' :'', 'year': ''}}];
-  private results: Observable<String[]>;
+  private results: Observable<any>;
   private tooFew: boolean = false;
   constructor(private movieService: MovieService, private store: Store<fromRoot.State>) {
     this.results = store.select('actors');
@@ -40,7 +40,7 @@ export class WhoWasItComponent implements OnInit {
     this.blankClearer();
     //If not enough movies after clearing blanks, doesn't call API and instead issues error via HTML
     if(!this.tooFew) {
-      this.store.dispatch({type: ActorActions.CLEAR_ACTORS, payload: this.movies.length});
+      this.store.dispatch(new ActorActions.ClearActors(this.movies.length));
       this.movies.forEach((v, i, array) => {
         this.movieService.compareMovies(v['movie']['title'], v['movie']['year']);
       })
@@ -51,7 +51,7 @@ export class WhoWasItComponent implements OnInit {
   clear(){
     this.tooFew = false;
     this.movies = [{movie: ''}, {movie: ''}];
-    this.store.dispatch({type: ActorActions.CLEAR_ACTORS, payload: -1})
+    this.store.dispatch(new ActorActions.ClearActors(-1))
   }
 
   //Clears blanks from movie array

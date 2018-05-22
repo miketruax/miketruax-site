@@ -1,12 +1,12 @@
 import { Action } from '@ngrx/store';
-import  {MovieActions}  from '../actions/movies.actions';
+import  * as MovieActions  from '../actions/movies.actions';
 
 export type State = Object
 
 const initialState: State = {movies: [], totalMovies: null, error: {msg: '', err: false}};
 
 
-export function moviesReducer(state = initialState, action: Action): any{
+export function moviesReducer(state = initialState, action: MovieActions.Actions): any{
 
   switch (action.type) {
 

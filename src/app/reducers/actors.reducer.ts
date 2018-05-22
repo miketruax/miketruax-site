@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import  * as actor  from '../actions/actor.actions';
+import  * as ActorActions  from '../actions/actor.actions';
 
 export type State = Object
 
@@ -9,21 +9,21 @@ export type State = Object
 const initialState: State = {actors: [], movieNum: -1, movies: []};
 
 
-export function actorReducer(state = initialState, action: Action): any{
+export function actorReducer(state = initialState, action: any): any{
     switch (action.type) {
       //Clears all actors
 
-      case actor.ActorActions.CLEAR_ACTORS: {
+      case ActorActions.CLEAR_ACTORS: {
         return {actors: [], movieNum: action.payload, movies: []}
       }
 
       //Adds movie to list and decrements movieNum when an API call is finished
-      case actor.ActorActions.ADD_ACTORS : {
+      case ActorActions.ADD_ACTORS : {
         return {actors: state['actors'].concat(action.payload.actors), movieNum: state['movieNum']-1, movies: state['movies'].concat(action.payload.movies)}
       }
 
 
-      case actor.ActorActions.COMBINE_ACTORS : {
+      case ActorActions.COMBINE_ACTORS : {
         //If still movies left to retrieve (movieNum > 0) will return current state
         if(state['movieNum'] >0){
          return state

@@ -1,31 +1,30 @@
 import { Action } from '@ngrx/store';
-import  * as recipes  from '../actions/recipes.actions';
+import  * as RecipeActions  from '../actions/recipes.actions';
 import {Recipe} from "../stores/recipe.store";
 
 export type State = Recipe[]
 
 const initialState: State = [];
 
-
-export function recipeReducer(state = initialState, action: Action): any{
+export function recipeReducer(state: Recipe[] = initialState, action: RecipeActions.Actions): State{
 
   switch (action.type) {
 
-    case recipes.Actions.ADD_RECIPES:
-      return action.payload;
+    case RecipeActions.ADD_RECIPES:
+      return action.payload as Recipe[];
 
-    case recipes.Actions.CREATE_RECIPE:
+    case RecipeActions.CREATE_RECIPE:
       return [...state, action.payload];
 
-    case recipes.Actions.UPDATE_RECIPE:
+    case RecipeActions.UPDATE_RECIPE:
       return state.map(recipe => {
-        return recipe.id === action.payload._id
+        return recipe.id === action.payload["id"]
           ? Object.assign({}, recipe, action.payload) : recipe;
       });
 
-    case recipes.Actions.DELETE_RECIPE:
+    case RecipeActions.DELETE_RECIPE:
       return state.filter(recipe => {
-        return recipe.id !== action.payload.id;
+        return recipe.id !== action.payload["id"];
       });
 
     default:

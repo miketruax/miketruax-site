@@ -17,6 +17,7 @@
 .portfolio-box{
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-around;
 }
 
 @media(max-width: 767px){
@@ -30,4 +31,10 @@
 .tech-list{
   flex: 1 1 auto;
   margin-bottom: 0 !important;
+}
+
+.portfolio-exit{
+  background-color: white !important;
+  margin-top: 20px !important;
+  display: flex;
 }

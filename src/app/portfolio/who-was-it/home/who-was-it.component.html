@@ -1,35 +1,35 @@
-<h3 class="col-xs-12 text-center top-title">Who Was It....</h3>
-<div class="col-xs-12" *ngIf="!about">
-  <div class="col-xs-12">
+<h3 class="col-12 text-center top-title">Who Was It....</h3>
+<div class="col-12" *ngIf="!about">
+  <div class="col-12">
     <h4 class="text-center">Search by Movie:</h4>
     <h5 class="text-center"> Enter two or more movies and see what actors appeared in all of them (if any do).</h5>
     <h6 class="text-center">(See the <a (click)="about = !about" class="pointer"> about section </a>for current limitations)</h6>
-    <div class="col-xs-12 top-10" *ngFor="let m of movies; let i= index;">
-      <input placeholder="Movie Title" class="col-xs-6 col-md-8" type="text" [(ngModel)]=m.movie.title>
-      <input placeholder="Year" class="col-xs-2 col-xs-offset-1" type="text" [(ngModel)]=m.movie.year>
-      <div class="col-xs-3 col-md-1 add-remove"><span (click)="addItem()" class="pointer glyphicon glyphicon-plus-sign"></span>
+    <div class="col-12 top-10" *ngFor="let m of movies; let i= index;">
+      <input placeholder="Movie Title" class="col-6 col-lg-8" type="text" [(ngModel)]=m.movie.title>
+      <input placeholder="Year" class="col-2 col-offset-1" type="text" [(ngModel)]=m.movie.year>
+      <div class="col-3 col-lg-1 add-remove"><span (click)="addItem()" class="pointer glyphicon glyphicon-plus-sign"></span>
         <span *ngIf="movies.length >2" (click)="removeMovie(i)"
               class="pointer glyphicon glyphicon-remove-circle"></span></div>
     </div>
   </div>
-  <div class="col-xs-12 buttons">
-    <button class="btn btn-default col-xs-3 col-xs-offset-2" (click)="clear()">Clear</button>
-    <button class="btn btn-default col-xs-4 col-xs-offset-1" (click)="search()">Submit</button>
+  <div class="col-12 buttons">
+    <button class="btn btn-default col-3 col-offset-2" (click)="clear()">Clear</button>
+    <button class="btn btn-default col-4 col-offset-1" (click)="search()">Submit</button>
   </div>
-  <div *ngIf="tooFew" class="alert alert-danger col-xs-8 col-xs-offset-2">
+  <div *ngIf="tooFew" class="alert alert-danger col-8 col-offset-2">
     <strong>Error!</strong> Please ensure at least two title fields are not blank.
   </div>
 
-  <div class="col-xs-12" *ngIf="!about">
+  <div class="col-12" *ngIf="!about">
     <who-was-it-results [results]="results | async">
     </who-was-it-results>
   </div>
 </div>
-<div class="col-xs-12"  *ngIf="about">
+<div class="col-12"  *ngIf="about">
 <who-was-it-about></who-was-it-about>
-<a (click)="about= !about" class="text-center pointer col-xs-8 col-xs-offset-2">Back to Search</a>
+<a (click)="about= !about" class="text-center pointer col-8 col-offset-2">Back to Search</a>
 </div>
 
-<a class="col-xs-12 text-center" style="background-color: white !important; margin-top: 20px !important;"
-   [routerLink]="['/portfolio']">
-  <h4>Back to Portfolio</h4></a>
+
+<h4 class="col-12 portfolio-exit text-center"> <a class="col-12"
+         [routerLink]="['/portfolio']">Back to Portfolio</a></h4>

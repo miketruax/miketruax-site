@@ -1,24 +1,24 @@
 
-<div class="col-xs-12 main-container" [style.opacity]="(moreInfo || showRanking) ? 0 : 1">
-<h3 class=" col-xs-12 text-center">
+<div class="col-12 main-container" [style.opacity]="(moreInfo || showRanking) ? 0 : 1">
+<h3 class=" col-12 text-center">
   Periodic Table
 </h3>
-  <div class="btn-group col-xs-12">
-    <button type="button" class="col-xs-12 btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <div class="btn-group col-12">
+    <button type="button" class="col-12 btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Change View <span class="caret"></span>
     </button>
-    <ul class="dropdown-menu col-xs-12">
-      <li><a class="dropdown-item col-xs-12" ngClass="{{style==='classic' ? 'active' : ''}}" (click)="setStyle('classic')">Classic</a></li>
-      <li><a class="dropdown-item col-xs-12" ngClass="{{style==='crustAbundance' ? 'active' : ''}}" (click)="setStyle('crustAbundance')">Crust Abundance</a></li>
-      <li><a class="dropdown-item col-xs-12" ngClass="{{style==='humanAbundance' ? 'active' : ''}}" (click)="setStyle('humanAbundance')">Human Abundance</a></li>
-      <li><a class="dropdown-item col-xs-12" ngClass="{{style==='universeAbundance' ? 'active' : ''}}" (click)="setStyle('universeAbundance')">Universe Abundance</a></li>
-      <li><a class="dropdown-item col-xs-12" ngClass="{{style==='discoveryYear' ? 'active' : ''}}" (click)="discoveryShow()">Order of Discovery</a></li>
+    <ul class="dropdown-menu col-12">
+      <li><a class="dropdown-item col-12" ngClass="{{style==='classic' ? 'active' : ''}}" (click)="setStyle('classic')">Classic</a></li>
+      <li><a class="dropdown-item col-12" ngClass="{{style==='crustAbundance' ? 'active' : ''}}" (click)="setStyle('crustAbundance')">Crust Abundance</a></li>
+      <li><a class="dropdown-item col-12" ngClass="{{style==='humanAbundance' ? 'active' : ''}}" (click)="setStyle('humanAbundance')">Human Abundance</a></li>
+      <li><a class="dropdown-item col-12" ngClass="{{style==='universeAbundance' ? 'active' : ''}}" (click)="setStyle('universeAbundance')">Universe Abundance</a></li>
+      <li><a class="dropdown-item col-12" ngClass="{{style==='discoveryYear' ? 'active' : ''}}" (click)="discoveryShow()">Order of Discovery</a></li>
     </ul>
   </div>
 </div>
-<button *ngIf="(!moreInfo && !showRanking) && style !== 'classic'" class="col-xs-8 col-xs-offset-2 btn btn-default" (click)="ranking()">Ranked List</button>
-<div class="col-xs-12"  *ngIf="style === 'discoveryYear' && (!moreInfo && !showRanking)">
-  <input (click)="clearCounter()" (mousedown)="clearCounter()" type="range" class="col-xs-12 yearSlider" min="0" max="{{currYear}}" [(ngModel)]="year"
+<button *ngIf="(!moreInfo && !showRanking) && style !== 'classic'" class="col-8 offset-2 btn btn-default" (click)="ranking()">Ranked List</button>
+<div class="col-12"  *ngIf="style === 'discoveryYear' && (!moreInfo && !showRanking)">
+  <input (click)="clearCounter()" (mousedown)="clearCounter()" type="range" class="col-12 yearSlider" min="0" max="{{currYear}}" [(ngModel)]="year"
          [style.background]="sanitizer.bypassSecurityTrustStyle('-moz-linear-gradient(left,  aliceblue 0%, aliceblue '+(year/currYear*100)+'%, gray '+(year/currYear*100)+'%, gray 100%)')"
   [style.background]= "sanitizer.bypassSecurityTrustStyle('-webkit-gradient(linear, left top, right top, color-stop(0%,aliceblue), color-stop('+(year/currYear*100)+'%,aliceblue), color-stop('+(year/currYear*100)+'%,gray), color-stop(100%,gray))')"
   [style.background]= "sanitizer.bypassSecurityTrustStyle('-webkit-linear-gradient(left,  aliceblue 0%,aliceblue '+(year/currYear*100)+'%,gray '+(year/currYear*100)+'%,gray 100%)')"
@@ -41,6 +41,6 @@
 <element-info-component [style.opacity]="moreInfo ? 1 : 0"  (showMore)="showMore($event)" [moreInfo]="moreInfo" [element]="selectedElement"></element-info-component>
 
 
-<a class="col-xs-12 text-center" style="background-color: white !important; margin-top: 20px !important;"
-   [routerLink]="['/portfolio']">
-  <h4>Back to Portfolio</h4></a>
+
+<h4 class="col-12 portfolio-exit text-center"><a class="col-12"
+         [routerLink]="['/portfolio']">Back to Portfolio</a></h4>

@@ -1,4 +1,7 @@
-.navbar-toggle {
+.navbar-toggler {
+  height: 35px;
+  width: 35px;
+  padding: 1px 6px;
   z-index: 100;
   margin: 5px 10px 5px 0 !important;
   background-color: $moonstone-blue !important;
@@ -12,7 +15,7 @@
 .navbar-brand{
   img{
     max-height: 40px !important;
-    margin-top: -15px !important;
+    margin: -5px 0 0 10px
   }
   max-height: 40px !important;
 }
@@ -39,7 +42,7 @@
     background-color: $moonstone-blue !important;
     color: $alabaster !important;
   }
-  a:hover{
+  a:hover:not(.active){
     background-color: $sunny !important;
     color: $yankees-blue !important;
   }
@@ -55,6 +58,14 @@
 $speed: 400ms;
 $easing: cubic-bezier(0.7, 0, 0, 0.7);
 
+.icon-bar{
+  display: block;
+  margin: 5px 0;
+  height: 2px;
+  background-color: #0f3c59 !important;
+  width: 20px;
+}
+
 .nav-icon-wrapper {
   overflow: hidden;
   float: left;
@@ -69,14 +80,14 @@ $easing: cubic-bezier(0.7, 0, 0, 0.7);
 .nav-menu-active {
   .icon-bar {
     &:nth-child(2) {
-      transform: translateY(6px) rotate(45deg);
+      transform: translateY(7px) rotate(45deg);
     }
     &:nth-child(3) {
       opacity: 0;
       transform: translateX(-100%);
     }
     &:nth-child(4) {
-      transform: translateY(-6px) rotate(-45deg);
+      transform: translateY(-7px) rotate(-45deg);
     }
   }
 }

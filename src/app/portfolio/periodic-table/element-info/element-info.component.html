@@ -1,72 +1,72 @@
-<div class="col-xs-12 info-container col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2" *ngIf="moreInfo">
+<div class="col-12 info-container col-lg-10 offset-lg-1 col-xl-8 offset-xl-2" *ngIf="moreInfo">
     <div class="exit" style="background-image: url('/assets/img/portfolio/periodic-table/exit.svg')" (click)="showMore.emit({})"></div>
     <div class="basicProps" *ngIf="element.basicProps">
     <div class="top-circle" ngClass="{{element.type}}">{{element.basicProps.symbol}}
     <p>{{element.basicProps['atomic number']}}</p>
     </div>
-    <h2 class="col-xs-12 text-center">{{element.name}}</h2>
+    <h2 class="col-12 text-center">{{element.name}}</h2>
 
-    <h5 class="col-xs-12 text-center info-header">Basic Info:</h5>
-    <div class="col-xs-12 "><b>Discovered: </b> {{element.discoveryYear}}</div>
-    <div class="col-xs-12 "><b>Type: </b> {{element.type | elementType}}</div>
-    <div class="col-xs-12 "><b>Atomic Mass: </b>{{element.basicProps['atomic mass']}}</div>
+    <h5 class="col-12 text-center info-header">Basic Info:</h5>
+    <div class="col-12 "><b>Discovered: </b> {{element.discoveryYear}}</div>
+    <div class="col-12 "><b>Type: </b> {{element.type | elementType}}</div>
+    <div class="col-12 "><b>Atomic Mass: </b>{{element.basicProps['atomic mass']}}</div>
 
   </div>
   <div class="thermoProps" *ngIf="element.thermoProps">
-    <h5 class="col-xs-12 text-center info-header">Thermodynamic Properties:</h5>
-    <div class="col-xs-12" *ngIf="element.thermoProps['phase at STP']"><b>Phase at STP: </b> {{element.thermoProps['phase at STP']}}</div>
-    <div class="col-xs-12 " *ngIf="element.thermoProps['melting point']"><b>Melting Point: </b> {{element.thermoProps['melting point']}}</div>
-    <div class="col-xs-12 " *ngIf="element.thermoProps['boiling point']"><b>Boiling Point: </b> {{element.thermoProps['boiling point']}}</div>
+    <h5 class="col-12 text-center info-header">Thermodynamic Properties:</h5>
+    <div class="col-12" *ngIf="element.thermoProps['phase at STP']"><b>Phase at STP: </b> {{element.thermoProps['phase at STP']}}</div>
+    <div class="col-12 " *ngIf="element.thermoProps['melting point']"><b>Melting Point: </b> {{element.thermoProps['melting point']}}</div>
+    <div class="col-12 " *ngIf="element.thermoProps['boiling point']"><b>Boiling Point: </b> {{element.thermoProps['boiling point']}}</div>
 
   </div>
   <div class="materialProps" *ngIf="element.materialProps">
-    <h5 class="col-xs-12 text-center info-header">Material Properties:</h5>
-    <div class="col-xs-12 " *ngIf="element.materialProps['density']"><b>Density: </b> {{element.materialProps['density']}}</div>
-    <div class="col-xs-12 " *ngIf="element.materialProps['Mohs hardness']"><b>Mohs Hardness: </b> {{element.materialProps['Mohs hardness']}}</div>
-    <div class="col-xs-12 " *ngIf='element.materialProps["Youngs modulus"]'><b>Young's Modulus: </b> {{element.materialProps["Youngs modulus"]}}</div>
-    <div class="col-xs-12 " *ngIf='element.materialProps["tensile yield strength"]'><b>Tensile Yield Strength: </b> {{element.materialProps["tensile yield strength"]}}</div>
-    <div class="col-xs-12 " *ngIf='element.materialProps["sound speed"]'><b>Sound Speed: </b> {{element.materialProps["sound speed"]}}</div>
-    <div class="col-xs-12 " *ngIf='element.materialProps["thermal expansion"]'><b>Thermal Expansion: </b> {{element.materialProps["thermal expansion"]}}</div>
-    <div class="col-xs-12 " *ngIf='element.materialProps["thermal conductivity"]'><b>Thermal Conductivity: </b> {{element.materialProps["thermal conductivity"]}}</div>
+    <h5 class="col-12 text-center info-header">Material Properties:</h5>
+    <div class="col-12 " *ngIf="element.materialProps['density']"><b>Density: </b> {{element.materialProps['density']}}</div>
+    <div class="col-12 " *ngIf="element.materialProps['Mohs hardness']"><b>Mohs Hardness: </b> {{element.materialProps['Mohs hardness']}}</div>
+    <div class="col-12 " *ngIf='element.materialProps["Youngs modulus"]'><b>Young's Modulus: </b> {{element.materialProps["Youngs modulus"]}}</div>
+    <div class="col-12 " *ngIf='element.materialProps["tensile yield strength"]'><b>Tensile Yield Strength: </b> {{element.materialProps["tensile yield strength"]}}</div>
+    <div class="col-12 " *ngIf='element.materialProps["sound speed"]'><b>Sound Speed: </b> {{element.materialProps["sound speed"]}}</div>
+    <div class="col-12 " *ngIf='element.materialProps["thermal expansion"]'><b>Thermal Expansion: </b> {{element.materialProps["thermal expansion"]}}</div>
+    <div class="col-12 " *ngIf='element.materialProps["thermal conductivity"]'><b>Thermal Conductivity: </b> {{element.materialProps["thermal conductivity"]}}</div>
 
   </div>
   <div class="electromagnetProps" *ngIf="element.electromagnetProps">
-    <h5 class="col-xs-12 text-center info-header">Electromagnetic Properties:</h5>
-    <div class="col-xs-12 " *ngIf="element.electromagnetProps['electrical type']"><b>Electrical Type: </b> {{element.electromagnetProps['electrical type']}}</div>
-    <div class="col-xs-12 " *ngIf="element.electromagnetProps['resistivity']"><b>Resistivity: </b> {{element.electromagnetProps['resistivity']}}</div>
-    <div class="col-xs-12 " *ngIf='element.electromagnetProps["magnetic type"]'><b>Magnetic Type: </b> {{element.electromagnetProps["magnetic type"]}}</div>
-    <div class="col-xs-12 " *ngIf='element.electromagnetProps["superconducting point"]'><b>Superconducting Point: </b> {{element.electromagnetProps["superconducting point"]}}</div>
-    <div class="col-xs-12 " *ngIf='element.electromagnetProps["color"]'><b>Color: </b> {{element.electromagnetProps["color"]}}</div>
+    <h5 class="col-12 text-center info-header">Electromagnetic Properties:</h5>
+    <div class="col-12 " *ngIf="element.electromagnetProps['electrical type']"><b>Electrical Type: </b> {{element.electromagnetProps['electrical type']}}</div>
+    <div class="col-12 " *ngIf="element.electromagnetProps['resistivity']"><b>Resistivity: </b> {{element.electromagnetProps['resistivity']}}</div>
+    <div class="col-12 " *ngIf='element.electromagnetProps["magnetic type"]'><b>Magnetic Type: </b> {{element.electromagnetProps["magnetic type"]}}</div>
+    <div class="col-12 " *ngIf='element.electromagnetProps["superconducting point"]'><b>Superconducting Point: </b> {{element.electromagnetProps["superconducting point"]}}</div>
+    <div class="col-12 " *ngIf='element.electromagnetProps["color"]'><b>Color: </b> {{element.electromagnetProps["color"]}}</div>
 
   </div>
   <div class="reactivity" *ngIf="element.reactivity">
-    <h5 class="col-xs-12 text-center info-header">Reactivity:</h5>
-    <div class="col-xs-12 " *ngIf="element.reactivity['valence']"><b>Valence: </b> {{element.reactivity['valence']}}</div>
-    <div class="col-xs-12 " *ngIf="element.reactivity['electronegativity']"><b>Electronegativity: </b> {{element.reactivity['electronegativity']}}</div>
-    <div class="col-xs-12 " *ngIf='element.reactivity["electron affinity"]'><b>Electron Afinity: </b> {{element.reactivity["electron affinity"]}}</div>
-    <div class="col-xs-12 " *ngIf='element.reactivity["first ionization energy"]'><b>First Ionization Energy: </b> {{element.reactivity["first ionization energy"]}}</div>
+    <h5 class="col-12 text-center info-header">Reactivity:</h5>
+    <div class="col-12 " *ngIf="element.reactivity['valence']"><b>Valence: </b> {{element.reactivity['valence']}}</div>
+    <div class="col-12 " *ngIf="element.reactivity['electronegativity']"><b>Electronegativity: </b> {{element.reactivity['electronegativity']}}</div>
+    <div class="col-12 " *ngIf='element.reactivity["electron affinity"]'><b>Electron Afinity: </b> {{element.reactivity["electron affinity"]}}</div>
+    <div class="col-12 " *ngIf='element.reactivity["first ionization energy"]'><b>First Ionization Energy: </b> {{element.reactivity["first ionization energy"]}}</div>
   </div>
   <div class="atomicProps" *ngIf="element.atomicProps">
-    <h5 class="col-xs-12 text-center info-header">Atomic Properties:</h5>
-    <div class="col-xs-12 " *ngIf="element.atomicProps['term symbol']"><b>Term Symbol: </b> {{element.atomicProps['term symbol']}}</div>
-    <div class="col-xs-12 " *ngIf="element.atomicProps['atomic radius']"><b>Atomic Radius: </b> {{element.atomicProps['atomic radius']}}</div>
+    <h5 class="col-12 text-center info-header">Atomic Properties:</h5>
+    <div class="col-12 " *ngIf="element.atomicProps['term symbol']"><b>Term Symbol: </b> {{element.atomicProps['term symbol']}}</div>
+    <div class="col-12 " *ngIf="element.atomicProps['atomic radius']"><b>Atomic Radius: </b> {{element.atomicProps['atomic radius']}}</div>
   </div>
   <div class="abundances" *ngIf="element.abundances">
-    <h5 class="col-xs-12 text-center info-header">Abundances:</h5>
-    <div class="col-xs-12 " *ngIf="element.abundances['universe abundance']"><b>Universe: </b> {{element.abundances['universe abundance']}}</div>
-    <div class="col-xs-12 " *ngIf="element.abundances['crust abundance']"><b>Crust: </b> {{element.abundances['crust abundance']}}</div>
-    <div class="col-xs-12 " *ngIf="element.abundances['human abundance']"><b>Human: </b> {{element.abundances["human abundance"]}}</div>
+    <h5 class="col-12 text-center info-header">Abundances:</h5>
+    <div class="col-12 " *ngIf="element.abundances['universe abundance']"><b>Universe: </b> {{element.abundances['universe abundance']}}</div>
+    <div class="col-12 " *ngIf="element.abundances['crust abundance']"><b>Crust: </b> {{element.abundances['crust abundance']}}</div>
+    <div class="col-12 " *ngIf="element.abundances['human abundance']"><b>Human: </b> {{element.abundances["human abundance"]}}</div>
   </div>
   <div class="nuclearProps" *ngIf="element.nuclearProps">
-    <h5 class="col-xs-12 text-center info-header">Nuclear Properties:</h5>
-    <div class="col-xs-12 " *ngIf="element.nuclearProps['half-life']"><b>Half-life: </b> {{element.nuclearProps['half-life']}}</div>
-    <div class="col-xs-12 " *ngIf='element.nuclearProps["stable isotopes"]'><b>Stable Isotopes: </b> {{element.nuclearProps['stable isotopes']}}</div>
-    <div class="col-xs-12 " *ngIf='element.nuclearProps["unstable isotopes"]'><b>Unstable Isotopes: </b> {{element.nuclearProps["unstable isotopes"]}}</div>
+    <h5 class="col-12 text-center info-header">Nuclear Properties:</h5>
+    <div class="col-12 " *ngIf="element.nuclearProps['half-life']"><b>Half-life: </b> {{element.nuclearProps['half-life']}}</div>
+    <div class="col-12 " *ngIf='element.nuclearProps["stable isotopes"]'><b>Stable Isotopes: </b> {{element.nuclearProps['stable isotopes']}}</div>
+    <div class="col-12 " *ngIf='element.nuclearProps["unstable isotopes"]'><b>Unstable Isotopes: </b> {{element.nuclearProps["unstable isotopes"]}}</div>
   </div>
   <div class="electronInformation" *ngIf="element.electron">
-    <h5 class="col-xs-12 text-center info-header">Electron Information:</h5>
-    <div class="col-xs-12 " *ngIf="element.electron['configuration']"><b>Electron Configuration: </b> {{element.electron['configuration']}}</div>
-    <div class="col-xs-12 " *ngIf="element.electron['pershell']"><b>Electrons per shell: </b> {{element.electron['pershell']}}</div>
+    <h5 class="col-12 text-center info-header">Electron Information:</h5>
+    <div class="col-12 " *ngIf="element.electron['configuration']"><b>Electron Configuration: </b> {{element.electron['configuration']}}</div>
+    <div class="col-12 " *ngIf="element.electron['pershell']"><b>Electrons per shell: </b> {{element.electron['pershell']}}</div>
   </div>
-  <button class="btn btn-default col-xs-12 text-center pointer" style="margin-top: 10px !important;" (click)="showMore.emit({})">Close</button>
+  <button class="btn btn-default col-12 text-center pointer" style="margin-top: 10px !important;" (click)="showMore.emit({})">Close</button>
 </div>

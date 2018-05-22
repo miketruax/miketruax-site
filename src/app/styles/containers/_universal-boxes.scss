@@ -1,6 +1,6 @@
 about-component, home-component, food-component, portfolio-component{
-  display: flex;
-  flex-flow: row wrap;
+  display: flex !important;
+  flex-flow: row wrap !important;
 }
 
 .top-div{

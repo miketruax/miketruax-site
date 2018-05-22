@@ -12,7 +12,7 @@ let pool = mysql.createPool({
 function acquire(callback){
   pool.getConnection(function(err, connection){
     if(err){
-      res.send(err);
+      console.error(err);
       return;
     }
     callback(connection);

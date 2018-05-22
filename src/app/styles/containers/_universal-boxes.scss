@@ -1,3 +1,8 @@
+about-component, home-component, food-component, portfolio-component{
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .top-div{
   margin-top: 146px !important;
 }
@@ -9,6 +14,7 @@
 }
 
 .container-box{
+  flex: 1 1 auto;
   padding: 15px !important;
   background-color: white !important;
   backface-visibility: hidden;

@@ -1,4 +1,6 @@
 .section-container{
+  display: flex;
+  flex-flow: column wrap;
   padding-top: 20px !important;
   @media(max-width: 1199px) {
     padding-left:0 !important;

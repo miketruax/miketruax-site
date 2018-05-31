@@ -4,19 +4,18 @@
     <h4 class="text-center">Search by Movie:</h4>
     <h5 class="text-center"> Enter two or more movies and see what actors appeared in all of them (if any do).</h5>
     <h6 class="text-center">(See the <a (click)="about = !about" class="pointer"> about section </a>for current limitations)</h6>
-    <div class="col-12 top-10" *ngFor="let m of movies; let i= index;">
-      <input placeholder="Movie Title" class="col-6 col-lg-8" type="text" [(ngModel)]=m.movie.title>
-      <input placeholder="Year" class="col-2 col-offset-1" type="text" [(ngModel)]=m.movie.year>
-      <div class="col-3 col-lg-1 add-remove"><span (click)="addItem()" class="pointer glyphicon glyphicon-plus-sign"></span>
-        <span *ngIf="movies.length >2" (click)="removeMovie(i)"
-              class="pointer glyphicon glyphicon-remove-circle"></span></div>
+    <div class="col-12 top-10 movie-search" *ngFor="let m of movies; let i= index;">
+      <input placeholder="Movie Title" class="col-5 col-lg-7" type="text" [(ngModel)]=m.movie.title>
+      <input placeholder="Year" class="col-2 offset-1" type="text" [(ngModel)]=m.movie.year>
+      <div class="col-1 col-lg-1 add-remove"><span (click)="addItem()" class="pointer glyphicon glyphicon-plus-sign">+</span>
+        <span *ngIf="movies.length >2" (click)="removeMovie(i)" class="pointer glyphicon glyphicon-remove-circle">-</span></div>
     </div>
   </div>
   <div class="col-12 buttons">
-    <button class="btn btn-default col-3 col-offset-2" (click)="clear()">Clear</button>
-    <button class="btn btn-default col-4 col-offset-1" (click)="search()">Submit</button>
+    <button class="btn btn-default col-4 offset-1" (click)="search()">Submit</button>
+    <button class="btn btn-default col-3 offset-2" (click)="clear()">Clear</button>
   </div>
-  <div *ngIf="tooFew" class="alert alert-danger col-8 col-offset-2">
+  <div *ngIf="tooFew" class="alert alert-danger col-8 offset-2">
     <strong>Error!</strong> Please ensure at least two title fields are not blank.
   </div>
 

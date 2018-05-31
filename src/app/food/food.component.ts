@@ -8,7 +8,7 @@ import {fadeInAnimation} from "../animations/fade-in.animation";
 @Component({
   selector: 'food-component',
   templateUrl: './food.component.html',
-  styleUrls: ['../styles/app.style.scss'],
+  styleUrls: ['food.component.scss'],
   animations: [fadeInAnimation],
   host: { '[@fadeInAnimation]': '' }
 })

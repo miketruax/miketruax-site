@@ -1,7 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule, APP_INITIALIZER} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {HttpModule, Http} from '@angular/http';
 import {routes} from './app.routes';
 import {AppComponent} from './app.component';
 import {RouterModule} from "@angular/router";
@@ -35,9 +34,10 @@ import {RankingPipe} from "./portfolio/periodic-table/pipes/ranking.pipe";
 import {EtaTimeUntilComponent} from "./shared/eta-until-end/eta-time-until.component";
 import {SectionBackgroundFade} from "./directives/section-background-fade";
 import {SlideBox} from "./directives/container-box-slide";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 
-export function startUpRecipes(startUpService: RecipeService, http: Http): Function {
+export function startUpRecipes(startUpService: RecipeService, http: HttpClient): Function {
   return () => {
     let backgrounds = ["beginning.gif", "home-logo.png", "consultation.gif", "design.gif", "food.gif",
       "home-logo.png", "passions.gif", "philosophy.gif", "planning.gif", "portfolio.gif",
@@ -83,7 +83,7 @@ export function startUpRecipes(startUpService: RecipeService, http: Http): Funct
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     RouterModule.forRoot(routes, {
       useHash: true
     }),
@@ -92,7 +92,7 @@ export function startUpRecipes(startUpService: RecipeService, http: Http): Funct
   providers: [{
     provide: APP_INITIALIZER,
     useFactory: startUpRecipes,
-    deps: [RecipeService, Http],
+    deps: [RecipeService, HttpClient],
     multi: true
   }, RecipeService, MovieService],
   bootstrap: [AppComponent]

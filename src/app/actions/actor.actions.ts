@@ -21,7 +21,8 @@ export class SetActors implements Action {
 }
 export class AddActors implements Action {
   readonly type = CLEAR_ACTORS;
-  constructor(public payload: any){}
+  constructor(public payload: Object){
+  }
 }
 
 export type Actions = ClearActors | CombineActors | SetActors | AddActors

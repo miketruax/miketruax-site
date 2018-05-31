@@ -1,5 +1,4 @@
 import {Injectable, Inject} from '@angular/core';
-import {Http, URLSearchParams} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 import {Store} from "@ngrx/store";
 import * as fromRoot from '../reducers'
@@ -8,15 +7,23 @@ import * as SelectedMovieActions from '../actions/selectedMovies.actions'
 import {map} from 'rxjs/operators';
 import 'rxjs/add/operator/toPromise';
 import * as MovieActions from "../actions/movies.actions";
+import {HttpClient,HttpParams} from "@angular/common/http";
 
 
 @Injectable()
 export class MovieService {
-  constructor(private http: Http, private store: Store<fromRoot.State>) {
+  constructor(private http: HttpClient, private store: Store<fromRoot.State>) {
   }
     //API call to OMDB to retrieve actor information on movies entered
-    compareMovies(title: String, year: number, page: number = 1){
-      this.getMovies({'t': title, 'y': year, 'page': page})
+    compareMovies(title: string, year: number, page: number = 1){
+    let params: HttpParams = new HttpParams()
+        .set('t', title.toString())
+        .set('y', year.toString())
+        .set ('page', '1')
+        .set('apikey', '25c98aaf')
+        .set('r', 'JSON');
+
+      this.getMovies(params)
             .map(res => {
               //If actors exist on response AND actors populated (not N/A), adds actors array to state
               if(res['Actors'] && res['Actors'] !== "N/A"){
@@ -32,29 +39,29 @@ export class MovieService {
               }
             })
             .subscribe(payload => {
-              this.store.dispatch(new ActorActions.AddActors(payload));
-              this.store.dispatch(new ActorActions.CombineActors());
+              this.store.dispatch({type: ActorActions.ADD_ACTORS, payload: payload});
+              this.store.dispatch({type: ActorActions.COMBINE_ACTORS});
             });
       }
 
-      getMovies(search: Object){
-        let params: URLSearchParams =  new URLSearchParams();
-        for(let k in search){
-          if(search[k]) {
-            params.set(k, search[k].toString());
-          }
-        }
-        params.set('apikey', '25c98aaf');
-        params.set('r', 'JSON');
+      getMovies(params: HttpParams){
+
+
         //retrieves movie information based off movie string and converts to json
 
-        return this.http.get('http://www.omdbapi.com/', {search: params})
-          .map(res => res.json())
+        return this.http.get('http://www.omdbapi.com/', {params})
 
       }
 
   searchMovies(title, year, page) {
-    return this.getMovies({'s': title, 'y': year, 'page': page})
+    let params: HttpParams =  new HttpParams()
+      .set('apikey', '25c98aaf')
+      .set('r', 'JSON')
+      .set('page', page ? page: '1')
+      .set('s', title ? title : '')
+      .set('y', year ? year : '');
+
+    return this.getMovies(params)
       .map(data=>{
         //if successful and movies are found
         if (data['Response'] === "True") {
@@ -86,10 +93,16 @@ export class MovieService {
   //title is clicked hides search results and shows more info
   movieById(id) {
     this.store.dispatch({type: SelectedMovieActions.CLEAR_SELECTED_MOVIE});
-    return this.getMovies({'i': id, 'plot': 'full'})
+    let params: HttpParams =  new HttpParams()
+      .set('apikey', '25c98aaf')
+      .set('r', 'JSON')
+      .set('i', id)
+      .set('plot', 'full');
+
+    return this.getMovies(params)
       //if response is valid JSON movie info, show contanier and populate info
       .map(data =>{
-        if (data.Response === "True") {
+        if (data['Response'] === "True") {
           //populates the data
           this.store.dispatch({type: SelectedMovieActions.SELECT_MOVIE, payload: data})
         }

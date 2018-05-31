@@ -135,6 +135,7 @@ a h4{
 }
 
 .players {
+  float: left;
   color: rgba($alabaster, 0.2);
   text-align: center;
   outline: 1px solid $alabaster;
@@ -178,9 +179,12 @@ a h4{
   position: absolute;
   font-size: 1rem;
   left: 0;
-  right: 0;
-  top: $spacing*2;
+  top: 0;
+  height: 30px;
+  line-height: 30px !important;
+  text-transform: uppercase;
   margin: auto;
+  width: 100%;
 }
 
 .active #O, .active #X {

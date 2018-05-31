@@ -1,3 +1,6 @@
+@import "../shared/styles/fonts";
+@import "../shared/styles/colors";
+
 .portfolio-container{
   display: flex;
   flex-flow: column wrap;
@@ -34,7 +37,12 @@
 }
 
 .portfolio-exit{
+  clear: both;
   background-color: white !important;
   margin-top: 20px !important;
   display: flex;
+}
+
+.portfolio-title{
+  height: 63px;
 }

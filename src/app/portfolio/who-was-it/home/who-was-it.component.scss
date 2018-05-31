@@ -4,11 +4,12 @@
 .top-10{
   margin-top: 10px;
 }
-.glyphicon{
-  font-family: 'Glyphicons Halflings' !important;
-}
 .top-title{
   margin-top: 165px !important;
+}
+
+.movie-search{
+  display: flex;
 }
 
 input {
@@ -20,7 +21,11 @@ input {
 }
 .add-remove{
   height: 46px;
+  span:nth-child(2){
+    float: right;
+  }
   span{
+    float: left;
     margin-top: 16px;
   }
 }

@@ -5,6 +5,7 @@ import {fadeInAnimation} from "../animations/fade-in.animation";
   selector: 'portfolio-component',
   templateUrl: 'portfolio.component.html',
   animations: [fadeInAnimation],
+  styleUrls: ['./portfolio.component.scss'],
   host: { '[@fadeInAnimation]': '' }
 })
 export class PortfolioComponent implements OnInit {

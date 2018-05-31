@@ -4,6 +4,7 @@ import {fadeInAnimation} from "../animations/fade-in.animation";
 @Component({
   selector: 'food-list',
   templateUrl: './food-list.component.html',
+  styleUrls: ['food.component.scss'],
   animations: [fadeInAnimation]
 })
 export class FoodListComponent implements OnInit{

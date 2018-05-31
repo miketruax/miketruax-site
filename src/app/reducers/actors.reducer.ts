@@ -10,7 +10,7 @@ const initialState: State = {actors: [], movieNum: -1, movies: []};
 
 
 export function actorReducer(state = initialState, action: any): any{
-    switch (action.type) {
+  switch (action.type) {
       //Clears all actors
 
       case ActorActions.CLEAR_ACTORS: {

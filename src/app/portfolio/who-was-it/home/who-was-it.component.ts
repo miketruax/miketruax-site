@@ -40,8 +40,8 @@ export class WhoWasItComponent implements OnInit {
     this.blankClearer();
     //If not enough movies after clearing blanks, doesn't call API and instead issues error via HTML
     if(!this.tooFew) {
-      this.store.dispatch(new ActorActions.ClearActors(this.movies.length));
-      this.movies.forEach((v, i, array) => {
+      this.store.dispatch({type: ActorActions.CLEAR_ACTORS, payload: this.movies.length});
+      this.movies.forEach(v => {
         this.movieService.compareMovies(v['movie']['title'], v['movie']['year']);
       })
     }
@@ -51,7 +51,7 @@ export class WhoWasItComponent implements OnInit {
   clear(){
     this.tooFew = false;
     this.movies = [{movie: ''}, {movie: ''}];
-    this.store.dispatch(new ActorActions.ClearActors(-1))
+    this.store.dispatch({type: ActorActions.CLEAR_ACTORS, payload: -1})
   }
 
   //Clears blanks from movie array

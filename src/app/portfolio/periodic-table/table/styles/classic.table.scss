@@ -67,7 +67,6 @@
 .element-symbol {
   font-size: 1.75vw !important;
   font-weight: 200;
-  margin: -.2vw;
 }
 
 @media(max-width: 649px) {
@@ -83,6 +82,7 @@
 }
 
 .exit{
+  z-index: 100;
   cursor: pointer;
   width: 20px;
   height: 20px;
@@ -91,4 +91,12 @@
   background-size: 90% 90%;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.discoveryYear, .classic {
+  .element:hover {
+    .element-symbol {
+      zoom: 125%;
+    }
+  }
 }

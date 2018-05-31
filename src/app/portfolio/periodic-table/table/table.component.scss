@@ -3,7 +3,9 @@
 @import "./styles/human-abundance.table";
 @import "./styles/crust-abundance.table";
 @import "./styles/discovery-year.table";
-
+.portfolio-exit{
+  clear: both;
+}
 .main-container{
   margin-top: 56px;
   margin-bottom: 20px;
@@ -133,3 +135,53 @@ element-info-component, element-ranking-component, .main-container{
 .Unknown{
   background-color: #f2edf6;
 }
+
+.icon-parent{
+  margin-top: 25px;
+  width: 100%;
+}
+.icon-container{
+  cursor: pointer;
+  float: left;
+  width: 20%;
+  margin: 0;
+  padding: 0;
+  height: 75px;
+  line-height: 50px;
+  text-align: center;
+}
+
+
+
+.icon-container.active ::ng-deep {
+  .svgIcon{
+    fill: deepskyblue;
+  }
+  .iconDescription {
+    color: deepskyblue;
+  }
+}
+
+  @media(max-width: 475px){
+    .icon-container ::ng-deep {
+      .iconDescription {
+        display: none;
+      }
+    }
+  }
+
+.rankingButton{
+  display: table;
+  margin: auto;
+  clear: both;
+  text-align: center;
+  cursor: pointer;
+}
+
+.rankingButton:hover ::ng-deep{
+  svg{
+    fill: lightskyblue;
+  }
+  color: lightskyblue;
+}
+

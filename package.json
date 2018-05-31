@@ -53,6 +53,7 @@
     "ngrx-store-localstorage": "^0.2.4",
     "ngrx-store-logger": "^0.2.0",
     "node-sass": "^4.5.1",
+    "octicons": "^7.3.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "popper.js": "^1.14.3",

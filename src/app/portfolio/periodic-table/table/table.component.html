@@ -1,11 +1,12 @@
-<div class="main-container" [style.display]="(moreInfo || showRanking) ? 'none' : 'block'">
-  <h3 class="text-center">
+<div class="main-container" ngClass="{{showRanking || moreInfo ? 'hide-table' : ''}}">
+<div class="table-container">
+  <h3 class="text-center main-title">
     Periodic Table
   </h3>
 
   <!--TOP MENU -->
 
-  <div class="menu-container">
+  <div class="menu-container" >
     <div class="icon-container" ngClass="{{style==='classic' ? 'active' : ''}}" (click)="setStyle('classic')"
          [innerHTML]="beakerIcon">
       Classic
@@ -24,7 +25,7 @@
       Order of Discovery
     </div>
   </div>
-</div>
+
 
 <!--SHOW RANKING BUTTON-->
 
@@ -35,7 +36,7 @@
 
 
 <!--YEAR SLIDER FOR CHRONOLOGICAL ORDER-->
-
+<!--TODO: CLEAN UP YEAR TRACK BAR-->
 <div class="slider-container" *ngIf="style === 'discoveryYear' && (!moreInfo && !showRanking)">
   <input (click)="clearCounter()" (mousedown)="clearCounter()" type="range" class="yearSlider" min="0"
          max="{{currYear}}" [(ngModel)]="year"
@@ -50,19 +51,23 @@
 
 <!--TABLE-->
 
-<div [style.opacity]="(moreInfo || showRanking) ? 0 : 1" class="table" ngClass="{{style}}"
-     *ngIf="!moreInfo && !showRanking">
+
+
+<div class="table" ngClass="{{style}}">
   <div *ngFor="let e of elements;" id="{{e['basic properties'].symbol}}"
-       (click)="(style=== 'classic' || style === 'discoveryYear') ? showMore(e) : ''"
+       (click)="(style=== 'classic' || style === 'discoveryYear') ? showMore(e, $event) : ''"
        ngClass="{{e['basic properties'].type}} {{e['basic properties']['year discovered'] > year? 'undiscovered' : 'discovered'}}"
        class="element">
+    <ng-container *ngIf="moreInfo && selectedElement == e">
+    <element-info-component (showMore)="hideMore($event)" [element]="e"></element-info-component>
+    </ng-container>
     <div class='element-symbol text-center'>{{e['basic properties'].symbol}}</div>
     <div class='element-number text-center'>{{e['basic properties']['atomic number']}}</div>
     <div class='element-weight text-center'>{{e['basic properties']['atomic mass'] | atomicMass}}</div>
   </div>
 </div>
 
-
+  </div>
 <!--ELEMENT RANKING -->
 
 <element-ranking-component [style.opacity]="(showRanking  && !moreInfo) ? 1 : 0" (closeRanking)="ranking($event)"
@@ -72,10 +77,11 @@
 
 <!--ELEMENT INFO-->
 
-<element-info-component [style.opacity]="moreInfo ? 1 : 0" (showMore)="showMore($event)" [moreInfo]="moreInfo"
-                        [element]="selectedElement"></element-info-component>
+<!--<element-info-component id="element-info" (showMore)="hideMore($event)" *ngIf="moreInfo"-->
+                        <!--[element]="selectedElement"></element-info-component>-->
 
 <!--PORTFOLIO EXIT-->
 
 <h4 class="col-12 portfolio-exit text-center"><a class="col-12"
                                                  [routerLink]="['/portfolio']">Back to Portfolio</a></h4>
+</div>

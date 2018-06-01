@@ -94,7 +94,7 @@
 }
 
 .discoveryYear, .classic {
-  .element:hover {
+  .element:not(.more-info-element):hover {
     .element-symbol {
       zoom: 125%;
     }

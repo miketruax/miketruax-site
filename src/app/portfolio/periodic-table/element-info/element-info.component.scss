@@ -1,7 +1,6 @@
 .top-circle{
-  display: flex;
-  flex-flow: column wrap;
-  margin: 10px auto;
+  padding-top: 15px;
+  margin: 10px auto !important;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -11,7 +10,6 @@
    }
 
   .symbol{
-    margin-top: 15px;
     height: 50px;
     line-height: 50px;
     font-size: 45px;
@@ -30,6 +28,8 @@
   font-weight:bold;
   background-color: lightgray;
 }
+
+
 
 .exit{
   z-index: 100;

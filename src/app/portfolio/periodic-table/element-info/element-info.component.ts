@@ -7,7 +7,6 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
 })
 export class ElementInfoComponent {
   @Input() element: Object;
-  @Input() moreInfo: Object;
   @Output() showMore = new EventEmitter();
 
 }

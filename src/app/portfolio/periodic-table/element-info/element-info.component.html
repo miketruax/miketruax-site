@@ -1,4 +1,4 @@
-<div class="info-container" *ngIf="moreInfo">
+<div class="info-container">
     <div class="exit" style="background-image: url('/assets/img/portfolio/periodic-table/exit.svg')" (click)="showMore.emit({})"></div>
   <div class="top-circle" ngClass="{{element['basic properties'].type}}">
     <p class="symbol text-center">{{element['basic properties'].symbol}}</p>
@@ -6,12 +6,12 @@
   </div>
 
 
-  <div class="" *ngFor="let el of element | keys">
-    <h5 class="text-center info-header text-uppercase">{{el.key}}:</h5>
-    <div class="float-left info" *ngFor="let info of element[el.key] | keys">
-      <b class="text-capitalize float-left">{{info.key}}:</b><span class="float-right"> {{info.value}}</span>
-    </div>
+<div class="info-section" *ngFor="let el of element | keys">
+  <h5 class="text-center info-header text-uppercase">{{el.key}}:</h5>
+  <div class="float-left info" *ngFor="let info of element[el.key] | keys">
+    <b class="text-capitalize float-left">{{info.key}}:</b><span class="float-right"> {{info.value}}</span>
   </div>
+</div>
 
 
   <button class="close-button text-center pointer" (click)="showMore.emit({})">Close</button>

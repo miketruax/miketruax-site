@@ -1,36 +1,32 @@
-.info-container{
-  background-color: white;
-  position: relative;
-  top: -95px;
-  padding-bottom: 20px;
-}
-
-.info{
-  margin-top: 20px !important;
-  margin-bottom: 20px !important;
-  padding: 8px !important;
-}
-
 .top-circle{
+  display: flex;
+  flex-flow: column wrap;
   margin: auto;
   width: 100px;
   height: 100px;
-  text-align: center;
-  font-size: 45px;
-  line-height: 67.5px;
   border-radius: 50%;
-  p{
-    line-height: 15px;
+   .symbol, .atomic-number{
+     text-align: center;
+     margin: 0;
+     padding: 0;
+   }
+
+  .symbol{
+    margin-top: 15px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 45px;
+  }
+
+  .atomic-number{
+    height: 25px;
+    line-height: 25px;
     font-size:20px;
   }
 }
 
 .info-header{
   background-color: lightgray;
-}
-
-.basicProps{
-  margin-top: 80px !important;
 }
 
 .exit{

@@ -1,13 +1,13 @@
 <div class="col-12 info-container col-lg-10 offset-lg-1 col-xl-8 offset-xl-2" *ngIf="showRanking && !moreInfo" >
   <div class="exit" style="background-image: url('/assets/img/portfolio/periodic-table/exit.svg')" (click)="closeRanking.emit()"></div>
-  <h2 class="col-12 text-center">{{rankHeader()}}</h2>
+  <h2 class="text-center">{{rankHeader()}}</h2>
   <div class="ranking-container col-12">
-    <h3 class="col-12 text-center" *ngIf="style !== 'discoveryYear'">
+    <h3 class="text-center" *ngIf="style !== 'discoveryYear'">
       {{style !=='discoveryYear' ? 'Ranked by mass percentage' : 'Elements by year discovered'}}</h3>
     <div class="ranking" *ngFor="let e of elements; let i = index" ngClass="{{e.type}}" (click)="showMore.emit(e)">
       <div class="col-12">{{i+1}}. {{e.name}}<span style="float: right;">{{e |rankingInfo:style}}</span></div>
     </div>
   </div>
-  <button class="btn btn-default col-12 text-center pointer" style="margin-top: 10px !important;" (click)="closeRanking.emit()">Close</button>
+  <button class="close-button text-center pointer" (click)="closeRanking.emit()">Close</button>
 </div>
 

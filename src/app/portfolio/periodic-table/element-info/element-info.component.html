@@ -1,9 +1,14 @@
 <div class="col-12 info-container col-lg-10 offset-lg-1 col-xl-8 offset-xl-2" *ngIf="moreInfo">
     <div class="exit" style="background-image: url('/assets/img/portfolio/periodic-table/exit.svg')" (click)="showMore.emit({})"></div>
+  <div class="top-circle" ngClass="{{element.type}}">
+    <p class="symbol">{{element.basicProps.symbol}}</p>
+    <p class="atomic-number">{{element.basicProps['atomic number']}}</p>
+  </div>
+
+
+
     <div class="basicProps" *ngIf="element.basicProps">
-    <div class="top-circle" ngClass="{{element.type}}">{{element.basicProps.symbol}}
-    <p>{{element.basicProps['atomic number']}}</p>
-    </div>
+
     <h2 class="col-12 text-center">{{element.name}}</h2>
 
     <h5 class="col-12 text-center info-header">Basic Info:</h5>
@@ -12,8 +17,10 @@
     <div class="col-12 "><b>Atomic Mass: </b>{{element.basicProps['atomic mass']}}</div>
 
   </div>
+  <div class="col-12" *ngFor="let el of element | keys" [ngClass]="el.key">{{el.value}}</div>
   <div class="thermoProps" *ngIf="element.thermoProps">
     <h5 class="col-12 text-center info-header">Thermodynamic Properties:</h5>
+
     <div class="col-12" *ngIf="element.thermoProps['phase at STP']"><b>Phase at STP: </b> {{element.thermoProps['phase at STP']}}</div>
     <div class="col-12 " *ngIf="element.thermoProps['melting point']"><b>Melting Point: </b> {{element.thermoProps['melting point']}}</div>
     <div class="col-12 " *ngIf="element.thermoProps['boiling point']"><b>Boiling Point: </b> {{element.thermoProps['boiling point']}}</div>
@@ -65,8 +72,8 @@
   </div>
   <div class="electronInformation" *ngIf="element.electron">
     <h5 class="col-12 text-center info-header">Electron Information:</h5>
-    <div class="col-12 " *ngIf="element.electron['configuration']"><b>Electron Configuration: </b> {{element.electron['configuration']}}</div>
-    <div class="col-12 " *ngIf="element.electron['pershell']"><b>Electrons per shell: </b> {{element.electron['pershell']}}</div>
+    <div class="col-12 " *ngIf="element.electron['electron configuration']"><b>Electron Configuration: </b> {{element.electron['electron configuration']}}</div>
+    <div class="col-12 " *ngIf="element.electron['electrons per shell']"><b>Electrons per shell: </b> {{element.electron['electrons per shell']}}</div>
   </div>
-  <button class="btn btn-default col-12 text-center pointer" style="margin-top: 10px !important;" (click)="showMore.emit({})">Close</button>
+  <button class="close-button text-center pointer" (click)="showMore.emit({})">Close</button>
 </div>

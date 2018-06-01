@@ -35,6 +35,7 @@ import {EtaTimeUntilComponent} from "./shared/eta-until-end/eta-time-until.compo
 import {SectionBackgroundFade} from "./directives/section-background-fade";
 import {SlideBox} from "./directives/container-box-slide";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {KeysPipe} from "./portfolio/periodic-table/pipes/keys.pipe";
 
 
 export function startUpRecipes(startUpService: RecipeService, http: HttpClient): Function {
@@ -68,7 +69,7 @@ export function startUpRecipes(startUpService: RecipeService, http: HttpClient):
       //Elemental Table Components
           TableComponent, ElementRankingComponent, ElementInfoComponent,
         //Elemental Table Pipes
-              AtomicMass, ElementType, RankingInfoPipe, RankingPipe,
+              AtomicMass, ElementType, RankingInfoPipe, RankingPipe, KeysPipe,
 
     //Shared Components
     PaginationComponent, EtaTimeUntilComponent,

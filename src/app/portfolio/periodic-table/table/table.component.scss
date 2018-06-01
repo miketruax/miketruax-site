@@ -6,10 +6,8 @@
 .portfolio-exit{
   clear: both;
 }
-.main-container{
-  margin-top: 56px;
-  margin-bottom: 20px;
-}
+
+
 .universeAbundance, .humanAbundance, .crustAbundance{
   .element{
     cursor: auto;
@@ -185,3 +183,27 @@ element-info-component, element-ranking-component, .main-container{
   color: lightskyblue;
 }
 
+
+//More Info
+.info-container{
+  background-color: white;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.info{
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  padding: 8px !important;
+}
+
+//Universal
+
+.close-button{
+  width: calc(100% / 3);
+  text-align: center;
+  margin: 20px;
+  float: right;
+  clear: both;
+
+}

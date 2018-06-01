@@ -7,43 +7,47 @@
 
 
 
-    <div class="basicProps" *ngIf="element.basicProps">
-
+  <div class="basicProps" *ngIf="element.basicProps">
     <h2 class="col-12 text-center">{{element.name}}</h2>
-
     <h5 class="col-12 text-center info-header">Basic Info:</h5>
     <div class="col-12 "><b>Discovered: </b> {{element.discoveryYear}}</div>
     <div class="col-12 "><b>Type: </b> {{element.type | elementType}}</div>
     <div class="col-12 "><b>Atomic Mass: </b>{{element.basicProps['atomic mass']}}</div>
-
   </div>
-  <div class="col-12" *ngFor="let el of element | keys" [ngClass]="el.key">{{el.value}}</div>
-  <div class="thermoProps" *ngIf="element.thermoProps">
+
+  <div class="col-12" *ngFor="let el of element | keys">
+    <h5 class="col-12 text-center info-header text-capitalize">{{el.key}}:</h5>
+    <div class="col-12" *ngFor="let info of element[el.key] | keys">
+      <b class="text-capitalize">{{info.key}}:</b> {{info.value}}
+    </div>
+  </div>
+
+  <div class="thermoProps" *ngIf="element['thermodynamic props']">
     <h5 class="col-12 text-center info-header">Thermodynamic Properties:</h5>
 
-    <div class="col-12" *ngIf="element.thermoProps['phase at STP']"><b>Phase at STP: </b> {{element.thermoProps['phase at STP']}}</div>
-    <div class="col-12 " *ngIf="element.thermoProps['melting point']"><b>Melting Point: </b> {{element.thermoProps['melting point']}}</div>
-    <div class="col-12 " *ngIf="element.thermoProps['boiling point']"><b>Boiling Point: </b> {{element.thermoProps['boiling point']}}</div>
+    <div class="col-12" *ngIf="element['thermodynamic properties']['phase at STP']"><b>Phase at STP: </b> {{element['thermodynamic properties']['phase at STP']}}</div>
+    <div class="col-12 " *ngIf="element['thermodynamic properties']['melting point']"><b>Melting Point: </b> {{element['thermodynamic properties']['melting point']}}</div>
+    <div class="col-12 " *ngIf="element['thermodynamic properties']['boiling point']"><b>Boiling Point: </b> {{element['thermodynamic properties']['boiling point']}}</div>
 
   </div>
-  <div class="materialProps" *ngIf="element.materialProps">
+  <div class="materialProps" *ngIf="element['material properties']">
     <h5 class="col-12 text-center info-header">Material Properties:</h5>
-    <div class="col-12 " *ngIf="element.materialProps['density']"><b>Density: </b> {{element.materialProps['density']}}</div>
-    <div class="col-12 " *ngIf="element.materialProps['Mohs hardness']"><b>Mohs Hardness: </b> {{element.materialProps['Mohs hardness']}}</div>
-    <div class="col-12 " *ngIf='element.materialProps["Youngs modulus"]'><b>Young's Modulus: </b> {{element.materialProps["Youngs modulus"]}}</div>
-    <div class="col-12 " *ngIf='element.materialProps["tensile yield strength"]'><b>Tensile Yield Strength: </b> {{element.materialProps["tensile yield strength"]}}</div>
-    <div class="col-12 " *ngIf='element.materialProps["sound speed"]'><b>Sound Speed: </b> {{element.materialProps["sound speed"]}}</div>
-    <div class="col-12 " *ngIf='element.materialProps["thermal expansion"]'><b>Thermal Expansion: </b> {{element.materialProps["thermal expansion"]}}</div>
-    <div class="col-12 " *ngIf='element.materialProps["thermal conductivity"]'><b>Thermal Conductivity: </b> {{element.materialProps["thermal conductivity"]}}</div>
+    <div class="col-12 " *ngIf="element['material properties']['density']"><b>Density: </b> {{element['material properties']['density']}}</div>
+    <div class="col-12 " *ngIf="element['material properties']['Mohs hardness']"><b>Mohs Hardness: </b> {{element['material properties']['Mohs hardness']}}</div>
+    <div class="col-12 " *ngIf="element['material properties']['Youngs modulus']"><b>Young's Modulus: </b> {{element['material properties']["Youngs modulus"]}}</div>
+    <div class="col-12 " *ngIf="element['material properties']['tensile yield strength']"><b>Tensile Yield Strength: </b> {{element['material properties']["tensile yield strength"]}}</div>
+    <div class="col-12 " *ngIf="element['material properties']['sound speed']"><b>Sound Speed: </b> {{element['material properties']["sound speed"]}}</div>
+    <div class="col-12 " *ngIf="element['material properties']['thermal expansion']"><b>Thermal Expansion: </b> {{element['material properties']["thermal expansion"]}}</div>
+    <div class="col-12 " *ngIf="element['material properties']['thermal conductivity']"><b>Thermal Conductivity: </b> {{element['material properties']["thermal conductivity"]}}</div>
 
   </div>
-  <div class="electromagnetProps" *ngIf="element.electromagnetProps">
+  <div class="electromagnetProps" *ngIf="element['electromagnetic properties']">
     <h5 class="col-12 text-center info-header">Electromagnetic Properties:</h5>
-    <div class="col-12 " *ngIf="element.electromagnetProps['electrical type']"><b>Electrical Type: </b> {{element.electromagnetProps['electrical type']}}</div>
-    <div class="col-12 " *ngIf="element.electromagnetProps['resistivity']"><b>Resistivity: </b> {{element.electromagnetProps['resistivity']}}</div>
-    <div class="col-12 " *ngIf='element.electromagnetProps["magnetic type"]'><b>Magnetic Type: </b> {{element.electromagnetProps["magnetic type"]}}</div>
-    <div class="col-12 " *ngIf='element.electromagnetProps["superconducting point"]'><b>Superconducting Point: </b> {{element.electromagnetProps["superconducting point"]}}</div>
-    <div class="col-12 " *ngIf='element.electromagnetProps["color"]'><b>Color: </b> {{element.electromagnetProps["color"]}}</div>
+    <div class="col-12 " *ngIf="element['electromagnetic properties']['electrical type']"><b>Electrical Type: </b> {{element['electromagnetic properties']['electrical type']}}</div>
+    <div class="col-12 " *ngIf="element['electromagnetic properties']['resistivity']"><b>Resistivity: </b> {{element['electromagnetic properties']['resistivity']}}</div>
+    <div class="col-12 " *ngIf="element['electromagnetic properties']['magnetic type']"><b>Magnetic Type: </b> {{element['electromagnetic properties']["magnetic type"]}}</div>
+    <div class="col-12 " *ngIf="element['electromagnetic properties']['superconducting point']"><b>Superconducting Point: </b> {{element['electromagnetic properties']["superconducting point"]}}</div>
+    <div class="col-12 " *ngIf="element['electromagnetic properties']['color']"><b>Color: </b> {{element['electromagnetic properties']["color"]}}</div>
 
   </div>
   <div class="reactivity" *ngIf="element.reactivity">
@@ -64,16 +68,16 @@
     <div class="col-12 " *ngIf="element.abundances['crust abundance']"><b>Crust: </b> {{element.abundances['crust abundance']}}</div>
     <div class="col-12 " *ngIf="element.abundances['human abundance']"><b>Human: </b> {{element.abundances["human abundance"]}}</div>
   </div>
-  <div class="nuclearProps" *ngIf="element.nuclearProps">
+  <div class="nuclearProps" *ngIf="element['nuclear properties']">
     <h5 class="col-12 text-center info-header">Nuclear Properties:</h5>
-    <div class="col-12 " *ngIf="element.nuclearProps['half-life']"><b>Half-life: </b> {{element.nuclearProps['half-life']}}</div>
-    <div class="col-12 " *ngIf='element.nuclearProps["stable isotopes"]'><b>Stable Isotopes: </b> {{element.nuclearProps['stable isotopes']}}</div>
-    <div class="col-12 " *ngIf='element.nuclearProps["unstable isotopes"]'><b>Unstable Isotopes: </b> {{element.nuclearProps["unstable isotopes"]}}</div>
+    <div class="col-12 " *ngIf="element['nuclear properties']['half-life']"><b>Half-life: </b> {{element['nuclear properties']['half-life']}}</div>
+    <div class="col-12 " *ngIf="element['nuclear properties']['stable isotopes']"><b>Stable Isotopes: </b> {{element['nuclear properties']['stable isotopes']}}</div>
+    <div class="col-12 " *ngIf="element['nuclear properties']['unstable isotopes']"><b>Unstable Isotopes: </b> {{element['nuclear properties']["unstable isotopes"]}}</div>
   </div>
-  <div class="electronInformation" *ngIf="element.electron">
+  <div class="electronInformation" *ngIf="element['electron information']">
     <h5 class="col-12 text-center info-header">Electron Information:</h5>
-    <div class="col-12 " *ngIf="element.electron['electron configuration']"><b>Electron Configuration: </b> {{element.electron['electron configuration']}}</div>
-    <div class="col-12 " *ngIf="element.electron['electrons per shell']"><b>Electrons per shell: </b> {{element.electron['electrons per shell']}}</div>
+    <div class="col-12 " *ngIf="element['electron information']['electron configuration']"><b>Electron Configuration: </b> {{element['electron information']['electron configuration']}}</div>
+    <div class="col-12 " *ngIf="element['electron information']['electrons per shell']"><b>Electrons per shell: </b> {{element['electron information']['electrons per shell']}}</div>
   </div>
   <button class="close-button text-center pointer" (click)="showMore.emit({})">Close</button>
 </div>

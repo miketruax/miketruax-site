@@ -1,12 +1,11 @@
 .top-circle{
   display: flex;
   flex-flow: column wrap;
-  margin: auto;
+  margin: 10px auto;
   width: 100px;
   height: 100px;
   border-radius: 50%;
    .symbol, .atomic-number{
-     text-align: center;
      margin: 0;
      padding: 0;
    }
@@ -26,9 +25,13 @@
 }
 
 .info-header{
+  margin-top: 5px;
+  clear: both;
+  font-weight:bold;
   background-color: lightgray;
 }
 
 .exit{
   z-index: 100;
 }
+

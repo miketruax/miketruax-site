@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DomSanitizer, SafeHtml} from "@angular/platform-browser";
 
 @Component({
@@ -23,6 +23,7 @@ export class TableComponent implements OnInit{
   humanIcon: SafeHtml;
   clockIcon: SafeHtml;
   listorderedIcon: SafeHtml;
+
   constructor(private sanitizer: DomSanitizer){
     this.elements = require('../assets/elem_v3.json');
     this.currYear = new Date().getFullYear();

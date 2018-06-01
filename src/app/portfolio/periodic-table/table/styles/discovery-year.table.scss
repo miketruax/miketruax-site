@@ -17,10 +17,17 @@
   }
 }
 
+.slider-container{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 .yearSlider{
-  margin: 10px 0 !important;
+  display: block;
+  margin: 10px auto !important;
   padding: 0 !important;
+  width: 90%;
   -webkit-appearance: none;
   background: transparent;
   outline: none !important;

@@ -18,14 +18,6 @@ element-info-component, element-ranking-component, .main-container{
   transition: all .25s linear;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
-.dropdown-menu{
-  a{
-    cursor: pointer;
-  }
-  .active{
-    background-color: gainsboro;
-  }
-}
 
 .element-symbol, .element-number, .element-weight{
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
@@ -134,10 +126,11 @@ element-info-component, element-ranking-component, .main-container{
   background-color: #f2edf6;
 }
 
-.icon-parent{
+.menu-container{
   margin-top: 25px;
   width: 100%;
 }
+
 .icon-container{
   cursor: pointer;
   float: left;
@@ -189,15 +182,21 @@ element-info-component, element-ranking-component, .main-container{
   background-color: white;
   position: relative;
   padding-bottom: 20px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .info{
-  margin-top: 20px !important;
-  margin-bottom: 20px !important;
-  padding: 8px !important;
+  margin: 2px auto;
+  width: 100%;
 }
 
-//Universal
+.info:not(:last-child){
+  border-bottom: 1px solid black;
+}
+
+//Close Button
 
 .close-button{
   width: calc(100% / 3);
@@ -205,5 +204,24 @@ element-info-component, element-ranking-component, .main-container{
   margin: 20px;
   float: right;
   clear: both;
+}
 
+.text-center{
+  text-align: center;
+}
+
+.text-capitalize{
+  text-transform: capitalize;
+}
+
+.text-uppercase{
+  text-transform: uppercase;
+}
+
+.float-left{
+  float: left;
+}
+
+.float-right{
+  float: right;
 }

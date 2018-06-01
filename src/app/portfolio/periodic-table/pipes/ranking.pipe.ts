@@ -38,7 +38,7 @@ export class RankingPipe implements PipeTransform {
           ret.push(val);
         });
         ret.sort((a, b) => {
-          return a['discoveryYear'] > b['discoveryYear'] ? 1 : a['discoveryYear'] < b['discoveryYear'] ? -1 : 0;
+          return a['basic properties']['year discovered'] > b['basic properties']['year discovered'] ? 1 : a['basic properties']['year discovered'] < b['basic properties']['year discovered'] ? -1 : 0;
         });
         return ret;
 

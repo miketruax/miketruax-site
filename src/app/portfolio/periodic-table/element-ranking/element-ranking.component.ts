@@ -22,11 +22,11 @@ export class ElementRankingComponent {
       case ('universeAbundance'):
         return e['abundances']["universe abundance"].split('(rank')[0];
       case ('discoveryYear'):
-        if (e['discoveryYear'] > 0) {
-          return e['discoveryYear'] + ' CE';
+        if (e['year discovered']['discoveryYear'] > 0) {
+          return e['year discovered']['discoveryYear'] + ' CE';
         }
         else {
-          return Math.abs(e['discoveryYear']) + ' BCE';
+          return Math.abs(e['year discovered']['discoveryYear']) + ' BCE';
         }
       default:
         return;

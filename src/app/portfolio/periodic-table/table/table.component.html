@@ -1,31 +1,43 @@
-<div class="col-12 main-container" [style.display]="(moreInfo || showRanking) ? 'none' : 'block'">
-  <h3 class=" col-12 text-center">
+<div class="main-container" [style.display]="(moreInfo || showRanking) ? 'none' : 'block'">
+  <h3 class="text-center">
     Periodic Table
   </h3>
-<div class="icon-parent">
-  <div class="icon-container" ngClass="{{style==='classic' ? 'active' : ''}}" (click)="setStyle('classic')" [innerHTML]="beakerIcon">
-    Classic
+
+  <!--TOP MENU -->
+
+  <div class="menu-container">
+    <div class="icon-container" ngClass="{{style==='classic' ? 'active' : ''}}" (click)="setStyle('classic')"
+         [innerHTML]="beakerIcon">
+      Classic
+    </div>
+    <div class="icon-container " ngClass="{{style==='crustAbundance' ? 'active' : ''}}"
+         (click)="setStyle('crustAbundance')" [innerHTML]="globeIcon">Crust Abundance
+    </div>
+    <div class="icon-container " ngClass="{{style==='humanAbundance' ? 'active' : ''}}"
+         (click)="setStyle('humanAbundance')" [innerHTML]="humanIcon">Human Abundance
+    </div>
+    <div class="icon-container " ngClass="{{style==='universeAbundance' ? 'active' : ''}}"
+         (click)="setStyle('universeAbundance')" [innerHTML]="rocketIcon">Universe Abundance
+    </div>
+    <div class="icon-container " ngClass="{{style==='discoveryYear' ? 'active' : ''}}" (click)="discoveryShow()"
+         [innerHTML]="calendarIcon">
+      Order of Discovery
+    </div>
   </div>
-  <div class="icon-container " ngClass="{{style==='crustAbundance' ? 'active' : ''}}"
-       (click)="setStyle('crustAbundance')" [innerHTML]="globeIcon">Crust Abundance
-  </div>
-  <div class="icon-container " ngClass="{{style==='humanAbundance' ? 'active' : ''}}"
-       (click)="setStyle('humanAbundance')" [innerHTML]="humanIcon">Human Abundance
-  </div>
-  <div class="icon-container " ngClass="{{style==='universeAbundance' ? 'active' : ''}}"
-       (click)="setStyle('universeAbundance')" [innerHTML]="rocketIcon">Universe Abundance
-  </div>
-  <div class="icon-container " ngClass="{{style==='discoveryYear' ? 'active' : ''}}" (click)="discoveryShow()" [innerHTML]="calendarIcon">
-    Order of Discovery
-  </div>
-</div>
-</div>
-<div *ngIf="(!moreInfo && !showRanking) && style !== 'classic'" class="rankingButton"
-        (click)="ranking()" [innerHTML]="style === 'discoveryYear' ? clockIcon : listorderedIcon">
 </div>
 
-<div class="col-12" *ngIf="style === 'discoveryYear' && (!moreInfo && !showRanking)">
-  <input (click)="clearCounter()" (mousedown)="clearCounter()" type="range" class="col-12 yearSlider" min="0"
+<!--SHOW RANKING BUTTON-->
+
+<div *ngIf="(!moreInfo && !showRanking) && style !== 'classic'" class="rankingButton"
+     (click)="ranking()" [innerHTML]="style === 'discoveryYear' ? clockIcon : listorderedIcon">
+</div>
+
+
+
+<!--YEAR SLIDER FOR CHRONOLOGICAL ORDER-->
+
+<div class="slider-container" *ngIf="style === 'discoveryYear' && (!moreInfo && !showRanking)">
+  <input (click)="clearCounter()" (mousedown)="clearCounter()" type="range" class="yearSlider" min="0"
          max="{{currYear}}" [(ngModel)]="year"
          [style.background]="sanitizer.bypassSecurityTrustStyle('-moz-linear-gradient(left,  aliceblue 0%, aliceblue '+(year/currYear*100)+'%, gray '+(year/currYear*100)+'%, gray 100%)')"
          [style.background]="sanitizer.bypassSecurityTrustStyle('-webkit-gradient(linear, left top, right top, color-stop(0%,aliceblue), color-stop('+(year/currYear*100)+'%,aliceblue), color-stop('+(year/currYear*100)+'%,gray), color-stop(100%,gray))')"
@@ -36,23 +48,34 @@
   <div class="text-center lead">{{year === currYear ? 'Now' : year+' CE'}}</div>
 </div>
 
+<!--TABLE-->
 
-<div [style.opacity]="(moreInfo || showRanking) ? 0 : 1" class="table" ngClass="{{style}}" *ngIf="!moreInfo && !showRanking">
-  <div *ngFor="let e of elements;" id="{{e.basicProps.symbol}}"
+<div [style.opacity]="(moreInfo || showRanking) ? 0 : 1" class="table" ngClass="{{style}}"
+     *ngIf="!moreInfo && !showRanking">
+  <div *ngFor="let e of elements;" id="{{e['basic properties'].symbol}}"
        (click)="(style=== 'classic' || style === 'discoveryYear') ? showMore(e) : ''"
-       ngClass="{{e.type}} {{e.discoveryYear > year? 'undiscovered' : 'discovered'}}" class="element">
-    <div class='element-symbol text-center'>{{e.basicProps.symbol}}</div>
-    <div class='element-number text-center'>{{e.basicProps['atomic number']}}</div>
-    <div class='element-weight text-center'>{{e.basicProps['atomic mass'] | atomicMass}}</div>
+       ngClass="{{e['basic properties'].type}} {{e['basic properties']['year discovered'] > year? 'undiscovered' : 'discovered'}}"
+       class="element">
+    <div class='element-symbol text-center'>{{e['basic properties'].symbol}}</div>
+    <div class='element-number text-center'>{{e['basic properties']['atomic number']}}</div>
+    <div class='element-weight text-center'>{{e['basic properties']['atomic mass'] | atomicMass}}</div>
   </div>
 </div>
+
+
+<!--ELEMENT RANKING -->
 
 <element-ranking-component [style.opacity]="(showRanking  && !moreInfo) ? 1 : 0" (closeRanking)="ranking($event)"
                            [moreInfo]="moreInfo" [showRanking]="showRanking" (showMore)="showMore($event)"
                            [style]="style" [elements]="elements | ranking:style"></element-ranking-component>
+
+
+<!--ELEMENT INFO-->
+
 <element-info-component [style.opacity]="moreInfo ? 1 : 0" (showMore)="showMore($event)" [moreInfo]="moreInfo"
                         [element]="selectedElement"></element-info-component>
 
+<!--PORTFOLIO EXIT-->
 
 <h4 class="col-12 portfolio-exit text-center"><a class="col-12"
                                                  [routerLink]="['/portfolio']">Back to Portfolio</a></h4>

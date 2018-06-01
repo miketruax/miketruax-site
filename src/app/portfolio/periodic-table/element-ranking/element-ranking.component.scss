@@ -1,15 +1,15 @@
 .ranking{
   width: 96%;
-  margin: 2px 2% !important;
+  padding: 4px;
+  margin: 2px auto !important;
   cursor: pointer;
   border: .5px solid rgba(black, .2);
-  border-radius: 6px;
   font-weight: 400 !important;
   float: left;
-  @media (max-width: 720px) {
-    width: 96%;
-    margin: 2px 2% !important;
-  }
+}
+
+.ranking-item span{
+  float: right;
 }
 
 .ranking:hover{

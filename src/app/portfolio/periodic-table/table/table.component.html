@@ -8,29 +8,28 @@
 
   <div class="menu-container" >
     <div class="icon-container" ngClass="{{style==='classic' ? 'active' : ''}}" (click)="setStyle('classic')"
-         [innerHTML]="beakerIcon">
+         [innerHTML]="iconBuilder('beaker', 'Standard View')">
       Classic
     </div>
     <div class="icon-container " ngClass="{{style==='crustAbundance' ? 'active' : ''}}"
-         (click)="setStyle('crustAbundance')" [innerHTML]="globeIcon">Crust Abundance
+         (click)="setStyle('crustAbundance')" [innerHTML]="iconBuilder('globe', 'Crust Abundance')">Crust Abundance
     </div>
     <div class="icon-container " ngClass="{{style==='humanAbundance' ? 'active' : ''}}"
-         (click)="setStyle('humanAbundance')" [innerHTML]="humanIcon">Human Abundance
+         (click)="setStyle('humanAbundance')" [innerHTML]="iconBuilder('person', 'Human Abundance')">Human Abundance
     </div>
     <div class="icon-container " ngClass="{{style==='universeAbundance' ? 'active' : ''}}"
-         (click)="setStyle('universeAbundance')" [innerHTML]="rocketIcon">Universe Abundance
+         (click)="setStyle('universeAbundance')" [innerHTML]="iconBuilder('rocket', 'Universe Abundance')">Universe Abundance
     </div>
-    <div class="icon-container " ngClass="{{style==='discoveryYear' ? 'active' : ''}}" (click)="discoveryShow()"
-         [innerHTML]="calendarIcon">
+    <div class="icon-container " ngClass="{{style==='discoveryYear' ? 'active' : ''}}" (click)="setStyle('discoveryYear')"
+         [innerHTML]="iconBuilder('calendar', 'Discovery Date')">
       Order of Discovery
     </div>
   </div>
 
-
 <!--SHOW RANKING BUTTON-->
 
 <div *ngIf="(!moreInfo) && style !== 'classic'" class="rankingButton"
-     (click)="showRankTable()" [innerHTML]="style === 'discoveryYear' ? clockIcon : listorderedIcon">
+     (click)="showRankTable()" [innerHTML]="style === 'discoveryYear' ? iconBuilder('clock', 'View List By Chronological Order', true) : iconBuilder('list-ordered', 'View List Ranked By Mass', true)">
 </div>
 <element-ranking-component *ngIf="showRanking" (closeRanking)="hideRankTable($event)"
                            [moreInfo]="moreInfo" [showRanking]="showRanking" (showMore)="showMore($event)"
@@ -41,15 +40,13 @@
 <!--YEAR SLIDER FOR CHRONOLOGICAL ORDER-->
 <!--TODO: CLEAN UP YEAR TRACK BAR-->
 <div class="slider-container" *ngIf="style === 'discoveryYear' && (!moreInfo && !showRanking)">
-  <input (click)="clearCounter()" (mousedown)="clearCounter()" type="range" class="yearSlider" min="0"
-         max="{{currYear}}" [(ngModel)]="year"
-         [style.background]="sanitizer.bypassSecurityTrustStyle('-moz-linear-gradient(left,  aliceblue 0%, aliceblue '+(year/currYear*100)+'%, gray '+(year/currYear*100)+'%, gray 100%)')"
-         [style.background]="sanitizer.bypassSecurityTrustStyle('-webkit-gradient(linear, left top, right top, color-stop(0%,aliceblue), color-stop('+(year/currYear*100)+'%,aliceblue), color-stop('+(year/currYear*100)+'%,gray), color-stop(100%,gray))')"
-         [style.background]="sanitizer.bypassSecurityTrustStyle('-webkit-linear-gradient(left,  aliceblue 0%,aliceblue '+(year/currYear*100)+'%,gray '+(year/currYear*100)+'%,gray 100%)')"
-         [style.background]="sanitizer.bypassSecurityTrustStyle('-o-linear-gradient(left,  aliceblue 0%,aliceblue '+(year/currYear*100)+'%,gray '+(year/currYear*100)+'%,gray 100%)')"
-         [style.background]="sanitizer.bypassSecurityTrustStyle('-ms-linear-gradient(left,  aliceblue 0%,aliceblue '+(year/currYear*100)+'%,gray '+(year/currYear*100)+'%,gray 100%)')"
-         [style.background]="sanitizer.bypassSecurityTrustStyle('linear-gradient(to right,  aliceblue 0%,aliceblue '+(year/currYear*100)+'%,gray '+(year/currYear*100)+'%,gray 100%)')"/>
   <div class="text-center lead">{{year === currYear ? 'Now' : year+' CE'}}</div>
+  <div class="back yearControls" [style.visibility]="year === -10000 ? 'hidden' : 'visible'" (click)="jumpYear(-1)" [innerHTML]="iconBuilder('arrow-left', 'Prev')"></div>
+  <div class="back yearControls" [style.visibility]="year === -10000 ? 'hidden' : 'visible'" (click)="year = -10000" [innerHTML]="iconBuilder('history', 'Reset')"></div>
+  <div class="back yearControls" (click)="playYear(true)" [innerHTML]="iconBuilder('triangle-right', 'Play')"></div>
+  <div class="back yearControls" (click)="playYear(false)" [innerHTML]="iconBuilder('primitive-square', 'Stop')"></div>
+
+  <div class="back yearControls" [style.opacity]="year !== elementYears[elementYears.length - 1] ? 1 : 0" [innerHTML]="iconBuilder('arrow-right', 'Next')"(click)="jumpYear(1)"></div>
 </div>
 
 <!--TABLE-->

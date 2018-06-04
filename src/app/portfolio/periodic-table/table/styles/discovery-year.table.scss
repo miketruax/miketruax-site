@@ -21,6 +21,12 @@
   width: 100%;
   margin: 0;
   padding: 0;
+  text-align: center;
+}
+
+.yearControls{
+  cursor: pointer;
+  margin: 0px 10px;
 }
 
 .yearSlider{
@@ -31,93 +37,4 @@
   -webkit-appearance: none;
   background: transparent;
   outline: none !important;
-}
-input[type=range]::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 25px;
-  cursor: pointer;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: none  ;
-  border-radius: 1.3px;
-  border: 0.2px solid #010101;
-}
-
-input[type=range]::-moz-range-track {
-  width: 100%;
-  height: 25px;
-  cursor: pointer;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: none;
-  border-radius: 1.3px;
-  border: 0.2px solid #010101;
-}
-
-input[type=range]::-ms-track {
-  width: 100%;
-  height: 25px;
-  cursor: pointer;
-  background: transparent;
-  border-color: transparent;
-  border-width: 16px 0;
-  color: transparent;
-}
-input[type=range]::-ms-fill-lower {
-  background: none;
-  border: 0.2px solid #010101;
-  border-radius: 2.6px;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-}
-
-
-input[type=range]::-ms-fill-upper {
-  background: none;
-  border: 0.2px solid #010101;
-  border-radius: 2.6px;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-}
-
-
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  border: 1px solid #000000;
-  height: 25px;
-  width: 15px;
-  border-radius: 3px;
-  background: #ffffff;
-  cursor: pointer;
-  margin-top: -1px;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-}
-
-input[type=range]::-moz-range-thumb {
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  border: 1px solid #000000;
-  height: 25px;
-  width: 15px;
-  margin-top: -1px;
-  border-radius: 3px;
-  background: #ffffff;
-  cursor: pointer;
-}
-
-input[type=range]::-ms-thumb {
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  border: 1px solid #000000;
-  height: 25px;
-  width: 15px;
-  margin-top: -1px;
-  border-radius: 3px;
-  background: #ffffff;
-  cursor: pointer;
-}
-
-.loading-bar{
-  background-color: aliceblue;
-  padding:10px 0 !important;
-  border: 1px solid black;
-}
-
-.loading-container{
-  padding: 0 !important;
-  background-color: gray;
 }

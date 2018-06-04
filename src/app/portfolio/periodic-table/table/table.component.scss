@@ -147,6 +147,8 @@ element-info-component, element-ranking-component, .main-container {
   width: 100%;
 }
 
+//Icon Styling
+
 .icon-container ::ng-deep{
   cursor: pointer;
   float: left;
@@ -183,7 +185,7 @@ element-info-component, element-ranking-component, .main-container {
   }
 }
 
-.rankingButton {
+.rankingButton ::ng-deep{
   position: relative;
   display: table;
   margin: auto;
@@ -191,11 +193,20 @@ element-info-component, element-ranking-component, .main-container {
   top: 0;
   text-align: center;
   cursor: pointer;
+
+  .iconDescription{
+    padding-left: 5px;
+    vertical-align: text-bottom;
+  }
+
 }
 
 .rankingButton:hover ::ng-deep {
   svg {
     fill: lightskyblue;
+  }
+  .iconDescription{
+    color: lightskyblue;
   }
   color: lightskyblue;
 }
@@ -248,4 +259,8 @@ element-info-component, element-ranking-component, .main-container {
 
 .table, .menu-container, .slider-container {
   transition: opacity 150ms linear;
+}
+
+.yearControls{
+  display: inline-block;
 }

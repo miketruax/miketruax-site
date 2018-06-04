@@ -11,68 +11,95 @@ export class TableComponent implements OnInit {
   moreInfo: boolean = false;
   showRanking: boolean = false;
   style: string = "classic";
-  counter: any;
   elements: Object[];
   selectedElement: Object = {};
   currYear: number;
   year: number;
+  elementYears: number[] = [];
   octicons: any = require('octicons');
-  icons: Object;
-  globeIcon: SafeHtml;
-  rocketIcon: SafeHtml;
-  calendarIcon: SafeHtml;
-  beakerIcon: SafeHtml;
-  humanIcon: SafeHtml;
-  clockIcon: SafeHtml;
-  listorderedIcon: SafeHtml;
   box: Object = {el: {}, top: '', left: ''};
   transitionStyle: string;
+  timer: any = false;
 
 
   constructor(private sanitizer: DomSanitizer) {
     this.elements = require('../assets/elem_v3.json');
     this.currYear = new Date().getFullYear();
-    this.year = this.currYear;
+    this.year = -10000;
+    this.elements.forEach((v, i) =>{
+      this.elementYears.push(v['basic properties']['year discovered']);
+    });
+    this.elementYears.sort((a,b)=>{
+      return a-b;
+    });
   }
 
 
-  clearCounter() {
-    clearInterval(this.counter);
-  }
+
 
   changeStyle(style){
     this.transitionStyle = style;
   }
 
-  discoveryShow() {
-    this.style = 'discoveryYear';
-    this.year = 0;
-    this.counter = setInterval(() => {
-      this.year += this.year < 1200 ? 50 : 5;
-      if (this.year >= this.currYear) {
-        this.year = this.currYear;
-        clearInterval(this.counter);
-      }
-    }, 50);
-  }
-
   setStyle(s: string) {
-    this.year = this.currYear;
-    clearInterval(this.counter);
+    clearInterval(this.timer);
+    this.timer = false;
+    this.year = -10000;
     this.style = s;
   }
 
+  jumpYear(val: number){
+    if (val === -1){
+      let currentIndex = this.elementYears.indexOf(this.year);
+      this.year = currentIndex === 0 ? this.year : this.elementYears[currentIndex -1];
+    }
+    if (val === 1){
+      let currentIndex = this.elementYears.lastIndexOf(this.year);
+      this.year = currentIndex === (this.elementYears.length-1) ? this.year : this.elementYears[currentIndex + 1];
+    }
+  }
+
+  cycleYears(){
+    let current = this.elementYears.lastIndexOf(this.year);
+    if(current == this.elementYears.length -1){
+      clearInterval(this.timer);
+      this.timer = false;
+    }
+    else{
+      this.year = this.elementYears[current +1];
+      return false
+
+    }
+  }
+
+  playYear(bool: boolean){
+    if(bool && this.timer){
+      return;
+    }
+    if(bool){
+      this.timer = setInterval(this.cycleYears.bind(this), 250)
+    }
+    else{
+      clearInterval(this.timer);
+      this.timer = false;
+    }
+  }
+
+
+
+
+  //Showing and Hiding more info section
   hideMore(e) {
-    this.selectedElement = {};
     this.transitionStyle = 'infoOut';
-    window.setTimeout(() => {
+    setTimeout(() => {
       this.transitionStyle = 'infoIn startMoreInfoOut'
     }, 250);
-    window.setTimeout(() => {
+    setTimeout(() => {
       this.transitionStyle = 'infoIn endMoreInfoOut';
     }, 950);
-    window.setTimeout(() => {
+    setTimeout(() => {
       this.transitionStyle = '';
+      this.selectedElement = {};
       this.moreInfo = !this.moreInfo
     }, 1600)
   }
@@ -87,27 +114,28 @@ export class TableComponent implements OnInit {
     this.box['el'] = event.target.hasOwnProperty('id') ? event.target : event.target.parentElement;
     this.box['top'] = `${this.box['el'].getBoundingClientRect().top - 85}px`;
     this.box['left'] = this.box['el'].getBoundingClientRect().left + 'px';
-    clearInterval(this.counter);
     this.year = this.currYear;
     this.moreInfo = !this.moreInfo;
     this.transitionStyle = 'infoIn';
-    window.setTimeout(() => {
+    setTimeout(() => {
       this.transitionStyle = 'infoIn startMoreInfoIn'
     }, 50);
-    window.setTimeout(() => {
+    setTimeout(() => {
       this.transitionStyle = 'infoIn endMoreInfoIn'
     }, 650);
   }
+
+  //Showing and Hiding Rank Table
 
   showRankTable() {
     window.scrollTo(0,0);
     this.transitionStyle = 'rankingIn';
     this.showRanking = !this.showRanking;
-    window.setTimeout(() => {
+    setTimeout(() => {
       this.transitionStyle = 'rankingIn startRankingIn'
     }, 150);
 
-    window.setTimeout(() => {
+    setTimeout(() => {
       this.transitionStyle = 'rankingIn endRankingIn'
     }, 250);
 
@@ -116,34 +144,29 @@ export class TableComponent implements OnInit {
   hideRankTable(){
     window.scrollTo(0,0);
     this.transitionStyle = 'rankingOut';
-    window.setTimeout(()=>{
+    setTimeout(()=>{
       this.transitionStyle = 'rankingOut startRankingOut';
     }, 150);
-    window.setTimeout(()=>{
+    setTimeout(()=>{
       this.transitionStyle = 'rankingOut endRankingOut';
     }, 500);
-    window.setTimeout(()=>{
+    setTimeout(()=>{
       this.transitionStyle = '';
       this.showRanking = !this.showRanking;
     }, 900);
 
   }
 
-  iconBuilder<SafeHtml>(value: string, msg: string){
+  iconBuilder<SafeHtml>(value: string, msg: string='', span: boolean = false){
+
+
     return this.sanitizer.bypassSecurityTrustHtml(this.octicons[value].toSVG({
       height: "27.5",
       width: "27.5",
       "class": "svgIcon"
-    }) + `<p class='iconDescription'>${msg}</p>`)
+    }) + `<${!span ? 'p' : 'span'} class='iconDescription'>${msg}</${!span ? 'p' : 'span'}>`)
 }
 
   ngOnInit() {
-    this.calendarIcon = this.iconBuilder('calendar', 'Discovery Date');
-    this.globeIcon = this.iconBuilder('globe', 'Crust Abundance');
-    this.rocketIcon = this.iconBuilder('rocket', 'Universe Abundance');
-    this.beakerIcon = this.iconBuilder('beaker', 'Standard View');
-    this.humanIcon = this.iconBuilder('person', 'Human Abundance');
-    this.clockIcon = this.iconBuilder('clock', 'View List By Chronological Order');
-    this.listorderedIcon = this.iconBuilder('list-ordered', 'View List Ranked By Mass');
   }
 }

@@ -24,18 +24,18 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {WhoWasItComponent} from "./portfolio/who-was-it/home/who-was-it.component";
 import {WhoWasItAboutComponent} from "./portfolio/who-was-it/about/who-was-it-about.component";
 import {WhoWasItResultsComponent} from "./portfolio/who-was-it/home/who-was-it-results.component";
-import {TableComponent} from "./portfolio/periodic-table/table/table.component";
-import {ElementRankingComponent} from "./portfolio/periodic-table/element-ranking/element-ranking.component";
-import {ElementInfoComponent} from "./portfolio/periodic-table/element-info/element-info.component";
-import {AtomicMass} from "./portfolio/periodic-table/pipes/atomicMass.pipe";
-import {ElementType} from "./portfolio/periodic-table/pipes/elementType.pipe";
-import {RankingInfoPipe} from "./portfolio/periodic-table/pipes/rankingInfo.pipe";
+// import {TableComponent} from "./portfolio/periodic-table/table/table.component";
+// import {ElementRankingComponent} from "./portfolio/periodic-table/element-ranking/element-ranking.component";
+// import {ElementInfoComponent} from "./portfolio/periodic-table/element-info/element-info.component";
+// import {AtomicMass} from "./portfolio/periodic-table/pipes/atomicMass.pipe";
+// import {ElementType} from "./portfolio/periodic-table/pipes/elementType.pipe";
+// import {RankingInfoPipe} from "./portfolio/periodic-table/pipes/rankingInfo.pipe";
 import {RankingPipe} from "./portfolio/periodic-table/pipes/ranking.pipe";
 import {EtaTimeUntilComponent} from "./shared/eta-until-end/eta-time-until.component";
 import {SectionBackgroundFade} from "./directives/section-background-fade";
 import {SlideBox} from "./directives/container-box-slide";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import {KeysPipe} from "./portfolio/periodic-table/pipes/keys.pipe";
+// import {KeysPipe} from "./portfolio/periodic-table/pipes/keys.pipe";
 
 
 export function startUpRecipes(startUpService: RecipeService, http: HttpClient): Function {
@@ -67,9 +67,9 @@ export function startUpRecipes(startUpService: RecipeService, http: HttpClient):
           MovieSearchImageComponent, MovieMoreInfoComponent,
 
       //Elemental Table Components
-          TableComponent, ElementRankingComponent, ElementInfoComponent,
+      //     TableComponent, ElementRankingComponent, ElementInfoComponent,
         //Elemental Table Pipes
-              AtomicMass, ElementType, RankingInfoPipe, RankingPipe, KeysPipe,
+        //       AtomicMass, ElementType, RankingInfoPipe, RankingPipe, KeysPipe,
 
     //Shared Components
     PaginationComponent, EtaTimeUntilComponent,

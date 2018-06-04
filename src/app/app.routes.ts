@@ -15,6 +15,6 @@ export const routes: Routes = [
   { path: 'portfolio/movie-search', component: MovieSearchComponent},
   { path: 'portfolio/tic-tac-toe', component: TicTacToeComponent},
   { path: 'portfolio/who-was-it', component: WhoWasItComponent},
-  { path: 'portfolio/periodic-table', component: TableComponent},
+  // { path: 'portfolio/periodic-table', component: TableComponent},
   { path: '**',   redirectTo: '/', pathMatch: 'full' }
 ];

@@ -23,8 +23,13 @@ export class TableComponent implements OnInit {
   beakerIcon: SafeHtml;
   humanIcon: SafeHtml;
   clockIcon: SafeHtml;
-  box: any;
   listorderedIcon: SafeHtml;
+  box: any;
+  boxLeft: string;
+  boxTop: string;
+  infoTransition: string;
+
+
 
 
   constructor(private sanitizer: DomSanitizer) {
@@ -58,22 +63,30 @@ export class TableComponent implements OnInit {
 
   hideMore(e) {
     this.selectedElement = {};
-    console.log(this.selectedElement);
-    this.moreInfo = !this.moreInfo;
-    console.log(this.moreInfo);
+    this.infoTransition = 'infoOut';
+    window.setTimeout(()=>{this.infoTransition = 'infoIn startMoreInfoOut'}, 250);
+    window.setTimeout(()=>{this.infoTransition = 'infoIn endMoreInfoOut';}, 950);
+    window.setTimeout(()=>{this.moreInfo = !this.moreInfo}, 1600)
   }
 
 
   showMore(element: Object, event: any) {
-    if(event.target.classList.contains('exit') || event.target.classList.contains('close-button') || this.moreInfo == true)
+    if(this.moreInfo == true)
     {
       return;
     }
+    window.scrollTo(0,0);
     this.selectedElement = element;
     this.box = event.target.hasOwnProperty('id') ? event.target : event.target.parentElement;
+    this.box.classList.add('active-element');
+    this.boxTop = `${this.box.getBoundingClientRect().top - 80}px`;
+    this.boxLeft = this.box.getBoundingClientRect().left + 'px';
     clearInterval(this.counter);
     this.year = this.currYear;
     this.moreInfo = !this.moreInfo;
+    this.infoTransition = 'infoIn';
+    window.setTimeout(()=>{this.infoTransition = 'infoIn startMoreInfoIn'}, 150);
+    window.setTimeout(()=>{this.infoTransition = 'infoIn endMoreInfoIn'}, 950);
   }
 
   ranking() {

@@ -1,3 +1,11 @@
+
+  <div id="{{element['basic properties'].symbol}}"
+       ngClass="{{element['basic properties'].type}} {{element['basic properties']['year discovered'] > year? 'undiscovered' : 'discovered'}}"
+       class="element" [style.left]="startLeft" [style.top]="startTop">
+    <div class='element-symbol text-center'>{{element['basic properties'].symbol}}</div>
+    <div class='element-number text-center'>{{element['basic properties']['atomic number']}}</div>
+    <div class='element-weight text-center'>{{element['basic properties']['atomic mass'] | atomicMass}}</div>
+</div>
 <div class="info-container">
     <div class="exit" style="background-image: url('/assets/img/portfolio/periodic-table/exit.svg')" (click)="showMore.emit({})"></div>
   <div class="top-circle" ngClass="{{element['basic properties'].type}}">

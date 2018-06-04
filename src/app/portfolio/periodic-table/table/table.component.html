@@ -1,4 +1,4 @@
-<div class="main-container" ngClass="{{showRanking || moreInfo ? 'hide-table' : ''}}">
+<div class="main-container" ngClass="{{infoTransition}}">
 <div class="table-container">
   <h3 class="text-center main-title">
     Periodic Table
@@ -58,9 +58,9 @@
        (click)="(style=== 'classic' || style === 'discoveryYear') ? showMore(e, $event) : ''"
        ngClass="{{e['basic properties'].type}} {{e['basic properties']['year discovered'] > year? 'undiscovered' : 'discovered'}}"
        class="element">
-    <ng-container *ngIf="moreInfo && selectedElement == e">
-    <element-info-component (showMore)="hideMore($event)" [element]="e"></element-info-component>
-    </ng-container>
+    <!--<ng-container *ngIf="moreInfo && selectedElement == e">-->
+    <!--<element-info-component (showMore)="hideMore($event)" [element]="e"></element-info-component>-->
+    <!--</ng-container>-->
     <div class='element-symbol text-center'>{{e['basic properties'].symbol}}</div>
     <div class='element-number text-center'>{{e['basic properties']['atomic number']}}</div>
     <div class='element-weight text-center'>{{e['basic properties']['atomic mass'] | atomicMass}}</div>
@@ -77,8 +77,8 @@
 
 <!--ELEMENT INFO-->
 
-<!--<element-info-component id="element-info" (showMore)="hideMore($event)" *ngIf="moreInfo"-->
-                        <!--[element]="selectedElement"></element-info-component>-->
+<element-info-component id="element-info" (showMore)="hideMore($event)" *ngIf="moreInfo"
+                        [element]="selectedElement" [startTop]="boxTop" [startLeft]="boxLeft"></element-info-component>
 
 <!--PORTFOLIO EXIT-->
 

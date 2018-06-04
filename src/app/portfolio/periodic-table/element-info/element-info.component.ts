@@ -7,6 +7,11 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
 })
 export class ElementInfoComponent {
   @Input() element: Object;
+  @Input() startTop: Object;
+  @Input() startLeft: Object;
   @Output() showMore = new EventEmitter();
+ constructor(){
 
+
+ }
 }

@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Vollkorn+SC');
 @import "./styles/classic.table";
 @import "./styles/universe-abundance.table";
 @import "./styles/human-abundance.table";
 @import "./styles/crust-abundance.table";
 @import "./styles/discovery-year.table";
+@import "./styles/more-info-transitions";
+@import "./styles/ranking-table-transitions";
 
+*{
+  font-family: 'Vollkorn SC', serif !important;
+}
 .portfolio-exit {
   clear: both;
 }
@@ -16,11 +22,12 @@
 
 element-info-component, element-ranking-component, .main-container {
   transition: all .25s linear;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
-.element-symbol, .element-number, .element-weight {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+.main-title{
+  font-weight: bolder;
+  text-transform: uppercase;
+  text-decoration: underline;
 }
 
 .universeAbundance, .crustAbundance, .humanAbundance {
@@ -140,7 +147,7 @@ element-info-component, element-ranking-component, .main-container {
   width: 100%;
 }
 
-.icon-container {
+.icon-container ::ng-deep{
   cursor: pointer;
   float: left;
   width: 20%;
@@ -149,6 +156,11 @@ element-info-component, element-ranking-component, .main-container {
   height: 75px;
   line-height: 50px;
   text-align: center;
+
+  .iconDescription{
+    font-family: 'Vollkorn SC', serif !important;
+  }
+
 }
 
 .icon-container.active ::ng-deep {
@@ -161,6 +173,9 @@ element-info-component, element-ranking-component, .main-container {
 }
 
 @media(max-width: 475px) {
+  .main-title{
+    font-size: 1.25rem !important;
+  }
   .icon-container ::ng-deep {
     .iconDescription {
       display: none;
@@ -169,9 +184,11 @@ element-info-component, element-ranking-component, .main-container {
 }
 
 .rankingButton {
+  position: relative;
   display: table;
   margin: auto;
   clear: both;
+  top: 0;
   text-align: center;
   cursor: pointer;
 }
@@ -186,9 +203,12 @@ element-info-component, element-ranking-component, .main-container {
 //More Info
 
 .info {
+  width: 100%;
   padding: 0 10px;
   margin: 2px auto;
-  width: 100%;
+  b, span{
+    font-family: 'Vollkorn SC', serif !important;
+  }
 }
 
 .info:not(:last-child){
@@ -197,6 +217,7 @@ element-info-component, element-ranking-component, .main-container {
 
 //Close Button
 .close-button {
+  font-family: 'Vollkorn SC', serif !important;
   width: calc(100% / 3);
   text-align: center;
   margin: 20px;
@@ -228,158 +249,3 @@ element-info-component, element-ranking-component, .main-container {
 .table, .menu-container, .slider-container {
   transition: opacity 150ms linear;
 }
-
-.infoIn ::ng-deep {
-  element-info-component {
-    .element {
-      transition: all 400ms linear, transform 250ms linear 500ms;
-    }
-    .info-section, .exit, .close-button {
-      transition: opacity 300ms linear 450ms;
-    }
-    .top-circle {
-      transition: transform 200ms linear;
-    }
-
-  }
-  .table, .menu-container, .slider-container {
-    opacity: 0;
-  }
-}
-
-
-.infoOut ::ng-deep{
-  element-info-component {
-    .element {
-      transition: all 400ms linear 550ms, transform 200ms linear 200ms;
-    }
-    .info-section, .exit, .close-button{
-      transition: opacity 300ms linear;
-    }
-    .top-circle{
-      transition: transform 200ms linear 300ms
-    }
-  }
-  .table, .menu-container, .slider-container {
-    transition: opacity 150ms linear;
-    opacity: 0;
-  }
-}
-
-
-.startMoreInfoOut ::ng-deep {
-  element-info-component {
-    .info-section, .exit, .close-button {
-      opacity: 0;
-    }
-    .top-circle {
-      transform: rotateY(180deg);
-    }
-    background-color: white !important;
-    .element {
-      left: calc(50% - 50px) !important;
-      top: 10px !important;
-      height: 100px;
-      width: 100px;
-      border-radius: 50%;
-      transform: rotateY(0deg);
-    }
-    z-index: 100;
-  }
-}
-
-.endMoreInfoOut ::ng-deep{
-  element-info-component {
-    z-index: 0;
-    .element{
-      height: 5vw;
-      width: 5vw;
-    }
-
-    .info-section, .exit, .close-button {
-      opacity: 0;
-    }
-    .top-circle {
-      transform: rotateY(180deg);
-    }
-  }
-  .table, .menu-container, .slider-container {
-    transition: opacity 150ms linear;
-    opacity: 1;
-  }
-}
-
-
-
-
-.startMoreInfoIn ::ng-deep{
-  element-info-component {
-    .element {
-      left: calc(50% - 50px) !important;
-      top: 10px !important;
-      height: 100px;
-      width: 100px;
-      border-radius: 50%;
-      transform: rotateY(180deg);
-    }
-  }
-  .table, .menu-container, .slider-container{
-    opacity: 0;
-  }
-}
-
-
-.endMoreInfoIn ::ng-deep{
-  element-info-component{
-    background-color: white !important;
-    .element{
-      left: calc(50% - 50px) !important;
-      top: 10px !important;
-      height: 100px;
-      width: 100px;
-      border-radius: 50%;
-      transform: rotateY(180deg);
-    }
-    z-index: 100;
-    .info-section, .exit, .close-button {
-      opacity: 1;
-    }
-    .top-circle{
-      transform: rotateY(0deg);
-    }
-
-
-  }
-  .table, .menu-container, .slider-container{
-    opacity: 0;
-  }
-}
-
-
-
-element-info-component ::ng-deep{
-  .info-section, .exit, .close-button {
-    opacity: 0;
-    .top-circle{
-      opacity: 1;
-    }
-  }
-  .element{
-    backface-visibility: hidden;
-    margin: 0 !important;
-    position: relative;
-
-  }
-  .top-circle{
-    transform: rotateY(180deg);
-    backface-visibility: hidden;
-  }
-  background-color: rgba(255,255,255,0) !important;
-  position: absolute;
-  top: 30px;
-  left: 0px;
-  width: 100%;
-  height: auto;
-  transition: all 400ms linear 200ms, transform 250ms linear, opacity 300ms linear 200ms;
-}
-

@@ -1,7 +1,7 @@
 <div class="main-container" ngClass="{{infoTransition}}">
 <div class="table-container">
   <h3 class="text-center main-title">
-    Periodic Table
+    Periodic Table of Elements
   </h3>
 
   <!--TOP MENU -->
@@ -29,9 +29,12 @@
 
 <!--SHOW RANKING BUTTON-->
 
-<div *ngIf="(!moreInfo && !showRanking) && style !== 'classic'" class="rankingButton"
-     (click)="ranking()" [innerHTML]="style === 'discoveryYear' ? clockIcon : listorderedIcon">
+<div *ngIf="(!moreInfo) && style !== 'classic'" class="rankingButton"
+     (click)="showRankTable()" [innerHTML]="style === 'discoveryYear' ? clockIcon : listorderedIcon">
 </div>
+<element-ranking-component *ngIf="showRanking" (closeRanking)="hideRankTable($event)"
+                           [moreInfo]="moreInfo" [showRanking]="showRanking" (showMore)="showMore($event)"
+                           [style]="style" [elements]="elements | ranking:style"></element-ranking-component>
 
 
 
@@ -58,11 +61,8 @@
        (click)="(style=== 'classic' || style === 'discoveryYear') ? showMore(e, $event) : ''"
        ngClass="{{e['basic properties'].type}} {{e['basic properties']['year discovered'] > year? 'undiscovered' : 'discovered'}}"
        class="element">
-    <!--<ng-container *ngIf="moreInfo && selectedElement == e">-->
-    <!--<element-info-component (showMore)="hideMore($event)" [element]="e"></element-info-component>-->
-    <!--</ng-container>-->
-    <div class='element-symbol text-center'>{{e['basic properties'].symbol}}</div>
     <div class='element-number text-center'>{{e['basic properties']['atomic number']}}</div>
+    <div class='element-symbol text-center'>{{e['basic properties'].symbol}}</div>
     <div class='element-weight text-center'>{{e['basic properties']['atomic mass'] | atomicMass}}</div>
   </div>
 </div>
@@ -70,15 +70,11 @@
   </div>
 <!--ELEMENT RANKING -->
 
-<element-ranking-component [style.opacity]="(showRanking  && !moreInfo) ? 1 : 0" (closeRanking)="ranking($event)"
-                           [moreInfo]="moreInfo" [showRanking]="showRanking" (showMore)="showMore($event)"
-                           [style]="style" [elements]="elements | ranking:style"></element-ranking-component>
-
 
 <!--ELEMENT INFO-->
 
 <element-info-component id="element-info" (showMore)="hideMore($event)" *ngIf="moreInfo"
-                        [element]="selectedElement" [startTop]="boxTop" [startLeft]="boxLeft"></element-info-component>
+                        [element]="selectedElement" [startTop]="box.top" [startLeft]="box.left"></element-info-component>
 
 <!--PORTFOLIO EXIT-->
 

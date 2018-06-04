@@ -1,0 +1,159 @@
+element-ranking-component ::ng-deep{
+  width: 100%;
+  transition: all 1000ms linear;
+  overflow-y: hidden;
+  position: absolute;
+  top: 35px;
+  .exit, .close-button, h2, h3{
+    transition: opacity 500ms linear;
+    opacity: 0;
+  }
+  .ranking{
+    overflow-y: hidden;
+  }
+}
+
+.rankingIn{
+  .table, .menu-container, .slider-container{
+    opacity: 0;
+  }
+  .rankingButton{
+    transition: all 350ms linear, opacity 250ms linear 350ms;
+  }
+  element-ranking-component ::ng-deep{
+    h2, h3{
+      transition: opacity 250ms linear 400ms;
+    }
+    .exit, .close-button{
+      transition: opacity 250ms linear 1000ms;
+    }
+
+    .ranking{
+      padding: 0;
+      margin: 0;
+      border: none;
+      height: 0px;
+      transition: all 250ms linear 650ms
+    }
+
+  }
+}
+
+
+.startRankingIn{
+  .table, .menu-container, .slider-container {
+    opacity: 0;
+  }
+  .rankingButton{
+    top: -95px;
+    opacity: 0;
+  }
+  element-ranking-component ::ng-deep{
+    background-color: white;
+    height: auto;
+    h2, h3{
+      opacity: 1;
+    }
+    .ranking{
+      padding: 0;
+      margin: 0;
+      border: none;
+      height: 0px;
+    }
+  }
+}
+
+.endRankingIn{
+  .table, .menu-container, .slider-container {
+    opacity: 0;
+  }
+  .rankingButton{
+    transition: top 250ms linear, opacity 250ms linear 250ms;
+    top: -95px;
+    opacity: 0;
+  }
+  element-ranking-component ::ng-deep{
+    background-color: white;
+    z-index: 100;
+    height: auto;
+    h2, h3, .exit, .close-button{
+      opacity: 1;
+    }
+    .ranking{
+      padding: 4px;
+      margin: 2px auto !important;
+      border: .5px solid rgba(black, .2);
+      height: 31px;
+      transition: all 250ms linear 750ms
+    }
+  }
+}
+
+.rankingOut{
+  .table, .menu-container, .slider-container {
+    transition: opacity 250ms linear 550ms;
+    opacity: 0;
+  }
+  .rankingButton{
+    transition: top 300ms linear 450ms, opacity 250ms linear 500ms;
+    top: -95px;
+    opacity: 0;
+  }
+  element-ranking-component ::ng-deep{
+    h2, h3, .exit, .close-button{
+      transition: opacity 250ms linear;
+      opacity: 1;
+    }
+    .ranking{
+      transition: all 500ms linear;
+      height: 31px;
+    }
+  }
+
+}
+
+.startRankingOut{
+  .table, .menu-container, .slider-container {
+    opacity: 0;
+  }
+  .rankingButton{
+    z-index: 1;
+    top: 0px;
+    opacity: 1;
+  }
+  element-ranking-component ::ng-deep{
+    h2, h3, .exit, .close-button{
+      opacity: 0;
+    }
+    .ranking{
+      padding: 0;
+      margin: 0;
+      border: none;
+      height: 0px;
+    }
+  }
+}
+
+.endRankingOut{
+  .table, .menu-container, .slider-container {
+    opacity: 1;
+  }
+  .rankingButton{
+    z-index: 1;
+    top: 0px;
+    opacity: 1;
+  }
+  element-ranking-component ::ng-deep{
+    h2, h3, .exit, .close-button{
+      opacity: 0;
+    }
+    .ranking{
+      padding: 0;
+      margin: 0;
+      border: none;
+      height: 0px;
+    }
+  }
+}
+
+

@@ -17,6 +17,7 @@ export class TableComponent implements OnInit {
   currYear: number;
   year: number;
   octicons: any = require('octicons');
+  icons: Object;
   globeIcon: SafeHtml;
   rocketIcon: SafeHtml;
   calendarIcon: SafeHtml;
@@ -24,12 +25,8 @@ export class TableComponent implements OnInit {
   humanIcon: SafeHtml;
   clockIcon: SafeHtml;
   listorderedIcon: SafeHtml;
-  box: any;
-  boxLeft: string;
-  boxTop: string;
+  box: Object = {el: {}, top: '', left: ''};
   infoTransition: string;
-
-
 
 
   constructor(private sanitizer: DomSanitizer) {
@@ -64,72 +61,85 @@ export class TableComponent implements OnInit {
   hideMore(e) {
     this.selectedElement = {};
     this.infoTransition = 'infoOut';
-    window.setTimeout(()=>{this.infoTransition = 'infoIn startMoreInfoOut'}, 250);
-    window.setTimeout(()=>{this.infoTransition = 'infoIn endMoreInfoOut';}, 950);
-    window.setTimeout(()=>{this.moreInfo = !this.moreInfo}, 1600)
+    window.setTimeout(() => {
+      this.infoTransition = 'infoIn startMoreInfoOut'
+    }, 250);
+    window.setTimeout(() => {
+      this.infoTransition = 'infoIn endMoreInfoOut';
+    }, 950);
+    window.setTimeout(() => {
+      this.infoTransition = '';
+      this.moreInfo = !this.moreInfo
+    }, 1600)
   }
 
 
   showMore(element: Object, event: any) {
-    if(this.moreInfo == true)
-    {
+    if (this.moreInfo == true) {
       return;
     }
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     this.selectedElement = element;
-    this.box = event.target.hasOwnProperty('id') ? event.target : event.target.parentElement;
-    this.box.classList.add('active-element');
-    this.boxTop = `${this.box.getBoundingClientRect().top - 80}px`;
-    this.boxLeft = this.box.getBoundingClientRect().left + 'px';
+    this.box['el'] = event.target.hasOwnProperty('id') ? event.target : event.target.parentElement;
+    this.box['top'] = `${this.box['el'].getBoundingClientRect().top - 85}px`;
+    this.box['left'] = this.box['el'].getBoundingClientRect().left + 'px';
     clearInterval(this.counter);
     this.year = this.currYear;
     this.moreInfo = !this.moreInfo;
     this.infoTransition = 'infoIn';
-    window.setTimeout(()=>{this.infoTransition = 'infoIn startMoreInfoIn'}, 150);
-    window.setTimeout(()=>{this.infoTransition = 'infoIn endMoreInfoIn'}, 950);
+    window.setTimeout(() => {
+      this.infoTransition = 'infoIn startMoreInfoIn'
+    }, 50);
+    window.setTimeout(() => {
+      this.infoTransition = 'infoIn endMoreInfoIn'
+    }, 650);
   }
 
-  ranking() {
+  showRankTable() {
+    window.scrollTo(0,0);
+    this.infoTransition = 'rankingIn';
     this.showRanking = !this.showRanking;
+    window.setTimeout(() => {
+      this.infoTransition = 'rankingIn startRankingIn'
+    }, 150);
+
+    window.setTimeout(() => {
+      this.infoTransition = 'rankingIn endRankingIn'
+    }, 250);
+
   }
+
+  hideRankTable(){
+    window.scrollTo(0,0);
+    this.infoTransition = 'rankingOut';
+    window.setTimeout(()=>{
+      this.infoTransition = 'rankingOut startRankingOut';
+    }, 150);
+    window.setTimeout(()=>{
+      this.infoTransition = 'rankingOut endRankingOut';
+    }, 500);
+    window.setTimeout(()=>{
+      this.infoTransition = '';
+      this.showRanking = !this.showRanking;
+    }, 900);
+
+  }
+
+  iconBuilder<SafeHtml>(value: string, msg: string){
+    return this.sanitizer.bypassSecurityTrustHtml(this.octicons[value].toSVG({
+      height: "27.5",
+      width: "27.5",
+      "class": "svgIcon"
+    }) + `<p class='iconDescription'>${msg}</p>`)
+}
 
   ngOnInit() {
-
-    this.calendarIcon = this.sanitizer.bypassSecurityTrustHtml(this.octicons.calendar.toSVG({
-        height: "35",
-        width: "35",
-        "class": "svgIcon"
-      }) + "<p class='iconDescription'>Discovery Date</p>");
-    this.globeIcon = this.sanitizer.bypassSecurityTrustHtml(this.octicons.globe.toSVG({
-        height: "35",
-        width: "35",
-        "class": "svgIcon"
-      }) + "<p class='iconDescription'>Crust Abundance</p>");
-    this.rocketIcon = this.sanitizer.bypassSecurityTrustHtml(this.octicons.rocket.toSVG({
-        height: "35",
-        width: "35",
-        "class": "svgIcon"
-      }) + "<p class='iconDescription'>Universe Abundance</p>");
-    this.beakerIcon = this.sanitizer.bypassSecurityTrustHtml(this.octicons.beaker.toSVG({
-        height: "35",
-        width: "35",
-        "class": "svgIcon"
-      }) + "<p class='iconDescription'>Standard View</p>");
-    this.humanIcon = this.sanitizer.bypassSecurityTrustHtml(this.octicons.person.toSVG({
-        height: "35",
-        width: "35",
-        "class": "svgIcon"
-      }) + "<p class='iconDescription'>Human Abundance</p>");
-    this.clockIcon = this.sanitizer.bypassSecurityTrustHtml("<h3>" + this.octicons.clock.toSVG({
-        height: "35",
-        width: "35",
-        "class": "svgIcon"
-      }) + " View By Chronological Order");
-    this.listorderedIcon = this.sanitizer.bypassSecurityTrustHtml("<h3>" + this.octicons["list-ordered"].toSVG({
-        height: "35",
-        width: "35",
-        "class": "svgIcon"
-      }) + " View Ranked List");
-
+    this.calendarIcon = this.iconBuilder('calendar', 'Discovery Date');
+    this.globeIcon = this.iconBuilder('globe', 'Crust Abundance');
+    this.rocketIcon = this.iconBuilder('rocket', 'Universe Abundance');
+    this.beakerIcon = this.iconBuilder('beaker', 'Standard View');
+    this.humanIcon = this.iconBuilder('person', 'Human Abundance');
+    this.clockIcon = this.iconBuilder('clock', 'View List By Chronological Order');
+    this.listorderedIcon = this.iconBuilder('list-ordered', 'View List Ranked By Mass');
   }
 }

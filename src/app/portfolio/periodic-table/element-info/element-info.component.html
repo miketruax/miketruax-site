@@ -2,8 +2,8 @@
   <div id="{{element['basic properties'].symbol}}"
        ngClass="{{element['basic properties'].type}} {{element['basic properties']['year discovered'] > year? 'undiscovered' : 'discovered'}}"
        class="element" [style.left]="startLeft" [style.top]="startTop">
-    <div class='element-symbol text-center'>{{element['basic properties'].symbol}}</div>
     <div class='element-number text-center'>{{element['basic properties']['atomic number']}}</div>
+    <div class='element-symbol text-center'>{{element['basic properties'].symbol}}</div>
     <div class='element-weight text-center'>{{element['basic properties']['atomic mass'] | atomicMass}}</div>
 </div>
 <div class="info-container">
@@ -17,7 +17,7 @@
 <div class="info-section" *ngFor="let el of element | keys">
   <h5 class="text-center info-header text-uppercase">{{el.key}}:</h5>
   <div class="float-left info" *ngFor="let info of element[el.key] | keys">
-    <b class="text-capitalize float-left">{{info.key}}:</b><span class="float-right"> {{info.value}}</span>
+    <b class="text-capitalize float-left">{{info.key}}: </b><span class="float-right"> {{info.value}}</span>
   </div>
 </div>
 

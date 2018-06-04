@@ -11,11 +11,11 @@ export class RankingInfoPipe implements PipeTransform {
       case ('universeAbundance'):
         return e['abundances']["universe abundance"].split('(rank')[0];
       case ('discoveryYear'):
-        if (e['discoveryYear'] > 0) {
-          return e['discoveryYear'] + ' CE';
+        if (e['basic properties']['year discovered'] > 0) {
+          return e['basic properties']['year discovered'] + ' CE';
         }
         else {
-          return Math.abs(e['discoveryYear']) + ' BCE';
+          return Math.abs(e['basic properties']['year discovered']) + ' BCE';
         }
       default:
         return;

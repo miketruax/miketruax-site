@@ -2,18 +2,10 @@
   width: 96%;
   padding: 4px;
   margin: 2px auto !important;
-  cursor: pointer;
   border: .5px solid rgba(black, .2);
   font-weight: 400 !important;
-  float: left;
 }
 
 .ranking-item span{
   float: right;
-}
-
-.ranking:hover{
-  -ms-transform: scale(1.02);
-  -webkit-transform: scale(1.02);
-  transform: scale(1.02);
 }

@@ -26,7 +26,7 @@ export class TableComponent implements OnInit {
   clockIcon: SafeHtml;
   listorderedIcon: SafeHtml;
   box: Object = {el: {}, top: '', left: ''};
-  infoTransition: string;
+  transitionStyle: string;
 
 
   constructor(private sanitizer: DomSanitizer) {
@@ -38,6 +38,10 @@ export class TableComponent implements OnInit {
 
   clearCounter() {
     clearInterval(this.counter);
+  }
+
+  changeStyle(style){
+    this.transitionStyle = style;
   }
 
   discoveryShow() {
@@ -60,15 +64,15 @@ export class TableComponent implements OnInit {
 
   hideMore(e) {
     this.selectedElement = {};
-    this.infoTransition = 'infoOut';
+    this.transitionStyle = 'infoOut';
     window.setTimeout(() => {
-      this.infoTransition = 'infoIn startMoreInfoOut'
+      this.transitionStyle = 'infoIn startMoreInfoOut'
     }, 250);
     window.setTimeout(() => {
-      this.infoTransition = 'infoIn endMoreInfoOut';
+      this.transitionStyle = 'infoIn endMoreInfoOut';
     }, 950);
     window.setTimeout(() => {
-      this.infoTransition = '';
+      this.transitionStyle = '';
       this.moreInfo = !this.moreInfo
     }, 1600)
   }
@@ -86,40 +90,40 @@ export class TableComponent implements OnInit {
     clearInterval(this.counter);
     this.year = this.currYear;
     this.moreInfo = !this.moreInfo;
-    this.infoTransition = 'infoIn';
+    this.transitionStyle = 'infoIn';
     window.setTimeout(() => {
-      this.infoTransition = 'infoIn startMoreInfoIn'
+      this.transitionStyle = 'infoIn startMoreInfoIn'
     }, 50);
     window.setTimeout(() => {
-      this.infoTransition = 'infoIn endMoreInfoIn'
+      this.transitionStyle = 'infoIn endMoreInfoIn'
     }, 650);
   }
 
   showRankTable() {
     window.scrollTo(0,0);
-    this.infoTransition = 'rankingIn';
+    this.transitionStyle = 'rankingIn';
     this.showRanking = !this.showRanking;
     window.setTimeout(() => {
-      this.infoTransition = 'rankingIn startRankingIn'
+      this.transitionStyle = 'rankingIn startRankingIn'
     }, 150);
 
     window.setTimeout(() => {
-      this.infoTransition = 'rankingIn endRankingIn'
+      this.transitionStyle = 'rankingIn endRankingIn'
     }, 250);
 
   }
 
   hideRankTable(){
     window.scrollTo(0,0);
-    this.infoTransition = 'rankingOut';
+    this.transitionStyle = 'rankingOut';
     window.setTimeout(()=>{
-      this.infoTransition = 'rankingOut startRankingOut';
+      this.transitionStyle = 'rankingOut startRankingOut';
     }, 150);
     window.setTimeout(()=>{
-      this.infoTransition = 'rankingOut endRankingOut';
+      this.transitionStyle = 'rankingOut endRankingOut';
     }, 500);
     window.setTimeout(()=>{
-      this.infoTransition = '';
+      this.transitionStyle = '';
       this.showRanking = !this.showRanking;
     }, 900);
 

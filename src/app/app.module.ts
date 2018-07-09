@@ -66,11 +66,6 @@ export function startUpRecipes(startUpService: RecipeService, http: HttpClient):
       //Movie Search Components
           MovieSearchImageComponent, MovieMoreInfoComponent,
 
-      //Elemental Table Components
-      //     TableComponent, ElementRankingComponent, ElementInfoComponent,
-        //Elemental Table Pipes
-        //       AtomicMass, ElementType, RankingInfoPipe, RankingPipe, KeysPipe,
-
     //Shared Components
     PaginationComponent, EtaTimeUntilComponent,
 

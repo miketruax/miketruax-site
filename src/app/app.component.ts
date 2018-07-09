@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   fullHeight: number = window.scrollY + (window.innerHeight -200);
   menuActive: boolean = false;
 
-  constructor(private router: Router) {
+  constructor(public router: Router) {
     this.router.events.subscribe(path=>{
       if (path['url'] != this.router.url) {
           document.getElementById('navbar-main').classList.remove('show');

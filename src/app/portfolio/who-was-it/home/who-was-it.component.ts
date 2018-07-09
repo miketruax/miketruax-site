@@ -15,8 +15,9 @@ import * as ActorActions from "../../../actions/actor.actions";
 export class WhoWasItComponent implements OnInit {
   //Initializes elements movie as two blank elements, tooFew (movies searched for) as false, results as observable
   private movies: Array<Object> = [{movie: {'title' :'', 'year': ''}}, {movie: {'title' :'', 'year': ''}}];
-  private results: Observable<any>;
-  private tooFew: boolean = false;
+  public about: boolean = false;
+  public results: Observable<any>;
+  public tooFew: boolean = false;
   constructor(private movieService: MovieService, private store: Store<fromRoot.State>) {
     this.results = store.select('actors');
   }

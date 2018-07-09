@@ -32,10 +32,10 @@
 <div class="col-12 food-container" *ngFor="let r of recipes | category:activeCat; let idx = index;">
   <div *ngIf="idx === activeIdx" [@fadeInAnimation]>
     <div class="col-12 recipe-title"><h2 class="text-center">{{r.name}}</h2></div>
-    <div class="col-md-5 col-xl-4 col-6 col-offset-3 offset-md-0 text-center">
+    <div class="col-xl-4 offset-xl-4 col-6 offset-3 text-center">
       <img class="rounded img-thumbnail img-responsive" [src]="'assets/img/food/'+r.image">
     </div>
-    <div class="col-md-7 col-12 col-lg-6 col-xl-8">
+    <div class="col-md-8 offset-1 col-10 col-xl-6 offset-md-2 offset-xl-3">
       <dl>
         <dt>Results:</dt>
         <dd> {{r.results}}</dd>

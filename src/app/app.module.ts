@@ -30,7 +30,7 @@ import {WhoWasItResultsComponent} from "./portfolio/who-was-it/home/who-was-it-r
 // import {AtomicMass} from "./portfolio/periodic-table/pipes/atomicMass.pipe";
 // import {ElementType} from "./portfolio/periodic-table/pipes/elementType.pipe";
 // import {RankingInfoPipe} from "./portfolio/periodic-table/pipes/rankingInfo.pipe";
-import {RankingPipe} from "./portfolio/periodic-table/pipes/ranking.pipe";
+// import {RankingPipe} from "./portfolio/periodic-table/pipes/ranking.pipe";
 import {EtaTimeUntilComponent} from "./shared/eta-until-end/eta-time-until.component";
 import {SectionBackgroundFade} from "./directives/section-background-fade";
 import {SlideBox} from "./directives/container-box-slide";

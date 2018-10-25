@@ -1,11 +1,10 @@
 import {Component, Input, OnInit} from "@angular/core";
-import {Recipe} from "../stores/recipe.store";
-import {fadeInAnimation} from "../animations/fade-in.animation";
+import {Recipe} from '../models/recipe.model'
+
 @Component({
   selector: 'food-list',
   templateUrl: './food-list.component.html',
-  styleUrls: ['food.component.scss'],
-  animations: [fadeInAnimation]
+  styleUrls: ['food.component.scss']
 })
 export class FoodListComponent implements OnInit{
   activeCat: number = 1;

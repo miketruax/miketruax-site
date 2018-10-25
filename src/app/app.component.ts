@@ -1,32 +1,26 @@
-import {Component, OnInit, HostListener} from '@angular/core';
-import {Router, NavigationEnd} from "@angular/router";
+import {Component} from '@angular/core';
+import {Router, NavigationStart, RouterOutlet} from "@angular/router";
+import { slideInAnimation } from './shared/animations/routeAnimations';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+  animations: [slideInAnimation]
 })
-export class AppComponent implements OnInit {
-
-  fullHeight: number = window.scrollY + (window.innerHeight -200);
-  menuActive: boolean = false;
-
-  constructor(public router: Router) {
-    this.router.events.subscribe(path=>{
-      if (path['url'] != this.router.url) {
-          document.getElementById('navbar-main').classList.remove('show');
-        this.menuActive = false;
-          window.scrollTo(0, 0);
-        }
-
+export class AppComponent {
+  opened: boolean;
+  constructor(private router: Router){
+    this.router.events.subscribe(path => {
+      if(event instanceof NavigationStart && path['url'] != this.router.url) {
+        window.scrollTo(0,0);
+      }
     });
   }
-
-  @HostListener('window:scroll') onScroll() {
-    this.fullHeight = window.scrollY + (window.innerHeight -200);
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
-
-    menuClick(){
-    this.menuActive = !this.menuActive;
+  
+  ngOnInit(){
   }
-    ngOnInit(){}
 }

@@ -1,7 +1,7 @@
 <div class="main-content col-12">
 
 
-<movie-more-info  *ngIf="moreInfo && !loading" [movie]="activeMovie | async" (close)="closeMore($event)"></movie-more-info>
+<movie-about  *ngIf="moreInfo && !loading" [movie]="activeMovie | async" (close)="closeMore($event)"></movie-about>
 
 
   <div class="main-header col-12" *ngIf="!moreInfo">
@@ -16,13 +16,12 @@
   <div class="col-12 text-center" *ngIf="loading">LOADING...<br><img src="../../../assets/img/portfolio/movie-search/bar.gif"></div>
   <div id="movies" class="movie-list col-12"  *ngIf="!moreInfo">
 
-    <div class="no-movies text-center" *ngIf="(movieSearchInfo |async).error.err">
-      <i class="material-icons icon-help">help_outline</i>{{(movieSearchInfo |async).error.msg}}</div>
-
+    <div class="no-movies text-center" *ngIf="(movieSearchInfo |async).msg">
+      <i class="material-icons icon-help">help_outline</i>{{(movieSearchInfo |async).msg}}</div>
     <div *ngFor="let m of (movieSearchInfo |async).movies" data-toggle="tooltip"
         title="Click to see more about {{m.Title}}" class="movie_more col-12 col-sm-6 col-md-4 col-lg-3"
         (click)="showMore(m.imdbID)">
-      <movie-search-image [imdbID]="m.imdbID"></movie-search-image>
+      <movie-poster [imdbID]="m.imdbID"></movie-poster>
       <p class="movie-title col-12 text-center" >{{m.Title}}</p>
       <p class="movie-year  col-12 text-center">{{m.Year}}</p>
     </div>

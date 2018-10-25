@@ -1,0 +1,54 @@
+<nav class="food-menu col-12">
+  <ul class="nav nav-pills text-center">
+    <li role="presentation" class="pointer" [ngClass]="{active: activeCat === 1}" (click)="setCat(1)">
+      <a>
+        <img class="button-img"[src]="'/assets/img/buttons/food/breads' + (activeCat === 1 ? 'Active.png': '.png')">
+        <b class="link-text">Breads</b></a>
+    </li>
+    <li role="presentation" class="pointer" [ngClass]="{active: activeCat === 2}" (click)="setCat(2)">
+      <a>
+        <img class="button-img"[src]="'/assets/img/buttons/food/desserts' + (activeCat === 2 ? 'Active.png': '.png')">
+        <b class="link-text">Desserts</b></a></li>
+    <li role="presentation" class="pointer" [ngClass]="{active: activeCat === 3}" (click)="setCat(3)">
+      <a>
+        <img class="button-img" [src]="'/assets/img/buttons/food/entrees' + (activeCat === 3 ? 'Active.png': '.png')">
+        <b class="link-text">Entrees</b></a></li>
+    <li role="presentation" class="pointer" [ngClass]="{active: activeCat === 4}" (click)="setCat(4)">
+      <a>
+        <img class="button-img" [src]="'/assets/img/buttons/food/sides'+(activeCat === 4 ? 'Active.png': '.png')">
+        <b class="link-text">Sides</b></a></li>
+  </ul>
+</nav>
+
+
+<div class="col-12 text-center thumbnail-container" >
+  <ng-container *ngFor="let f of recipes; let i = index" (click)="activeIdx = i">
+  <div *ngIf="recipe.categoryID === activeCat" [ngClass]="{'active-thumb': i === activeIdx}" class="thumbnail-img">
+    <img class="rounded" [src]="'assets/img/food/'+f.image" title="{{f.name}}" />
+    </div>
+  </ng-container>
+</div>
+
+
+<div class="col-12 food-container" *ngFor="let r of recipes; let idx = index;">
+  <ng-container [ngIf]="recipe.categoryID === activeCat">
+  <div *ngIf="idx === activeIdx" [@fadeInAnimation]>
+    <div class="col-12 recipe-title"><h2 class="text-center">{{r.name}}</h2></div>
+    <div class="col-xl-4 offset-xl-4 col-6 offset-3 text-center">
+      <img class="rounded img-thumbnail img-responsive" [src]="'assets/img/food/'+r.image">
+    </div>
+    <div class="col-md-8 offset-1 col-10 col-xl-6 offset-md-2 offset-xl-3">
+      <dl>
+        <dt>Results:</dt>
+        <dd> {{r.results}}</dd>
+      </dl>
+      <dl>
+        <dt>Changes from Original:</dt>
+        <dd>{{r.changes}}</dd>
+      </dl>
+    </div>
+    <div class="text-center col-12 recipeLink"><a
+      [href]="r.recipeLink" target="_blank"><h4><i>{{r.credits}}</i></h4></a></div>
+  </div>
+</ng-container>
+</div>

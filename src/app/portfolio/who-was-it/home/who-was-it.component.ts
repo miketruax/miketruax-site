@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {MovieService} from '../../../services/movie.service'
-import * as fromRoot from "../../../reducers";
 import {Store} from "@ngrx/store";
 import {Observable} from "rxjs";
-import * as ActorActions from "../../../actions/actor.actions";
+import { WhoWasItService } from '../services/who-was-it.service';
+import { PortfolioStoreFacade } from '../../store';
 
 
 @Component({
   selector: 'who-was-it',
-  providers: [MovieService],
   templateUrl: './who-was-it.component.html',
   styleUrls: ['./who-was-it.component.scss']
 })
@@ -18,8 +16,8 @@ export class WhoWasItComponent implements OnInit {
   public about: boolean = false;
   public results: Observable<any>;
   public tooFew: boolean = false;
-  constructor(private movieService: MovieService, private store: Store<fromRoot.State>) {
-    this.results = store.select('actors');
+  constructor(private wwiService: WhoWasItService, private store: PortfolioStoreFacade) {
+    this.results = store.actors$
   }
   //Pushes blank movie to search array to allow for more than 3 searches
   addItem(){
@@ -41,9 +39,9 @@ export class WhoWasItComponent implements OnInit {
     this.blankClearer();
     //If not enough movies after clearing blanks, doesn't call API and instead issues error via HTML
     if(!this.tooFew) {
-      this.store.dispatch({type: ActorActions.CLEAR_ACTORS, payload: this.movies.length});
+      this.store.clearActors(this.movies.length)
       this.movies.forEach(v => {
-        this.movieService.compareMovies(v['movie']['title'], v['movie']['year']);
+        this.wwiService.compareMovies(v['movie']['title'], v['movie']['year']);
       })
     }
   }
@@ -52,12 +50,11 @@ export class WhoWasItComponent implements OnInit {
   clear(){
     this.tooFew = false;
     this.movies = [{movie: ''}, {movie: ''}];
-    this.store.dispatch({type: ActorActions.CLEAR_ACTORS, payload: -1})
+    this.store.clearActors(-1)
   }
 
   //Clears blanks from movie array
   blankClearer(){
-
     //Iterates through movies array, if value is undefined (blank) removes it from movies array
     this.movies.forEach((v, i, array)=>{
       if(!v['movie']){
@@ -71,7 +68,6 @@ export class WhoWasItComponent implements OnInit {
       this.movies.length === 1 ? this.movies.push({movie: {'title' :'', 'year': ''}}) : this.movies.push({movie: {'title' :'', 'year': ''}}, {movie: {'title' :'', 'year': ''}});
     }
   }
-
   ngOnInit() {
   }
 

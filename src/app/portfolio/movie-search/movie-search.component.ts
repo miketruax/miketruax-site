@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import 'rxjs/Rx';
-import * as fromRoot from '../../reducers'
-import * as MovieActions from '../../actions/movies.actions'
-import {Observable} from "rxjs";
-import {Store} from "@ngrx/store";
-import {MovieService} from "../../services/movie.service";
-import * as SelectedMovieActions from "../../actions/selectedMovies.actions";
+
+import {MovieSearchService} from "./services/movie-search.service";
+import { Observable } from 'rxjs';
+import { PortfolioStoreFacade } from '../store';
 
 @Component({
   selector: 'movie-search',
@@ -22,9 +19,9 @@ export class MovieSearchComponent implements OnInit {
   currentPage: number = 1;
 
 
-  constructor(private movieService: MovieService, private store: Store<fromRoot.State>) {
-    this.movieSearchInfo = store.select(fromRoot.getMoviesState);
-    this.activeMovie = store.select(fromRoot.getSelectedMoviesState);
+  constructor(private movieService: MovieSearchService, private portfolioStore: PortfolioStoreFacade) {
+    this.movieSearchInfo = this.portfolioStore.movies$;
+    this.activeMovie = this.portfolioStore.selectedMovie$;
 
   };
   closeMore(e){
@@ -34,19 +31,25 @@ export class MovieSearchComponent implements OnInit {
   searchMovies(idx) {
     this.loading = true;
     this.currentPage = idx;
-    this.store.dispatch(new MovieActions.ClearMovies());
+    this.portfolioStore.clearMovies()
     this.movieService.searchMovies(this.movieSearch, this.yearSearch, idx)
-      .subscribe(()=>{this.loading = false;});
+      .subscribe(val=>{
+        this.portfolioStore.updateMovies(val);
+        this.loading = false;
+      });
 
   }
 
   //title is clicked hides search results and shows more info
   showMore(id) {
-    this.store.dispatch(new SelectedMovieActions.ClearSelectedMovie());
+    this.portfolioStore.clearSelectedMovie();
     this.moreInfo = true;
     this.loading = true;
     this.movieService.movieById(id)
-      .subscribe(()=>{this.loading = false;});
+      .subscribe(val=>{
+        this.portfolioStore.selectMovie(val)
+        this.loading = false;
+      });
 
   };
 

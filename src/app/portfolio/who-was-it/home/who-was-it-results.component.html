@@ -6,10 +6,13 @@
       <div>
         <ng-container *ngFor="let m of results.movies; let i = index">
           <div *ngIf="!m.valid && m.title">
-            {{m.title}} ignored, {{m.msg}}
+            {{m.title}} ignored, either the movie wasn't found, or the actors aren't populated in OMDB.
           </div>
           <div *ngIf="m.title === ''">
             A title was ignored, the field was left blank.
+          </div>
+          <div *ngIf="m.title === undefined">
+            {{m.title}} was ignored, something went wrong with the api call.
           </div>
         </ng-container>
       </div>

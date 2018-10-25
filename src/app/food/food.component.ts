@@ -1,9 +1,7 @@
 import {Component,  AfterViewInit} from '@angular/core';
-import {Store} from "@ngrx/store";
-import * as fromRoot from '../reducers'
 import {Observable} from "rxjs";
-import {fadeInAnimation} from "../animations/fade-in.animation";
 import { Recipe } from '../models/recipe.model';
+import { RootStoreFacade } from '../store';
 
 @Component({
   selector: 'food-component',
@@ -12,8 +10,8 @@ import { Recipe } from '../models/recipe.model';
 })
 export class FoodComponent{
   recipes: Observable<Array<Recipe>>;
-  constructor(private store: Store<fromRoot.State>) {
-    this.recipes = store.select(fromRoot.getRecipeState);
+  constructor(private store: RootStoreFacade) {
+    this.recipes = store.recipes$;
   }
 
 }

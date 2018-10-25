@@ -1,21 +1,21 @@
 .section-heading {
-  border-bottom: 1px solid $sunny !important;
-  background-color: rgba($yankees-blue, 1) !important;
-  color: $alabaster !important;
-  text-transform: uppercase !important;
-  letter-spacing: 1px !important;
+  border-bottom: 1px solid $warning;
+  background-color: $secondary;
+  color: $font-light;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .inner-heading{
-  color: $yankees-blue !important;
-  background-color: rgba($sunny, .4) !important;
-  border: 1px solid $yankees-blue !important;
+  color: $secondary;
+  background-color: rgba($warning, .4);
+  border: 1px solid $secondary;
 }
 
 .sub-heading{
-  margin-top: 10px !important;
-  color: $yankees-blue;
+  margin-top: 10px;
+  color: $secondary;
   text-align: center;
-  text-shadow: 1px 1px $moonstone-blue;
+  text-shadow: 1px 1px $primary;
 }
 

@@ -1,8 +1,8 @@
 /*ELEMENTS----------------*/
 * {
   line-height: normal !important;
-  font-family: $content-font !important;
-  color: $raisin-black;
+  font-family: $content-font;
+  color: $font-dark;
 }
 nav{
   -webkit-transform: translateZ(0) !important;
@@ -30,11 +30,11 @@ hr{
   padding: 1px !important;
   margin-left: 5% !important;
   width: 90% !important;
-  background-color: $raisin-black;
+  background-color: $font-dark;
 }
 
 footer{
-  background-color: $alabaster;
+  background-color: $font-light;
   padding-bottom: 20px !important;
 }
 

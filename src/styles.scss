@@ -1,8 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-@import './app/styles/app.style.scss';
-
-
-/* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import '~@angular/material/theming';
 @import './app/shared/styles/colors';
@@ -22,21 +18,93 @@ $dark-blue: #355778;
 $off-black: #1e1e24;
 
 
-$buddy-primary: (
-    50 : #edf4f3,
-    100 : #d2e3e0,
-    200 : #b5d1cb,
-    300 : #97bfb6,
-    400 : #80b1a7,
-    500 : #6aa397,
-    600 : #629b8f,
-    700 : #579184,
-    800 : #4d887a,
-    900 : #3c7769,
-    A100 : #cafff2,
-    A200 : #97ffe5,
-    A400 : #64ffd8,
-    A700 : #4bffd2,
+$md-primary: (
+    50 : #eff7f7,
+    100 : #d7ecec,
+    200 : #bddfdf,
+    300 : #a3d2d2,
+    400 : #8fc9c9,
+    500 : #7bbfbf,
+    600 : #73b9b9,
+    700 : #68b1b1,
+    800 : #5ea9a9,
+    900 : #4b9b9b,
+    A100 : #f8ffff,
+    A200 : #c5ffff,
+    A400 : #92ffff,
+    A700 : #79ffff,
+    contrast: (
+        50 : #252627,
+        100 : #252627,
+        200 : #252627,
+        300 : #252627,
+        400 : #252627,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #252627,
+        A200 : #252627,
+        A400 : #252627,
+        A700 : #252627,
+    )
+);
+
+$site-primary: mat-palette($md-primary);
+
+$md-secondary: (
+    50 : #e2e8eb,
+    100 : #b7c5cd,
+    200 : #879eac,
+    300 : #57778b,
+    400 : #335972,
+    500 : #0f3c59,
+    600 : #0d3651,
+    700 : #0b2e48,
+    800 : #08273e,
+    900 : #041a2e,
+    A100 : #67acff,
+    A200 : #3490ff,
+    A400 : #0174ff,
+    A700 : #0068e6,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #f3efe9,
+        400 : #f3efe9,
+        500 : #f3efe9,
+        600 : #f3efe9,
+        700 : #f3efe9,
+        800 : #f3efe9,
+        900 : #f3efe9,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #f3efe9,
+        A700 : #f3efe9,
+    )
+);
+
+$site-secondary:  mat-palette($md-secondary);
+
+// The warn palette is optional (defaults to red).
+
+$md-warning: (
+    50 : #fffdef,
+    100 : #fffbd8,
+    200 : #fff8be,
+    300 : #fff5a4,
+    400 : #fff391,
+    500 : #fff17d,
+    600 : #ffef75,
+    700 : #ffed6a,
+    800 : #ffeb60,
+    900 : #ffe74d,
+    A100 : #f3efe9,
+    A200 : #f3efe9,
+    A400 : #fffdf3,
+    A700 : #fffada,
     contrast: (
         50 : #000000,
         100 : #000000,
@@ -45,98 +113,26 @@ $buddy-primary: (
         400 : #000000,
         500 : #000000,
         600 : #000000,
-        700 : #ffffff,
-        800 : #ffffff,
-        900 : #ffffff,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #000000,
-        A700 : #000000,
-    )
-);
-$buddy-app-primary: mat-palette($buddy-primary);
-
-$buddy-secondary: (
-    50 : #e7ebef,
-    100 : #c2cdd7,
-    200 : #9aabbc,
-    300 : #7289a1,
-    400 : #53708c,
-    500 : #355778,
-    600 : #304f70,
-    700 : #284665,
-    800 : #223c5b,
-    900 : #162c48,
-    A100 : #85b6ff,
-    A200 : #5297ff,
-    A400 : #1f79ff,
-    A700 : #066aff,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #000000,
-        400 : #ffffff,
-        500 : #ffffff,
-        600 : #ffffff,
-        700 : #ffffff,
-        800 : #ffffff,
-        900 : #ffffff,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #ffffff,
-        A700 : #ffffff,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #252627,
+        A200 : #252627,
+        A400 : #252627,
+        A700 : #252627,
     )
 );
 
 
-$buddy-app-accent:  mat-palette($buddy-secondary);
-
-// The warn palette is optional (defaults to red).
-
-$buddy-warning: (
-    50 : #faece7,
-    100 : #f2d0c2,
-    200 : #e9b09a,
-    300 : #e09072,
-    400 : #da7953,
-    500 : #d36135,
-    600 : #ce5930,
-    700 : #c84f28,
-    800 : #c24522,
-    900 : #b73316,
-    A100 : #ffedea,
-    A200 : #ffc2b7,
-    A400 : #ff9784,
-    A700 : #ff816a,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #000000,
-        400 : #000000,
-        500 : #ffffff,
-        600 : #ffffff,
-        700 : #ffffff,
-        800 : #ffffff,
-        900 : #ffffff,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #000000,
-        A700 : #000000,
-    )
-);
-
-
-$buddy-app-warn:    mat-palette($buddy-warning);
+$site-warn:    mat-palette($md-warning);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$buddy-app-theme: mat-light-theme($buddy-app-primary, $buddy-app-accent, $buddy-app-warn);
+$site-theme: mat-light-theme($site-primary, $site-secondary, $site-warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($buddy-app-theme);
+@include angular-material-theme($site-theme);
 
 
     //Layout
@@ -169,19 +165,16 @@ $buddy-app-theme: mat-light-theme($buddy-app-primary, $buddy-app-accent, $buddy-
     cursor: pointer;
 }
 
-.content-container{
-    height: auto;
-    overflow: visible;
-    width: 100%;
-}
-
-
-.paw-icon{
-    max-height: 50px; width: auto;
-    padding: 0 !important;
-    margin-left: -5px !important;
+.section-background{
+    background: center/cover no-repeat;
+    min-height: 150px !important;
+    border: 1px solid $secondary;
+    transition: opacity .6s ease-in;
+    @media(max-width: 1199px){
+      border-width: 1px 0 0 0 !important;
+    }
   }
-  
+
  
 .main-content{
     background-color: rgba(255,255,255,.6);
@@ -189,9 +182,20 @@ $buddy-app-theme: mat-light-theme($buddy-app-primary, $buddy-app-accent, $buddy-
 
   .mat-sidenav-container{
     .sidenav-menu{
-        margin-top: 50px;
+        margin-top: 40px;
     }
       min-height: 100vh;
   }
 
 body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+.social-icon{
+    height: 32px !important;
+    width: auto !important;
+    margin: 0 8px !important;
+  }
+  
+  .icon {
+    max-height: 25px !important;
+  }
+  

@@ -13,7 +13,7 @@
   }
   a{
     text-decoration: underline;
-    color: $moonstone-blue;
+    color: $primary;
   }
 }
 
@@ -25,7 +25,7 @@
 
 @media(max-width: 767px){
   .portfolio-container:nth-child(even){
-    background-color: $alabaster !important;
+    background-color: $font-light !important;
   }
   .portfolio-icon{
     max-width: 33% !important;
@@ -45,4 +45,9 @@
 
 .portfolio-title{
   height: 63px;
+}
+
+.portfolio-icon{
+  max-width: 50% !important;
+  margin: 10px auto;
 }

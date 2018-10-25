@@ -6,11 +6,12 @@ about-component, home-component, food-component, portfolio-component{
 .top-div{
   margin-top: 146px !important;
 }
+
 .body {
   font-family: $content-font;
   margin: 0 !important;
   padding: 0 !important;
-  background-color: $alabaster;
+  background-color: $font-light;
 }
 
 .container-box{
@@ -32,6 +33,6 @@ about-component, home-component, food-component, portfolio-component{
 
   }
   @media(min-width: 1200px) {
-    border: 1px solid $raisin-black;
+    border: 1px solid $font-dark;
   }
 }

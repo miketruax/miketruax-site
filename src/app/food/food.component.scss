@@ -14,7 +14,7 @@
 }
 
 .thumbnail-container{
-  border-bottom: 2px solid $yankees-blue;
+  border-bottom: 2px solid $secondary;
   margin: auto;
   min-height: 75px !important;
 }
@@ -28,15 +28,15 @@ food-list{
   margin: 7px 0 !important;
   h2{
     font-family: $title-font;
-    color: $yankees-blue !important;
-    text-shadow: 2px 2px $sunny !important;
+    color: $secondary !important;
+    text-shadow: 2px 2px $warning !important;
   }
 }
 
 .recipeLink{
   margin-top: 5px !important;
-  color: $raisin-black !important;
-  text-shadow: 2px 2px $alabaster !important;
+  color: $font-dark !important;
+  text-shadow: 2px 2px $font-light !important;
 }
 
 
@@ -56,7 +56,7 @@ food-list{
 }
 
 .active-thumb{
-  border:2px solid $yankees-blue;
+  border:2px solid $secondary;
 }
 
 .img-thumbnail{
@@ -73,7 +73,7 @@ food-list{
 
 
   .pointer {
-    background-color: rgba($alabaster, .6) !important;
+    background-color: rgba($font-light, .6) !important;
     max-height: 40px !important;
     margin: 5px .5% 5px .5%;
     width: 24% !important;
@@ -95,11 +95,11 @@ food-list{
     }
   }
   .active{
-    background-color: rgba($sunny, .6) !important;
+    background-color: rgba($warning, .6) !important;
   }
 
   .double-menu {
-    background-color: rgba($moonstone-blue, 0.5) !important;
+    background-color: rgba($primary, 0.5) !important;
     width: 100%;
   }
 }

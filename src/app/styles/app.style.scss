@@ -22,11 +22,11 @@
   padding: 1px 6px;
   z-index: 100;
   margin: 5px 10px 5px 0 !important;
-  background-color: $moonstone-blue !important;
-  border-color: $yankees-blue !important;
+  background-color: $primary !important;
+  border-color: $secondary !important;
 
   span {
-    background-color: $yankees-blue !important;
+    background-color: $secondary !important;
   }
 }
 
@@ -43,31 +43,31 @@
 }
 
 .navbar-header{
-  background-color: $yankees-blue !important;
+  background-color: $secondary !important;
 
 }
 
 .navbar-default, .nav{
   min-height: 46px !important;
   border: 0 !important;
-  background-color: $yankees-blue !important;
+  background-color: $secondary !important;
 }
 
 .navbar-collapse{
   -webkit-transform: translateZ(0);
-  background-color: $yankees-blue !important;
+  background-color: $secondary !important;
 
   a{
-    color: $alabaster !important;
+    color: $font-light !important;
   }
   .nav-item.active{
-    background-color: $moonstone-blue !important;
-    color: $alabaster !important;
+    background-color: $primary !important;
+    color: $font-light !important;
   }
   .nav-item:hover:not(.active){
-    background-color: $sunny !important;
+    background-color: $warning !important;
     a{
-      color: $yankees-blue !important;
+      color: $secondary !important;
     }
   }
 }

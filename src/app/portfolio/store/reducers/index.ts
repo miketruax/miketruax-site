@@ -16,7 +16,6 @@ export const reducers: ActionReducerMap<PortfolioState> = {
 };
 
 
-export const getMoviesState = createFeatureSelector<PortfolioState>('movies');
-  
-export const getSelectedMovieState = createFeatureSelector<PortfolioState>('selectedMovie');
-export const getActorsState = createFeatureSelector<PortfolioState>('actors');
+export const getMoviesState = createFeatureSelector<PortfolioState>('portfolio');
+export const getSelectedMovieState = createFeatureSelector<PortfolioState>('portfolio');
+export const getActorsState = createFeatureSelector<PortfolioState>('portfolio');

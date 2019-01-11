@@ -11,14 +11,14 @@ import {HomeComponent} from "./home/home.component";
 import {RecipeService} from "./services/recipe.service";
 import {StoreModule} from "@ngrx/store";
 import {FoodListComponent} from "./food/food-list/food-list.component";
-import {PaginationComponent} from "./shared/pagination/pagination.component";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {EtaTimeUntilComponent} from "./shared/eta-until-end/eta-time-until.component";
 import {SectionBackgroundFade} from "./directives/section-background-fade";
 import {SlideBox} from "./directives/container-box-slide";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { MaterialModule } from './material.module';
-import { PortfolioModule } from './portfolio/portfolio.module';
+import {PortfolioModule} from './portfolio/portfolio.module'
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -38,7 +38,7 @@ export function startUpRecipes(startUpService: RecipeService, http: HttpClient):
 @NgModule({
   declarations: [
     //Main Components
-    AppComponent, FoodComponent, AboutComponent, HomeComponent, FoodListComponent,
+    AppComponent, FoodComponent, AboutComponent, HomeComponent, FoodListComponent, FooterComponent,
 
     //Shared Components
     EtaTimeUntilComponent,
@@ -47,9 +47,9 @@ export function startUpRecipes(startUpService: RecipeService, http: HttpClient):
     SectionBackgroundFade, SlideBox
       ],
   imports: [
-    BrowserModule,
+    BrowserModule, PortfolioModule,
     BrowserAnimationsModule,
-    FormsModule, PortfolioModule,
+    FormsModule, 
     HttpClientModule, MaterialModule,
     RouterModule.forRoot(routes, {
       useHash: true

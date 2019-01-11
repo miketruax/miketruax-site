@@ -1,0 +1,15 @@
+@import '../shared/styles/colors';
+// Footer
+
+.footer{
+    border-top: 2px solid $secondary;
+    .footer-logo{
+        img{
+            vertical-align: middle
+        }
+        h6{
+            margin: 5px;
+        }
+    }
+    margin-bottom: 5px;
+}

@@ -2,8 +2,8 @@
 
 //TOP MENU
 .mat-sidenav{
+    top: 2px !important;
     width: 300px;
-    height: 100%;
     background-color: $secondary;
   }
     //LINKS
@@ -22,6 +22,11 @@
 
 
 //TOP TOOLBAR
+
+.mat-drawer-backdrop{
+    height: calc(100vh);
+    position: fixed;
+}
 
 .menu-toggle{
     padding: 0;
@@ -53,6 +58,9 @@ mat-sidenav-content{
   overflow: visible;
 }
 
+mat-sidenav-container{
+    flex: 1;
+}
 
 // BANNER
 
@@ -60,7 +68,7 @@ mat-sidenav-content{
     display: inline-block;
     height: 100%;
     vertical-align: middle;
-  }
+}
 
 .banner-logo {
     position: fixed;
@@ -70,6 +78,7 @@ mat-sidenav-content{
     background: $primary url('/assets/img/backgrounds/home-logo.png') no-repeat center/cover;
     height: 80px !important;
     width: 100%;
+    z-index: 10;
     img{
         vertical-align: middle;
         max-height: 70px !important;
@@ -81,8 +90,7 @@ mat-sidenav-content{
 // Container
 
 .content-container{
-    height: auto;
-    overflow: visible;
+    background-color: $font-light;
     width: 100%;
-    // margin-top: 
+    margin-top: 114px;
 }

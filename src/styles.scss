@@ -134,36 +134,73 @@ $site-theme: mat-light-theme($site-primary, $site-secondary, $site-warn);
 // that you are using.
 @include angular-material-theme($site-theme);
 
-
-    //Layout
-    .text-center{
-        text-align: center;
-    }
+//HELPERS
+.text-center{
+    text-align: center;
+}
+.pointer{
+    cursor: pointer;
+}
+.uppercase{text-transform: uppercase;}
 
 
 //Layout Helpers
 .float-right{
     float: right;
+}
+.float-left{
+    float: left;
+}
+.clear-both{
     clear: both;
 }
 
 
+
+// FONTS
+
+    // Faces
+
+    // Colors
+    .font-primary {   color: $primary     }
+    .font-secondary { color: $secondary;  }
+    .font-warning {   color: $warning;    }
+    .font-dark {      color: $font-dark;  }
+    .font-light {     color: $font-light; }
+
+//Backgrounds
+
+.background-primary {   background-color: $primary     }
+.background-secondary { background-color: $secondary;  }
+.background-warning {   background-color: $warning;    }
+.background-opaque-white { background-color: rgba(255,255,255,.6);}
+.background-white {background-color: white;}
+
 //CONTAINERS
 
 .page-container{
-    width: 90%;
-    margin: 65px 5% 20px;
     position: relative;
     top: 0px;
+    display: flex;
+    flex-flow: row wrap;
 }  
 
 .section-container{
-    margin-top: 10px;
+    margin: 10px 3px;
+    flex-shrink: 0;
+    flex-basis: calc(100% - 6px);
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column wrap;
 }
 
-.pointer{
-    cursor: pointer;
+@media(min-width: 1200px){
+    .section-container{
+        flex-basis: calc((100% / 3) - 6px);
+    }
 }
+
+
 
 .section-background{
     background: center/cover no-repeat;
@@ -175,17 +212,9 @@ $site-theme: mat-light-theme($site-primary, $site-secondary, $site-warn);
     }
   }
 
- 
-.main-content{
-    background-color: rgba(255,255,255,.6);
-  }
-
-  .mat-sidenav-container{
-    .sidenav-menu{
+.sidenav-menu{
         margin-top: 40px;
-    }
-      min-height: 100vh;
-  }
+}
 
 body { margin: 0; font-family: 'Roboto', sans-serif; }
 

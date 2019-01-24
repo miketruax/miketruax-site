@@ -10,7 +10,6 @@ import {reducers} from './store/reducers';
 import {HomeComponent} from "./home/home.component";
 import {RecipeService} from "./services/recipe.service";
 import {StoreModule} from "@ngrx/store";
-import {FoodListComponent} from "./food/food-list/food-list.component";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {EtaTimeUntilComponent} from "./shared/eta-until-end/eta-time-until.component";
 import {SectionBackgroundFade} from "./directives/section-background-fade";
@@ -38,7 +37,7 @@ export function startUpRecipes(startUpService: RecipeService, http: HttpClient):
 @NgModule({
   declarations: [
     //Main Components
-    AppComponent, FoodComponent, AboutComponent, HomeComponent, FoodListComponent, FooterComponent,
+    AppComponent, FoodComponent, AboutComponent, HomeComponent, FooterComponent,
 
     //Shared Components
     EtaTimeUntilComponent,

@@ -1,39 +1,96 @@
 <div class="top-div col-12 section-container">
-  <div imageFade class="col-12 section-background" style="background-image: url('/assets/img/backgrounds/food.gif');">
-  </div>
+  <div
+    imageFade
+    class="col-12 section-background"
+    style="background-image: url('/assets/img/backgrounds/food.gif');"
+  ></div>
   <h3 class="section-heading text-center col-12">The Hungry Bear Food Blog</h3>
   <div class="col-12 container-box">
-    <p class="col-12">In my opinion, food is one of the great equalizers. Everyone needs to eat and
-      no matter your viewpoints, you can almost always find common ground in enjoyed foods.
-      From a young age, my mother instilled in me a love of food and a love of cooking.
-      She always made meals from scratch and insisted my sister and I help so we could
-      learn how to cook. Because of that, cooking is always something I've enjoyed doing
-      AND something I've been good at.
+    <p class="col-12">
+      In my opinion, food is one of the great equalizers. Everyone needs to eat
+      and no matter your viewpoints, you can almost always find common ground in
+      enjoyed foods. From a young age, my mother instilled in me a love of food
+      and a love of cooking. She always made meals from scratch and insisted my
+      sister and I help so we could learn how to cook. Because of that, cooking
+      is always something I've enjoyed doing AND something I've been good at.
     </p>
-    <p class="col-12"> To be fair though, it wasn't until about 6 years ago when my wife and I really
-      started experimenting with food. I started baking and immediately fell in love. I
-      still remember one day I just decided: "I think I'm going to try making a pie today."
-      It turned out amazingly well so I tried a different baking recipe. That one went well,
-      so I tried making eclairs. They worked out well so I tried another recipe, and so on.
-      Originally I just started taking pictures of the food I made to share with my friends out
-      of state. Then I decided to keep a catalog of how they turned out. When I went to design
-      this site, I figured I might as well include them here as cooking is a part of who I am.
+    <p class="col-12">
+      To be fair though, it wasn't until about 6 years ago when my wife and I
+      really started experimenting with food. I started baking and immediately
+      fell in love. I still remember one day I just decided: "I think I'm going
+      to try making a pie today." It turned out amazingly well so I tried a
+      different baking recipe. That one went well, so I tried making eclairs.
+      They worked out well so I tried another recipe, and so on. Originally I
+      just started taking pictures of the food I made to share with my friends
+      out of state. Then I decided to keep a catalog of how they turned out.
+      When I went to design this site, I figured I might as well include them
+      here as cooking is a part of who I am.
     </p>
   </div>
 </div>
 
-<food-list [recipes]="recipes | async">Getting Recipe List...</food-list>
+<div class="category-container background-secondary">
+  <div class="category  pointer"
+    *ngFor="let cat of categories; let i = index"
+    [class.active]="(category | async) === i"
+    (click)="setCat(i)"
+  >
+    <img
+      class="category-img"
+      [src]="
+        '/assets/img/buttons/food/' +
+        categories[i] +
+        ((category | async) === i ? 'Active.png' : '.png')
+      "
+    />
+    <b class="category-text text-center">{{ categories[i] | titlecase }}</b>
+</div>
+</div>
 
-<!--<h3 class="section-heading text-center col-12">Twitter Food Updates</h3>-->
-<!--<div class="container-box col-12">-->
-  <!--<a class="twitter-timeline"-->
-     <!--href="https://twitter.com/search?q=%23hungrybearfoodblog%20from%3Athecodingursine"-->
-     <!--data-widget-id="918561802233008128"-->
-     <!--data-tweet-limit="5"-->
-     <!--data-width="4000"-->
-     <!--data-dnt="true"-->
-     <!--data-chrome="nofooter noheader">-->
-  <!--</a>-->
-<!--</div>-->
+<div class="recipe-icon-container">
+  <ng-container *ngFor="let r of recipes; let i = index">
+    <div
+      class="recipe-icon"
+      @fadeInAnimation
+      *ngIf="r.category_ID == (category | async)"
+    >
+      <img
+        [class.active]="r.id === (activeRecipe | async).id"
+        (click)="setRecipe(r)"
+        [src]="'assets/img/food/' + r.image"
+        title="{{ r.name }}"
+      />
+    </div>
+  </ng-container>
+</div>
+
+<ng-container *ngFor="let r of recipes">
+  <div class="recipe-container" *ngIf="r.id == (activeRecipe | async).id">
+    <mat-card class="recipe-card">
+      <h2 class="text-center" @fadeInAnimation>
+        {{ (activeRecipe | async).name | uppercase }}
+      </h2>
+      <img
+        mat-card-image
+        @fadeInAnimation
+        [src]="'assets/img/food/' + (activeRecipe | async).image"
+        alt="{{(activeRecipe | async).name }}"
+      />
+      <mat-card-content>
+        <h4>Results:</h4>
+        <p>{{ (activeRecipe | async).results }}</p>
+        <h4>Changes:</h4>
+        <p>{{ (activeRecipe | async).changes }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>
+          <a [href]="(activeRecipe | async).recipeLink" target="_blank">{{
+            (activeRecipe | async).credits
+          }}</a>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</ng-container>
 
 <footer-component></footer-component>

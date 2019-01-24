@@ -9,7 +9,17 @@ import * as fromSelectors from './selectors'
 
 export class RootStoreFacade{
   recipes$ = this.store.pipe(select(fromSelectors.getRecipes));
+  category$ = this.store.pipe(select(fromSelectors.getCategory));
+  activeRecipe$ = this.store.pipe(select(fromSelectors.getActiveRecipe));
   constructor(private store: Store<fromReducers.RootState>){
+  }
+
+  selectCategory(category: number){
+    this.store.dispatch(new fromActions.SelectCategory(category))
+  }
+
+  selectActiveRecipe(recipe: Recipe){
+    this.store.dispatch(new fromActions.SelectActiveRecipe(recipe))
   }
 
   addRecipes(recipes: Recipe[]){

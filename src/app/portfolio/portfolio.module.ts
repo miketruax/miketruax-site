@@ -14,6 +14,7 @@ import { StoreModule } from '@ngrx/store';
 import { PortfolioStoreFacade } from './store';
 import { WhoWasItAboutComponent } from './who-was-it/about/who-was-it-about.component';
 import { WhoWasItResultsComponent } from './who-was-it/home/who-was-it-results.component';
+import { SharedModule } from '../shared/components/shared.module';
 
 
 
@@ -23,7 +24,7 @@ import { WhoWasItResultsComponent } from './who-was-it/home/who-was-it-results.c
     TicTacToeComponent, WhoWasItComponent, PortfolioComponent,WhoWasItResultsComponent , WhoWasItAboutComponent
   ],
   imports: [CommonModule, PortfolioRoutingModule, MaterialModule, 
-    FormsModule,
+    FormsModule, SharedModule,
     HttpClientModule, StoreModule.forFeature('portfolio', reducers)
   ],
   providers: [WhoWasItService, PortfolioStoreFacade],

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {horizontalSlideAnimation} from "../../animations/horizontal-slide.animation";
 
 @Component({
   selector: 'tictactoe',

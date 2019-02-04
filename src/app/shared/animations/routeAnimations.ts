@@ -7,7 +7,7 @@ trigger('routeAnimations', [
     query(':enter, :leave',  [
       style({
         position: 'absolute',
-        top: '114px',
+        top: '0px',
         left: 0,
         width: '100%'
       })

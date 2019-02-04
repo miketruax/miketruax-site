@@ -134,6 +134,7 @@ $site-theme: mat-light-theme($site-primary, $site-secondary, $site-warn);
 // that you are using.
 @include angular-material-theme($site-theme);
 
+
 //HELPERS
 .text-center{
     text-align: center;
@@ -162,55 +163,57 @@ $site-theme: mat-light-theme($site-primary, $site-secondary, $site-warn);
     // Faces
 
     // Colors
-    .font-primary {   color: $primary     }
-    .font-secondary { color: $secondary;  }
-    .font-warning {   color: $warning;    }
-    .font-dark {      color: $font-dark;  }
-    .font-light {     color: $font-light; }
+    .font-primary {   color: $primary !important;     }
+    .font-secondary { color: $secondary !important;  }
+    .font-warning {   color: $warning !important;    }
+    .font-dark {      color: $font-dark !important;  }
+    .font-light {     color: $font-light !important; }
 
 //Backgrounds
 
-.background-primary {   background-color: $primary     }
-.background-secondary { background-color: $secondary;  }
-.background-warning {   background-color: $warning;    }
-.background-opaque-white { background-color: rgba(255,255,255,.6);}
-.background-white {background-color: white;}
+.background-primary {   background-color: $primary    !important; }
+.background-secondary { background-color: $secondary !important;  }
+.background-warning {   background-color: $warning !important;    }
+.background-opaque-white { background-color: rgba(255,255,255,.6) !important;}
+.background-white {background-color: white !important;}
 
 //CONTAINERS
 
-.page-container{
-    position: relative;
-    top: 0px;
-    display: flex;
-    flex-flow: row wrap;
-}  
-
 .section-container{
-    margin: 10px 3px;
+    margin: 10px 0px;
     flex-shrink: 0;
-    flex-basis: calc(100% - 6px);
+    flex-basis: 100%;
+    // max-width: 100%;
     flex-grow: 1;
     display: flex;
     flex-flow: column wrap;
 }
 
-@media(min-width: 1200px){
-    .section-container{
-        flex-basis: calc((100% / 3) - 6px);
-    }
+.content-container{
+    height: auto;
+    overflow: visible;
+    width: 100%;
+}
+
+.page-container{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+    top: 0px;
+}  
+footer-component{
+    flex-basis: 100%;
 }
 
 
-
-.section-background{
-    background: center/cover no-repeat;
-    min-height: 150px !important;
-    border: 1px solid $secondary;
-    transition: opacity .6s ease-in;
-    @media(max-width: 1199px){
-      border-width: 1px 0 0 0 !important;
+@media(min-width: 1200px){
+    .section-container{
+        flex-basis: calc((100% / 3) - 20px);
+        margin: 10px;
+        padding: 10px 0;
     }
-  }
+}
 
 .sidenav-menu{
         margin-top: 40px;
@@ -227,4 +230,24 @@ body { margin: 0; font-family: 'Roboto', sans-serif; }
   .icon {
     max-height: 25px !important;
   }
+
+  .section-heading {
+    border-bottom: 1px solid $warning;
+    letter-spacing: 1px;
+    margin: 0px;
+  }
   
+  .inner-heading{
+    background-color: rgba($warning, .4);
+    border: 1px solid $secondary;
+  }
+  
+  .sub-heading{
+    margin-top: 10px;
+    text-align: center;
+    text-shadow: 1px 1px $primary;
+  }
+  .section-inner-box{
+      width: calc(100% - 20px);
+      padding: 0 10px;
+  }

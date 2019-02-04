@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {fadeInAnimation} from "../animations/fade-in.animation";
 
 @Component({
   selector: 'portfolio-component',
   templateUrl: 'portfolio.component.html',
-  animations: [fadeInAnimation],
-  styleUrls: ['./portfolio.component.scss'],
-  host: { '[@fadeInAnimation]': '' }
+  styleUrls: ['./portfolio.component.scss']
 })
 export class PortfolioComponent implements OnInit {
   constructor() { }

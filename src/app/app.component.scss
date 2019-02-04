@@ -2,7 +2,7 @@
 
 //TOP MENU
 .mat-sidenav{
-    top: 2px !important;
+    height: 100%;
     width: 300px;
     background-color: $secondary;
   }
@@ -22,6 +22,10 @@
 
 
 //TOP TOOLBAR
+
+.mat-drawer-container{
+    overflow: visible;
+}
 
 .mat-drawer-backdrop{
     height: calc(100vh);
@@ -50,12 +54,13 @@
     height: 40px;
     position: fixed;
     z-index: 10;
+    top: 0;
 }
 
 
 
 mat-sidenav-content{
-  overflow: visible;
+  overflow: visible !important;
 }
 
 mat-sidenav-container{
@@ -90,7 +95,10 @@ mat-sidenav-container{
 // Container
 
 .content-container{
-    background-color: $font-light;
     width: 100%;
     margin-top: 114px;
 }
+
+.sidenav-content{
+    overflow: visible;
+  }

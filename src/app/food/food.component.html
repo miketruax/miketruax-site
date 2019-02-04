@@ -1,12 +1,9 @@
-<div class="top-div col-12 section-container">
-  <div
-    imageFade
-    class="col-12 section-background"
-    style="background-image: url('/assets/img/backgrounds/food.gif');"
-  ></div>
-  <h3 class="section-heading text-center col-12">The Hungry Bear Food Blog</h3>
-  <div class="col-12 container-box">
-    <p class="col-12">
+<div class="page-container">
+<div class="section-container">
+    <section-background imageFade class="section-background" [background]="'food'"></section-background>
+  <h3 class="section-heading text-center uppercase font-light background-secondary">The Hungry Bear Food Blog</h3>
+  <div class="container-box">
+    <p>
       In my opinion, food is one of the great equalizers. Everyone needs to eat
       and no matter your viewpoints, you can almost always find common ground in
       enjoyed foods. From a young age, my mother instilled in me a love of food
@@ -14,7 +11,7 @@
       sister and I help so we could learn how to cook. Because of that, cooking
       is always something I've enjoyed doing AND something I've been good at.
     </p>
-    <p class="col-12">
+    <p>
       To be fair though, it wasn't until about 6 years ago when my wife and I
       really started experimenting with food. I started baking and immediately
       fell in love. I still remember one day I just decided: "I think I'm going
@@ -70,17 +67,19 @@
       <h2 class="text-center" @fadeInAnimation>
         {{ (activeRecipe | async).name | uppercase }}
       </h2>
-      <img
-        mat-card-image
-        @fadeInAnimation
-        [src]="'assets/img/food/' + (activeRecipe | async).image"
-        alt="{{(activeRecipe | async).name }}"
-      />
-      <mat-card-content>
+
+      <mat-card-content @fadeInAnimation class="active-recipe">
+        <div class="active-recipe-image">
+          <img [src]="'assets/img/food/' + (activeRecipe | async).image" alt="{{(activeRecipe | async).name }}"
+        />
+      </div>
+        <div class="active-recipe-description">
         <h4>Results:</h4>
         <p>{{ (activeRecipe | async).results }}</p>
         <h4>Changes:</h4>
-        <p>{{ (activeRecipe | async).changes }}</p>
+        <p>{{ (activeRecipe | async).changes }}
+        </p>
+      </div>  
       </mat-card-content>
       <mat-card-actions>
         <button mat-button>
@@ -94,3 +93,4 @@
 </ng-container>
 
 <footer-component></footer-component>
+</div>

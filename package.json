@@ -32,6 +32,7 @@
     "@ngrx/router-store": "^6.1.0",
     "@ngrx/store": "^6.1.0",
     "@ngrx/store-devtools": "^6.1.0",
+    "angular-particle": "^1.0.4",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.1",
     "codelyzer": "^4.5.0",

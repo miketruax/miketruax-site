@@ -76,7 +76,7 @@
 }
 
 //-----------MEDIA QUERIES--------------//
-@media(max-width: 550px) {
+@media(max-width: 600px) {
   .category-text{
     display: none !important;
   }
@@ -121,10 +121,39 @@
 }
 
 
-.mat-card-image{
-    max-width: 550px;
-    height: auto;
-    margin: auto;
-    display: block;
-    border-radius: 20px;
+//Active Recipe
+
+.active-recipe{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+
+.active-recipe-image{
+    flex-basis: 100%;
+    justify-content: center;
+    img{
+      border-radius: 20px;
+      display: block;
+      margin: auto;
+      width: 100%;
+      max-width: 550px;
+      height: auto;
+    }
+    
+}
+
+.active-recipe-description{
+  width: 100%;
+}
+
+@media(min-width: 800px) {
+  .active-recipe-image{
+    flex-basis: 50%;
+  }
+  .active-recipe-description{
+    // vertical-align: top;
+    padding: 10px;
+    flex-basis: calc(50% - 20px);
+  }
 }

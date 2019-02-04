@@ -1,4 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
+import { ParticlesModule } from 'angular-particle';
 import {NgModule, APP_INITIALIZER} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {routes} from './app.routes';
@@ -17,7 +18,7 @@ import {SlideBox} from "./directives/container-box-slide";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { MaterialModule } from './material.module';
 import {PortfolioModule} from './portfolio/portfolio.module'
-import { FooterComponent } from './footer/footer.component';
+import { SharedModule } from './shared/components/shared.module';
 
 
 
@@ -37,10 +38,10 @@ export function startUpRecipes(startUpService: RecipeService, http: HttpClient):
 @NgModule({
   declarations: [
     //Main Components
-    AppComponent, FoodComponent, AboutComponent, HomeComponent, FooterComponent,
+    AppComponent, FoodComponent, AboutComponent, HomeComponent,
 
     //Shared Components
-    EtaTimeUntilComponent,
+    EtaTimeUntilComponent, 
 
     //Directives
     SectionBackgroundFade, SlideBox
@@ -48,8 +49,8 @@ export function startUpRecipes(startUpService: RecipeService, http: HttpClient):
   imports: [
     BrowserModule, PortfolioModule,
     BrowserAnimationsModule,
-    FormsModule, 
-    HttpClientModule, MaterialModule,
+    FormsModule, ParticlesModule,
+    HttpClientModule, MaterialModule, SharedModule,
     RouterModule.forRoot(routes, {
       useHash: true
     }),

@@ -1,38 +1,10 @@
 @import '../shared/styles/colors';
 
-.grid-list{
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    margin: 0;
-    .grid-item-desc{
-        width: calc(100% - 10px);
-        padding: 0 5px;
-    }
-}
-.grid-item{
-    flex-basis: calc(100%/3 - 4px);
-    display: flex;
-    flex-flow: column wrap;
-    margin: 2px;
-}
+// .mat-list, .mat-list-item, .mat-subheader{
+//     height: auto !important;
+// }
 
-.grid-item-title{
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-flow: row wrap;
-    text-align: center;
-    width: 100%;
-    height: 47px;
-    margin: 0;
-    .grid-title-text{  
-        max-width: calc(100% - 30px);
-        margin: 0;
-    }
-}
 
-.mat-icon, .material-icons{
-height: 47px;
-line-height: 47px;
+.mat-icon{
+    margin-right: 5px;
 }

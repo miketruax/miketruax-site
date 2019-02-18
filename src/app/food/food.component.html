@@ -1,8 +1,8 @@
 <div class="page-container">
-<div class="section-container">
+<div class="section-container no-shrink">
     <section-background imageFade class="section-background" [background]="'food'"></section-background>
   <h3 class="section-heading text-center uppercase font-light background-secondary">The Hungry Bear Food Blog</h3>
-  <div class="container-box">
+  <div class="section-inner-box">
     <p>
       In my opinion, food is one of the great equalizers. Everyone needs to eat
       and no matter your viewpoints, you can almost always find common ground in
@@ -81,7 +81,7 @@
         </p>
       </div>  
       </mat-card-content>
-      <mat-card-actions>
+      <mat-card-actions class="text-center">
         <button mat-button>
           <a [href]="(activeRecipe | async).recipeLink" target="_blank">{{
             (activeRecipe | async).credits

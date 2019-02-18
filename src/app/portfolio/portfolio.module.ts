@@ -32,4 +32,5 @@ import { SharedModule } from '../shared/components/shared.module';
   exports: [PortfolioComponent, TicTacToeComponent, WhoWasItComponent, MovieSearchModule]
 })
 
-export class PortfolioModule { }
+export class PortfolioModule {}
+

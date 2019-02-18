@@ -33,24 +33,21 @@
 
 //Category Menus
 .category-container {
-  padding: 0;
-  margin-top: 10px ;
-  height: auto;
-  width: 99%;
-  max-height: 90px;
-  padding: 5px .5%;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 5px 0;
 
   .category {
     position: relative;
-    display: inline-block;
     background-color: rgba($primary, .8) ;
-    height: auto;
-    padding: 5px .5%;
-    width: 22%;
+    padding: 3px;
     margin: 0 1%;
+    max-width: 100px;
     .category-img{
-      height: 80px;
-      width: auto;
+      height: auto;
+      width: 100%;
       display: block;
       margin: auto;
     }
@@ -117,8 +114,12 @@
 
 .recipe-container{
     width: 98%;
-    margin: 5px 1%;
+    margin: 5px auto;
+    @media(min-width: 800px){
+      width: 80%;
+    }
 }
+
 
 
 //Active Recipe
@@ -137,7 +138,7 @@
       display: block;
       margin: auto;
       width: 100%;
-      max-width: 550px;
+      max-width: 400px;
       height: auto;
     }
     

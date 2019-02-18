@@ -1,29 +1,29 @@
 <div class="page-container">
-<div class="top-div col-12 col-xl-4 section-container">
+<div class="top-div section-container">
     <section-background imageFade class="section-background" [background]="'philosophy'"></section-background>
   <h4 class="section-heading text-center uppercase font-light background-secondary">Project <br> Philosophy</h4>
-  <div class="col-12 container-box  " slideBox>
-    <p class="col-12">
+  <div class="section-inner-box" slideBox>
+    <p class="">
       My philosophy is to bring my knowledge from working as both a team leader and a team member to any project I
       approach. I originally gave up a decade-long career in another industry to pursue programming full-time—this is
       literally my dream job—so, I give
       everything I have to each project. I am eager to prove my talents and what I am truly capable of with every
       contract. No task is too big when you're following your dream, and I attack every challenge with that mentality.
     </p>
-    <p class="col-12">I'm not naïve enough to think that passion is all that a potential client is looking for, of
+    <p class="">I'm not naïve enough to think that passion is all that a potential client is looking for, of
       course. I also bring
       experience dealing with large projects with hard deadlines and high expectations. I've dealt with profit and loss
       statements for years; I know how important it is to be done on time and under budget.</p>
   </div>
 </div>
 
-<div class="col-12 col-xl-4 section-container">
+<div class="section-container">
     <section-background imageFade class="section-background" [background]="'programming'"></section-background>
   <h4 class="section-heading text-center uppercase font-light background-secondary">Programming <br>Knowledge</h4>
-  <div class="col-12 container-box  " slideBox>
+  <div class="section-inner-box" slideBox>
 
-    <h5 class="col-12">Full Proficiencies:</h5>
-    <div class="col-12">
+    <h5 class="">Full Proficiencies:</h5>
+    <div class="">
       <b>JavaScript</b>
       <ul>
         <li>Node.js</li>
@@ -35,7 +35,7 @@
         <li>jQuery</li>
       </ul>
     </div>
-    <div class="col-12">
+    <div class="">
       <b>Web Design</b>
       <ul>
         <li>CSS/SCSS/LESS</li>
@@ -46,7 +46,7 @@
         <li>Knowledge of security practices for CSRF/XSS/ SQL Injection</li>
       </ul>
     </div>
-    <div class="col-12">
+    <div class="">
       <b>Database Management</b>
       <ul>
         <li>MongoDB/ NOSQL DBs including Mongoose through Node</li>
@@ -61,11 +61,11 @@
 </div>
 </div>
 
-<div class="col-12 col-xl-4 section-container">
+<div class="section-container">
     <section-background imageFade class="section-background" [background]="'planning'"></section-background>
     <h4 class="section-heading text-center uppercase font-light background-secondary">Certifications<br> And Other Skills</h4>
-    <div class="col-12 container-box  " slideBox>
-      <div class="col-12">
+    <div class="section-inner-box" slideBox>
+      <div class="">
         <b>Certifications:</b>
         <ul>
           <li>
@@ -78,14 +78,14 @@
             title="Copyright &copy 2016 SCRUM ALLIANCE&reg, Inc."></li>
         </ul>
       </div>
-      <div class="col-12">
+      <div class="">
         <b>Awards:</b>
         <ul>
           <li>Walter Scott Scholar UNOmaha 2000</li>
           <li>Eagle Scout through Boy Scouts of America</li>
         </ul>
       </div>
-      <div class="col-12">
+      <div class="">
         <b>Non Programming Skills</b>
         <ul>
           <li>Full Knowledge of Microsoft Office Programs</li>
@@ -103,27 +103,25 @@
 </div>
 
 
-<div class="col-12 section-container no-top">
+<div class="section-container no-top">
     <section-background imageFade class="section-background" [background]="'portfolio'"></section-background>
     <h3 class="section-heading text-center uppercase font-light background-secondary">Portfolio</h3>
-    <div class="col-12 container-box  portfolio-box">
+       
+        <h4 class="text-center section-heading  inner-heading">Sample Apps and Websites</h4>
 
-      <div class="col-12">
-        <h4 class="col-12 text-center section-heading  inner-heading">Sample Apps and Websites</h4>
-      </div>
-
-      <div class="col-12 col-md-4 col-xl-3 portfolio-container">
+      <div class="section-inner-box portfolio-box grid-list">
+      <div class="portfolio-container grid-item">
         <img class="img-responsive portfolio-icon" src="../../assets/img/portfolio/icons/buddyTrakr.png"/>
-        <h3 class="col-12 text-center portfolio-title">Buddy Trakr</h3>
-        <a target="_blank" href="http://buddytrakr.herokuapp.com" class=" port-link col-12 text-center">Check it
+        <h3 class="text-center portfolio-title">Buddy Trakr</h3>
+        <a target="_blank" href="http://buddytrakr.herokuapp.com" class=" port-link text-center">Check it
           out</a>
         <hr>
-        <h4 class="text-center col-12">About</h4>
-        <p class="col-12 portfolio-about">Tracking app for stuffed animals. This was originally a pet project of mine
+        <h4 class="text-center">About</h4>
+        <p class="portfolio-about">Tracking app for stuffed animals. This was originally a pet project of mine
           that I used to
           teach myself a lot of Angular2 and Authentication via passport</p>
-        <h4 class="text-center col-12">Tech Stack</h4>
-        <ul class="col-12 tech-list">
+        <h4 class="text-center">Tech Stack</h4>
+        <ul class="tech-list">
           <li>Angluar 2 w/ Angular CLI for ease of scaffolding</li>
           <li>Bootstrap and SCSS for styling</li>
           <li>Rxjs and ngrx for Observables and Stores for client-side</li>
@@ -138,17 +136,17 @@
       </div>
 
 
-      <div class="col-12 col-md-4 col-xl-3 portfolio-container">
+      <div class="portfolio-container grid-item">
         <img class="img-responsive portfolio-icon" src="../../assets/img/portfolio/icons/miketruax.png"/>
-        <h3 class="col-12 text-center portfolio-title">Personal Site</h3>
-        <a [routerLink]="['/']" class="port-link  col-12 text-center">Back Home</a>
+        <h3 class="text-center portfolio-title">Personal Site</h3>
+        <a [routerLink]="['/']" class="port-link  text-center">Back Home</a>
         <hr>
-        <h4 class="text-center col-12">About</h4>
-        <p class="col-12 portfolio-about">Personal website for contract work and showing off my skills. Hope you're
+        <h4 class="text-center">About</h4>
+        <p class="portfolio-about">Personal website for contract work and showing off my skills. Hope you're
           enjoying it
           right now!</p>
-        <h4 class="text-center col-12">Tech Stack</h4>
-        <ul class="col-12 tech-list">
+        <h4 class="text-center">Tech Stack</h4>
+        <ul class="tech-list">
           <li>HTML5 / Bootstrap / SCSS for design</li>
           <li>Angular 2 utilizing ngrx, stores, and reducers (specifically for food blog)</li>
           <li>Node.JS with Express for backend</li>
@@ -162,18 +160,18 @@
         <hr>
       </div>
 
-      <div class="col-12 col-md-4 col-xl-3 portfolio-container">
+      <div class="portfolio-container grid-item">
         <img class="img-responsive portfolio-icon" src="../../assets/img/portfolio/icons/periodictable.png"/>
-        <h3 class="col-12 text-center portfolio-title">Periodic Table</h3>
-        <a href="https://miketruax.github.io/periodic-table/" target="_blank" class="port-link  col-12 text-center">Check it out</a>
+        <h3 class="text-center portfolio-title">Periodic Table</h3>
+        <a href="https://miketruax.github.io/periodic-table/" target="_blank" class="port-link  text-center">Check it out</a>
         <hr>
-        <h4 class="text-center col-12">About</h4>
-        <p class="col-12 portfolio-about">Interactive view of the periodic table. I made this as a way to improve
+        <h4 class="text-center">About</h4>
+        <p class="portfolio-about">Interactive view of the periodic table. I made this as a way to improve
           upon
           a version I saw
           on reddit. Currently allows for sorting by several factors with more planned for the future.</p>
-        <h4 class="text-center col-12">Tech Stack</h4>
-        <ul class="col-12 tech-list">
+        <h4 class="text-center">Tech Stack</h4>
+        <ul class="tech-list">
           <li> Initially used Node get/fs to pull information from Wolfram Alpha</li>
           <li> SCSS for animations and styling</li>
           <li> Angular 2/4 for components and pipes</li>
@@ -184,17 +182,17 @@
         <hr>
       </div>
 
-      <div class="col-12 col-md-4 col-xl-3 portfolio-container">
+      <div class="portfolio-container grid-item">
         <img class="img-responsive portfolio-icon" src="../../assets/img/portfolio/icons/moviesearch.png"/>
-        <h3 class="col-12 text-center portfolio-title">Movie Search</h3>
-        <a [routerLink]="['/movie-search']" class="port-link col-12 text-center">Check it out</a>
+        <h3 class="text-center portfolio-title">Movie Search</h3>
+        <a [routerLink]="['/movie-search']" class="port-link text-center">Check it out</a>
         <hr>
-        <h4 class="text-center col-12">About</h4>
-        <p class="col-12 portfolio-about">Simple Movie Search App allowing utilizing the OMDBApi to pull information.
+        <h4 class="text-center">About</h4>
+        <p class="portfolio-about">Simple Movie Search App allowing utilizing the OMDBApi to pull information.
           Allows to
           search by any string and then see more information for any of the results.</p>
-        <h4 class="text-center col-12">Tech Stack</h4>
-        <ul class="col-12 tech-list">
+        <h4 class="text-center">Tech Stack</h4>
+        <ul class="tech-list">
           <li> Utilizes the OMDB API for JSONP calling</li>
           <li> Front Page formatting by http://www.teamtreehouse.com</li>
           <li> Styling for "more-info" page completely done by myself</li>
@@ -211,17 +209,17 @@
       </div>
 
 
-      <div class="col-12 col-md-4 col-xl-3 portfolio-container">
+      <div class="portfolio-container grid-item">
         <img class="img-responsive portfolio-icon" src="../../assets/img/portfolio/icons/tictactoe.png"/>
-        <h3 class="col-12 text-center portfolio-title">Tic Tac Toe</h3>
-        <a [routerLink]="['/portfolio/tic-tac-toe']" class="port-link  col-12 text-center">Check it out</a>
+        <h3 class="text-center portfolio-title">Tic Tac Toe</h3>
+        <a [routerLink]="['/portfolio/tic-tac-toe']" class="port-link  text-center">Check it out</a>
         <hr>
-        <h4 class="text-center col-12">About</h4>
-        <p class="col-12 portfolio-about">Tic-Tac-Toe app that originally was part of a Javascript course. I Switched
+        <h4 class="text-center">About</h4>
+        <p class="portfolio-about">Tic-Tac-Toe app that originally was part of a Javascript course. I Switched
           the code over to
           Angular2/4 and reset the styling to allow for simpler code. Currently allows for both one and two players.</p>
-        <h4 class="text-center col-12">Tech Stack</h4>
-        <ul class="col-12 tech-list">
+        <h4 class="text-center">Tech Stack</h4>
+        <ul class="tech-list">
           <li>Styling template initially provided by teamtreehouse.com but with HEAVY adjustments</li>
           <li>Utilizes TS and Angular 2 for interactivity</li>
           <li>Simple AI utilizing min-max calculations for best computer move</li>
@@ -234,17 +232,17 @@
         <hr>
       </div>
 
-      <div class="col-12 col-md-4 col-xl-3 portfolio-container">
+      <div class="portfolio-container grid-item">
         <img class="img-responsive portfolio-icon" src="../../assets/img/portfolio/icons/whowasit.png"/>
-        <h3 class="col-12 text-center portfolio-title">Who Was It?</h3>
-        <a [routerLink]="['/portfolio/who-was-it']" class="port-link  col-12 text-center">Check it out</a>
+        <h3 class="text-center portfolio-title">Who Was It?</h3>
+        <a [routerLink]="['/portfolio/who-was-it']" class="port-link  text-center">Check it out</a>
         <hr>
-        <h4 class="text-center col-12">About</h4>
-        <p class="col-12 portfolio-about">This was my first attempt at an Angular2/4 app. Super simple app that
+        <h4 class="text-center">About</h4>
+        <p class="portfolio-about">This was my first attempt at an Angular2/4 app. Super simple app that
           allows
           you to search for two or more movies to find actors who appeared in all of the movies.</p>
-        <h4 class="text-center col-12">Tech Stack</h4>
-        <ul class="col-12 tech-list">
+        <h4 class="text-center">Tech Stack</h4>
+        <ul class="tech-list">
           <li> Utilizes the OMDB API for JSONP calling</li>
           <li> Observables/ redux to compile actor information</li>
           <li> Styling via minor SCSS and Bootstrap</li>

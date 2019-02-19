@@ -18,7 +18,6 @@ import { SharedModule } from '../shared/components/shared.module';
 
 
 
-
 @NgModule({
   declarations: [
     TicTacToeComponent, WhoWasItComponent, PortfolioComponent,WhoWasItResultsComponent , WhoWasItAboutComponent
@@ -33,4 +32,3 @@ import { SharedModule } from '../shared/components/shared.module';
 })
 
 export class PortfolioModule {}
-

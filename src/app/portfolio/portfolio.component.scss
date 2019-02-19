@@ -83,3 +83,42 @@
       margin: 0;
   }
 }
+
+
+.mat-list, .mat-list-item, .mat-subheader{
+    height: auto !important;
+    padding: 3px 16px;
+}
+
+.auto-width{
+  width: auto !important;
+}
+
+.mat-list-icon{
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+  margin-right: 5px;
+  border-radius: 0 !important;
+}
+
+.js-list{
+  .mat-list-icon{
+    padding-right: 72.96px
+  }
+  .nodejs{
+    padding-right: 56.78px;
+  }
+  .express{
+    padding-right: 15.82px;
+  }
+  .mongo{
+    padding-right: 4px;
+  }
+}
+
+.js-list, .cert-list{
+  margin-top: 16px;
+  .mat-subheader:first-child{
+    margin-top: 0px;
+  }
+}

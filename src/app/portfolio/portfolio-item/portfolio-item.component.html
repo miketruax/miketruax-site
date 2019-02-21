@@ -1,0 +1,38 @@
+<div mat-dialog-title>
+        <img
+        class="portfolio-icon"
+        [src]="'../../assets/img/portfolio/icons/'+portfolioItem.img"
+      />
+      <h4 class="section-heading text-center uppercase font-light background-secondary">{{portfolioItem.title}}</h4>
+</div>
+<div mat-dialog-content>
+    <p class="portfolio-about text-center">
+      {{portfolioItem.about}}
+    </p>
+    
+    <mat-list class="tech-list" >
+        <h4 matSubheader class="">Tech Stack</h4>
+      <mat-list-item *ngFor="let tech of portfolioItem.techStack">{{tech}}</mat-list-item>
+      
+        <a *ngIf="portfolioItem.link == '/'" mat-list-item href="/assets/pdfs/brandID.pdf" target="_blank">Images and initial layout concept by in-house designer. See branding
+            concept for this site here.</a>
+    
+    </mat-list>
+  </div>
+  <hr />
+  <div mat-dialog-actions class="button-container">
+        
+        <a mat-raised-button color="primary" class="button"
+          target="_blank"
+          [href]="'https://github.com/miketruax/'+portfolioItem.githubLink"
+          >
+          <img
+            src="assets/img/icons/GitHub-Mark-32px.png"
+            class="icon social-icon"
+            alt="Github Icon"
+          />
+          Code Repo</a>
+          <a mat-raised-button color="accent" *ngIf="internalLink" (click)="dialogRef.close()" [routerLink]="[portfolioItem.link]" class="button text-center">{{portfolioItem.link == "/" ? 'Back Home' : "Check it Out"}}</a>
+          <a mat-raised-button color="accent" *ngIf="!internalLink" [href]="portfolioItem.link" target="_blank" class="text-center button">Check it Out</a>
+          <button mat-raised-button color="warn" (click)="dialogRef.close()" class="button text-center">Close</button>
+</div>    

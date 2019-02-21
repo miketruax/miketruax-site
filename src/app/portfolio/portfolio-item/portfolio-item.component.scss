@@ -1,0 +1,28 @@
+.portfolio-icon{
+    display: block;
+    margin: 3px auto;
+    max-height: 150px;
+}
+
+.button-container{
+    justify-content: space-evenly;
+    .button{
+        margin-left: 8px;
+        flex-grow: 1;
+        margin-bottom: 8px;
+    }
+}
+
+.mat-dialog-title{
+    margin-bottom: 5px !important;
+}
+
+.portfolio-about{
+    margin-top: 0px;
+}
+
+.mat-list, .mat-list-item, .mat-subheader{
+    font-size: 13px;
+    height: auto !important;
+    padding: 3px 16px;
+}

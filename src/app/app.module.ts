@@ -52,7 +52,7 @@ export function startUpRecipes(startUpService: RecipeService, http: HttpClient):
     FormsModule, ParticlesModule,
     HttpClientModule, MaterialModule, SharedModule,
     RouterModule.forRoot(routes, {
-      useHash: true
+      useHash: false
     }),
     StoreModule.forRoot(reducers),
   ],

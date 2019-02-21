@@ -15,20 +15,22 @@ import { PortfolioStoreFacade } from './store';
 import { WhoWasItAboutComponent } from './who-was-it/about/who-was-it-about.component';
 import { WhoWasItResultsComponent } from './who-was-it/home/who-was-it-results.component';
 import { SharedModule } from '../shared/components/shared.module';
+import { PortfolioItemComponent } from './portfolio-item/portfolio-item.component';
+import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
 
 
 
 @NgModule({
   declarations: [
-    TicTacToeComponent, WhoWasItComponent, PortfolioComponent,WhoWasItResultsComponent , WhoWasItAboutComponent
+    TicTacToeComponent, WhoWasItComponent, PortfolioComponent,WhoWasItResultsComponent , WhoWasItAboutComponent, PortfolioItemComponent
   ],
   imports: [CommonModule, PortfolioRoutingModule, MaterialModule, 
     FormsModule, SharedModule,
     HttpClientModule, StoreModule.forFeature('portfolio', reducers)
   ],
-  providers: [WhoWasItService, PortfolioStoreFacade],
+  providers: [WhoWasItService, PortfolioStoreFacade, {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}],
   bootstrap: [PortfolioComponent], 
-  exports: [PortfolioComponent, TicTacToeComponent, WhoWasItComponent, MovieSearchModule]
+  entryComponents: [PortfolioItemComponent],
+  exports: [PortfolioComponent, TicTacToeComponent, WhoWasItComponent, MovieSearchModule, PortfolioItemComponent]
 })
-
 export class PortfolioModule {}

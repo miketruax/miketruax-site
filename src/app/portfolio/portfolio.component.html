@@ -1,5 +1,5 @@
 <div class="page-container">
-  <div class="top-div section-container">
+  <div class="section-container full-width">
     <section-background
       imageFade
       class="section-background"
@@ -42,100 +42,132 @@
     >
       Programming <br />Proficiencies
     </h4>
-    <div class="section-inner-box" slideBox>
-    <mat-list class="js-list">
+    <div class="section-inner-box  list-container" slideBox>
+      <mat-list dense class="prof-list">
         <h2 matSubheader>JavaScript</h2>
-        <mat-divider></mat-divider>
-        <mat-list-item><img
-          matListIcon
-          class="mat-icon auto-width nodejs"
-          src="assets/img/icons/nodejs.png"
-          alt="Node.js"
-        />Node.js</mat-list-item>
         
-        <mat-list-item><img
-          matListIcon
-          class="mat-icon"
-          src="assets/img/icons/angular.png"
-          alt="Angular Icon"
-        />AngularJS and Angular 6+</mat-list-item>
-        <mat-list-item><img
-          matListIcon
-          class="mat-icon auto-width express"
-          src="assets/img/icons/express.png"
-          alt="Express.js"
-        />Express.js</mat-list-item>
-        <mat-list-item><img
-          matListIcon
-          class="mat-icon"
-          src="assets/img/icons/redux.svg"
-          alt="Redux"
-        />Redux</mat-list-item>
-        <mat-list-item><img
-          matListIcon
-          class="mat-icon"
-          src="assets/img/icons/react.svg"
-          alt="ReactJS"
-        />ReactJS</mat-list-item>
-        
+        <mat-list-item
+          ><img
+            matListIcon
+            class="mat-icon auto-width nodejs"
+            src="assets/img/icons/nodejs.png"
+            alt="Node.js"
+          />Node.js</mat-list-item
+        >
+        <mat-list-item
+          ><img
+            matListIcon
+            class="mat-icon"
+            src="assets/img/icons/angular.png"
+            alt="Angular Icon"
+          />AngularJS and Angular 6+</mat-list-item
+        >
+        <mat-list-item
+          ><img
+            matListIcon
+            class="mat-icon auto-width express"
+            src="assets/img/icons/express.png"
+            alt="Express.js"
+          />Express.js</mat-list-item
+        >
+        <mat-list-item
+          ><img
+            matListIcon
+            class="mat-icon"
+            src="assets/img/icons/redux.svg"
+            alt="Redux"
+          />Redux</mat-list-item
+        >
+        <mat-list-item class="no-border"
+          ><img
+            matListIcon
+            class="mat-icon"
+            src="assets/img/icons/react.svg"
+            alt="ReactJS"
+          />ReactJS</mat-list-item
+        >
+      <!-- </mat-list>
+
+      <mat-list dense class="prof-list"> -->
+          <h4 matSubheader>Database Management</h4>
+          
+          <mat-list-item
+            ><img
+              matListIcon
+              class="mat-icon auto-width mongo"
+              src="assets/img/icons/mongo.jpg"
+              alt="MongoDB"
+            />MongoDB/ NOSQL DBs including Mongoose through Node</mat-list-item
+          >
+          <mat-list-item
+            ><img
+              matListIcon
+              class="mat-icon auto-width postGres"
+              src="assets/img/icons/postgres.svg"
+              alt="PostGres"
+            />PostGres and MySQL/SQLLite</mat-list-item
+          >
+          <mat-list-item
+            ><mat-icon matListIcon>cloud_upload</mat-icon>
+            Database Integration via RESTful API Design
+          </mat-list-item>
+        </mat-list>
+
+      <mat-list dense class="prof-list">
         <h4 matSubheader>Web Design</h4>
-        <mat-divider></mat-divider>
-        <mat-list-item><img
-          matListIcon
-          class="mat-icon"
-          src="assets/img/icons/css.png"
-          alt="CSS"
-        />CSS/SCSS/LESS</mat-list-item>
-        <mat-list-item><img
-          matListIcon
-          class="mat-icon"
-          src="assets/img/icons/html5.svg"
-          alt="HTML"
-        />HTML5</mat-list-item>  
-        <mat-list-item><img
+        
+        <mat-list-item
+          ><img
+            matListIcon
+            class="mat-icon"
+            src="assets/img/icons/css.png"
+            alt="CSS"
+          />CSS/SCSS/LESS</mat-list-item
+        >
+        <mat-list-item
+          ><img
+            matListIcon
+            class="mat-icon"
+            src="assets/img/icons/html5.svg"
+            alt="HTML"
+          />HTML5</mat-list-item
+        >
+        <mat-list-item
+          ><img
             matListIcon
             class="mat-icon"
             src="assets/img/icons/bootstrap.svg"
             alt="Bootstrap"
-          />Bootstrap</mat-list-item>
-          <mat-list-item><img
+          />Bootstrap</mat-list-item
+        >
+        <mat-list-item
+          ><img
             matListIcon
             class="mat-icon"
             src="assets/img/icons/material.svg"
             alt="Material Design"
-          />Angular Material</mat-list-item>
-          <mat-list-item><img
+          />Angular Material</mat-list-item
+        >
+        <mat-list-item
+          ><img
             matListIcon
             class="mat-icon"
             src="assets/img/icons/passport.png"
             alt="Passport"
-          />Passport.js authentication</mat-list-item>
-          <mat-list-item><mat-icon matListIcon>developer_board</mat-icon
-            >Third-party API Integration</mat-list-item>
-          
-          <mat-list-item><mat-icon matListIcon>security</mat-icon
-            >Security practices for CSRF/XSS/ SQL Injection</mat-list-item>
-          
-        <h4 matSubheader>Database Management</h4>
-        <mat-divider></mat-divider>
-        <mat-list-item><img
-          matListIcon
-          class="mat-icon auto-width mongo"
-          src="assets/img/icons/mongo.jpg"
-          alt="MongoDB"
-        />MongoDB/ NOSQL DBs including Mongoose through Node</mat-list-item>
-        <mat-list-item><img
-          matListIcon
-          class="mat-icon auto-width"
-          src="assets/img/icons/postgres.svg"
-          alt="PostGres"
-        />PostGres and MySQL/SQLLite</mat-list-item>
-        <mat-list-item><mat-icon matListIcon>cloud_upload</mat-icon>
-          Database Integration via RESTful API Design
-        </mat-list-item>
-        <mat-divider></mat-divider>
+          />Passport.js authentication</mat-list-item
+        >
+        <mat-list-item
+          ><mat-icon matListIcon>developer_board</mat-icon>Third-party API
+          Integration</mat-list-item
+        >
+
+        <mat-list-item
+          ><mat-icon matListIcon>security</mat-icon>Security practices for
+          CSRF/XSS/ SQL Injection</mat-list-item
+        >
       </mat-list>
-  </div>
+    
+    </div>
   </div>
 
   <div class="section-container">
@@ -150,59 +182,79 @@
       Certifications<br />
       And Other Skills
     </h4>
-    <div class="section-inner-box" slideBox>
-      <mat-list class="cert-list">
-      <h4 matSubheader>Certifications:</h4>
-      <mat-divider></mat-divider>
-          <mat-list-item>
-            <img
-              matListIcon
-              class="mat-icon auto-width"
-              src="assets/img/icons/ScrumMaster.png"
-              title="Copyright &copy 2016 SCRUM ALLIANCE&reg, Inc."
-            />SCRUM ALLIANCE Certified ScrumMaster
-          </mat-list-item>
-          <mat-list-item>
-            <img
+    <div class="section-inner-box list-container" slideBox>
+      <mat-list dense class="cert-list">
+        <h4 matSubheader>Certifications:</h4>
+        <mat-list-item>
+          <img
             matListIcon
             class="mat-icon auto-width"
-              src="assets/img/icons/ProductOwner.png"
-              title="Copyright &copy 2016 SCRUM ALLIANCE&reg, Inc."
-            />SCRUM ALLIANCE Certified Scrum Product Owner
-          </mat-list-item>
-
-        <h4 matSubheader>Awards:</h4>
-        <mat-divider></mat-divider>
-          
-          <mat-list-item>    <img
+            src="assets/img/icons/ScrumMaster.png"
+            title="Copyright &copy 2016 SCRUM ALLIANCE&reg, Inc."
+          />SCRUM ALLIANCE Certified ScrumMaster
+        </mat-list-item>
+        <mat-list-item class="no-border">
+          <img
             matListIcon
             class="mat-icon auto-width"
-              src="assets/img/icons/bsa.png"
-              title="Boy Scouts of America"
-            />Eagle Scout through Boy Scouts of America</mat-list-item>
-            <mat-list-item><mat-icon matListIcon>school</mat-icon>Walter Scott Scholar UNOmaha 2000</mat-list-item>
+            src="assets/img/icons/ProductOwner.png"
+            title="Copyright &copy 2016 SCRUM ALLIANCE&reg, Inc."
+          />SCRUM ALLIANCE Certified Scrum Product Owner
+        </mat-list-item>
       
-        <h4 matSubheader>Non Programming Skills</h4>
-        <mat-divider></mat-divider>
-          <mat-list-item><mat-icon matListIcon>computer</mat-icon>Full Knowledge of Microsoft Office Programs</mat-list-item>
-          <mat-list-item><mat-icon matListIcon>cloud_upload</mat-icon>Working knowledge of Agile Methodology</mat-list-item>
-          <mat-list-item><mat-icon matListIcon>group</mat-icon>Excellent verbal and written communication skills</mat-list-item>
-          <mat-list-item><mat-icon matListIcon>grid_on</mat-icon>Highly organized and detail-oriented</mat-list-item>
-          <mat-list-item><mat-icon matListIcon>show_chart</mat-icon>
-            Established track record of financial planning for business units
-          </mat-list-item>
-          <mat-list-item><mat-icon matListIcon>table_chart</mat-icon>
-            Keenly developed problem-solving and multi-step brainstorming skills
-          </mat-list-item>
-          <mat-list-item><mat-icon matListIcon>supervised_user_circle</mat-icon>
-            Fair and consistent personnel management with 10 years of management
-            experience overseeing teams of 10 to 100
-          </mat-list-item>
-        </mat-list>  
-      </div>
-    </div>
+        <h4 matSubheader>Awards:</h4>
+        
 
-  <div class="section-container no-top">
+        <mat-list-item>
+          <img
+            matListIcon
+            class="mat-icon auto-width"
+            src="assets/img/icons/bsa.png"
+            title="Boy Scouts of America"
+          />Eagle Scout through Boy Scouts of America</mat-list-item
+        >
+        <mat-list-item
+          ><mat-icon matListIcon>school</mat-icon>Walter Scott Scholar UNOmaha
+          2000</mat-list-item
+        >
+      </mat-list>
+      <mat-list dense class="cert-list">
+        <h4 matSubheader>Non Programming Skills</h4>
+        
+        <mat-list-item
+          ><mat-icon matListIcon>computer</mat-icon>Full Knowledge of Microsoft
+          Office Programs</mat-list-item
+        >
+        <mat-list-item
+          ><mat-icon matListIcon>cloud_upload</mat-icon>Working knowledge of
+          Agile Methodology</mat-list-item
+        >
+        <mat-list-item
+          ><mat-icon matListIcon>group</mat-icon>Excellent verbal and written
+          communication skills</mat-list-item
+        >
+        <mat-list-item
+          ><mat-icon matListIcon>grid_on</mat-icon>Highly organized and
+          detail-oriented</mat-list-item
+        >
+        <mat-list-item
+          ><mat-icon matListIcon>show_chart</mat-icon>
+          Established track record of financial planning for business units
+        </mat-list-item>
+        <mat-list-item
+          ><mat-icon matListIcon>table_chart</mat-icon>
+          Keenly developed problem-solving brainstorming skills
+        </mat-list-item>
+        <mat-list-item
+          ><mat-icon matListIcon>supervised_user_circle</mat-icon>
+          Fair and consistent management style with 10 years
+          experience overseeing teams of 10 to 100
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+
+  <div class="section-container no-top full-width">
     <section-background
       imageFade
       class="section-background"
@@ -214,275 +266,14 @@
       Portfolio
     </h3>
 
-    <h4 class="text-center section-heading  inner-heading">
+    <!-- <h4 class="text-center section-heading  inner-heading">
       Sample Apps and Websites
-    </h4>
+    </h4> -->
 
-    <div class="section-inner-box portfolio-box grid-list">
-      <div class="portfolio-container grid-item">
-        <img
-          class="img-responsive portfolio-icon"
-          src="../../assets/img/portfolio/icons/buddyTrakr.png"
-        />
-        <h3 class="text-center portfolio-title">Buddy Trakr</h3>
-        <a
-          target="_blank"
-          href="http://buddytrakr.herokuapp.com"
-          class=" port-link text-center"
-          >Check it out</a
-        >
-        <hr />
-        <h4 class="text-center">About</h4>
-        <p class="portfolio-about">
-          Tracking app for stuffed animals. This was originally a pet project of
-          mine that I used to teach myself a lot of Angular2 and Authentication
-          via passport
-        </p>
-        <h4 class="text-center">Tech Stack</h4>
-        <ul class="tech-list">
-          <li>Angluar 2 w/ Angular CLI for ease of scaffolding</li>
-          <li>Bootstrap and SCSS for styling</li>
-          <li>Rxjs and ngrx for Observables and Stores for client-side</li>
-          <li>Node.js in ES6</li>
-          <li>
-            Utilized some components via @datatype_void's MEA2N constructor
-            while learning Angular 2
-          </li>
-          <li>MongoDB via mlab.com for off-site MongoDB storage</li>
-          <li>
-            API for data access and passport/express-session for login
-            authentication / sessions
-          </li>
-          <li>
-            <a
-              target="_blank"
-              href="https://github.com/miketruax/BuddyTrakr-Angular2"
-              ><img
-                src="assets/img/icons/GitHub-Mark-32px.png"
-                class="icon social-icon"
-                alt="Github Icon"
-              />See the code</a
-            >
-          </li>
-        </ul>
-        <hr />
-      </div>
-
-      <div class="portfolio-container grid-item">
-        <img
-          class="img-responsive portfolio-icon"
-          src="../../assets/img/portfolio/icons/miketruax.png"
-        />
-        <h3 class="text-center portfolio-title">Personal Site</h3>
-        <a [routerLink]="['/']" class="port-link  text-center">Back Home</a>
-        <hr />
-        <h4 class="text-center">About</h4>
-        <p class="portfolio-about">
-          Personal website for contract work and showing off my skills. Hope
-          you're enjoying it right now!
-        </p>
-        <h4 class="text-center">Tech Stack</h4>
-        <ul class="tech-list">
-          <li>HTML5 / Bootstrap / SCSS for design</li>
-          <li>
-            Angular 2 utilizing ngrx, stores, and reducers (specifically for
-            food blog)
-          </li>
-          <li>Node.JS with Express for backend</li>
-          <li>Angular CLI for ease of scaffolding</li>
-          <li>Integrated API via MySQL for recipe retrieval</li>
-          <li>
-            Images and initial layout concept by in-house designer. See branding
-            concept for this site
-            <a href="/assets/pdf/brandID.pdf" target="_blank">here</a>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              href="https://github.com/miketruax/miketruax-website-NG2"
-              ><img
-                src="assets/img/icons/GitHub-Mark-32px.png"
-                class="icon social-icon"
-                alt="Github Icon"
-              />See the code</a
-            >
-          </li>
-        </ul>
-        <hr />
-      </div>
-
-      <div class="portfolio-container grid-item">
-        <img
-          class="img-responsive portfolio-icon"
-          src="../../assets/img/portfolio/icons/periodictable.png"
-        />
-        <h3 class="text-center portfolio-title">Periodic Table</h3>
-        <a
-          href="https://miketruax.github.io/periodic-table/"
-          target="_blank"
-          class="port-link  text-center"
-          >Check it out</a
-        >
-        <hr />
-        <h4 class="text-center">About</h4>
-        <p class="portfolio-about">
-          Interactive view of the periodic table. I made this as a way to
-          improve upon a version I saw on reddit. Currently allows for sorting
-          by several factors with more planned for the future.
-        </p>
-        <h4 class="text-center">Tech Stack</h4>
-        <ul class="tech-list">
-          <li>
-            Initially used Node get/fs to pull information from Wolfram Alpha
-          </li>
-          <li>SCSS for animations and styling</li>
-          <li>Angular 2/4 for components and pipes</li>
-          <li>
-            <a
-              target="_blank"
-              href="https://github.com/miketruax/miketruax-website-NG2/tree/master/src/app/portfolio/periodic-table"
-              ><img
-                src="assets/img/icons/GitHub-Mark-32px.png"
-                class="icon social-icon"
-                alt="Github Icon"
-              />See the code</a
-            >
-          </li>
-        </ul>
-        <hr />
-      </div>
-
-      <div class="portfolio-container grid-item">
-        <img
-          class="img-responsive portfolio-icon"
-          src="../../assets/img/portfolio/icons/moviesearch.png"
-        />
-        <h3 class="text-center portfolio-title">Movie Search</h3>
-        <a [routerLink]="['/movie-search']" class="port-link text-center"
-          >Check it out</a
-        >
-        <hr />
-        <h4 class="text-center">About</h4>
-        <p class="portfolio-about">
-          Simple Movie Search App allowing utilizing the OMDBApi to pull
-          information. Allows to search by any string and then see more
-          information for any of the results.
-        </p>
-        <h4 class="text-center">Tech Stack</h4>
-        <ul class="tech-list">
-          <li>Utilizes the OMDB API for JSONP calling</li>
-          <li>Front Page formatting by http://www.teamtreehouse.com</li>
-          <li>Styling for "more-info" page completely done by myself</li>
-          <li>NG2 http calls with rxjs for asynchronous calling</li>
-          <li>
-            Custom pagination component
-            <a
-              href="https://github.com/miketruax/miketruax-website-NG2/tree/master/src/app/shared/pagination"
-              target="_blank"
-              >(here)</a
-            >
-            to get past pull limit for OMDB API
-          </li>
-          <li>
-            <a
-              target="_blank"
-              href="https://github.com/miketruax/miketruax-website-NG2/tree/master/src/app/portfolio/movie-search"
-              ><img
-                src="assets/img/icons/GitHub-Mark-32px.png"
-                class="icon social-icon"
-                alt="Github Icon"
-              />See the code</a
-            >
-          </li>
-        </ul>
-        <hr />
-      </div>
-
-      <div class="portfolio-container grid-item">
-        <img
-          class="img-responsive portfolio-icon"
-          src="../../assets/img/portfolio/icons/tictactoe.png"
-        />
-        <h3 class="text-center portfolio-title">Tic Tac Toe</h3>
-        <a
-          [routerLink]="['/portfolio/tic-tac-toe']"
-          class="port-link  text-center"
-          >Check it out</a
-        >
-        <hr />
-        <h4 class="text-center">About</h4>
-        <p class="portfolio-about">
-          Tic-Tac-Toe app that originally was part of a Javascript course. I
-          Switched the code over to Angular2/4 and reset the styling to allow
-          for simpler code. Currently allows for both one and two players.
-        </p>
-        <h4 class="text-center">Tech Stack</h4>
-        <ul class="tech-list">
-          <li>
-            Styling template initially provided by teamtreehouse.com but with
-            HEAVY adjustments
-          </li>
-          <li>Utilizes TS and Angular 2 for interactivity</li>
-          <li>
-            Simple AI utilizing min-max calculations for best computer move
-          </li>
-          <li>SCSS and Raw CSS for styling</li>
-          <li>
-            Utilizes jQuery for ease of DOM manipulation (in addition to NG2)
-          </li>
-          <li>
-            <a
-              target="_blank"
-              href="https://github.com/miketruax/miketruax-website-NG2/tree/master/src/app/portfolio/tic-tac-toe"
-              ><img
-                src="assets/img/icons/GitHub-Mark-32px.png"
-                class="icon social-icon"
-                alt="Github Icon"
-              />See the code</a
-            >
-          </li>
-        </ul>
-        <hr />
-      </div>
-
-      <div class="portfolio-container grid-item">
-        <img
-          class="img-responsive portfolio-icon"
-          src="../../assets/img/portfolio/icons/whowasit.png"
-        />
-        <h3 class="text-center portfolio-title">Who Was It?</h3>
-        <a
-          [routerLink]="['/portfolio/who-was-it']"
-          class="port-link  text-center"
-          >Check it out</a
-        >
-        <hr />
-        <h4 class="text-center">About</h4>
-        <p class="portfolio-about">
-          This was my first attempt at an Angular2/4 app. Super simple app that
-          allows you to search for two or more movies to find actors who
-          appeared in all of the movies.
-        </p>
-        <h4 class="text-center">Tech Stack</h4>
-        <ul class="tech-list">
-          <li>Utilizes the OMDB API for JSONP calling</li>
-          <li>Observables/ redux to compile actor information</li>
-          <li>Styling via minor SCSS and Bootstrap</li>
-          <li>NG2 http calls with rxjs for asynchronous calling</li>
-          <li>
-            <a
-              target="_blank"
-              href="https://github.com/miketruax/miketruax-website-NG2/tree/master/src/app/portfolio/who-was-it"
-              ><img
-                src="assets/img/icons/GitHub-Mark-32px.png"
-                class="icon social-icon"
-                alt="Github Icon"
-              />See the code</a
-            >
-          </li>
-        </ul>
-        <hr />
-      </div>
+    <div class="section-inner-box portfolio-container">
+        <div *ngFor="let item of portfolioItems" (click)="openPortfolioItem(item)" class="icon-container pointer"> 
+          <img  class="img-responsive portfolio-icon" [src]="'../../assets/img/portfolio/icons/'+item.img" />
+        </div>
     </div>
   </div>
   <footer-component></footer-component>

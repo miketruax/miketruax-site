@@ -53,15 +53,10 @@ export class HomeComponent implements OnInit {
       },
       {title: "General Troubleshooting",
        icon: "contact_support"
-      },
+      }
     ]
   }
 
   ngOnInit(){
 }
 }
-
-// Web applications
-// Website and e-mail hosting
-// Database and server integrations
-// Software integrations and upgrades

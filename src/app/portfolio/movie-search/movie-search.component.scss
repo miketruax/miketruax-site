@@ -1,15 +1,13 @@
 // ------PALLETE-----
 // Primary Colors
-$moonstone-blue: rgb(123, 191, 191);
-$yankees-blue: rgb(15,60,89);
-$sunny: rgb(255, 241, 125);
-
-// -----TYPOGRAPHY-----
-$raisin-black: rgb(37, 38, 39);
-$alabaster: rgb(243, 239, 233);
+$primary: rgb(123, 191, 191);
+$secondary: rgb(15, 60, 89);
+$warning: rgb(255, 241, 125);
+$font-dark: rgb(37, 38, 39);
+$font-light: rgb(243, 239, 233);
 
 .material-icons {
-  font-family: 'Material Icons' !important;
+  font-family: "Material Icons" !important;
 }
 /* =================================
   Element Styles
@@ -19,14 +17,7 @@ ul {
   list-style: none;
 }
 
-input {
-  height: 46px;
-  border: none;
-  outline: 0;
-  border-bottom: 4px solid #e4e4e4;
-}
-
-#year{
+#year {
   margin-left: 5px;
 }
 
@@ -51,29 +42,15 @@ select {
   Page Components
 ==================================== */
 
-.movie_more {
-  cursor: pointer;
-}
-.movie_more:hover{
-  .movie_more /deep/ > movie-search-image{
-      border: 2px solid black;
-      //-webkit-transform: scale(1.1);
-      //transform: scale(1.1);
-    }
-  .movie-title{
-
-    color: $moonstone-blue;
+.movie:hover {
+  .movie /deep/ > movie-poster {
+    border: 2px solid black;
+    //-webkit-transform: scale(1.1);
+    //transform: scale(1.1);
   }
-}
-.search-form input:last-of-type {
-  margin-right: -40px;
-}
-
-.search-button {
-  cursor: pointer;
-  z-index: 2;
-  float: right;
-  margin-right: -10px;
+  .movie-title {
+    color: $primary;
+  }
 }
 
 .icn-search {
@@ -89,14 +66,9 @@ select {
 
 /* MOVIE LIST COMPONENTS -------- */
 
-.movie-list div, .movie-list a {
-  margin: 26px auto;
+.movie-list a {
+  margin: 2px auto;
   margin-bottom: 0px;
-}
-
-.movie-list{
-  display: flex;
-  flex-flow: row wrap;
 }
 
 .movie-list a {
@@ -104,12 +76,11 @@ select {
   margin: auto;
 }
 
-.no-movies{
+.no-movies {
   margin: 26px auto;
 }
 
-
-.movie-title{
+.movie-title {
   margin-top: 10px;
 }
 
@@ -123,15 +94,10 @@ select {
   float: left;
 }
 
-
 .movie-year {
   color: gray;
 }
 
-.movie-more{
-  display: flex;
-  flex-flow: column wrap;
-}
 
 /* =================================
   Expanded Info Styles
@@ -151,7 +117,7 @@ select {
 }
 
 .top-grey {
-  background: $yankees-blue !important;
+  background: $secondary !important;
   padding-bottom: 15px !important;
   margin-bottom: 10px;
 }
@@ -167,37 +133,102 @@ select {
   color: white;
 }
 
-
-
-.synopsis, .more-synopsis{
+.synopsis,
+.more-synopsis {
   margin-bottom: 10px !important;
-  h3{
+  h3 {
     padding-top: 10px !important;
   }
 }
 
 .imdb-button {
-  background: $moonstone-blue;
+  background: $primary;
   color: white;
   border-radius: 5px;
-  border: solid $moonstone-blue 2px;
+  border: solid $primary 2px;
   padding: 6px;
   margin-top: 4px;
   cursor: pointer;
 }
 
 .imdb-button:hover {
-  color: $moonstone-blue;
+  color: $primary;
   background: white;
 }
 
-
-.main-content{
+.main-content {
   min-height: 300px !important;
   background-color: white !important;
   margin-top: 165px !important;
 }
 
+//NEW STYLES
 
+.row-flex {
+  display: flex;
+  flex-flow: row wrap;
+}
 
+.column-flex{
+  display: flex;
+  flex-flow: column;
+}
 
+.text-center {
+  text-align: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.movie-container{
+  min-height: calc(100vh - 200px);
+}
+
+// SEARCH BOXES
+
+.search-form {
+  margin: auto;
+  width: 95%;
+
+  .search-field {
+    margin: 0 5px;
+    flex-basis: calc(70% - 30px);
+  }
+  .title-search {
+    width: 175px;
+  }
+
+  .year-search {
+    width: 1em;
+    flex-basis: calc(30% - 30px);
+  }
+
+  .search-button {
+    margin-top: 13.5px;
+    flex-basis: 40px;
+    cursor: pointer;
+  }
+}
+
+// MOVIE LIST
+
+.movie{
+  margin: 5px auto;
+  flex-basis: calc(25% - 10px);
+  justify-content: space-between;
+  movie-poster{
+    margin: auto;
+  }
+  @media(max-width: 1000px){
+    flex-basis: calc((100% / 3) - 10px);
+  }
+  @media(max-width: 800px){
+    flex-basis: calc(50% - 10px);
+  }
+}
+
+.portfolio-exit{
+  margin: 10px;
+}

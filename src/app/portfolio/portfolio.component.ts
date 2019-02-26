@@ -53,7 +53,7 @@ export class PortfolioComponent implements OnInit {
     {
       title: 'Movie Search',
       img: 'moviesearch.png',
-      link: '/movie-search',
+      link: '/portfolio/movie-search',
       about: "Simple Movie Search App allowing utilizing the OMDBApi to pull information. Allows to search by any string and then see more information for any of the results.",
       techStack: ["Utilizes the OMDB API for JSONP calling", "NG2 http calls with rxjs for asynchronous calling"],
       githubLink: "miketruax-website-NG2/tree/master/src/app/portfolio/movie-search"
@@ -75,6 +75,15 @@ export class PortfolioComponent implements OnInit {
       techStack: ["Utilizes the OMDB API for JSONP calling", "Observables/ redux to compile actor information", 
       "Styling via minor SCSS and Bootstrap", "NG2 http calls with rxjs for asynchronous calling"],
       githubLink: "miketruax/miketruax-website-NG2/tree/master/src/app/portfolio/who-was-it"
+    },
+    {
+      title: 'Image Tile Slider',
+      img: 'imgtileslide.png',
+      link: '/portfolio/tile-slide',
+      about: "As weird as it sounds, I really haven't done a ton with canvas outside of just basic things. I figured I would try my hand at making a simple game and this is basically the result.",
+      techStack: ["Uses a directive for each tile to only draw the needed part of the canvas.", "Predominantly done via SCSS @mixins for easy resizing", 
+      "Allows for multiple levels of difficulty and grid sizes (can be expanded to include many more than available here."],
+      githubLink: "miketruax/miketruax-website-NG2/tree/master/src/app/portfolio/tile-slide-game"
     }
   
   ]

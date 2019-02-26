@@ -27,4 +27,4 @@ import { PaginationComponent } from '../../shared/pagination/pagination.componen
   exports: [MovieSearchComponent, MovieAboutComponent, MoviePosterComponent]
 })
 
-export class MovieSearchModule { }
+export class MovieSearchModule {}

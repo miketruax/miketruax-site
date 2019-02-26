@@ -1,15 +1,14 @@
-.material-icons {
-  font-family: 'Material Icons' !important;
-}
-
 .movie-poster{
+  height: 275px;
+  width: auto;
   display: block;
   margin: auto;
 }
 
-.more-placeholder {
-  padding-top: 110px;
+.no-poster {
   color: #dadada;
   font-size: 5em;
   text-align: center;
+  padding: 0;
+  width: 100%;
 }

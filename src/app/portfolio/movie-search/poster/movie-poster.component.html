@@ -1,6 +1,4 @@
-<div class="col-12" style="height: 300px !important;">
-<img *ngIf="!placeholder" class="img-fluid movie-poster"
-     [src]="'http://img.omdbapi.com/?apikey=25c98aaf&i='+imdbID" (error)="setPlaceholder()">
-
-<i *ngIf="placeholder" class="material-icons more-placeholder col-12">crop_original</i>
+<div class="poster-container">
+<img *ngIf="!placeholder" class="movie-poster" [src]="'http://img.omdbapi.com/?apikey=25c98aaf&i='+imdbID" (error)="setPlaceholder()">
+<mat-icon *ngIf="placeholder" class="no-poster" aria-label="Poster Not Found">help_outline</mat-icon>
 </div>

@@ -1,285 +1,189 @@
 // ------PALLETE-----
 // Primary Colors
-$moonstone-blue: rgb(123, 191, 191);
-//$yankees-blue: rgb(21, 54, 66);
-$yankees-blue: rgb(15,60,89);
-$sunny: rgb(255, 241, 125);
 
-// Highlight
-
-// -----TYPOGRAPHY-----
-$raisin-black: rgb(37, 38, 39);
-$alabaster: rgb(243, 239, 233);
-
-$size-sm:        80px;
-$size:           120px;
-$spacing:        5px;
-
-$player-1-icon:  $alabaster;
-$player-2-icon:  $sunny;
-
-$player-1-color: $moonstone-blue;
-$player-2-color: $yankees-blue;
-$hover-color:    $raisin-black;
+$primary: rgb(123, 191, 191);
+$secondary: rgb(15, 60, 89);
+$warning: rgb(255, 241, 125);
+$font-dark: rgb(37, 38, 39);
+$font-light: rgb(243, 239, 233);
 
 
 
-.computer {
-  margin-top: 1rem;
-}
+// TOP PLAYER BOXES
 
-a h4{
-  background-color: white !important;
-  width: ($size-sm + $spacing*2)*3 + ($spacing*2);
 
-  margin: auto !important;
-  margin-top: 10px !important;
-  @media(min-width: 450px) {
-    width: ($size + $spacing*2)*3 + ($spacing*2);
+.player {
+  margin: 2px;
+  span{
+    max-height: 20px;
+    overflow: hidden;
+    word-break: break-all;
   }
-}
-
-#playOne, #playTwo {
-  color: $yankees-blue;
-}
-
-.play1, .play2 {
-  color: $sunny;
-}
-.screen {
-  width: ($size-sm + $spacing*2)*3 + ($spacing*2);
-  height: ($size-sm + $spacing)*4;
-  float: none !important;
-  margin: auto !important;
-  margin-top: 150px !important;
-  .screen-head{
-    margin-top: ($spacing) !important;
-  }
-  @media(min-width: 450px) {
-    height: ($size + $spacing)*4 + $spacing;
-    width: ($size + $spacing*2)*3 + ($spacing*2);
-    .screen-head{
-      margin-top: $size + $spacing  !important;
+  svg {
+    position: absolute;
+    top: 2.5px;
+    left: calc(50% - 12.5px);
+    g {
+      fill: rgba($secondary, 0.15);
+      height: 25px !important;
     }
-
   }
-  background: white !important;
-  label{
-    margin-top: $spacing*5 !important;
-  }
-  input{
-    margin: $spacing*2 0;
-  }
-  padding-bottom: $spacing*2 ;
-}
-
-#lplayOne{
-  margin-top: $spacing*3 !important;
-}
-
-
-
-.screen-start button {
-  color: $yankees-blue !important;
-  background-color: $moonstone-blue !important;
-  margin-top: 4vh !important;
-  height: 60px !important;
-  border: 1px solid $sunny !important;
-}
-
-
-.screen-win p, .screen-win h1 {
-  margin-top: $spacing*6 !important;
-  font-size: 60px;
-  font-weight: 500;
-  color: $yankees-blue
-}
-
-.screen-win button{
-  color: $yankees-blue !important;
-  background-color: $moonstone-blue !important;
-  border: 1px solid $sunny !important;
-}
-
-
-.screen-win-3 {
-  background: $alabaster;
-  p{
-    color: $yankees-blue;
-  }
-  h1{
-    color: $yankees-blue;
-  }
-}
-
-.screen-win-1 {
-  background: $moonstone-blue;
-}
-
-.screen-win-1 button {
-  color: rgb(21, 54, 66);
-}
-
-
-.screen-win-2 {
-  background: $yankees-blue;
-}
-
-
-.board {
-  padding-top: 1em;
-}
-
-.board h1 {
-  margin-top: 0.3em;
-}
-
-.players {
-  float: left;
-  color: rgba($alabaster, 0.2);
-  text-align: center;
-  outline: 1px solid $alabaster;
-  transition: 1s;
-  height: 30px !important;
-  background-size: 40px auto !important;
-}
-
-.players svg g {
-  fill: rgba($yankees-blue, 0.15);
-  height: 25px !important;
-}
-
-.startgame{
-  margin-top: 10vh !important;
-  background-color: $alabaster !important;
-}
-
-.players-turn {
-  outline: none;
-}
-
-.player1.active svg g{
-  fill: $alabaster;
-}
-
-.player2.active svg g {
-  fill: #aaa;
 }
 
 .player1.active {
-  background: rgba($moonstone-blue, 1);
+  background: $primary;
 }
 
 .player2.active {
   background: rgb(21, 54, 66);
 }
 
-#O, #X {
-  color: rgba($yankees-blue, .7);
-  position: absolute;
-  font-size: 1rem;
-  left: 0;
-  top: 0;
-  height: 30px;
-  line-height: 30px !important;
-  text-transform: uppercase;
+.active {
+  span {
+    color: rgb(243, 239, 233);
+  }
+  svg g {
+    fill: $font-light;
+  }
+}
+
+.name {
+  display: block;
   margin: auto;
+  color: $font-dark;
+  top: 0;
+  text-align: center;
+}
+
+//CONTAINERS 
+.board,
+.player-select,
+.screen-win {
+  width: 75%;
+  margin: auto;
+  height: 75vw;
+  max-height: 600px;
+}
+
+.screen-win, .player-select{
   width: 100%;
 }
 
-.active #O, .active #X {
-  color: rgb(243, 239, 233);
+.screen-win, .player-select{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
 }
 
+//BOARD
+.board {
+  display: flex;
+  flex-flow: row wrap;
+}
 
 .box {
-  background-color: $alabaster;
-  border-radius: 14px;
+  margin: 2px;
+  flex-basis: calc(100% / 3 - 6px);
+  background-color: $font-light;
+  padding-top: calc(100% / 3 - 6px);
   cursor: pointer;
-  color: white;
-  height: $size-sm;
-  margin: $spacing;
-  position: absolute;
-  width: $size-sm;
-
-  @media(min-width: 450px) {
-    height: $size;
-    width: $size;
-  }
-  border: 1px solid $yankees-blue;
-  transition: 0.2s ease;
+  border: 1px solid $secondary;
   background-size: 90%;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-.topb {
-  top: $size-sm;
-}
-.midrowb {
-  top: ($spacing + $size-sm*2);
-}
-.bottomb {
-  top: ($spacing*2 + $size-sm*3);
-}
-.leftb {
-  left: $spacing*2
-}
-.midcolb {
-  left: ($spacing*3 + $size-sm)
-}
-.rightb {
-  left: ($spacing*4 + $size-sm*2)
-}
-
-
-
-@media(min-width: 450px) {
-  .topb {
-    top: $size;
-  }
-  .midrowb {
-    top: ($spacing + $size*2);
-  }
-  .bottomb {
-    top: ($spacing*2 + $size*3);
-  }
-  .leftb {
-    left: $spacing*2
-  }
-  .midcolb {
-    left: ($spacing*3 + $size)
-  }
-  .rightb {
-    left: ($spacing*4 + $size*2)
-  }
-}
-
-
-
-.box.box-filled-1 {
-  background-color: $moonstone-blue !important;
+.activePlayer-1.filled-0:hover {
+  // transition: 0.2s ease;
   background-image: url(../../../assets/img/portfolio/tictactoe/o.svg);
 }
 
-.box.box-filled-2 {
-  background-color: $yankees-blue !important;
+.activePlayer-2.filled-0:hover {
+  // transition: 0.2s ease;
   background-image: url(../../../assets/img/portfolio/tictactoe/x.svg);
 }
 
-
-/* Body and Notice styling
--------------------------------------------------------------- */
-
-.background-screen {
-  color: $alabaster;
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  text-align: center;
+.filled-1 {
+  background-color: $primary !important;
+  background-image: url(../../../assets/img/portfolio/tictactoe/o.svg);
 }
 
-h5 {
-  font-weight: 400;
-  padding: 0 20px;
+.filled-2 {
+  background-color: $secondary !important;
+  background-image: url(../../../assets/img/portfolio/tictactoe/x.svg);
 }
 
+// END GAME SCREEN
+.new-game-button {
+  width: calc(60% - 20px);
+  margin: auto;
+}
+
+.screen-win {
+  h1{
+    margin: auto;
+    font-size: 6em;
+    word-break: break-all;
+  }
+  color: $font-light;
+}
+
+.screen-win-3 {
+  background: $font-light;
+  color: $secondary;
+}
+
+.screen-win-1 {
+  background: $primary;
+}
+
+.screen-win-2 {
+  background: $secondary;
+}
+
+.screen-win-1 button {
+  color: rgb(21, 54, 66);
+}
+
+// START GAME SCREEN
+
+
+.player-name {
+  display: block;
+  width: 80%;
+  margin: 5px auto;
+}
+
+//ALL SCREENS
+
+.title {
+  margin-top: 10px;
+  color: $font-light;
+  background-color: $secondary;
+}
+
+.start-button {
+  margin: 5px 10px;
+  width: calc(50% - 20px);
+  @media(max-width: 465px){
+    width: calc(100% - 20px);
+  }
+}
+
+
+
+.player {
+  height: 20px;
+  position: relative;
+}
+
+.ttt-game {
+  height: calc(75vw + 140px);
+  max-width: 800px;
+  max-height: 759px;
+  margin: auto;
+}
+
+.portfolio-exit {
+  margin: 10px;
+}

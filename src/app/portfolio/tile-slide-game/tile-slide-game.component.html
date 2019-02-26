@@ -1,0 +1,28 @@
+<div class="page-container">
+<div class="section-container slider-container">
+<div class="game-options" *ngIf="!gameReady">
+<h3 class="text-center">Choose Image</h3>
+<div class="img-choice-container">
+    <div class="img-choice pointer" *ngFor="let img of imgChoices; index as i;" >
+    <img [src]="img" (click)="setImg(img)" [class.active]="img === imgSrc">
+</div>
+</div>
+
+
+<h4 class="option text-center">Complexity {{complexity}}</h4>
+<mat-slider class="option" thumbLabel min="4" max="30" step="1" value="4" tickInterval="1" [(ngModel)]="complexity"></mat-slider>
+
+<h4 class="option text-center">Grid Size {{gridSize}} x {{gridSize}}</h4>
+<mat-slider class="option" thumbLabel min="3" max="20" step="1" value="3" tickInterval="1" [(ngModel)]="gridSize"></mat-slider>
+
+<button class="start-button" mat-raised-button color="primary" (click)="startGame()" >Start Game</button>
+</div>
+<tile-slide-board  *ngIf="gameReady" [gridSize]="gridSize" [complexity]="complexity" [imgSrc]="imgSrc" (newGame)="toggleReady()"></tile-slide-board>
+</div>
+</div>
+
+<h4 class="portfolio-exit text-center">
+    <a mat-raised-button color="primary" [routerLink]="['/portfolio']"
+      >Back to Portfolio</a
+    >
+  </h4>

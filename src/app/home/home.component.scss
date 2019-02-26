@@ -24,3 +24,9 @@
         flex-basis: calc(100% - 12px);
     }
 }
+
+@media(min-width: 1200px){
+    .update-list{
+        flex-basis: calc(100% / 3 - 12px) !important;
+    }
+}

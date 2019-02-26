@@ -1,0 +1,29 @@
+<h2 class="text-center">Turns Taken: {{ turnsTaken }}</h2>
+<div [ngClass]="'grid-size-'+gridSize+ ' '+boardSize" class="board-container">
+  <img  
+    class="game-img"
+    [class.opaque]="!gameOver"
+    [src]="imgSrc"
+  />
+
+  <div
+    class="game-board" 
+    [class.hidden]="gameOver">
+    <canvas
+      class="tile"
+      [class.transitioning] = "tile.transitioning"
+      [ngClass]="'offset-x-'+tile.currX+' offset-y-'+tile.currY"
+      *ngFor="let tile of imgGrid;"
+      (click)="slideTile(tile)"
+      [appDrawImage]="imgSrc"
+      [tile]="tile"
+      [width]="tileSize"
+      [height]="tileSize"
+      [gridSize]="gridSize"
+      [tileSize]="tileSize"
+      >
+    </canvas>
+
+  </div>
+</div>
+<button class="new-game" *ngIf="gameOver" mat-raised-button color="primary" (click)="toggleNewGame()">New Game</button>

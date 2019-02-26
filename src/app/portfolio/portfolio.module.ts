@@ -17,11 +17,14 @@ import { WhoWasItResultsComponent } from './who-was-it/home/who-was-it-results.c
 import { SharedModule } from '../shared/components/shared.module';
 import { PortfolioItemComponent } from './portfolio-item/portfolio-item.component';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
+import { TileSlideBoard } from './tile-slide-game/tile-slide-board/tile-slide-board.component';
+import { DrawImageDirective } from './tile-slide-game/tile-slide-board/draw-image.directive';
+import { TileSlideGame } from './tile-slide-game/tile-slide-game.component';
 
 
 
 @NgModule({
-  declarations: [
+  declarations: [ TileSlideBoard, TileSlideGame, DrawImageDirective,
     TicTacToeComponent, WhoWasItComponent, PortfolioComponent,WhoWasItResultsComponent , WhoWasItAboutComponent, PortfolioItemComponent
   ],
   imports: [CommonModule, PortfolioRoutingModule, MaterialModule, 
@@ -33,4 +36,4 @@ import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
   entryComponents: [PortfolioItemComponent],
   exports: [PortfolioComponent, TicTacToeComponent, WhoWasItComponent, MovieSearchModule, PortfolioItemComponent]
 })
-export class PortfolioModule {}
+export class PortfolioModule { }

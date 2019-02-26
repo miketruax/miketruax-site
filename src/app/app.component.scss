@@ -52,7 +52,7 @@
 .top-toolbar{
     background-color: $secondary;
     height: 40px;
-    width: calc(100vw - 16px) !important;
+    width: 100% !important;
     position: fixed;
     z-index: 10;
     top: 0;

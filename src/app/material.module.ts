@@ -15,6 +15,8 @@ import {
   MatNativeDateModule,
   MatDatepickerModule,
   MatDialogModule,
+  MatSelectModule,
+  MatSliderModule,
 
 } from '@angular/material';
 
@@ -33,6 +35,8 @@ import {
     MatNativeDateModule,
     MatCheckboxModule,
     MatListModule,
+    MatSelectModule,
+    MatSliderModule,
     MatPaginatorModule,
   ],
   exports: [
@@ -49,6 +53,8 @@ import {
     MatSidenavModule,
     MatCheckboxModule,
     MatListModule,
+    MatSelectModule,
+    MatSliderModule,
     MatPaginatorModule,
   ]
 })

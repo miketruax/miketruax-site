@@ -185,6 +185,7 @@ $site-theme: mat-light-theme($site-primary, $site-secondary, $site-warn);
 
 .section-container{
     margin: 5px 0px;
+    padding: 10px 0;
     flex-shrink: 0;
     flex-basis: 100%;
     flex-grow: 1;
@@ -215,7 +216,6 @@ footer-component{
     .section-container{
         flex-basis: calc((100% / 3) - 20px);
         margin: 0px 5px;
-        padding: 10px 0;
     }
 }
 

@@ -1,19 +1,20 @@
-import { NgModule } from "@angular/core";
+import { ModuleWithProviders } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import {PortfolioComponent} from "./portfolio.component"
 import {TicTacToeComponent} from './tic-tac-toe/tictactoe.component'
 import {WhoWasItComponent} from './who-was-it/home/who-was-it.component'
+import { TileSlideGame } from "./tile-slide-game/tile-slide-game.component";
 
 const routes: Routes = [
-    { path: "portfolio", component: PortfolioComponent}, 
-    { path: "portfolio/tic-tac-toe", component: TicTacToeComponent},
-    { path: 'portfolio/movie-search', loadChildren: './movie-search/movie-search.module', data: {animation: 'MovieSearch'} },
-    { path: "portfolio/who-was-it", component: WhoWasItComponent}, 
+        { path: "portfolio",  children: [
+        { path: '', component: PortfolioComponent},
+        { path: "tic-tac-toe", component: TicTacToeComponent},
+        { path: 'movie-search', loadChildren: './movie-search/movie-search.module#MovieSearch', data: {animation: 'MovieSearch'} },
+        { path: "who-was-it", component: WhoWasItComponent}, 
+        { path: "tile-slide", component: TileSlideGame}, 
+    ]}, 
+    
 
 ];
 
-@NgModule({
-    exports: [RouterModule],
-    imports: [RouterModule.forChild(routes)]
-})
-export class PortfolioRoutingModule { }
+export const PortfolioRoutingModule: ModuleWithProviders = RouterModule.forChild(routes);

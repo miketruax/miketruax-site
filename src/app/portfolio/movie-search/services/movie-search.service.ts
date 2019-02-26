@@ -43,7 +43,9 @@ export class MovieSearchService {
       .set('i', id)
       .set('plot', 'full');
     return this.getMovies(params).pipe(
-      //if response is valid JSON movie info, show contanier and populate info
+      
+      //if response is valid JSON movie info, show container and populate info
+
       map(data => data['Response'] === "True" ? data : 'Something went wrong. Please try again later.'),
       catchError(err=> of({errorMessage: 'Something went wrong. Please try again Later. '}))
       )

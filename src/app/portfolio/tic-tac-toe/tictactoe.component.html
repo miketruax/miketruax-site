@@ -1,73 +1,122 @@
-<div *ngIf="activePlayer === -1" class="screen screen-start col-12" id="start">
-  <h3 class="section-heading text-center col-12">Tic Tac Toe</h3>
-  <div class="col-12">
-      <h3 class="col-12 text-center screen-head">What Kind of Game?</h3>
-      <button class="btn btn-default col-12" (click)="againstWhom(true)">Play Against Computer</button><br><br>
-      <button class="btn btn-default col-12" (click)="againstWhom(false)">Play Against Player</button>
+<div class="page-container">
+  <div class="section-container ttt-game">
+    <h3 class="section-heading text-center title">Tic Tac Toe</h3>
+    <div class="player player1" [class.active]="gameInfo.activePlayer === 1">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="15"
+        height="15"
+        viewBox="0 0 42 42"
+        version="1.1"
+      >
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g transform="translate(-200.000000, -60.000000)" fill="#000000">
+            <g transform="translate(200.000000, 60.000000)">
+              <path
+                d="M21 36.6L21 36.6C29.6 36.6 36.6 29.6 36.6 21 36.6 12.4 29.6 5.4 21 5.4 12.4 5.4 5.4 12.4 5.4 21 5.4 29.6 12.4 36.6 21 36.6L21 36.6ZM21 42L21 42C9.4 42 0 32.6 0 21 0 9.4 9.4 0 21 0 32.6 0 42 9.4 42 21 42 32.6 32.6 42 21 42L21 42Z"
+              />
+            </g>
+          </g>
+        </g>
+      </svg>
+      <span class="name">{{ gameInfo.playerOne }}</span>
     </div>
-</div>
-
-
-
-
-  <div class="col-12 screen" *ngIf="activePlayer === 0">
-    <h3 class="section-heading text-center col-12">Tic Tac Toe</h3>
-    <label for="playOne" class="col-12 screen-head" id="lplayOne">Player One's Name:</label>
-      <input class="form-control" type="text" name="nameOne" id="playOne" [(ngModel)]="nameOne">
-
-    <label for="playTwo" class="col-12">Player Two's Name:</label>
-        <input *ngIf="!againstComputer" class="form-control" type="text" name="nameTwo" id="playTwo" [(ngModel)]="nameTwo">
-        <p class="col-12" *ngIf="againstComputer">{{nameTwo}}</p>
-    <button class="btn-lg btn btn-default col-6 offset-3 startgame" (click)="startGame();">Start</button>
-  </div>
-
-
-
-  <div *ngIf="gameOver" class="screen screen-win col-12" ngClass="screen-win-{{winner.winner}}" id="finish">
-    <h3 class="section-heading text-center col-12">Tic Tac Toe</h3>
-    <p class="message col-12 text-center screen-head" *ngIf="winner.winner === 1">{{winner.name ? winner.name : 'O'}} Wins!</p>
-    <p class="message col-12 text-center screen-head" *ngIf="winner.winner === 2">{{winner.name ? winner.name : 'X'}} Wins!</p>
-    <p class="message col-12 text-center screen-head" *ngIf="winner.winner === 3">It's a Tie!</p>
-    <button class="btn btn-default btn-lg col-6 offset-3" (click)="resetBoard()">New game</button>
-  </div>
-
-
-<div class="board col-12 screen" *ngIf="activePlayer >0 && !gameOver" id="board">
-  <h3 class="section-heading text-center col-12">Tic Tac Toe</h3>
-      <div class="players player1 active col-5">
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 42 42" version="1.1">
-          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <g transform="translate(-200.000000, -60.000000)" fill="#000000">
-              <g transform="translate(200.000000, 60.000000)">
-                <path d="M21 36.6L21 36.6C29.6 36.6 36.6 29.6 36.6 21 36.6 12.4 29.6 5.4 21 5.4 12.4 5.4 5.4 12.4 5.4 21 5.4 29.6 12.4 36.6 21 36.6L21 36.6ZM21 42L21 42C9.4 42 0 32.6 0 21 0 9.4 9.4 0 21 0 32.6 0 42 9.4 42 21 42 32.6 32.6 42 21 42L21 42Z"/>
-              </g>
+    <div class="player player2" [class.active]="gameInfo.activePlayer === 2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="15"
+        height="15"
+        viewBox="0 0 42 43"
+        version="1.1"
+      >
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g transform="translate(-718.000000, -60.000000)" fill="#000000">
+            <g
+              transform="translate(739.500000, 81.500000) rotate(-45.000000) translate(-739.500000, -81.500000) translate(712.000000, 54.000000)"
+            >
+              <path
+                d="M30 30.1L30 52.5C30 53.6 29.1 54.5 28 54.5L25.5 54.5C24.4 54.5 23.5 53.6 23.5 52.5L23.5 30.1 2 30.1C0.9 30.1 0 29.2 0 28.1L0 25.6C0 24.5 0.9 23.6 2 23.6L23.5 23.6 23.5 2.1C23.5 1 24.4 0.1 25.5 0.1L28 0.1C29.1 0.1 30 1 30 2.1L30 23.6 52.4 23.6C53.5 23.6 54.4 24.5 54.4 25.6L54.4 28.1C54.4 29.2 53.5 30.1 52.4 30.1L30 30.1Z"
+              />
             </g>
           </g>
-        </svg>
-        <span id="O" style="color: black">{{nameOne}}</span></div>
-      <div class="players player2 col-5 offset-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 42 43" version="1.1">
-          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <g transform="translate(-718.000000, -60.000000)" fill="#000000">
-              <g transform="translate(739.500000, 81.500000) rotate(-45.000000) translate(-739.500000, -81.500000) translate(712.000000, 54.000000)">
-                <path d="M30 30.1L30 52.5C30 53.6 29.1 54.5 28 54.5L25.5 54.5C24.4 54.5 23.5 53.6 23.5 52.5L23.5 30.1 2 30.1C0.9 30.1 0 29.2 0 28.1L0 25.6C0 24.5 0.9 23.6 2 23.6L23.5 23.6 23.5 2.1C23.5 1 24.4 0.1 25.5 0.1L28 0.1C29.1 0.1 30 1 30 2.1L30 23.6 52.4 23.6C53.5 23.6 54.4 24.5 54.4 25.6L54.4 28.1C54.4 29.2 53.5 30.1 52.4 30.1L30 30.1Z"/>
-              </g>
-            </g>
-          </g>
-        </svg>
-        <span id="X" style="color: black">{{nameTwo}}</span></div>
+        </g>
+      </svg>
+      <span class="name">{{ gameInfo.playerTwo }}</span>
+    </div>
 
+    <!-- NUM PLAYER SELECT -->
+    <div *ngIf="!!!gameInfo.activePlayer" class="player-select">
+      <div>
+      <mat-form-field class="player-name">
+        <input
+          matInput
+          placeholder="Player One"
+          [(ngModel)]="gameInfo.playerOne"
+        />
+      </mat-form-field>
+      <mat-form-field class="player-name">
+        <input
+          matInput
+          placeholder="Player Two"
+          [(ngModel)]="gameInfo.playerTwo"
+        />
+      </mat-form-field>
+    </div>
+      <div>
+        <button
+          mat-raised-button
+          color="primary"
+          class="start-button"
+          (click)="startGame(true)"
+        >
+          Against Computer
+        </button>
+        <button
+          mat-raised-button
+          color="accent"
+          class="start-button"
+          (click)="startGame(false)"
+        >
+          Against Player
+        </button>
+      </div>
+    </div>
 
-    <div class="box topb leftb" (click)="placeMove($event, 0)" (mouseenter)="highlight($event, true)" (mouseleave)="highlight($event, false)"></div>
-    <div class="box topb midcolb" (click)="placeMove($event, 1)" (mouseenter)="highlight($event, true)" (mouseleave)="highlight($event, false)"></div>
-    <div class="box topb rightb" (click)="placeMove($event, 2)" (mouseenter)="highlight($event, true)" (mouseleave)="highlight($event, false)"></div>
-    <div class="box midrowb leftb" (click)="placeMove($event, 3)" (mouseenter)="highlight($event, true)" (mouseleave)="highlight($event, false)"></div>
-    <div class="box midrowb midcolb" (click)="placeMove($event, 4)" (mouseenter)="highlight($event, true)" (mouseleave)="highlight($event, false)"></div>
-    <div class="box midrowb rightb" (click)="placeMove($event, 5)" (mouseenter)="highlight($event, true)" (mouseleave)="highlight($event, false)"></div>
-    <div class="box bottomb leftb" (click)="placeMove($event, 6)" (mouseenter)="highlight($event, true)" (mouseleave)="highlight($event, false)"></div>
-    <div class="box bottomb midcolb" (click)="placeMove($event, 7)" (mouseenter)="highlight($event, true)" (mouseleave)="highlight($event, false)"></div>
-    <div class="box bottomb rightb" (click)="placeMove($event, 8)" (mouseenter)="highlight($event, true)" (mouseleave)="highlight($event, false)"></div>
+    <!-- BOARD -->
+    <div
+      class="board screen"
+      *ngIf="gameInfo.activePlayer > 0 && !gameInfo.gameOver"
+    >
+      <div
+        *ngFor="let box of gameBoard.currentBoard; index as i"
+        class="box"
+        [ngClass]="
+          'filled-' + box + ' ' + 'activePlayer-' + gameInfo.activePlayer
+        "
+        (click)="placeMove(i)"
+      ></div>
+    </div>
+
+    <!-- GAME END SCREEN -->
+    <div
+      *ngIf="gameInfo.gameOver"
+      class="screen-win"
+      ngClass="screen-win-{{ gameInfo.winner }}"
+      id="finish"
+    >
+      <h1 class="message text-center screen-head">{{ gameOverMessage }}</h1>
+      <button
+        mat-raised-button
+        color="warn"
+        class="new-game-button"
+        (click)="resetGame()"
+      >
+        New game
+      </button>
+    </div>
+
+    <h4 class="portfolio-exit text-center">
+      <a mat-raised-button color="primary" [routerLink]="['/portfolio']">Back to Portfolio</a>
+    </h4>
+  </div>
 </div>
-
-
-<h4 class="col-12 portfolio-exit text-center"><a class="col-12"  [routerLink]="['/portfolio']">Back to Portfolio</a></h4>

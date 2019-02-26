@@ -1,0 +1,106 @@
+.text-center{
+    text-align: center;
+}
+
+.tile{
+    position: absolute;
+    cursor: pointer;
+}
+
+
+.game-board, .game-img, .tile{
+    transition: opacity 1.5s ease-out .2s;
+    position: absolute;
+}
+
+.hidden{
+    cursor: auto !important;
+    opacity: 0;
+}
+
+.opaque{
+    opacity: .3;
+}
+
+.new-game{
+    margin: 10px auto;
+    display: block;
+    width: 50%;
+    max-width: 800px;   
+}
+
+// NEW SIZE STYLING
+
+@mixin boardSize($size, $gridCount) {
+    .game-img, .game-board{
+        left: 0;
+        width: $size;
+        height: $size;
+        border: .5px solid black;
+        margin: -.5px;
+    }
+
+    .transitioning{
+        transition: top .2s, left .2s;
+    }
+    .tile{
+        
+        width: ($size / $gridCount);
+        height: ($size / $gridCount);
+    }
+
+    @for $j from 0 through $gridCount {
+    .offset-y-#{$j}{
+        top: (($size / $gridCount) * $j);
+    }
+    .offset-x-#{$j}{
+        left: (($size / $gridCount) * $j);
+    }
+    } 
+  }
+
+.board-container{
+    position: relative;
+    margin: auto;
+}
+
+.board-container.x-large{
+    height: 800px;
+    width: 800px;
+    @for $i from 3 through 20 { 
+        .grid-size-#{$i}{
+            @include boardSize(800px, $i)
+        }
+    }
+}
+  
+.board-container.large{
+    height: 550px;
+    width: 550px;
+    @for $i from 3 through 20 { 
+        &.grid-size-#{$i}{
+            @include boardSize(550px, $i)
+        }
+    }
+}
+  
+.board-container.medium{
+    height: 450px;
+    width: 450px;
+    @for $i from 3 through 20 { 
+        &.grid-size-#{$i}{
+            @include boardSize(450px, $i)
+        }
+    }
+}
+
+.board-container.small{
+    height: 300px;
+    width: 300px;
+    @for $i from 3 through 20 { 
+        &.grid-size-#{$i}{
+            @include boardSize(300px, $i)
+        }
+    }
+}
+

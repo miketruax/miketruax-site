@@ -1,39 +1,96 @@
-<div class="main-content col-12">
+<div class="page-container">
+  <div class="section-container movie-container">
+    <div class="main-header" *ngIf="!moreInfo">
+      <h3 class="text-center">OMDB API Movie Search</h3>
+      
+      <!-- SEARCH FIELD -->
+      <div class="search-form row-flex">
+        <mat-form-field class="search-field title-search">
+          <input
+            matInput
+            type="text"
+            placeholder="Movie Title"
+            [(ngModel)]="movieSearch"
+          />
+          <button
+            mat-button
+            *ngIf="movieSearch"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="movieSearch = ''"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field class="search-field year-search">
+          <input
+            matInput
+            type="number"
+            maxlength="4"
+            min="1920"
+            placeholder="Year"
+            [(ngModel)]="yearSearch"
+          />
+        </mat-form-field>
 
-
-<movie-about  *ngIf="moreInfo && !loading" [movie]="activeMovie | async" (close)="closeMore($event)"></movie-about>
-
-
-  <div class="main-header col-12" *ngIf="!moreInfo">
-      <h3 class="main-title col-12">OMDB API Movie Search</h3>
-      <div class="search-form col-12">
-        <input class="col-6 col-lg-6 offset-lg-3" id="search" [(ngModel)]="movieSearch" type="search" name="movie" placeholder="Search a Title...">
-        <input class="col-5 col-offset-1 col-lg-1" id="year" [(ngModel)]="yearSearch" type="number" maxlength="4" min=1900 max=2020 name="year" placeholder="Year"/>
-        <button (click)="searchMovies(1)" class="search-button"><i class="material-icons icn-search">search</i></button>
+        <button
+          mat-icon-button
+          class="search-button pointer"
+          (click)="searchMovies(1)"
+        >
+          <mat-icon aria-label="Search For Movie">search</mat-icon>
+        </button>
       </div>
-  </div>
-
-  <div class="col-12 text-center" *ngIf="loading">LOADING...<br><img src="../../../assets/img/portfolio/movie-search/bar.gif"></div>
-  <div id="movies" class="movie-list col-12"  *ngIf="!moreInfo">
-
-    <div class="no-movies text-center" *ngIf="(movieSearchInfo |async).msg">
-      <i class="material-icons icon-help">help_outline</i>{{(movieSearchInfo |async).msg}}</div>
-    <div *ngFor="let m of (movieSearchInfo |async).movies" data-toggle="tooltip"
-        title="Click to see more about {{m.Title}}" class="movie_more col-12 col-sm-6 col-md-4 col-lg-3"
-        (click)="showMore(m.imdbID)">
-      <movie-poster [imdbID]="m.imdbID"></movie-poster>
-      <p class="movie-title col-12 text-center" >{{m.Title}}</p>
-      <p class="movie-year  col-12 text-center">{{m.Year}}</p>
     </div>
 
+    <!-- LOADING BAR DURING API PULL -->
+    <div class="text-center" *ngIf="loading">
+      LOADING...<br /><img
+        src="../../../assets/img/portfolio/movie-search/bar.gif"
+      />
+    </div>
+
+    <!-- LIST OF MOVIES -->
+    <div class="movie-list row-flex" *ngIf="!moreInfo">
+      <div class="no-movies text-center" *ngIf="(movieSearchInfo | async).msg">
+        <i class="material-icons icon-help">help_outline</i
+        >{{ (movieSearchInfo | async).msg }}
+      </div>
+      <div
+        *ngFor="let movie of (movieSearchInfo | async).movies"  title="Click to see more about {{ movie.Title }}" class="movie column-flex pointer"
+        (click)="showMore(movie.imdbID)"
+      >
+        <movie-poster [imdbID]="movie.imdbID"></movie-poster>
+        <div class="movie-info">
+            <p class="movie-title text-center">{{ movie.Title }}</p>
+            <p class="movie-year  text-center">{{ movie.Year }}</p>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <movie-about
+      *ngIf="moreInfo && !loading"
+      [movie]="activeMovie | async"
+      (close)="closeMore($event)"
+    ></movie-about>
+
+    <!-- PAGINATION INFO -->
+    <pagination-component
+      *ngIf="!moreInfo"
+      [perPage]="10"
+      (action)="searchMovies($event)"
+      [active]="currentPage"
+      [total]="(movieSearchInfo | async).totalMovies"
+    >
+    </pagination-component>
   </div>
-  <pagination-component *ngIf="!moreInfo" [perPage]="10" (action)="searchMovies($event)"
-                        [active]="currentPage" [total]="(movieSearchInfo |async).totalMovies">
-  </pagination-component>
 </div>
 
-
-
-
-<h4 class="col-12 portfolio-exit text-center"><a class="col-12" [routerLink]="['/portfolio']">Back to Portfolio</a></h4>
-
+<h4 class="portfolio-exit text-center">
+  <a mat-raised-button color="primary" [routerLink]="['/portfolio']"
+    >Back to Portfolio</a
+  >
+</h4>

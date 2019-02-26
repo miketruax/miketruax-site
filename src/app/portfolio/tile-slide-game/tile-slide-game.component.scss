@@ -1,0 +1,50 @@
+.img-choice-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.img-choice{
+    margin: 5px;
+    display: inline-block;
+    flex-basis: calc(20% - 14px);
+    max-width: calc(20% - 14px);
+    height: auto;
+    img{
+        border: 2px solid transparent;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.active{
+    border-color: black !important;
+}
+
+
+.portfolio-exit{
+    margin: 10px;
+  }
+
+.game-options{
+width: 90%;
+margin: auto;
+
+.option{
+    width: 75%;
+    }
+}
+
+.option, .start-button{
+    display: block;
+    margin: auto;
+}
+.start-button{
+    width: 50%;    
+}
+
+.board-container{
+    width: 90%;
+    margin: auto;
+    position: relative;
+}

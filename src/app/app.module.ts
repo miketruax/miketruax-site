@@ -12,7 +12,6 @@ import {HomeComponent} from "./home/home.component";
 import {RecipeService} from "./services/recipe.service";
 import {StoreModule} from "@ngrx/store";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {EtaTimeUntilComponent} from "./shared/eta-until-end/eta-time-until.component";
 import {SectionBackgroundFade} from "./directives/section-background-fade";
 import {SlideBox} from "./directives/container-box-slide";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
@@ -39,9 +38,6 @@ export function startUpRecipes(startUpService: RecipeService, http: HttpClient):
   declarations: [
     //Main Components
     AppComponent, FoodComponent, AboutComponent, HomeComponent,
-
-    //Shared Components
-    EtaTimeUntilComponent, 
 
     //Directives
     SectionBackgroundFade, SlideBox

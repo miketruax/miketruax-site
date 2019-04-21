@@ -1,25 +1,17 @@
 <div id="pagination-div" class="col-12" *ngIf="total > perPage">
-  <div class="pagination-sub text-center">{{totalPages.length}} total pages</div>
-  <div class="pagination-sub text-center">{{total}} movies found</div>
-  <div class="pagination-sub text-center">
-    <div id="buttons">
-      <div class="pag-button first jumper pointer" *ngIf="active !== 1" (click)="action.emit(1)">
-        <!--<a class="first jumper pointer" (click)="active = 1; pullMovies()">-->
-          &#8606;first</div>
-      <div class="pag-button" *ngFor="let i of buttons;" ngClass="{{active == i ? 'active' : ''}}" (click)="action.emit(i)">
-        <!--<a class="pag-button pointer" ngClass="{{active == i ? 'active' : ''}}" (click)="action.emit(i)" >{{i}}</a>-->
+  <div class="margin-auto text-center">{{totalPages}} total pages</div>
+  <div class="margin-auto text-center">{{total}} movies found</div>
+  <div class="margin-auto text-center">
+    <div>
+      <button mat-raised-button color="primary" *ngIf="active !== 1" (click)="action.emit(1)">
+        <mat-icon matListIcon>first_page</mat-icon></button>
+      <button mat-raised-button color="primary" *ngFor="let i of buttons;" ngClass="{{active == i ? 'active' : ''}}" (click)="action.emit(i)">
+      
         {{i}}
-      </div>
-      <div class="pag-button last pointer" *ngIf="active !== totalPages.length" (click)="action.emit(totalPages.length)">
-        <!--<a class="last pointer" *ngIf="active !== totalPages.length" (click)="action.emit(totalPages.length)">last &#8608;</a>-->
-         last &#8608;
-      </div>
+      </button>
+      <button mat-raised-button color="primary" *ngIf="active !== totalPages.length" (click)="action.emit(totalPages.length)">
+        <mat-icon matListIcon>last_page</mat-icon>
+      </button>
     </div>
-  </div>
-  <div class="select">Jump to page:
-    <select name="pagejump" [(ngModel)]="jumpIdx">
-      <option *ngFor="let i of totalPages" value="{{i}}">{{i}}</option>
-    </select>
-    <a class="pointer" id="jump-to" (click)="action.emit(jumpIdx); active = jumpIdx" >Go!</a>
   </div>
 </div>

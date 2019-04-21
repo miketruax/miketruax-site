@@ -13,8 +13,6 @@ import { PaginationComponent } from '../../shared/pagination/pagination.componen
 
 
 
-
-
 @NgModule({
   declarations: [
     MovieSearchComponent, MovieAboutComponent, MoviePosterComponent, PaginationComponent

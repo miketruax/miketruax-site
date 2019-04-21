@@ -79,7 +79,7 @@
 
     <!-- PAGINATION INFO -->
     <pagination-component
-      *ngIf="!moreInfo"
+      *ngIf="!moreInfo && (movieSearchInfo | async).totalMovies > 10"
       [perPage]="10"
       (action)="searchMovies($event)"
       [active]="currentPage"

@@ -44,19 +44,22 @@
         transition: top .2s, left .2s;
     }
     .tile{
-        
         width: ($size / $gridCount);
         height: ($size / $gridCount);
     }
 
-    @for $j from 0 through $gridCount {
-    .offset-y-#{$j}{
-        top: (($size / $gridCount) * $j);
+    @for $i from 0 through $gridCount {
+    .offset-y-#{$i}{
+        top: (($size / $gridCount) * $i);
     }
-    .offset-x-#{$j}{
-        left: (($size / $gridCount) * $j);
+    .offset-x-#{$i}{
+        left: (($size / $gridCount) * $i);
     }
-    } 
+    }
+    
+    .bg .tile{
+        background-size: $size;
+    }
   }
 
 .board-container{

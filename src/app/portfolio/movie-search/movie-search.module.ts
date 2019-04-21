@@ -26,5 +26,4 @@ import { PaginationComponent } from '../../shared/pagination/pagination.componen
   bootstrap: [MovieSearchComponent], 
   exports: [MovieSearchComponent, MovieAboutComponent, MoviePosterComponent]
 })
-
 export class MovieSearchModule {}

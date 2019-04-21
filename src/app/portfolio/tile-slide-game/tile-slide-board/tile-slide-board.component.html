@@ -5,25 +5,19 @@
     [class.opaque]="!gameOver"
     [src]="imgSrc"
   />
-
   <div
-    class="game-board" 
-    [class.hidden]="gameOver">
-    <canvas
-      class="tile"
-      [class.transitioning] = "tile.transitioning"
-      [ngClass]="'offset-x-'+tile.currX+' offset-y-'+tile.currY"
-      *ngFor="let tile of imgGrid;"
-      (click)="slideTile(tile)"
-      [appDrawImage]="imgSrc"
-      [tile]="tile"
-      [width]="tileSize"
-      [height]="tileSize"
-      [gridSize]="gridSize"
-      [tileSize]="tileSize"
-      >
-    </canvas>
+  class="game-board bg" 
+  [class.hidden]="gameOver">
+  <div 
+    class="tile"
+    [class.transitioning] = "tile.transitioning"
+    [style.background-image]="tile.startX === tile.startY && tile.startX === gridSize-1 ? '' : 'url('+imgSrc+')'"
+    [style.background-position]="'-'+tileSize*tile.startX+'px -'+tileSize*tile.startY+'px'"
+    [ngClass]="'offset-x-'+tile.currX+' offset-y-'+tile.currY"
+    *ngFor="let tile of imgGrid;"
+    (click)="slideTile(tile)"
+    ></div>
 
-  </div>
+</div>
 </div>
 <button class="new-game" *ngIf="gameOver" mat-raised-button color="primary" (click)="toggleNewGame()">New Game</button>

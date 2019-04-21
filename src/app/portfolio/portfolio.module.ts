@@ -18,13 +18,12 @@ import { SharedModule } from '../shared/components/shared.module';
 import { PortfolioItemComponent } from './portfolio-item/portfolio-item.component';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
 import { TileSlideBoard } from './tile-slide-game/tile-slide-board/tile-slide-board.component';
-import { DrawImageDirective } from './tile-slide-game/tile-slide-board/draw-image.directive';
 import { TileSlideGame } from './tile-slide-game/tile-slide-game.component';
 
 
 
 @NgModule({
-  declarations: [ TileSlideBoard, TileSlideGame, DrawImageDirective,
+  declarations: [ TileSlideBoard, TileSlideGame,
     TicTacToeComponent, WhoWasItComponent, PortfolioComponent,WhoWasItResultsComponent , WhoWasItAboutComponent, PortfolioItemComponent
   ],
   imports: [CommonModule, PortfolioRoutingModule, MaterialModule, 

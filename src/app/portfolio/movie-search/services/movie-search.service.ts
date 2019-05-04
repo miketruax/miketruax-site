@@ -5,7 +5,7 @@ import { of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class MovieSearchService {
   constructor(private http: HttpClient, private portfolioStore: PortfolioStoreFacade) {}
       

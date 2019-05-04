@@ -2,7 +2,7 @@ import { ModuleWithProviders } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import {PortfolioComponent} from "./portfolio.component"
 import {TicTacToeComponent} from './tic-tac-toe/tictactoe.component'
-import {WhoWasItComponent} from './who-was-it/home/who-was-it.component'
+import {WhoWasItComponent} from './who-was-it/who-was-it.component'
 import { TileSlideGame } from "./tile-slide-game/tile-slide-game.component";
 
 const routes: Routes = [

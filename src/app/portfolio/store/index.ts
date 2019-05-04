@@ -8,24 +8,11 @@ import * as fromSelectors from './selectors'
 
 export class PortfolioStoreFacade{
   selectedMovie$ = this.store.pipe(select(fromSelectors.getSelectedMovie));
-  actors$ = this.store.pipe(select(fromSelectors.getAllActors));
   movies$ = this.store.pipe(select(fromSelectors.getMovies));
   constructor(private store: Store<fromReducers.PortfolioState>){
 
   }
 
-clearActors(num: number){
-  this.store.dispatch(new fromActions.ClearActors(num));
-}
-
-combineActors(){
-  this.store.dispatch(new fromActions.CombineActors());
-}
-
-
-addActors(actor: Object){
-  this.store.dispatch(new fromActions.AddActors(actor));
-}
 
 updateMovies(movies: Object){
   this.store.dispatch(new fromActions.UpdateMovies(movies));

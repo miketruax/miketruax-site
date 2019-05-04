@@ -1,0 +1,92 @@
+<div class="section-container background-opaque-white">
+  <h2 class="font-secondary text-center">Who Was It....</h2>
+  <h5 class="text-center font-dark">
+    Enter two or more movies and see what actors appeared in all of them (if any
+    do).
+  </h5>
+  <div class="movie-search" *ngFor="let m of searchArray; let i = index">
+    <div class="form-container">
+      <mat-form-field class="font-secondary input">
+        <input
+          class="font-secondary"
+          matInput
+          placeholder="Movie Title"
+          [(ngModel)]="m.title"
+        />
+      </mat-form-field>
+      <mat-form-field class="font-secondary input">
+        <input
+          class="font-secondary"
+          matInput
+          placeholder="Year"
+          [(ngModel)]="m.year"
+        />
+      </mat-form-field>
+      <div class="button-container">
+        <button
+          (click)="addMovie()"
+          mat-icon-button
+          class="add-remove"
+          color="secondary"
+        >
+          <mat-icon aria-label="Example icon-button with a heart icon"
+            >add_circle_outline</mat-icon
+          >
+        </button>
+        <button
+          class="add-remove"
+          *ngIf="searchArray.length > 2"
+          (click)="removeMovie(i)"
+          mat-icon-button
+          color="secondary"
+        >
+          <mat-icon aria-label="Example icon-button with a heart icon"
+            >remove_circle_outline</mat-icon
+          >
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="submit-buttons">
+    <button mat-raised-button (click)="search()" color="primary">Submit</button>
+    <button mat-raised-button (click)="clear()" color="warn">Clear</button>
+  </div>
+  <h4 *ngIf="!(results | async).ready" class="text-center">
+    Please ensure at least two "Movie Title" fields are not blank.
+  </h4>
+  <!-- RESULTS -->
+  <div *ngIf="(results | async).ready" class=" ">
+    <h5
+      class="text-center font-secondary"
+      *ngIf="
+        (results | async).actors.length == 0 ||
+        (results | async).actors[0] === undefined
+      "
+    >
+      No Actors in common according to OMDBApi. If you feel this is an error,
+      feel free to contact them and help update their data.
+    </h5>
+    <div
+      *ngIf="
+        (results | async).actors.length > 0 &&
+        (results | async).actors[0] !== undefined
+      "
+    >
+      <h5 class="text-center font-secondary">
+        {{ (results | async).actors.length > 1 ? "Actors" : "Actor" }} who
+        appeared in the all of your chosen movies:
+      </h5>
+      <mat-list class="text-center list">
+        <mat-list-item *ngFor="let a of (results | async).actors">{{
+          a
+        }}</mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+
+  <!-- END RESULTS -->
+
+  <h4 class="text-center">
+    <a mat-button [routerLink]="['/portfolio']">Back to Portfolio</a>
+  </h4>
+</div>

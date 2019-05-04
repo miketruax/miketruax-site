@@ -8,9 +8,7 @@ import { MovieSearchComponent } from './movie-search.component';
 import { MovieAboutComponent } from './about/movie-about.component';
 import { MoviePosterComponent } from './poster/movie-poster.component';
 import { MovieSearchRoutingModule } from './movie-search-routing.module';
-import { MovieSearchService } from './services/movie-search.service';
 import { PaginationComponent } from '../../shared/pagination/pagination.component';
-
 
 
 @NgModule({
@@ -20,7 +18,7 @@ import { PaginationComponent } from '../../shared/pagination/pagination.componen
   imports: [CommonModule, MovieSearchRoutingModule, MaterialModule, 
     FormsModule, HttpClientModule
   ],
-  providers: [MovieSearchService],
+  providers: [],
   bootstrap: [MovieSearchComponent], 
   exports: [MovieSearchComponent, MovieAboutComponent, MoviePosterComponent]
 })

@@ -5,7 +5,9 @@ import { catchError} from 'rxjs/operators';
 import { of } from 'rxjs';
 import { RootStoreFacade } from '../store';
 
-@Injectable()
+@Injectable(
+  {providedIn: 'root'}
+)
 export class RecipeService {
   constructor(private http: HttpClient, private store: RootStoreFacade) {
   }

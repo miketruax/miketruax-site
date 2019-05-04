@@ -1,0 +1,44 @@
+
+.form-container{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.input{
+  margin: 0 5px;
+  flex-basis: 400px;
+}
+
+.button-container{
+  flex-basis: 80px;
+}
+
+.add-remove{
+  margin-top: 5px;
+}
+
+.movie-search{
+  flex-basis: 66px;
+}
+.section-container{
+  display: block;
+}
+
+.portfolio-exit{
+  text-decoration: none;
+}
+
+.submit-buttons{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  button{
+    margin: 0 5px;
+  }
+}
+
+.list{
+  margin: auto;
+  width: 50%;
+}

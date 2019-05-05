@@ -1,6 +1,6 @@
 <div class="page-container">
   <div class="section-container movie-container">
-    <div class="main-header" *ngIf="!moreInfo">
+    <div class="main-header">
       <h3 class="text-center">OMDB API Movie Search</h3>
       
       <!-- SEARCH FIELD -->
@@ -34,25 +34,19 @@
           />
         </mat-form-field>
 
-        <button
-          mat-icon-button
-          class="search-button pointer"
-          (click)="searchMovies(1)"
-        >
-          <mat-icon aria-label="Search For Movie">search</mat-icon>
-        </button>
+        <button mat-icon-button class="search-button pointer"   (click)="searchMovies(1)">
+            <mat-icon aria-label="Search For Movie">search</mat-icon>
+          </button>
       </div>
     </div>
 
     <!-- LOADING BAR DURING API PULL -->
-    <div class="text-center" *ngIf="loading">
-      LOADING...<br /><img
-        src="../../../assets/img/portfolio/movie-search/bar.gif"
-      />
+    <div class="margin-auto" *ngIf="loading">
+        <mat-spinner></mat-spinner>
     </div>
 
     <!-- LIST OF MOVIES -->
-    <div class="movie-list row-flex" *ngIf="!moreInfo">
+    <div class="movie-list row-flex">
       <div class="no-movies text-center" *ngIf="(movieSearchInfo | async).msg">
         <i class="material-icons icon-help">help_outline</i
         >{{ (movieSearchInfo | async).msg }}
@@ -66,16 +60,9 @@
             <p class="movie-title text-center">{{ movie.Title }}</p>
             <p class="movie-year  text-center">{{ movie.Year }}</p>
         </div>
-        
       </div>
     </div>
 
-    <!-- ABOUT PAGE -->
-    <movie-about
-      *ngIf="moreInfo && !loading"
-      [movie]="activeMovie | async"
-      (close)="closeMore($event)"
-    ></movie-about>
 
     <!-- PAGINATION INFO -->
     <pagination-component
@@ -89,8 +76,6 @@
   </div>
 </div>
 
-<h4 class="portfolio-exit text-center">
-  <a mat-raised-button color="primary" [routerLink]="['/portfolio']"
-    >Back to Portfolio</a
-  >
-</h4>
+<h4 class="text-center">
+    <a mat-button [routerLink]="['/portfolio']">Back to Portfolio</a>
+  </h4>

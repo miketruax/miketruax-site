@@ -13,6 +13,10 @@ $font-light: rgb(243, 239, 233);
   Element Styles
 ==================================== */
 
+.margin-auto{
+  margin: auto;
+}
+
 ul {
   list-style: none;
 }
@@ -43,18 +47,9 @@ select {
 ==================================== */
 
 .movie:hover {
-  .movie /deep/ > movie-poster {
-    border: 2px solid black;
-    //-webkit-transform: scale(1.1);
-    //transform: scale(1.1);
-  }
   .movie-title {
     color: $primary;
   }
-}
-
-.icn-search {
-  font-weight: 700;
 }
 
 .icon-help {
@@ -66,16 +61,6 @@ select {
 
 /* MOVIE LIST COMPONENTS -------- */
 
-.movie-list a {
-  margin: 2px auto;
-  margin-bottom: 0px;
-}
-
-.movie-list a {
-  display: block;
-  margin: auto;
-}
-
 .no-movies {
   margin: 26px auto;
 }
@@ -84,83 +69,13 @@ select {
   margin-top: 10px;
 }
 
-.more-poster {
-  z-index: -1;
-  margin: 1%;
-  padding: 1%;
-  margin-top: -40px;
-  max-width: 25%;
-  background: #fff;
-  float: left;
-}
-
 .movie-year {
   color: gray;
 }
-
-
-/* =================================
-  Expanded Info Styles
-==================================== */
-
-.back {
-  color: #c2c4c6;
-  text-align: left;
-  cursor: pointer;
-  position: relative;
-  bottom: 5px;
-  left: -10px;
+.movie-title, .movie-year{
+  margin: 2px;
 }
 
-.back:hover {
-  color: white;
-}
-
-.top-grey {
-  background: $secondary !important;
-  padding-bottom: 15px !important;
-  margin-bottom: 10px;
-}
-
-.more-title {
-  color: white;
-  text-align: center;
-  font-weight: 500;
-}
-
-.more-rating {
-  font-size: 12px;
-  color: white;
-}
-
-.synopsis,
-.more-synopsis {
-  margin-bottom: 10px !important;
-  h3 {
-    padding-top: 10px !important;
-  }
-}
-
-.imdb-button {
-  background: $primary;
-  color: white;
-  border-radius: 5px;
-  border: solid $primary 2px;
-  padding: 6px;
-  margin-top: 4px;
-  cursor: pointer;
-}
-
-.imdb-button:hover {
-  color: $primary;
-  background: white;
-}
-
-.main-content {
-  min-height: 300px !important;
-  background-color: white !important;
-  margin-top: 165px !important;
-}
 
 //NEW STYLES
 
@@ -208,7 +123,6 @@ select {
   .search-button {
     margin-top: 13.5px;
     flex-basis: 40px;
-    cursor: pointer;
   }
 }
 

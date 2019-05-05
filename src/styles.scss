@@ -149,6 +149,16 @@ $site-theme: mat-light-theme($site-primary, $site-secondary, $site-warn);
     border: none !important;
 }
 
+
+
+.snack-bar{
+    padding: 5px !important;
+    background-color: white  !important;
+    border: 2px solid $secondary;
+    border-bottom-width: 0px;
+    border-radius: 10px 10px 0 0 !important;
+}
+  
 //Layout Helpers
 .float-right{
     float: right;

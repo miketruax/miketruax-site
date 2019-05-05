@@ -1,17 +1,16 @@
-<div id="expandedInfo" class="col-12">
-  <div class="top-grey col-12">
-    <h2 class="more-title col-12">{{movie['Title']}}  ({{movie['Year']}})</h2>
-    <div class="text-center more-title more-rating col-12">IMDB Rating: {{movie['imdbRating']}}</div>
-    <button class="back" (click)="close.emit()">  &#10094; Search results</button>
-  </div>
-
-
-  <div class="poster-wrap col-12 col-lg-4 offset-lg-4 text-center">
-    <movie-poster [imdbID]="movie['imdbID']"></movie-poster>
-  </div>
-  <div class ="more-synopsis col-12 col-lg-8 offset-lg-2">
-    <h3 class="text-center">Plot Synopsis:</h3>
-    <p class="synopsis">{{movie['Plot']}}</p>
-    <a class="imdb-button float-right" [href]="'http://www.imdb.com/title/'+movie['imdbID']" target="_blank">View on IMDB</a>
-  </div>
+<div mat-dialog-title>
+        <h2 class="font-secondary">{{(movie | async).Title}}  ({{(movie | async).Year}})</h2>
+        <div class="text-center font-secondary">IMDB Rating: {{(movie | async).imdbRating}}</div>
 </div>
+<div mat-dialog-content>
+    <div class="poster-wrap">
+        <movie-poster [imdbID]="(movie | async).imdbID"></movie-poster>
+    </div>
+    <h3 class="text-center font-secondary">Plot Synopsis:</h3>
+    <p class="synopsis font-secondary">{{(movie | async).Plot}}</p>
+</div>
+
+<div mat-dialog-actions class="button-container">
+    <a mat-raised-button [href]="'http://www.imdb.com/title/'+(movie | async).imdbID" target="_blank" class="text-center button">View On IMDB</a>
+    <button mat-raised-button color="warn" (click)="dismiss()" class="button text-center">Close</button>
+</div>    

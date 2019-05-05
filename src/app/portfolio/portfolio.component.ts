@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PortfolioItem } from './portfolioItem.model';
-import { MatDialog } from '@angular/material';
-import { PortfolioItemComponent } from './portfolio-item/portfolio-item.component';
+import { MatDialog, MatSnackBar } from '@angular/material';
+import { PortfolioInfoComponent } from './portfolio-info/portfolio-info.component';
 
 @Component({
   selector: 'portfolio-component',
@@ -10,14 +10,10 @@ import { PortfolioItemComponent } from './portfolio-item/portfolio-item.componen
 })
 export class PortfolioComponent implements OnInit {
   portfolioItems: PortfolioItem[];
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private snackBar : MatSnackBar) { }
 
-  openPortfolioItem(itemClicked){
-    const dialogRef = this.dialog.open(PortfolioItemComponent, {data: {portfolioItem: itemClicked}});
-
-    dialogRef.afterClosed().subscribe(result => {
-      
-    });
+  openSnackBar(item){
+    this.snackBar.openFromComponent(PortfolioInfoComponent, {panelClass: ["snack-bar"], data: item})
   }
 
   ngOnInit() {

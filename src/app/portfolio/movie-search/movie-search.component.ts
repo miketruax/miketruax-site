@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar} from '@angular/material';
 import {MovieSearchService} from "./services/movie-search.service";
 import { Observable } from 'rxjs';
 import { PortfolioStoreFacade } from '../store';
+import { MovieAboutComponent } from './about/movie-about.component';
 
 @Component({
   selector: 'movie-search',
@@ -13,20 +14,16 @@ export class MovieSearchComponent implements OnInit {
   movieSearch: string = '';
   yearSearch: number = null;
   movieSearchInfo: Observable<Object>;
-  activeMovie: Observable<Object>;
-  moreInfo: boolean = false;
   loading: boolean = false;
   currentPage: number = 1;
+  snackRef: any;
 
 
-  constructor(private movieService: MovieSearchService, private portfolioStore: PortfolioStoreFacade) {
+  constructor(private movieService: MovieSearchService, private portfolioStore: PortfolioStoreFacade, private snackBar: MatSnackBar) {
     this.movieSearchInfo = this.portfolioStore.movies$;
-    this.activeMovie = this.portfolioStore.selectedMovie$;
-
+ 
   };
-  closeMore(e){
-    this.moreInfo = false;
-  }
+
 
   searchMovies(idx) {
     this.loading = true;
@@ -43,12 +40,12 @@ export class MovieSearchComponent implements OnInit {
   //title is clicked hides search results and shows more info
   showMore(id) {
     this.portfolioStore.clearSelectedMovie();
-    this.moreInfo = true;
-    this.loading = true;
     this.movieService.movieById(id)
       .subscribe(val=>{
         this.portfolioStore.selectMovie(val)
-        this.loading = false;
+        if(!this.snackRef){
+          this.snackRef = this.snackBar.openFromComponent(MovieAboutComponent, {panelClass: ["snack-bar"]})
+        }
       });
 
   };

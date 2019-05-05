@@ -1,4 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
+import { PosterService } from './poster.service';
+import { PortfolioStoreFacade } from '../../store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'movie-poster',
@@ -7,14 +10,35 @@ import {Component, OnInit, Input} from '@angular/core';
 })
 export class MoviePosterComponent implements OnInit {
   @Input() imdbID: string;
-  placeholder: boolean = false;
-  constructor() {
+  imageToShow: any;
+  isPosterLoading: boolean = true;
+  movie : Observable<Object>
+  constructor(private posterService: PosterService, private portfolioStore: PortfolioStoreFacade) {
+    this.movie = this.portfolioStore.selectedMovie$;
   }
-  setPlaceholder(){
-    this.placeholder = true;
+  
+
+  posterFromBlob(image: Blob){
+    let fr = new FileReader();
+    fr.addEventListener("load", ()=>{
+      this.imageToShow = fr.result;
+      this.isPosterLoading = false
+    }, false)
+      fr.readAsDataURL(image);
+  }
+
+  getPosterImage(){
+    this.posterService.getPoster(`http://img.omdbapi.com/?apikey=25c98aaf&i=${this.imdbID}`).subscribe(data =>{
+      if(typeof data !== "boolean"){
+        this.posterFromBlob(data)
+      }
+      return;
+    })
   }
 
   ngOnInit() {
+    this.getPosterImage();
+    this.movie.subscribe(val=> this.getPosterImage());
   }
 
 }

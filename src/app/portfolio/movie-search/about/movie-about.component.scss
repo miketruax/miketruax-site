@@ -1,0 +1,11 @@
+.button-container{
+    border-top: 1px solid black;
+    padding: 8px 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    .button{
+        margin-left: 8px;
+        flex-grow: 1;
+    }
+}

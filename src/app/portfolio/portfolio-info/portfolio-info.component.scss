@@ -1,24 +1,19 @@
 .portfolio-icon{
     display: block;
-    margin: 3px auto;
-    max-height: 150px;
+    margin: auto;
+    max-height: 100px;
 }
 
 .button-container{
+    border-top: 1px solid black;
+    padding: 8px 0;
+    display: flex;
+    flex-flow: row wrap;
     justify-content: space-evenly;
     .button{
         margin-left: 8px;
         flex-grow: 1;
-        margin-bottom: 8px;
     }
-}
-
-.mat-dialog-title{
-    margin-bottom: 5px !important;
-}
-
-.portfolio-about{
-    margin-top: 0px;
 }
 
 .mat-list, .mat-list-item, .mat-subheader{

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Router, NavigationStart, RouterOutlet} from "@angular/router";
+import {Router, NavigationStart, RouterOutlet, NavigationEnd} from "@angular/router";
 import { slideInAnimation } from './shared/animations/routeAnimations';
 
 @Component({
@@ -13,8 +13,8 @@ export class AppComponent {
   myStyle: Object;
   myParams: Object
   constructor(private router: Router){
-    this.router.events.subscribe(path => {
-      if(event instanceof NavigationStart && path['url'] != this.router.url) {
+    this.router.events.subscribe(evt => {
+      if(evt instanceof NavigationEnd) {
         window.scrollTo(0,0);
       }
     });

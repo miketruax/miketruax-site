@@ -271,7 +271,7 @@
     </h4> -->
 
     <div class="section-inner-box portfolio-container">
-        <div *ngFor="let item of portfolioItems" (click)="openPortfolioItem(item)" class="icon-container pointer"> 
+        <div *ngFor="let item of portfolioItems" (click)="openSnackBar(item)" class="icon-container pointer"> 
           <img  class="img-responsive portfolio-icon" [src]="'../../assets/img/portfolio/icons/'+item.img" />
         </div>
     </div>

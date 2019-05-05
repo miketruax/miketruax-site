@@ -20,6 +20,7 @@ import { PaginationComponent } from '../../shared/pagination/pagination.componen
   ],
   providers: [],
   bootstrap: [MovieSearchComponent], 
+  entryComponents: [MovieAboutComponent],
   exports: [MovieSearchComponent, MovieAboutComponent, MoviePosterComponent]
 })
 export class MovieSearchModule {}

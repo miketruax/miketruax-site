@@ -17,31 +17,6 @@ $font-light: rgb(243, 239, 233);
   margin: auto;
 }
 
-ul {
-  list-style: none;
-}
-
-#year {
-  margin-left: 5px;
-}
-
-input:focus {
-  border-color: #c1c1c1;
-}
-
-button {
-  border: 0;
-  outline: 0;
-  background: none;
-  position: relative;
-  z-index: 100;
-}
-
-select {
-  padding: 3px 3px;
-  margin: 2px;
-}
-
 /* =================================
   Page Components
 ==================================== */
@@ -57,23 +32,6 @@ select {
   margin-bottom: 12px;
   color: #dfdfdf;
   display: block;
-}
-
-/* MOVIE LIST COMPONENTS -------- */
-
-.no-movies {
-  margin: 26px auto;
-}
-
-.movie-title {
-  margin-top: 10px;
-}
-
-.movie-year {
-  color: gray;
-}
-.movie-title, .movie-year{
-  margin: 2px;
 }
 
 
@@ -104,26 +62,15 @@ select {
 // SEARCH BOXES
 
 .search-form {
+  justify-content: center;
   margin: auto;
   width: 95%;
 
   .search-field {
     margin: 0 5px;
-    flex-basis: calc(70% - 30px);
-  }
-  .title-search {
-    width: 175px;
+    flex-basis: 80%;
   }
 
-  .year-search {
-    width: 1em;
-    flex-basis: calc(30% - 30px);
-  }
-
-  .search-button {
-    margin-top: 13.5px;
-    flex-basis: 40px;
-  }
 }
 
 // MOVIE LIST
@@ -146,3 +93,4 @@ select {
 .portfolio-exit{
   margin: 10px;
 }
+

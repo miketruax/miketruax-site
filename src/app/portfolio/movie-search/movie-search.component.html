@@ -7,36 +7,14 @@
       <div class="search-form row-flex">
         <mat-form-field class="search-field title-search">
           <input
+            id="movieSearch"
             matInput
             type="text"
             placeholder="Movie Title"
             [(ngModel)]="movieSearch"
           />
-          <button
-            mat-button
-            *ngIf="movieSearch"
-            matSuffix
-            mat-icon-button
-            aria-label="Clear"
-            (click)="movieSearch = ''"
-          >
-            <mat-icon>close</mat-icon>
-          </button>
-        </mat-form-field>
-        <mat-form-field class="search-field year-search">
-          <input
-            matInput
-            type="number"
-            maxlength="4"
-            min="1920"
-            placeholder="Year"
-            [(ngModel)]="yearSearch"
-          />
         </mat-form-field>
 
-        <button mat-icon-button class="search-button pointer"   (click)="searchMovies(1)">
-            <mat-icon aria-label="Search For Movie">search</mat-icon>
-          </button>
       </div>
     </div>
 
@@ -47,7 +25,7 @@
 
     <!-- LIST OF MOVIES -->
     <div class="movie-list row-flex">
-      <div class="no-movies text-center" *ngIf="(movieSearchInfo | async).msg">
+      <div class="no-movies text-center margin-auto" *ngIf="(movieSearchInfo | async).msg">
         <i class="material-icons icon-help">help_outline</i
         >{{ (movieSearchInfo | async).msg }}
       </div>
@@ -65,8 +43,7 @@
 
 
     <!-- PAGINATION INFO -->
-    <pagination-component
-      *ngIf="!moreInfo && (movieSearchInfo | async).totalMovies > 10"
+    <pagination-component *ngIf="!loading"
       [perPage]="10"
       (action)="searchMovies($event)"
       [active]="currentPage"

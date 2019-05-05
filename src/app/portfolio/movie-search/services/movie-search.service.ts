@@ -13,13 +13,12 @@ export class MovieSearchService {
         return this.http.get('http://www.omdbapi.com/', {params})
   }
 
-  searchMovies(title, year, page) {
+  searchMovies(title, page) {
     let params: HttpParams =  new HttpParams()
       .set('apikey', '25c98aaf')
       .set('r', 'JSON')
       .set('page', page ? page: '1')
       .set('s', title ? title : '')
-      .set('y', year ? year : '');
 
     return this.getMovies(params)
     .pipe(

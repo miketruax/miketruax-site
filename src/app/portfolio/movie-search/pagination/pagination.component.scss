@@ -1,0 +1,19 @@
+.button-container{
+  margin-top: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.margin-auto {
+  margin: auto;
+}
+.button{
+  padding: 0;
+  margin: 0 3px;
+  min-width: 50px
+}
+
+.active{
+  color: white;
+}

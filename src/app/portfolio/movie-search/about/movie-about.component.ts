@@ -1,7 +1,7 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import { PortfolioStoreFacade } from '../../store';
 import { Observable } from 'rxjs';
-import { MatSnackBarRef } from '@angular/material';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'movie-about',
@@ -10,11 +10,11 @@ import { MatSnackBarRef } from '@angular/material';
 })
 export class MovieAboutComponent implements OnInit {
   movie: Observable<Object>;
-  constructor(private portfolioStore: PortfolioStoreFacade, private _snackRef: MatSnackBarRef<MovieAboutComponent>) {
+  constructor(private portfolioStore: PortfolioStoreFacade, private _dialogRef: MatDialogRef<MovieAboutComponent>) {
     this.movie = this.portfolioStore.selectedMovie$;
   }
   dismiss(){
-    this._snackRef.dismiss();
+    this._dialogRef.close();
   }
   ngOnInit() {
   }

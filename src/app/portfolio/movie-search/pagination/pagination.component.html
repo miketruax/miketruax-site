@@ -1,0 +1,16 @@
+<ng-container *ngIf="total > perPage">
+<div class="margin-auto text-center">{{total}} movies found</div>
+<div class="margin-auto text-center">{{totalPages}} total pages</div>
+  <div class="margin-auto text-center">
+    <div class="button-container">
+      <button mat-raised-button color="primary" class="button" *ngIf="active !== 1" (click)="action.emit(1)">
+        <mat-icon matListIcon>first_page</mat-icon></button>
+      <button mat-raised-button [color]="active == i ? 'accent' : 'primary'" *ngFor="let i of buttons;" class="button" [class.active]="active == i" (click)="action.emit(i)">
+      {{i}}
+      </button>
+      <button mat-raised-button color="primary" class="button" *ngIf="active !== totalPages" (click)="action.emit(totalPages)">
+        <mat-icon matListIcon>last_page</mat-icon>
+      </button>
+    </div>
+  </div>
+</ng-container>

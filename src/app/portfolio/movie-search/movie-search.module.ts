@@ -8,7 +8,7 @@ import { MovieSearchComponent } from './movie-search.component';
 import { MovieAboutComponent } from './about/movie-about.component';
 import { MoviePosterComponent } from './poster/movie-poster.component';
 import { MovieSearchRoutingModule } from './movie-search-routing.module';
-import { PaginationComponent } from '../../shared/pagination/pagination.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 @NgModule({

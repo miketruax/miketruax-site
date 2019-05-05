@@ -38,7 +38,6 @@ export class MoviePosterComponent implements OnInit {
 
   ngOnInit() {
     this.getPosterImage();
-    this.movie.subscribe(val=> this.getPosterImage());
   }
 
 }

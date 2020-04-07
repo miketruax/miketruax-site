@@ -13,9 +13,7 @@ export default (app, router) => {
   //applies api routes
   app.use('/api', router);
 
-  //ALL requests get routed through to index.html to ensure app is used
-  app.get('*', (req, res) => {
+// Allows for angular routing to take precedent
 
-    res.sendFile('/dist/index.html', {root: __dirname + "/../"});
-  });
+
 };

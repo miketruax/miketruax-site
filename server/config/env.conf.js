@@ -1,4 +1,3 @@
-import config from './config';
 export function envValidator() {
   if(!process.env.NODE_ENV) {
     process.env.NODE_ENV = process.env.defaultENV;
@@ -9,7 +8,6 @@ export function envValidator() {
 
   if (!process.env.PORT)
     process.env.PORT = process.env.defaultPORT;
-
 
   return;
 }
@@ -40,7 +38,6 @@ function validateNodeEnv() {
       console.log('Defaulting value for: development');
       break;
   }
-
   return;
 }
 

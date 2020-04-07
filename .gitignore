@@ -1,6 +1,6 @@
 
 /dist/
 /node_modules/
-/config/config.js
+.env
 
 .idea/workspace.xml

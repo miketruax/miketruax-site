@@ -7,7 +7,7 @@ import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 })
 export class PaginationComponent implements OnInit {
   @Input() active: number;
-  @Input() total: string;
+  @Input() total: any;
   @Input() perPage: number;
   @Output() action = new EventEmitter;
   buttons: Array<number> = []

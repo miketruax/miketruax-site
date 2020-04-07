@@ -1,4 +1,4 @@
-import {acquire} from '../connection';
+import {acquire} from '../config/database.conf';
 
 
 function getRecipes(res) {

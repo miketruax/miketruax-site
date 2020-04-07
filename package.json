@@ -5,9 +5,10 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "dev": "concurrently --kill-others \"ng build --watch\" \"SET NODE_ENV=development& nodemon --exec babel-node server.js\" ",
     "start": "node server.prod.js",
-    "build": "webpack --config webpack.config.server.js",
+    "front": "ng build --watch",
+    "back": "SET NODE_ENV=development& nodemon --exec babel-node server.js",
+    "build": "webpack --config webpack.config.server.js && ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

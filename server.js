@@ -4,8 +4,6 @@ envValidator();
 
 import express from 'express';
 import bodyParser from 'body-parser';
-import morgan from 'morgan';
-import cookieParser from 'cookie-parser';
 
 
 import http from 'http';

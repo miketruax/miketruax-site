@@ -26,8 +26,4 @@ export default  (app, router) => {
     res.send({'response' : 'Functionality NYI'})
   });
 
-  router.get('/ping', (req, res, next)=>{
-    res.send({success: true})
-  });
-
 }
